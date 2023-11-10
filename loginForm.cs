@@ -10,6 +10,8 @@ namespace EpistWinform
 
         }
 
+
+
         private void loginForm_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(58, 175, 131);
@@ -18,6 +20,14 @@ namespace EpistWinform
             this.passwordLabel.ForeColor = Color.White;
             this.forgotpassLabel.ForeColor = Color.White;
             this.createAccountLabel.ForeColor = Color.White;
+        }
+
+        private void loginBtn_Click(object sender, EventArgs e)
+        {
+            var mainWindowForm = new MainWindowForm();
+            this.Hide();
+            mainWindowForm.ShowDialog();
+            this.Show();
         }
     }
 }

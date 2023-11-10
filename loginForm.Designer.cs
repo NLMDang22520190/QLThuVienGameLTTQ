@@ -120,6 +120,7 @@
             loginBtn.TabIndex = 0;
             loginBtn.Text = "LOGIN";
             loginBtn.UseVisualStyleBackColor = false;
+            loginBtn.Click += loginBtn_Click;
             // 
             // panel3
             // 
