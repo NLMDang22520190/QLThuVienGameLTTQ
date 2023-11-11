@@ -1,4 +1,5 @@
 using EpistWinform.DAO;
+using System.Runtime.InteropServices;
 
 namespace EpistWinform
 {
@@ -7,21 +8,22 @@ namespace EpistWinform
         public loginForm()
         {
             InitializeComponent();
-            this.MaximizeBox = false;
-            this.StartPosition = FormStartPosition.CenterScreen;
-
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            //this.FormBorderStyle = FormBorderStyle.None;
         }
 
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
 
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         private void loginForm_Load(object sender, EventArgs e)
         {
-            this.BackColor = Color.FromArgb(58, 175, 131);
-            this.loginLabel.ForeColor = Color.White;
-            this.usernameLabel.ForeColor = Color.White;
-            this.passwordLabel.ForeColor = Color.White;
-            this.forgotpassLabel.ForeColor = Color.White;
-            this.createAccountLabel.ForeColor = Color.White;
+
         }
 
         private void loginBtn_Click(object sender, EventArgs e)
@@ -36,7 +38,7 @@ namespace EpistWinform
             else
                 MessageBox.Show("Incorrect Username or Password");
 
-            
+
         }
 
         bool Login(string userName, string passWord)
@@ -44,5 +46,36 @@ namespace EpistWinform
             return AccountDAO.Instance.Login(userName, passWord);
         }
 
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void minimizeBtn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void controlBarPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void showPassBtn_Click(object sender, EventArgs e)
+        {
+            if (passwordTextBox.PasswordChar == '*')
+            {
+                passwordTextBox.PasswordChar = '\0';
+                showPassBtn.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+
+
+            }
+            else
+            {
+                passwordTextBox.PasswordChar = '*';
+                showPassBtn.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            }
+        }
     }
 }
