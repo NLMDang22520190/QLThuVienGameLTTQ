@@ -1,3 +1,5 @@
+using EpistWinform.DAO;
+
 namespace EpistWinform
 {
     public partial class loginForm : Form
@@ -24,10 +26,23 @@ namespace EpistWinform
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            var mainWindowForm = new MainWindowForm();
-            this.Hide();
-            mainWindowForm.ShowDialog();
-            this.Show();
+            if (Login(usernameTextBox.Text, passwordTextBox.Text))
+            {
+                var mainWindowForm = new MainWindowForm();
+                this.Hide();
+                mainWindowForm.ShowDialog();
+                this.Show();
+            }
+            else
+                MessageBox.Show("Incorrect Username or Password");
+
+            
         }
+
+        bool Login(string userName, string passWord)
+        {
+            return AccountDAO.Instance.Login(userName, passWord);
+        }
+
     }
 }
