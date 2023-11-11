@@ -1,4 +1,5 @@
-﻿using FontAwesome.Sharp;
+﻿using EpistWinform.Forms;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,7 @@ namespace EpistWinform
         private IconButton currentBtn;
         private Panel downBorderBtn;
         private Color pressColor;
+        private Form currentChildForm;
 
         private FormWindowState lastWindowState = FormWindowState.Normal;
 
@@ -42,6 +44,23 @@ namespace EpistWinform
             navigationPanel.Controls.Add(downBorderBtn);
             pressColor = Color.LightPink;
 
+        }
+
+        private void OpenChildForm(Form childForm)
+        {
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            changeFormPanel.Controls.Add(childForm);
+            changeFormPanel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
 
         private void ActivateButton(object sender, Color color)
@@ -121,22 +140,25 @@ namespace EpistWinform
         private void libraryBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, pressColor);
+            OpenChildForm(new libraryForm());
         }
 
         private void inventoryBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, pressColor);
-
+            OpenChildForm(new inventoryForm());
         }
 
         private void userBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, pressColor);
+            OpenChildForm(new userForm());
         }
 
         private void adminBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, pressColor);
+            OpenChildForm(new adminForm());
         }
     }
 }

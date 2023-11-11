@@ -41,6 +41,7 @@
             userBtn = new FontAwesome.Sharp.IconButton();
             inventoryBtn = new FontAwesome.Sharp.IconButton();
             libraryBtn = new FontAwesome.Sharp.IconButton();
+            changeFormPanel = new Panel();
             controlBarPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
             navigationPanel.SuspendLayout();
@@ -241,11 +242,20 @@
             libraryBtn.UseVisualStyleBackColor = true;
             libraryBtn.Click += libraryBtn_Click;
             // 
+            // changeFormPanel
+            // 
+            changeFormPanel.Dock = DockStyle.Fill;
+            changeFormPanel.Location = new Point(0, 130);
+            changeFormPanel.Name = "changeFormPanel";
+            changeFormPanel.Size = new Size(1258, 534);
+            changeFormPanel.TabIndex = 9;
+            // 
             // MainWindowForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1258, 664);
+            Controls.Add(changeFormPanel);
             Controls.Add(navigationPanel);
             Controls.Add(controlBarPanel);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -274,5 +284,6 @@
         private FontAwesome.Sharp.IconButton exitBtn;
         private FontAwesome.Sharp.IconButton userBtn;
         private FontAwesome.Sharp.IconButton inventoryBtn;
+        private Panel changeFormPanel;
     }
 }
