@@ -99,6 +99,14 @@ namespace EpistWinform
                 currentBtn.IconColor = Color.White;
             }
         }
+
+        private void LibraryForm_InventoryButtonClicked(object sender, EventArgs e)
+        {
+            // Mở inventoryForm trong changeFormPanel
+            OpenChildForm(inventoryForm);
+
+            // Hoặc thực hiện các hành động khác tùy thuộc vào yêu cầu của bạn
+        }
         #endregion
 
         #region events
@@ -187,9 +195,14 @@ namespace EpistWinform
             downBorderBtn.BringToFront();
 
             OpenChildForm(libraryForm);
-            
+
+            libraryForm.InventoryButtonClicked += LibraryForm_InventoryButtonClicked;
+
         }
+
+        
         #endregion
+
 
 
     }

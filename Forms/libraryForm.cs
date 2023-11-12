@@ -14,6 +14,7 @@ namespace EpistWinform.Forms
     {
         private int currentRandomIndex;
         private int lastRandomIndex;
+        public event EventHandler InventoryButtonClicked;
         public libraryForm()
         {
             InitializeComponent();
@@ -21,7 +22,7 @@ namespace EpistWinform.Forms
 
         private void libraryForm_Shown(object sender, EventArgs e)
         {
-            
+
         }
 
         private void bannerPictureBox_Click(object sender, EventArgs e)
@@ -44,5 +45,11 @@ namespace EpistWinform.Forms
             string bannerImagePath = $"./Resource/Banner/banner{currentRandomIndex}.jpg";
             this.bannerPictureBox.Image = Image.FromFile(bannerImagePath);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            InventoryButtonClicked?.Invoke(this, EventArgs.Empty);
+        }
+
     }
 }
