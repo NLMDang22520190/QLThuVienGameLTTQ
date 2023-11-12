@@ -28,6 +28,8 @@ namespace EpistWinform
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
+            usernameTextBox.Text = "admin";
+            passwordTextBox.Text = "123";
             if (Login(usernameTextBox.Text, passwordTextBox.Text))
             {
                 var mainWindowForm = new MainWindowForm();

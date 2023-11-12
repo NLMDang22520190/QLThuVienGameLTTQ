@@ -18,21 +18,26 @@ namespace EpistWinform
 
     public partial class MainWindowForm : Form
     {
-
+        #region privateProperty
         private IconButton currentBtn;
         private Panel downBorderBtn;
         private Color pressColor;
         private Form currentChildForm;
-
         private FormWindowState lastWindowState = FormWindowState.Normal;
+        private libraryForm libraryForm;
+        private inventoryForm inventoryForm;
+        private userForm userForm;
+        private adminForm adminForm;
+        #endregion
 
+        #region other
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
 
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
+        #endregion
         public MainWindowForm()
         {
             InitializeComponent();
@@ -44,13 +49,19 @@ namespace EpistWinform
             navigationPanel.Controls.Add(downBorderBtn);
             pressColor = Color.LightPink;
 
+            libraryForm = new libraryForm();
+            inventoryForm = new inventoryForm();
+            userForm = new userForm();
+            adminForm = new adminForm();
+
         }
 
+        #region privateMethods
         private void OpenChildForm(Form childForm)
         {
             if (currentChildForm != null)
             {
-                currentChildForm.Close();
+                currentChildForm.Visible = false;
             }
 
             currentChildForm = childForm;
@@ -88,6 +99,9 @@ namespace EpistWinform
                 currentBtn.IconColor = Color.White;
             }
         }
+        #endregion
+
+        #region events
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
@@ -140,25 +154,43 @@ namespace EpistWinform
         private void libraryBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, pressColor);
-            OpenChildForm(new libraryForm());
+            OpenChildForm(libraryForm);
         }
 
         private void inventoryBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, pressColor);
-            OpenChildForm(new inventoryForm());
+            OpenChildForm(inventoryForm);
         }
 
         private void userBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, pressColor);
-            OpenChildForm(new userForm());
+            OpenChildForm(userForm);
         }
 
         private void adminBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, pressColor);
-            OpenChildForm(new adminForm());
+            OpenChildForm(adminForm);
         }
+        private void MainWindowForm_Load(object sender, EventArgs e)
+        {
+            currentBtn = libraryBtn;
+            currentBtn.ForeColor = pressColor;
+            currentBtn.IconColor = pressColor;
+
+            downBorderBtn.BackColor = pressColor;
+            downBorderBtn.Location = new Point(currentBtn.Location.X, this.navigationPanel.Location.Y);
+            downBorderBtn.Visible = true;
+            downBorderBtn.Size = new Size(currentBtn.Width, 7);
+            downBorderBtn.BringToFront();
+
+            OpenChildForm(libraryForm);
+            
+        }
+        #endregion
+
+
     }
 }

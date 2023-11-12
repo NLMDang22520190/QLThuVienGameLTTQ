@@ -153,7 +153,7 @@
             adminBtn.FlatStyle = FlatStyle.Flat;
             adminBtn.Font = new Font("Tahoma", 14F, FontStyle.Bold, GraphicsUnit.Point);
             adminBtn.ForeColor = Color.White;
-            adminBtn.IconChar = FontAwesome.Sharp.IconChar.CableCar;
+            adminBtn.IconChar = FontAwesome.Sharp.IconChar.UsersCog;
             adminBtn.IconColor = Color.White;
             adminBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             adminBtn.ImageAlign = ContentAlignment.MiddleLeft;
@@ -173,7 +173,7 @@
             exitBtn.FlatStyle = FlatStyle.Flat;
             exitBtn.Font = new Font("Tahoma", 14F, FontStyle.Bold, GraphicsUnit.Point);
             exitBtn.ForeColor = Color.White;
-            exitBtn.IconChar = FontAwesome.Sharp.IconChar.CableCar;
+            exitBtn.IconChar = FontAwesome.Sharp.IconChar.PersonWalkingDashedLineArrowRight;
             exitBtn.IconColor = Color.White;
             exitBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             exitBtn.ImageAlign = ContentAlignment.MiddleLeft;
@@ -191,7 +191,7 @@
             userBtn.FlatStyle = FlatStyle.Flat;
             userBtn.Font = new Font("Tahoma", 14F, FontStyle.Bold, GraphicsUnit.Point);
             userBtn.ForeColor = Color.White;
-            userBtn.IconChar = FontAwesome.Sharp.IconChar.CableCar;
+            userBtn.IconChar = FontAwesome.Sharp.IconChar.UserGear;
             userBtn.IconColor = Color.White;
             userBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             userBtn.ImageAlign = ContentAlignment.MiddleLeft;
@@ -210,7 +210,7 @@
             inventoryBtn.FlatStyle = FlatStyle.Flat;
             inventoryBtn.Font = new Font("Tahoma", 14F, FontStyle.Bold, GraphicsUnit.Point);
             inventoryBtn.ForeColor = Color.White;
-            inventoryBtn.IconChar = FontAwesome.Sharp.IconChar.CableCar;
+            inventoryBtn.IconChar = FontAwesome.Sharp.IconChar.HardDrive;
             inventoryBtn.IconColor = Color.White;
             inventoryBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             inventoryBtn.ImageAlign = ContentAlignment.MiddleLeft;
@@ -229,7 +229,7 @@
             libraryBtn.FlatStyle = FlatStyle.Flat;
             libraryBtn.Font = new Font("Tahoma", 14F, FontStyle.Bold, GraphicsUnit.Point);
             libraryBtn.ForeColor = Color.White;
-            libraryBtn.IconChar = FontAwesome.Sharp.IconChar.CableCar;
+            libraryBtn.IconChar = FontAwesome.Sharp.IconChar.Gamepad;
             libraryBtn.IconColor = Color.White;
             libraryBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             libraryBtn.ImageAlign = ContentAlignment.MiddleLeft;
@@ -247,14 +247,14 @@
             changeFormPanel.Dock = DockStyle.Fill;
             changeFormPanel.Location = new Point(0, 130);
             changeFormPanel.Name = "changeFormPanel";
-            changeFormPanel.Size = new Size(1258, 534);
+            changeFormPanel.Size = new Size(1258, 614);
             changeFormPanel.TabIndex = 9;
             // 
             // MainWindowForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1258, 664);
+            ClientSize = new Size(1258, 744);
             Controls.Add(changeFormPanel);
             Controls.Add(navigationPanel);
             Controls.Add(controlBarPanel);
@@ -262,6 +262,7 @@
             Name = "MainWindowForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MainWindowForm";
+            Load += MainWindowForm_Load;
             Resize += MainWindowForm_Resize;
             controlBarPanel.ResumeLayout(false);
             controlBarPanel.PerformLayout();
