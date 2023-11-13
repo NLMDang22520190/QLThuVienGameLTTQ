@@ -107,7 +107,7 @@
             closeBtn.IconColor = Color.White;
             closeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             closeBtn.Location = new Point(1200, 5);
-            closeBtn.Margin = new Padding(5, 5, 5, 5);
+            closeBtn.Margin = new Padding(5);
             closeBtn.Name = "closeBtn";
             closeBtn.Size = new Size(52, 48);
             closeBtn.TabIndex = 10;
@@ -155,7 +155,6 @@
             // adminBtn
             // 
             adminBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            adminBtn.AutoSize = true;
             adminBtn.FlatAppearance.BorderSize = 0;
             adminBtn.FlatStyle = FlatStyle.Flat;
             adminBtn.Font = new Font("Tahoma", 14F, FontStyle.Bold, GraphicsUnit.Point);
@@ -177,7 +176,6 @@
             // exitBtn
             // 
             exitBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            exitBtn.AutoSize = true;
             exitBtn.FlatAppearance.BorderSize = 0;
             exitBtn.FlatStyle = FlatStyle.Flat;
             exitBtn.Font = new Font("Tahoma", 14F, FontStyle.Bold, GraphicsUnit.Point);
@@ -197,7 +195,6 @@
             // 
             // userBtn
             // 
-            userBtn.AutoSize = true;
             userBtn.FlatAppearance.BorderSize = 0;
             userBtn.FlatStyle = FlatStyle.Flat;
             userBtn.Font = new Font("Tahoma", 14F, FontStyle.Bold, GraphicsUnit.Point);
@@ -218,7 +215,6 @@
             // 
             // inventoryBtn
             // 
-            inventoryBtn.AutoSize = true;
             inventoryBtn.FlatAppearance.BorderSize = 0;
             inventoryBtn.FlatStyle = FlatStyle.Flat;
             inventoryBtn.Font = new Font("Tahoma", 14F, FontStyle.Bold, GraphicsUnit.Point);
@@ -239,7 +235,6 @@
             // 
             // libraryBtn
             // 
-            libraryBtn.AutoSize = true;
             libraryBtn.FlatAppearance.BorderSize = 0;
             libraryBtn.FlatStyle = FlatStyle.Flat;
             libraryBtn.Font = new Font("Tahoma", 14F, FontStyle.Bold, GraphicsUnit.Point);
@@ -286,7 +281,6 @@
             controlBarPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
             navigationPanel.ResumeLayout(false);
-            navigationPanel.PerformLayout();
             ResumeLayout(false);
         }
 

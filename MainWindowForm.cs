@@ -184,6 +184,14 @@ namespace EpistWinform
         }
         private void MainWindowForm_Load(object sender, EventArgs e)
         {
+            libraryBtn.Width = Screen.PrimaryScreen.Bounds.Width / 12;
+            inventoryBtn.Width = Screen.PrimaryScreen.Bounds.Width / 10;
+            userBtn.Width = Screen.PrimaryScreen.Bounds.Width / 17;
+            adminBtn.Width = Screen.PrimaryScreen.Bounds.Width / 15;
+            exitBtn.Width = Screen.PrimaryScreen.Bounds.Width / 19;
+
+
+
             currentBtn = libraryBtn;
             currentBtn.ForeColor = pressColor;
             currentBtn.IconColor = pressColor;
