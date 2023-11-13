@@ -10,8 +10,7 @@ namespace EpistWinform.DAO
 {
     public class DataProvider
     {
-        private string connectionSTR = "Data Source=TEKATOJI;Initial Catalog=QuanLyGame;Integrated Security=True;Connect Timeout=30;Encrypt=False;MultiSubnetFailover=False\r\n";
-
+        private string connectionSTR = "Server=tcp:lttqquanlygame.database.windows.net,1433;Initial Catalog=QuanLyGame;Persist Security Info=False;User ID=quanlygameadmin;Password=Quanlygame123@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
         private static DataProvider instance; // Ctrl + R + E
 
