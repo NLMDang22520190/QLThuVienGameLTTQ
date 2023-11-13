@@ -59,7 +59,7 @@
             controlBarPanel.Location = new Point(0, 0);
             controlBarPanel.Margin = new Padding(2);
             controlBarPanel.Name = "controlBarPanel";
-            controlBarPanel.Size = new Size(1006, 48);
+            controlBarPanel.Size = new Size(1258, 60);
             controlBarPanel.TabIndex = 7;
             controlBarPanel.MouseDown += controlBarPanel_MouseDown;
             // 
@@ -72,10 +72,10 @@
             maximizeBtn.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
             maximizeBtn.IconColor = Color.White;
             maximizeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            maximizeBtn.Location = new Point(920, 4);
+            maximizeBtn.Location = new Point(1150, 5);
             maximizeBtn.Margin = new Padding(2);
             maximizeBtn.Name = "maximizeBtn";
-            maximizeBtn.Size = new Size(44, 40);
+            maximizeBtn.Size = new Size(55, 50);
             maximizeBtn.TabIndex = 12;
             maximizeBtn.UseVisualStyleBackColor = true;
             maximizeBtn.Click += maximizeBtn_Click;
@@ -89,10 +89,10 @@
             minimizeBtn.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             minimizeBtn.IconColor = Color.White;
             minimizeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            minimizeBtn.Location = new Point(890, 4);
+            minimizeBtn.Location = new Point(1112, 5);
             minimizeBtn.Margin = new Padding(2);
             minimizeBtn.Name = "minimizeBtn";
-            minimizeBtn.Size = new Size(32, 40);
+            minimizeBtn.Size = new Size(40, 50);
             minimizeBtn.TabIndex = 11;
             minimizeBtn.UseVisualStyleBackColor = true;
             minimizeBtn.Click += minimizeBtn_Click;
@@ -106,10 +106,10 @@
             closeBtn.IconChar = FontAwesome.Sharp.IconChar.TimesRectangle;
             closeBtn.IconColor = Color.White;
             closeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            closeBtn.Location = new Point(960, 4);
-            closeBtn.Margin = new Padding(4);
+            closeBtn.Location = new Point(1200, 5);
+            closeBtn.Margin = new Padding(5, 5, 5, 5);
             closeBtn.Name = "closeBtn";
-            closeBtn.Size = new Size(42, 38);
+            closeBtn.Size = new Size(52, 48);
             closeBtn.TabIndex = 10;
             closeBtn.UseVisualStyleBackColor = true;
             closeBtn.Click += closeBtn_Click;
@@ -117,10 +117,10 @@
             // logoPictureBox
             // 
             logoPictureBox.Image = (Image)resources.GetObject("logoPictureBox.Image");
-            logoPictureBox.Location = new Point(22, 0);
+            logoPictureBox.Location = new Point(28, 0);
             logoPictureBox.Margin = new Padding(2);
             logoPictureBox.Name = "logoPictureBox";
-            logoPictureBox.Size = new Size(48, 48);
+            logoPictureBox.Size = new Size(60, 60);
             logoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             logoPictureBox.TabIndex = 6;
             logoPictureBox.TabStop = false;
@@ -130,10 +130,10 @@
             nameLabel.AutoSize = true;
             nameLabel.Font = new Font("Tahoma", 16F, FontStyle.Bold, GraphicsUnit.Point);
             nameLabel.ForeColor = Color.White;
-            nameLabel.Location = new Point(75, 7);
+            nameLabel.Location = new Point(94, 9);
             nameLabel.Margin = new Padding(2, 0, 2, 0);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(97, 33);
+            nameLabel.Size = new Size(113, 39);
             nameLabel.TabIndex = 4;
             nameLabel.Text = "EPIST";
             // 
@@ -146,15 +146,16 @@
             navigationPanel.Controls.Add(inventoryBtn);
             navigationPanel.Controls.Add(libraryBtn);
             navigationPanel.Dock = DockStyle.Top;
-            navigationPanel.Location = new Point(0, 48);
+            navigationPanel.Location = new Point(0, 60);
             navigationPanel.Margin = new Padding(2);
             navigationPanel.Name = "navigationPanel";
-            navigationPanel.Size = new Size(1006, 56);
+            navigationPanel.Size = new Size(1258, 70);
             navigationPanel.TabIndex = 8;
             // 
             // adminBtn
             // 
             adminBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            adminBtn.AutoSize = true;
             adminBtn.FlatAppearance.BorderSize = 0;
             adminBtn.FlatStyle = FlatStyle.Flat;
             adminBtn.Font = new Font("Tahoma", 14F, FontStyle.Bold, GraphicsUnit.Point);
@@ -163,10 +164,10 @@
             adminBtn.IconColor = Color.White;
             adminBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             adminBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            adminBtn.Location = new Point(703, 11);
+            adminBtn.Location = new Point(937, 8);
             adminBtn.Margin = new Padding(2);
             adminBtn.Name = "adminBtn";
-            adminBtn.Size = new Size(148, 34);
+            adminBtn.Size = new Size(171, 54);
             adminBtn.TabIndex = 4;
             adminBtn.Text = "ADMIN";
             adminBtn.TextAlign = ContentAlignment.MiddleRight;
@@ -176,6 +177,7 @@
             // exitBtn
             // 
             exitBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            exitBtn.AutoSize = true;
             exitBtn.FlatAppearance.BorderSize = 0;
             exitBtn.FlatStyle = FlatStyle.Flat;
             exitBtn.Font = new Font("Tahoma", 14F, FontStyle.Bold, GraphicsUnit.Point);
@@ -184,10 +186,10 @@
             exitBtn.IconColor = Color.White;
             exitBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             exitBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            exitBtn.Location = new Point(872, 11);
+            exitBtn.Location = new Point(1112, 8);
             exitBtn.Margin = new Padding(2);
             exitBtn.Name = "exitBtn";
-            exitBtn.Size = new Size(125, 34);
+            exitBtn.Size = new Size(134, 54);
             exitBtn.TabIndex = 3;
             exitBtn.Text = "EXIT";
             exitBtn.TextAlign = ContentAlignment.MiddleRight;
@@ -195,6 +197,7 @@
             // 
             // userBtn
             // 
+            userBtn.AutoSize = true;
             userBtn.FlatAppearance.BorderSize = 0;
             userBtn.FlatStyle = FlatStyle.Flat;
             userBtn.Font = new Font("Tahoma", 14F, FontStyle.Bold, GraphicsUnit.Point);
@@ -203,10 +206,10 @@
             userBtn.IconColor = Color.White;
             userBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             userBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            userBtn.Location = new Point(407, 11);
+            userBtn.Location = new Point(490, 8);
             userBtn.Margin = new Padding(2);
             userBtn.Name = "userBtn";
-            userBtn.Size = new Size(126, 34);
+            userBtn.Size = new Size(145, 54);
             userBtn.TabIndex = 2;
             userBtn.Text = "USER";
             userBtn.TextAlign = ContentAlignment.MiddleRight;
@@ -215,6 +218,7 @@
             // 
             // inventoryBtn
             // 
+            inventoryBtn.AutoSize = true;
             inventoryBtn.FlatAppearance.BorderSize = 0;
             inventoryBtn.FlatStyle = FlatStyle.Flat;
             inventoryBtn.Font = new Font("Tahoma", 14F, FontStyle.Bold, GraphicsUnit.Point);
@@ -223,10 +227,10 @@
             inventoryBtn.IconColor = Color.White;
             inventoryBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             inventoryBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            inventoryBtn.Location = new Point(189, 11);
+            inventoryBtn.Location = new Point(235, 8);
             inventoryBtn.Margin = new Padding(2);
             inventoryBtn.Name = "inventoryBtn";
-            inventoryBtn.Size = new Size(214, 34);
+            inventoryBtn.Size = new Size(251, 54);
             inventoryBtn.TabIndex = 1;
             inventoryBtn.Text = "INVENTORY";
             inventoryBtn.TextAlign = ContentAlignment.MiddleRight;
@@ -235,6 +239,7 @@
             // 
             // libraryBtn
             // 
+            libraryBtn.AutoSize = true;
             libraryBtn.FlatAppearance.BorderSize = 0;
             libraryBtn.FlatStyle = FlatStyle.Flat;
             libraryBtn.Font = new Font("Tahoma", 14F, FontStyle.Bold, GraphicsUnit.Point);
@@ -243,10 +248,10 @@
             libraryBtn.IconColor = Color.White;
             libraryBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             libraryBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            libraryBtn.Location = new Point(22, 11);
+            libraryBtn.Location = new Point(28, 8);
             libraryBtn.Margin = new Padding(2);
             libraryBtn.Name = "libraryBtn";
-            libraryBtn.Size = new Size(170, 34);
+            libraryBtn.Size = new Size(203, 54);
             libraryBtn.TabIndex = 0;
             libraryBtn.Text = "LIBRARY";
             libraryBtn.TextAlign = ContentAlignment.MiddleRight;
@@ -256,17 +261,17 @@
             // changeFormPanel
             // 
             changeFormPanel.Dock = DockStyle.Fill;
-            changeFormPanel.Location = new Point(0, 104);
+            changeFormPanel.Location = new Point(0, 130);
             changeFormPanel.Margin = new Padding(2);
             changeFormPanel.Name = "changeFormPanel";
-            changeFormPanel.Size = new Size(1006, 491);
+            changeFormPanel.Size = new Size(1258, 614);
             changeFormPanel.TabIndex = 9;
             // 
             // MainWindowForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1006, 595);
+            ClientSize = new Size(1258, 744);
             Controls.Add(changeFormPanel);
             Controls.Add(navigationPanel);
             Controls.Add(controlBarPanel);
@@ -281,6 +286,7 @@
             controlBarPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
             navigationPanel.ResumeLayout(false);
+            navigationPanel.PerformLayout();
             ResumeLayout(false);
         }
 
