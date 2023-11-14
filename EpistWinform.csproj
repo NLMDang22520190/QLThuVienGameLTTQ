@@ -17,6 +17,45 @@
     <None Remove="Resource\Banner\banner6.jpg" />
     <None Remove="Resource\Banner\banner7.jpg" />
     <None Remove="Resource\Banner\banner8.jpg" />
+    <None Remove="Resource\GamesPicture\10\Picture1.jpg" />
+    <None Remove="Resource\GamesPicture\10\Picture2.jpg" />
+    <None Remove="Resource\GamesPicture\10\Picture3.jpg" />
+    <None Remove="Resource\GamesPicture\11\Picture1.jpg" />
+    <None Remove="Resource\GamesPicture\11\Picture2.jpg" />
+    <None Remove="Resource\GamesPicture\11\Picture3.jpg" />
+    <None Remove="Resource\GamesPicture\12\Picture1.jpg" />
+    <None Remove="Resource\GamesPicture\12\Picture2.jpg" />
+    <None Remove="Resource\GamesPicture\12\Picture3.jpg" />
+    <None Remove="Resource\GamesPicture\13\Picture1.jpg" />
+    <None Remove="Resource\GamesPicture\13\Picture2.jpg" />
+    <None Remove="Resource\GamesPicture\13\Picture3.jpg" />
+    <None Remove="Resource\GamesPicture\1\Picture1.jpg" />
+    <None Remove="Resource\GamesPicture\1\Picture2.jpg" />
+    <None Remove="Resource\GamesPicture\1\Picture3.jpg" />
+    <None Remove="Resource\GamesPicture\2\Picture1.jpg" />
+    <None Remove="Resource\GamesPicture\2\Picture2.jpg" />
+    <None Remove="Resource\GamesPicture\2\Picture3.jpg" />
+    <None Remove="Resource\GamesPicture\3\Picture1.jpg" />
+    <None Remove="Resource\GamesPicture\3\Picture2.jpg" />
+    <None Remove="Resource\GamesPicture\3\Picture3.jpg" />
+    <None Remove="Resource\GamesPicture\4\Picture1.jpg" />
+    <None Remove="Resource\GamesPicture\4\Picture2.jpg" />
+    <None Remove="Resource\GamesPicture\4\Picture3.jpg" />
+    <None Remove="Resource\GamesPicture\5\Picture1.jpg" />
+    <None Remove="Resource\GamesPicture\5\Picture2.jpg" />
+    <None Remove="Resource\GamesPicture\5\Picture3.jpg" />
+    <None Remove="Resource\GamesPicture\6\Picture1.jpg" />
+    <None Remove="Resource\GamesPicture\6\Picture2.jpg" />
+    <None Remove="Resource\GamesPicture\6\Picture3.jpg" />
+    <None Remove="Resource\GamesPicture\7\Picture1.jpg" />
+    <None Remove="Resource\GamesPicture\7\Picture2.jpg" />
+    <None Remove="Resource\GamesPicture\7\Picture3.jpg" />
+    <None Remove="Resource\GamesPicture\8\Picture1.jpg" />
+    <None Remove="Resource\GamesPicture\8\Picture2.jpg" />
+    <None Remove="Resource\GamesPicture\8\Picture3.jpg" />
+    <None Remove="Resource\GamesPicture\9\Picture1.jpg" />
+    <None Remove="Resource\GamesPicture\9\Picture2.jpg" />
+    <None Remove="Resource\GamesPicture\9\Picture3.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -42,6 +81,123 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resource\Banner\banner8.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\10\Picture1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\10\Picture2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\10\Picture3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\11\Picture1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\11\Picture2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\11\Picture3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\12\Picture1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\12\Picture2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\12\Picture3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\13\Picture1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\13\Picture2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\13\Picture3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\1\Picture1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\1\Picture2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\1\Picture3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\2\Picture1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\2\Picture2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\2\Picture3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\3\Picture1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\3\Picture2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\3\Picture3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\4\Picture1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\4\Picture2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\4\Picture3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\5\Picture1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\5\Picture2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\5\Picture3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\6\Picture1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\6\Picture2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\6\Picture3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\7\Picture1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\7\Picture2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\7\Picture3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\8\Picture1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\8\Picture2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\8\Picture3.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\9\Picture1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\9\Picture2.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\GamesPicture\9\Picture3.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -22,9 +22,9 @@ namespace EpistWinform.DAO
 
         public bool Login(string userName, string passWord)
         {
-            string query = $"SELECT * From UserInfo WHERE username = '{userName}' AND password = '{passWord}'";
+            string query = "Login @userName , @passWord";
 
-            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] {userName, passWord});
 
             return result.Rows.Count > 0;
         }
