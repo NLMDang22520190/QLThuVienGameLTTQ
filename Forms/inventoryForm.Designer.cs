@@ -30,14 +30,14 @@
         {
             inventoryPanel = new Panel();
             installGamePanel = new Panel();
+            bannerPictureBox = new PictureBox();
             ownGameLayoutPanel = new FlowLayoutPanel();
             searchLabel = new Label();
             searchTextBox = new TextBox();
-            bannerPictureBox = new PictureBox();
             inventoryPanel.SuspendLayout();
             installGamePanel.SuspendLayout();
-            ownGameLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bannerPictureBox).BeginInit();
+            ownGameLayoutPanel.SuspendLayout();
             SuspendLayout();
             // 
             // inventoryPanel
@@ -59,6 +59,16 @@
             installGamePanel.Name = "installGamePanel";
             installGamePanel.Size = new Size(936, 558);
             installGamePanel.TabIndex = 1;
+            // 
+            // bannerPictureBox
+            // 
+            bannerPictureBox.Dock = DockStyle.Top;
+            bannerPictureBox.Location = new Point(0, 0);
+            bannerPictureBox.Name = "bannerPictureBox";
+            bannerPictureBox.Size = new Size(936, 274);
+            bannerPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            bannerPictureBox.TabIndex = 0;
+            bannerPictureBox.TabStop = false;
             // 
             // ownGameLayoutPanel
             // 
@@ -92,16 +102,6 @@
             searchTextBox.TabIndex = 0;
             searchTextBox.TextChanged += searchTextBox_TextChanged;
             // 
-            // bannerPictureBox
-            // 
-            bannerPictureBox.Dock = DockStyle.Fill;
-            bannerPictureBox.Location = new Point(0, 0);
-            bannerPictureBox.Name = "bannerPictureBox";
-            bannerPictureBox.Size = new Size(936, 558);
-            bannerPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-            bannerPictureBox.TabIndex = 0;
-            bannerPictureBox.TabStop = false;
-            // 
             // inventoryForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -116,9 +116,9 @@
             Resize += inventoryForm_Resize;
             inventoryPanel.ResumeLayout(false);
             installGamePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)bannerPictureBox).EndInit();
             ownGameLayoutPanel.ResumeLayout(false);
             ownGameLayoutPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)bannerPictureBox).EndInit();
             ResumeLayout(false);
         }
 

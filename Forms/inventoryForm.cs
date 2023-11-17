@@ -35,6 +35,7 @@ namespace EpistWinform.Forms
                 gameBtn.TextAlign = ContentAlignment.MiddleCenter;
                 gameBtn.Font = new Font("Tahoma", 10);
                 gameBtn.ForeColor = Color.White;
+                gameBtn.Click += GameButton_Click;
                 ownGameLayoutPanel.Controls.Add(gameBtn);
             }
 
@@ -65,18 +66,19 @@ namespace EpistWinform.Forms
 
         private void ChangePictureBoxByGameName(string gameName)
         {
-            string bannerPath;
-            foreach(Game game in gameList)
+            string bannerPath = "";
+            foreach (Game game in gameList)
             {
-                if(game.GameName == gameName)
+                if (game.GameName == gameName)
                 {
                     bannerPath = game.Picture1;
                     break;
-                }   
+                }
 
             }
+            bannerPictureBox.Image = Image.FromFile(bannerPath);
         }
-            
+
 
         #endregion
 
@@ -104,7 +106,7 @@ namespace EpistWinform.Forms
 
         private void inventoryForm_Resize(object sender, EventArgs e)
         {
-
+            bannerPictureBox.Height = ownGameLayoutPanel.Height / 2;
         }
 
         private void inventoryForm_SizeChanged(object sender, EventArgs e)
