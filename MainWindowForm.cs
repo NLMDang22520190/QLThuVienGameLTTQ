@@ -28,7 +28,7 @@ namespace EpistWinform
         private inventoryForm inventoryForm;
         private userForm userForm;
         private adminForm adminForm;
-        private string userId;
+        private int userId;
         #endregion
 
         #region other
@@ -39,7 +39,7 @@ namespace EpistWinform
 
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         #endregion
-        public MainWindowForm(string userId = "")
+        public MainWindowForm(int userId = 0)
         {
             InitializeComponent();
             this.Text = string.Empty;
@@ -51,11 +51,11 @@ namespace EpistWinform
             pressColor = Color.LightPink;
 
             libraryForm = new libraryForm();
-            inventoryForm = new inventoryForm();
+            inventoryForm = new inventoryForm(userId);
             userForm = new userForm();
             adminForm = new adminForm();
             this.userId = userId;
-            MessageBox.Show(userId);
+            MessageBox.Show(userId.ToString());
         }
 
         #region privateMethods

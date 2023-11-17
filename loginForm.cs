@@ -6,7 +6,7 @@ namespace EpistWinform
 {
     public partial class loginForm : Form
     {
-        private string userId;
+        private int userId;
         public loginForm()
         {
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace EpistWinform
         {
             DataTable data = AccountDAO.Instance.Login(userName, passWord);
             DataRow row = data.Rows[0];
-            userId = row["userID"].ToString();
+            userId = (int)row["userID"];
 
             return data.Rows.Count > 0;
         }
@@ -45,7 +45,7 @@ namespace EpistWinform
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            usernameTextBox.Text = "admin";
+            usernameTextBox.Text = "admin2";
             passwordTextBox.Text = "123";
             if (Login(usernameTextBox.Text, passwordTextBox.Text))
             {

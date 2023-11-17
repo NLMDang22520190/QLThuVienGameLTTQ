@@ -27,7 +27,7 @@ namespace EpistWinform.DAO
 
             string querry = "GetGameList";
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("GetGameList");
+            DataTable data = DataProvider.Instance.ExecuteQuery(querry);
             foreach (DataRow row in data.Rows)
             {
                 Game game = new Game(row);
@@ -36,5 +36,21 @@ namespace EpistWinform.DAO
 
             return gameList;
         }
+        public List<Game> LoadOwnGamesList(int userID)
+        {
+            List<Game> gameList = new List<Game>();
+
+            string querry = "GetOwnGameList @userID";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(querry, new object[] {userID});
+            foreach (DataRow row in data.Rows)
+            {
+                Game game = new Game(row);
+                gameList.Add(game);
+            }
+
+            return gameList;
+        }
+
     }
 }
