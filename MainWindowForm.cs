@@ -28,6 +28,7 @@ namespace EpistWinform
         private inventoryForm inventoryForm;
         private userForm userForm;
         private adminForm adminForm;
+        private string userId;
         #endregion
 
         #region other
@@ -38,7 +39,7 @@ namespace EpistWinform
 
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         #endregion
-        public MainWindowForm()
+        public MainWindowForm(string userId = "")
         {
             InitializeComponent();
             this.Text = string.Empty;
@@ -53,7 +54,8 @@ namespace EpistWinform
             inventoryForm = new inventoryForm();
             userForm = new userForm();
             adminForm = new adminForm();
-
+            this.userId = userId;
+            MessageBox.Show(userId);
         }
 
         #region privateMethods

@@ -1,10 +1,12 @@
 using EpistWinform.DAO;
+using System.Data;
 using System.Runtime.InteropServices;
 
 namespace EpistWinform
 {
     public partial class loginForm : Form
     {
+        private string userId;
         public loginForm()
         {
             InitializeComponent();
@@ -14,13 +16,28 @@ namespace EpistWinform
             //this.FormBorderStyle = FormBorderStyle.None;
         }
 
+        #region other
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
 
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
 
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        #endregion
 
+        #region methods
+        bool Login(string userName, string passWord)
+        {
+            DataTable data = AccountDAO.Instance.Login(userName, passWord);
+            DataRow row = data.Rows[0];
+            userId = row["userID"].ToString();
+
+            return data.Rows.Count > 0;
+        }
+
+        #endregion
+
+        #region events
         private void loginForm_Load(object sender, EventArgs e)
         {
 
@@ -32,7 +49,7 @@ namespace EpistWinform
             passwordTextBox.Text = "123";
             if (Login(usernameTextBox.Text, passwordTextBox.Text))
             {
-                var mainWindowForm = new MainWindowForm();
+                var mainWindowForm = new MainWindowForm(userId);
                 this.Hide();
                 mainWindowForm.ShowDialog();
                 this.Show();
@@ -41,11 +58,6 @@ namespace EpistWinform
                 MessageBox.Show("Incorrect Username or Password");
 
 
-        }
-
-        bool Login(string userName, string passWord)
-        {
-            return AccountDAO.Instance.Login(userName, passWord);
         }
 
         private void closeBtn_Click(object sender, EventArgs e)
@@ -79,5 +91,10 @@ namespace EpistWinform
                 showPassBtn.IconChar = FontAwesome.Sharp.IconChar.Eye;
             }
         }
+        #endregion
+
+
+
+       
     }
 }

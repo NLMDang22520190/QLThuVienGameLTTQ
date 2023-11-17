@@ -20,13 +20,14 @@ namespace EpistWinform.DAO
 
         private AccountDAO() { }
 
-        public bool Login(string userName, string passWord)
+        public DataTable Login(string userName, string passWord)
         {
             string query = "Login @userName , @passWord";
 
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] {userName, passWord});
 
-            return result.Rows.Count > 0;
+            ///return result.Rows.Count > 0;
+            return result;
         }
     }
 }

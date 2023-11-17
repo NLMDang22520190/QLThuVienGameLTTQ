@@ -30,12 +30,17 @@
         {
             inventoryPanel = new Panel();
             installGamePanel = new Panel();
+            installPanel = new Panel();
+            downloadProcessBar = new ProgressBar();
+            uninstallBtn = new FontAwesome.Sharp.IconButton();
+            installBtn = new FontAwesome.Sharp.IconButton();
             bannerPictureBox = new PictureBox();
             ownGameLayoutPanel = new FlowLayoutPanel();
             searchLabel = new Label();
             searchTextBox = new TextBox();
             inventoryPanel.SuspendLayout();
             installGamePanel.SuspendLayout();
+            installPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)bannerPictureBox).BeginInit();
             ownGameLayoutPanel.SuspendLayout();
             SuspendLayout();
@@ -53,12 +58,71 @@
             // installGamePanel
             // 
             installGamePanel.BackColor = Color.FromArgb(140, 231, 196);
+            installGamePanel.Controls.Add(installPanel);
             installGamePanel.Controls.Add(bannerPictureBox);
             installGamePanel.Dock = DockStyle.Fill;
             installGamePanel.Location = new Point(300, 0);
             installGamePanel.Name = "installGamePanel";
             installGamePanel.Size = new Size(936, 558);
             installGamePanel.TabIndex = 1;
+            // 
+            // installPanel
+            // 
+            installPanel.Controls.Add(downloadProcessBar);
+            installPanel.Controls.Add(uninstallBtn);
+            installPanel.Controls.Add(installBtn);
+            installPanel.Dock = DockStyle.Top;
+            installPanel.Location = new Point(0, 274);
+            installPanel.Name = "installPanel";
+            installPanel.Size = new Size(936, 74);
+            installPanel.TabIndex = 3;
+            // 
+            // downloadProcessBar
+            // 
+            downloadProcessBar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            downloadProcessBar.ForeColor = Color.FromArgb(255, 192, 255);
+            downloadProcessBar.Location = new Point(349, 20);
+            downloadProcessBar.Name = "downloadProcessBar";
+            downloadProcessBar.Size = new Size(560, 34);
+            downloadProcessBar.TabIndex = 3;
+            // 
+            // uninstallBtn
+            // 
+            uninstallBtn.AutoSize = true;
+            uninstallBtn.Dock = DockStyle.Left;
+            uninstallBtn.FlatStyle = FlatStyle.Flat;
+            uninstallBtn.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            uninstallBtn.ForeColor = Color.White;
+            uninstallBtn.IconChar = FontAwesome.Sharp.IconChar.TrashCanArrowUp;
+            uninstallBtn.IconColor = Color.White;
+            uninstallBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            uninstallBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            uninstallBtn.Location = new Point(146, 0);
+            uninstallBtn.Name = "uninstallBtn";
+            uninstallBtn.Size = new Size(170, 74);
+            uninstallBtn.TabIndex = 2;
+            uninstallBtn.Text = "Uninstall";
+            uninstallBtn.TextAlign = ContentAlignment.MiddleRight;
+            uninstallBtn.UseVisualStyleBackColor = true;
+            // 
+            // installBtn
+            // 
+            installBtn.AutoSize = true;
+            installBtn.Dock = DockStyle.Left;
+            installBtn.FlatStyle = FlatStyle.Flat;
+            installBtn.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            installBtn.ForeColor = Color.White;
+            installBtn.IconChar = FontAwesome.Sharp.IconChar.Download;
+            installBtn.IconColor = Color.White;
+            installBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            installBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            installBtn.Location = new Point(0, 0);
+            installBtn.Name = "installBtn";
+            installBtn.Size = new Size(146, 74);
+            installBtn.TabIndex = 1;
+            installBtn.Text = "Install";
+            installBtn.TextAlign = ContentAlignment.MiddleRight;
+            installBtn.UseVisualStyleBackColor = true;
             // 
             // bannerPictureBox
             // 
@@ -116,6 +180,8 @@
             Resize += inventoryForm_Resize;
             inventoryPanel.ResumeLayout(false);
             installGamePanel.ResumeLayout(false);
+            installPanel.ResumeLayout(false);
+            installPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)bannerPictureBox).EndInit();
             ownGameLayoutPanel.ResumeLayout(false);
             ownGameLayoutPanel.PerformLayout();
@@ -130,5 +196,9 @@
         private Label searchLabel;
         private TextBox searchTextBox;
         private PictureBox bannerPictureBox;
+        private FontAwesome.Sharp.IconButton installBtn;
+        private Panel installPanel;
+        private FontAwesome.Sharp.IconButton uninstallBtn;
+        private ProgressBar downloadProcessBar;
     }
 }

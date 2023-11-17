@@ -62,6 +62,18 @@ namespace EpistWinform.Forms
                 string gameName = clickedButton.Text;
                 ChangePictureBoxByGameName(gameName);
             }
+            if(installBtn.Visible == false)
+            {
+                installBtn.Visible = true;
+            }
+            if(uninstallBtn.Visible == false)
+            {
+                uninstallBtn.Visible = true;
+            }
+            if(downloadProcessBar.Visible == false)
+            {
+                downloadProcessBar.Visible = true;
+            }
         }
 
         private void ChangePictureBoxByGameName(string gameName)
@@ -88,6 +100,9 @@ namespace EpistWinform.Forms
             searchLabel.Width = ownGameLayoutPanel.Width;
             searchTextBox.Margin = new Padding(10, 0, 10, 0);
             searchTextBox.Width = ownGameLayoutPanel.Width - searchTextBox.Margin.Left - searchTextBox.Margin.Right;
+            installBtn.Visible = false;
+            uninstallBtn.Visible = false;
+            downloadProcessBar.Visible = false;
             LoadGameList();
 
             //gamesPanel.Controls.Add(new Panel { BackColor = Color.Red, Width = gamesPanel.Width });
