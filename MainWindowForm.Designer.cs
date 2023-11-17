@@ -272,6 +272,7 @@
             Controls.Add(controlBarPanel);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
+            MinimumSize = new Size(1280, 800);
             Name = "MainWindowForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MainWindowForm";
