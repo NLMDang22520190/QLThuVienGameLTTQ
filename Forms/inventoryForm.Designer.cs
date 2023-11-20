@@ -57,7 +57,7 @@
             // 
             // installGamePanel
             // 
-            installGamePanel.BackColor = Color.FromArgb(140, 231, 196);
+            installGamePanel.BackColor = Color.White;
             installGamePanel.Controls.Add(installPanel);
             installGamePanel.Controls.Add(bannerPictureBox);
             installGamePanel.Dock = DockStyle.Fill;
@@ -68,6 +68,7 @@
             // 
             // installPanel
             // 
+            installPanel.BackColor = Color.FromArgb(140, 231, 196);
             installPanel.Controls.Add(downloadProcessBar);
             installPanel.Controls.Add(uninstallBtn);
             installPanel.Controls.Add(installBtn);
@@ -92,9 +93,9 @@
             uninstallBtn.Dock = DockStyle.Left;
             uninstallBtn.FlatStyle = FlatStyle.Flat;
             uninstallBtn.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            uninstallBtn.ForeColor = Color.White;
-            uninstallBtn.IconChar = FontAwesome.Sharp.IconChar.TrashCanArrowUp;
-            uninstallBtn.IconColor = Color.White;
+            uninstallBtn.ForeColor = Color.Red;
+            uninstallBtn.IconChar = FontAwesome.Sharp.IconChar.TrashRestoreAlt;
+            uninstallBtn.IconColor = Color.Red;
             uninstallBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             uninstallBtn.ImageAlign = ContentAlignment.MiddleLeft;
             uninstallBtn.Location = new Point(146, 0);
@@ -111,9 +112,9 @@
             installBtn.Dock = DockStyle.Left;
             installBtn.FlatStyle = FlatStyle.Flat;
             installBtn.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            installBtn.ForeColor = Color.White;
+            installBtn.ForeColor = Color.DodgerBlue;
             installBtn.IconChar = FontAwesome.Sharp.IconChar.Download;
-            installBtn.IconColor = Color.White;
+            installBtn.IconColor = Color.DodgerBlue;
             installBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             installBtn.ImageAlign = ContentAlignment.MiddleLeft;
             installBtn.Location = new Point(0, 0);
@@ -126,6 +127,7 @@
             // 
             // bannerPictureBox
             // 
+            bannerPictureBox.BackColor = Color.White;
             bannerPictureBox.Dock = DockStyle.Top;
             bannerPictureBox.Location = new Point(0, 0);
             bannerPictureBox.Name = "bannerPictureBox";

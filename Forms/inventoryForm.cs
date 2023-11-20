@@ -63,15 +63,15 @@ namespace EpistWinform.Forms
                 string gameName = clickedButton.Text;
                 ChangePictureBoxByGameName(gameName);
             }
-            if(installBtn.Visible == false)
+            if (installBtn.Visible == false)
             {
                 installBtn.Visible = true;
             }
-            if(uninstallBtn.Visible == false)
+            if (uninstallBtn.Visible == false)
             {
                 uninstallBtn.Visible = true;
             }
-            if(downloadProcessBar.Visible == false)
+            if (downloadProcessBar.Visible == false)
             {
                 downloadProcessBar.Visible = true;
             }
@@ -92,7 +92,20 @@ namespace EpistWinform.Forms
             bannerPictureBox.Image = Image.FromFile(bannerPath);
         }
 
-
+        private void ChangeInstallBtnStyleToInstall()
+        {
+            this.installBtn.ForeColor = Color.DodgerBlue;
+            this.installBtn.IconChar = FontAwesome.Sharp.IconChar.Download;
+            this.installBtn.IconColor = Color.DodgerBlue;
+            //this.installBtn.Text = "Install";
+        }
+        private void ChangeInstallBtnStyleToPlay()
+        {
+            this.installBtn.ForeColor = Color.LimeGreen;
+            this.installBtn.IconChar = FontAwesome.Sharp.IconChar.Play;
+            this.installBtn.IconColor = Color.LimeGreen;
+            //this.installBtn.Text = "Install";
+        }
         #endregion
 
         #region events
@@ -104,20 +117,13 @@ namespace EpistWinform.Forms
             installBtn.Visible = false;
             uninstallBtn.Visible = false;
             downloadProcessBar.Visible = false;
+            if(installBtn.Text == "Install") 
+                ChangeInstallBtnStyleToInstall();
+            else
+                ChangeInstallBtnStyleToPlay();
             LoadGameList();
 
-            //gamesPanel.Controls.Add(new Panel { BackColor = Color.Red, Width = gamesPanel.Width });
-            //gamesPanel.Controls.Add(new Panel { BackColor = Color.Blue, Width = gamesPanel.Width });
-            //gamesPanel.Controls.Add(new Panel { BackColor = Color.Orange, Width = gamesPanel.Width });
-            //gamesPanel.Controls.Add(new Panel { BackColor = Color.Green, Width = gamesPanel.Width });
-            //gamesPanel.Controls.Add(new Panel { BackColor = Color.Yellow, Width = gamesPanel.Width });
-            //gamesPanel.Height = gamesPanel.Controls.Count * gamesPanel.Controls[0].Height + (gamesPanel.Controls.Count) * gamesPanel.Margin.Vertical;
-
-            //spacePanel.Height = panel1.Height - gamesPanel.Height - panel3.Height - bannerPanel.Height;
-            //if (spacePanel.Height < 0)
-            //{
-            //    spacePanel.Height = 1;
-            //}
+            
         }
 
         private void inventoryForm_Resize(object sender, EventArgs e)
@@ -127,11 +133,7 @@ namespace EpistWinform.Forms
 
         private void inventoryForm_SizeChanged(object sender, EventArgs e)
         {
-            //gamesPanel.Height = panel1.Height - panel3.Height - bannerPanel.Height - spacePanel.Height;
-            //foreach (Control item in gamesPanel.Controls)
-            //{
-            //    item.Width = gamesPanel.Width;
-            //}
+            
 
         }
 
