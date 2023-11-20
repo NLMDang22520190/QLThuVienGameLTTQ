@@ -44,7 +44,7 @@ namespace EpistWinform
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            usernameTextBox.Text = "admin2";
+            usernameTextBox.Text = "admin1";
             passwordTextBox.Text = "123";
             if (Login(usernameTextBox.Text, passwordTextBox.Text))
             {

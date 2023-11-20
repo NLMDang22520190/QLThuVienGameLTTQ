@@ -56,7 +56,7 @@ namespace EpistWinform
             userForm = new userForm();
             adminForm = new adminForm();
             this.currentUserAccount = currentUserAccount;
-            MessageBox.Show(currentUserAccount.UserID.ToString() + " " + currentUserAccount.UserName.ToString());
+            //MessageBox.Show(currentUserAccount.UserID.ToString() + " " + currentUserAccount.UserName.ToString());
         }
 
         #region privateMethods
