@@ -31,7 +31,7 @@
             inventoryPanel = new Panel();
             installGamePanel = new Panel();
             installPanel = new Panel();
-            downloadProcessBar = new ProgressBar();
+            downloadProgressBar = new ProgressBar();
             uninstallBtn = new FontAwesome.Sharp.IconButton();
             installBtn = new FontAwesome.Sharp.IconButton();
             bannerPictureBox = new PictureBox();
@@ -69,7 +69,7 @@
             // installPanel
             // 
             installPanel.BackColor = Color.FromArgb(140, 231, 196);
-            installPanel.Controls.Add(downloadProcessBar);
+            installPanel.Controls.Add(downloadProgressBar);
             installPanel.Controls.Add(uninstallBtn);
             installPanel.Controls.Add(installBtn);
             installPanel.Dock = DockStyle.Top;
@@ -78,14 +78,14 @@
             installPanel.Size = new Size(936, 74);
             installPanel.TabIndex = 3;
             // 
-            // downloadProcessBar
+            // downloadProgressBar
             // 
-            downloadProcessBar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            downloadProcessBar.ForeColor = Color.FromArgb(255, 192, 255);
-            downloadProcessBar.Location = new Point(349, 20);
-            downloadProcessBar.Name = "downloadProcessBar";
-            downloadProcessBar.Size = new Size(560, 34);
-            downloadProcessBar.TabIndex = 3;
+            downloadProgressBar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            downloadProgressBar.ForeColor = Color.FromArgb(255, 192, 255);
+            downloadProgressBar.Location = new Point(349, 20);
+            downloadProgressBar.Name = "downloadProgressBar";
+            downloadProgressBar.Size = new Size(560, 34);
+            downloadProgressBar.TabIndex = 3;
             // 
             // uninstallBtn
             // 
@@ -124,6 +124,7 @@
             installBtn.Text = "Install";
             installBtn.TextAlign = ContentAlignment.MiddleRight;
             installBtn.UseVisualStyleBackColor = true;
+            installBtn.Click += installBtn_Click;
             // 
             // bannerPictureBox
             // 
@@ -201,6 +202,6 @@
         private FontAwesome.Sharp.IconButton installBtn;
         private Panel installPanel;
         private FontAwesome.Sharp.IconButton uninstallBtn;
-        private ProgressBar downloadProcessBar;
+        private ProgressBar downloadProgressBar;
     }
 }
