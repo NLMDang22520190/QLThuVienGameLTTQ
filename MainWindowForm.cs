@@ -1,4 +1,5 @@
-﻿using EpistWinform.Forms;
+﻿using EpistWinform.DTO;
+using EpistWinform.Forms;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace EpistWinform
         private inventoryForm inventoryForm;
         private userForm userForm;
         private adminForm adminForm;
-        private int userId;
+        private Account currentUserAccount;
         #endregion
 
         #region other
@@ -39,7 +40,7 @@ namespace EpistWinform
 
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         #endregion
-        public MainWindowForm(int userId = 0)
+        public MainWindowForm(Account currentUserAccount)
         {
             InitializeComponent();
             this.Text = string.Empty;
@@ -51,11 +52,11 @@ namespace EpistWinform
             pressColor = Color.LightPink;
 
             libraryForm = new libraryForm();
-            inventoryForm = new inventoryForm(userId);
+            inventoryForm = new inventoryForm(currentUserAccount);
             userForm = new userForm();
             adminForm = new adminForm();
-            this.userId = userId;
-            MessageBox.Show(userId.ToString());
+            this.currentUserAccount = currentUserAccount;
+            MessageBox.Show(currentUserAccount.UserID.ToString() + " " + currentUserAccount.UserName.ToString());
         }
 
         #region privateMethods

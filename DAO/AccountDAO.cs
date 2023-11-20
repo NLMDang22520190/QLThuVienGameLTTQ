@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EpistWinform.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -24,10 +25,16 @@ namespace EpistWinform.DAO
         {
             string query = "Login @userName , @passWord";
 
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] {userName, passWord});
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord });
 
-            ///return result.Rows.Count > 0;
+            //return result.Rows.Count > 0;
             return result;
         }
+
+        //public Account GetAccount()
+        //{
+
+        //    Account a = new Account();
+        //}
     }
 }

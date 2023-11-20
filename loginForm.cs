@@ -1,4 +1,5 @@
 using EpistWinform.DAO;
+using EpistWinform.DTO;
 using System.Data;
 using System.Runtime.InteropServices;
 
@@ -6,7 +7,8 @@ namespace EpistWinform
 {
     public partial class loginForm : Form
     {
-        private int userId;
+        private Account currentUserAccount;
+        private DataTable currentUserData;
         public loginForm()
         {
             InitializeComponent();
@@ -28,11 +30,8 @@ namespace EpistWinform
         #region methods
         bool Login(string userName, string passWord)
         {
-            DataTable data = AccountDAO.Instance.Login(userName, passWord);
-            DataRow row = data.Rows[0];
-            userId = (int)row["userID"];
-
-            return data.Rows.Count > 0;
+            currentUserData = AccountDAO.Instance.Login(userName, passWord);
+            return currentUserData.Rows.Count > 0;
         }
 
         #endregion
@@ -49,7 +48,9 @@ namespace EpistWinform
             passwordTextBox.Text = "123";
             if (Login(usernameTextBox.Text, passwordTextBox.Text))
             {
-                var mainWindowForm = new MainWindowForm(userId);
+                DataRow row = currentUserData.Rows[0];
+                currentUserAccount = new Account(row);
+                var mainWindowForm = new MainWindowForm(currentUserAccount);
                 this.Hide();
                 mainWindowForm.ShowDialog();
                 this.Show();

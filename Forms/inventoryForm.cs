@@ -16,17 +16,17 @@ namespace EpistWinform.Forms
     public partial class inventoryForm : Form
     {
         private List<Game> gameList;
-        private int userID;
-        public inventoryForm(int userID = 0)
+        private Account currentUserAccount;
+        public inventoryForm(Account currentUserAccount)
         {
             InitializeComponent();
-            this.userID = userID;
+            this.currentUserAccount = currentUserAccount;
 
         }
         #region method
         private void LoadGameList()
         {
-            gameList = GamesDAO.Instance.LoadOwnGamesList(userID);
+            gameList = GamesDAO.Instance.LoadOwnGamesList(currentUserAccount.UserID);
             foreach (Game game in gameList)
             {
                 Button gameBtn = new Button() { Margin = new Padding(10, 0, 10, 0) };
