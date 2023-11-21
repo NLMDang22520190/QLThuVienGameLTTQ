@@ -223,4 +223,9 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Download\Game\" />
+    <Folder Include="Download\Path\" />
+  </ItemGroup>
+
 </Project>

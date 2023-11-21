@@ -23,6 +23,7 @@ namespace EpistWinform.Forms
         private Game currentChoosenGame;
         private const string connectionString = "DefaultEndpointsProtocol=https;AccountName=gamesdata;AccountKey=+o4CkMa2drN/78K4nMuSwpp11HMU9r+3Wv5fmLOnKq/wOt3CXTSF+Z8PgRLVnyxoXO6tQabL403z+AStDdx0dg==;EndpointSuffix=core.windows.net";
         private string extractFolder;
+        private bool isDownloading = false;
 
         public inventoryForm(Account currentUserAccount)
         {
@@ -74,14 +75,6 @@ namespace EpistWinform.Forms
             {
                 installBtn.Visible = true;
             }
-            if (uninstallBtn.Visible == false)
-            {
-                uninstallBtn.Visible = true;
-            }
-            if (downloadProgressBar.Visible == false)
-            {
-                downloadProgressBar.Visible = true;
-            }
         }
 
         private void ChangePictureBoxByGameName(string gameName)
@@ -105,14 +98,22 @@ namespace EpistWinform.Forms
             this.installBtn.ForeColor = Color.DodgerBlue;
             this.installBtn.IconChar = FontAwesome.Sharp.IconChar.Download;
             this.installBtn.IconColor = Color.DodgerBlue;
-            //this.installBtn.Text = "Install";
+            this.installBtn.Text = "Install";
         }
         private void ChangeInstallBtnStyleToPlay()
         {
             this.installBtn.ForeColor = Color.LimeGreen;
             this.installBtn.IconChar = FontAwesome.Sharp.IconChar.Play;
             this.installBtn.IconColor = Color.LimeGreen;
-            //this.installBtn.Text = "Install";
+            this.installBtn.Text = "Play";
+        }
+
+        private void ChangeInstallBtnToInstalling()
+        {
+            installBtn.Enabled = false; // Chuyển sang trạng thái không kích hoạt
+            installBtn.Text = "Installing";
+            installBtn.IconChar = IconChar.None;
+            //installBtn.BackColor = Color.Gray; // Thay đổi màu sắc nền (hoặc thay đổi kiểu hiển thị khác)
         }
 
         private bool CheckInstallBtnText()
@@ -123,32 +124,46 @@ namespace EpistWinform.Forms
                 return false;
         }
 
-        private async void InstallGame()
+        private async Task InstallGame()
         {
-            DialogResult result = MessageBox.Show("Do you want to choose your download path", "Confirmation", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Do you want to choose your own download path ?", "Confirmation", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
                 string destinationFilePath;
-                // Mở SaveFileDialog để chọn nơi lưu trữ dữ liệu tải về
-                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
-                {
-                    saveFileDialog.Filter = "ZIP Files (*.zip)|*.zip";
-                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                string defaultFileName = "Endoparasitic.zip"; 
+
+                
+                try {
+                    //ChangeInstallBtnToInstalling();
+                    using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
                     {
-                        destinationFilePath = saveFileDialog.FileName;
+                        if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            string destinationFolderPath = folderBrowserDialog.SelectedPath;
 
-                        // Thực hiện tải dữ liệu từ Blob Storage
-                        await DownloadBlobAsync("tesing1", "Endoparasitic.zip", destinationFilePath);
+                            // Tạo đường dẫn đầy đủ cho file dựa trên đường dẫn thư mục và tên file mặc định
+                            destinationFilePath = Path.Combine(destinationFolderPath, defaultFileName);
 
-                        // Giải nén file ZIP
-                        extractFolder = Path.Combine(Path.GetDirectoryName(destinationFilePath), Path.GetFileNameWithoutExtension(destinationFilePath));
-                        ExtractZipFile(destinationFilePath, extractFolder);
+                            // Thực hiện tải dữ liệu từ Blob Storage
+                            await Task.Run(() => DownloadBlobAsync("tesing1", "Endoparasitic.zip", destinationFilePath));
 
-                        // Xoá file ZIP sau khi giải nén
-                        File.Delete(destinationFilePath);
+                            // Giải nén file ZIP
+                            extractFolder = Path.Combine(destinationFolderPath, Path.GetFileNameWithoutExtension(destinationFilePath));
+                            ExtractZipFile(destinationFilePath, extractFolder);
+
+                            // Xoá file ZIP sau khi giải nén
+                            File.Delete(destinationFilePath);
+                        }
                     }
+                    
                 }
+                catch(Exception)
+                {
+                    MessageBox.Show("Download error!!!");
+                    ChangeInstallBtnStyleToInstall();
+                }
+                
             }
             else
             {
@@ -185,10 +200,16 @@ namespace EpistWinform.Forms
 
                             // Tính toán và cập nhật giá trị của progress bar
                             int progressPercentage = (int)((double)bytesRead / totalBytes * 100);
-                            downloadProgressBar.Value = progressPercentage;
+                            Invoke((MethodInvoker)delegate
+                            {
+                                downloadProgressBar.Value = progressPercentage;
+                            });
+                            //downloadProgressBar.Value = progressPercentage;
                         }
                     }
+
                 }
+                
 
                 MessageBox.Show("Download completed!");
             }
@@ -296,16 +317,38 @@ namespace EpistWinform.Forms
         #endregion
 
 
-        private void installBtn_Click(object sender, EventArgs e)
+        private async void installBtn_Click(object sender, EventArgs e)
         {
+            if (isDownloading)
+            {
+                // Nếu đang tải xuống, không làm gì khi click nút
+                return;
+            }
+
             if (CheckInstallBtnText())
             {
-                InstallGame();
+                downloadProgressBar.Visible = true;
+                isDownloading = true;
+
+                // Đặt trạng thái nút là "Installing"
+                ChangeInstallBtnToInstalling();
+
+                await InstallGame();
+
+                // Sau khi cài đặt xong, chuyển trạng thái nút và giao diện
                 installBtn.Text = "Play";
-                ChangeInstallBtnStyleToPlay() ;
+                uninstallBtn.Visible = true;
+
+                ChangeInstallBtnStyleToPlay();
+                installBtn.Enabled = true; // Kích hoạt lại nút
+                downloadProgressBar.Visible = false;
+                isDownloading = false;
             }
             else
                 PlayGame();
+
+
+
         }
     }
 }
