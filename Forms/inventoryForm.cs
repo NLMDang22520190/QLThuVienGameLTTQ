@@ -22,12 +22,16 @@ namespace EpistWinform.Forms
         private Account currentUserAccount;
         private Game currentChoosenGame;
         private Game currentInstallingGame;
+        private Game currentPlayingGame;
         //private const string connectionString = "DefaultEndpointsProtocol=https;AccountName=gamesdata;AccountKey=+o4CkMa2drN/78K4nMuSwpp11HMU9r+3Wv5fmLOnKq/wOt3CXTSF+Z8PgRLVnyxoXO6tQabL403z+AStDdx0dg==;EndpointSuffix=core.windows.net";
         private const string connectionString = "DefaultEndpointsProtocol=https;AccountName=gamedatalttq;AccountKey=D8SYJRzwjmzZt04xBKbZWIP/dKdrDpWUKoTCfqUmzSUhYhX7h6ueLNOLH+aXQm0LIEyhHZqtq4BU+AStCzOf0g==;EndpointSuffix=core.windows.net";
         private string extractFolder;
         private string saveGamePath = "./Download/Path/";
         private string defaultSaveGameFolder = "./Download/Game/";
         private bool isDownloading = false;
+        private bool isPlaying = false;
+        private Thread playGameThread;
+
 
         public inventoryForm(Account currentUserAccount)
         {
@@ -287,12 +291,70 @@ namespace EpistWinform.Forms
             ZipFile.ExtractToDirectory(zipFilePath, extractFolder);
         }
 
+        //private async Task PlayGame()
+        //{
+        //    try
+        //    {
+        //        isPlaying = true;
+        //        string saveGameFileInTxt = saveGamePath + $"{currentChoosenGame.GameName}" + ".txt";
+        //        string currentGameExtractFolder = "";
+
+        //        using (StreamReader sr = new StreamReader(saveGameFileInTxt))
+        //        {
+        //            currentGameExtractFolder = sr.ReadLine();
+        //        }
+
+        //        // Tên của tệp batch bạn muốn chạy
+        //        string batchFileName = "__Start game + create shortcut.bat";
+
+        //        // Đường dẫn đầy đủ đến tệp batch sau khi giải nén
+        //        string batchFilePath = Path.Combine(currentGameExtractFolder, batchFileName);
+
+        //        // Kiểm tra xem tệp batch có tồn tại không
+        //        if (File.Exists(batchFilePath))
+        //        {
+        //            // Định cấu hình cho quá trình
+        //            ProcessStartInfo processStartInfo = new ProcessStartInfo
+        //            {
+        //                FileName = "cmd.exe",  // Sử dụng Command Prompt để thực hiện tệp batch
+        //                Arguments = $"/c \"{batchFilePath}\"",  // /c để chạy và đóng Command Prompt sau khi hoàn thành
+        //                RedirectStandardOutput = true,
+        //                RedirectStandardError = true,
+        //                UseShellExecute = false,
+        //                CreateNoWindow = true
+        //            };
+
+        //            // Thực hiện quá trình và đọc kết quả đầu ra (nếu cần)
+        //            using (Process process = new Process { StartInfo = processStartInfo })
+        //            {
+        //                process.Start();
+        //                string output = process.StandardOutput.ReadToEnd();
+        //                string error = process.StandardError.ReadToEnd();
+        //                process.WaitForExit();
+
+        //            }
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Không tìm thấy tệp batch.");
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"Error: {ex.Message}");
+        //    }
+        //    finally
+        //    { isPlaying = false; }
+        //}
         private void PlayGame()
         {
             try
             {
+                isPlaying = true; // Bắt đầu chơi game
+
                 string saveGameFileInTxt = saveGamePath + $"{currentChoosenGame.GameName}" + ".txt";
                 string currentGameExtractFolder = "";
+
                 using (StreamReader sr = new StreamReader(saveGameFileInTxt))
                 {
                     currentGameExtractFolder = sr.ReadLine();
@@ -307,26 +369,35 @@ namespace EpistWinform.Forms
                 // Kiểm tra xem tệp batch có tồn tại không
                 if (File.Exists(batchFilePath))
                 {
-                    // Định cấu hình cho quá trình
-                    ProcessStartInfo processStartInfo = new ProcessStartInfo
+                    // Tạo luồng mới để chạy quá trình chơi game
+                    playGameThread = new Thread(() =>
                     {
-                        FileName = "cmd.exe",  // Sử dụng Command Prompt để thực hiện tệp batch
-                        Arguments = $"/c \"{batchFilePath}\"",  // /c để chạy và đóng Command Prompt sau khi hoàn thành
-                        RedirectStandardOutput = true,
-                        RedirectStandardError = true,
-                        UseShellExecute = false,
-                        CreateNoWindow = true
-                    };
+                        // Định cấu hình cho quá trình
+                        ProcessStartInfo processStartInfo = new ProcessStartInfo
+                        {
+                            FileName = "cmd.exe",  // Sử dụng Command Prompt để thực hiện tệp batch
+                            Arguments = $"/c \"{batchFilePath}\"",  // /c để chạy và đóng Command Prompt sau khi hoàn thành
+                            RedirectStandardOutput = true,
+                            RedirectStandardError = true,
+                            UseShellExecute = false,
+                            CreateNoWindow = true
+                        };
 
-                    // Thực hiện quá trình và đọc kết quả đầu ra (nếu cần)
-                    using (Process process = new Process { StartInfo = processStartInfo })
-                    {
-                        process.Start();
-                        string output = process.StandardOutput.ReadToEnd();
-                        string error = process.StandardError.ReadToEnd();
-                        process.WaitForExit();
+                        // Thực hiện quá trình và đọc kết quả đầu ra (nếu cần)
+                        using (Process process = new Process { StartInfo = processStartInfo })
+                        {
+                            process.Start();
+                            string output = process.StandardOutput.ReadToEnd();
+                            string error = process.StandardError.ReadToEnd();
+                            process.WaitForExit();
+                        }
 
-                    }
+                        // Kết thúc chơi game
+                        isPlaying = false;
+                    });
+
+                    // Bắt đầu luồng
+                    playGameThread.Start();
                 }
                 else
                 {
@@ -336,6 +407,9 @@ namespace EpistWinform.Forms
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}");
+
+                // Kết thúc chơi game (trong trường hợp có lỗi)
+                isPlaying = false;
             }
         }
 
@@ -403,10 +477,10 @@ namespace EpistWinform.Forms
 
         private async void installBtn_Click(object sender, EventArgs e)
         {
-            if (isDownloading)
+            if (isDownloading || isPlaying)
             {
                 // Nếu đang tải xuống, không làm gì khi click nút
-                MessageBox.Show("Another Game is installing, please wait.", "Warning");
+                MessageBox.Show("Another Game is installing or Playing, please wait.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -440,14 +514,20 @@ namespace EpistWinform.Forms
                 }
             }
             else
+            {
+                currentPlayingGame = currentChoosenGame;
                 PlayGame();
-
-
+            }
 
         }
 
         private void uninstallBtn_Click(object sender, EventArgs e)
         {
+            if(isPlaying && currentChoosenGame.GameName == currentPlayingGame.GameName)
+            {
+                MessageBox.Show("Please exit the game before uninstalling!", "Warnings", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+                return;
+            }
             string saveGameFileInTxt = saveGamePath + $"{currentChoosenGame.GameName}" + ".txt";
             string currentGameExtractFolder = "";
 
