@@ -105,6 +105,7 @@
             uninstallBtn.Text = "Uninstall";
             uninstallBtn.TextAlign = ContentAlignment.MiddleRight;
             uninstallBtn.UseVisualStyleBackColor = true;
+            uninstallBtn.Click += uninstallBtn_Click;
             // 
             // installBtn
             // 

@@ -21,8 +21,10 @@ namespace EpistWinform.Forms
         private List<Game> gameList;
         private Account currentUserAccount;
         private Game currentChoosenGame;
+        private Game currentInstallingGame;
         private const string connectionString = "DefaultEndpointsProtocol=https;AccountName=gamesdata;AccountKey=+o4CkMa2drN/78K4nMuSwpp11HMU9r+3Wv5fmLOnKq/wOt3CXTSF+Z8PgRLVnyxoXO6tQabL403z+AStDdx0dg==;EndpointSuffix=core.windows.net";
         private string extractFolder;
+        private string saveGamePath = "./Download/Path/";
         private bool isDownloading = false;
 
         public inventoryForm(Account currentUserAccount)
@@ -65,16 +67,40 @@ namespace EpistWinform.Forms
 
         private void GameButton_Click(object sender, EventArgs e)
         {
+            string gameName = "";
             if (sender is Button clickedButton)
             {
                 // Lấy tên game từ Button và thay đổi PictureBox tương ứng
-                string gameName = clickedButton.Text;
+                gameName = clickedButton.Text;
                 ChangePictureBoxByGameName(gameName);
             }
             if (installBtn.Visible == false)
             {
                 installBtn.Visible = true;
             }
+            if(installPanel.Visible == false)
+            {
+                installPanel.Visible = true;
+            }
+
+            if (CheckIfGameHasDownloaded() == false)
+            {
+                if (currentInstallingGame != null)
+                {
+                    if (currentInstallingGame.GameName == gameName && isDownloading == true)
+                    {
+                        ChangeInstallBtnToInstalling();
+                    }
+                    else
+                        ChangeInstallBtnStyleToInstall();
+                }
+
+                else
+                    ChangeInstallBtnStyleToInstall();
+            }
+            else
+                ChangeInstallBtnStyleToPlay();
+
         }
 
         private void ChangePictureBoxByGameName(string gameName)
@@ -99,6 +125,8 @@ namespace EpistWinform.Forms
             this.installBtn.IconChar = FontAwesome.Sharp.IconChar.Download;
             this.installBtn.IconColor = Color.DodgerBlue;
             this.installBtn.Text = "Install";
+            this.uninstallBtn.Visible = false;
+            this.downloadProgressBar.Visible = false;
         }
         private void ChangeInstallBtnStyleToPlay()
         {
@@ -106,13 +134,18 @@ namespace EpistWinform.Forms
             this.installBtn.IconChar = FontAwesome.Sharp.IconChar.Play;
             this.installBtn.IconColor = Color.LimeGreen;
             this.installBtn.Text = "Play";
+            this.uninstallBtn.Visible = true;
+            this.downloadProgressBar.Visible = false;
+
         }
 
         private void ChangeInstallBtnToInstalling()
         {
-            installBtn.Enabled = false; // Chuyển sang trạng thái không kích hoạt
-            installBtn.Text = "Installing";
-            installBtn.IconChar = IconChar.None;
+            this.installBtn.Enabled = false; // Chuyển sang trạng thái không kích hoạt
+            this.installBtn.Text = "Installing";
+            this.installBtn.IconChar = IconChar.None;
+            this.uninstallBtn.Visible = false;
+            this.downloadProgressBar.Visible = true;
             //installBtn.BackColor = Color.Gray; // Thay đổi màu sắc nền (hoặc thay đổi kiểu hiển thị khác)
         }
 
@@ -131,10 +164,10 @@ namespace EpistWinform.Forms
             if (result == DialogResult.Yes)
             {
                 string destinationFilePath;
-                string defaultFileName = "Endoparasitic.zip"; 
+                string defaultFileName = $"{currentInstallingGame.GameName}.zip";
 
-                
-                try {
+                try
+                {
                     //ChangeInstallBtnToInstalling();
                     using (FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog())
                     {
@@ -146,7 +179,7 @@ namespace EpistWinform.Forms
                             destinationFilePath = Path.Combine(destinationFolderPath, defaultFileName);
 
                             // Thực hiện tải dữ liệu từ Blob Storage
-                            await Task.Run(() => DownloadBlobAsync("tesing1", "Endoparasitic.zip", destinationFilePath));
+                            await Task.Run(() => DownloadBlobAsync("gamefiledata", defaultFileName, destinationFilePath));
 
                             // Giải nén file ZIP
                             extractFolder = Path.Combine(destinationFolderPath, Path.GetFileNameWithoutExtension(destinationFilePath));
@@ -156,14 +189,14 @@ namespace EpistWinform.Forms
                             File.Delete(destinationFilePath);
                         }
                     }
-                    
+
                 }
-                catch(Exception)
+                catch (Exception)
                 {
-                    MessageBox.Show("Download error!!!");
+                    //MessageBox.Show("Download error!!!");
                     ChangeInstallBtnStyleToInstall();
                 }
-                
+
             }
             else
             {
@@ -209,7 +242,7 @@ namespace EpistWinform.Forms
                     }
 
                 }
-                
+
 
                 MessageBox.Show("Download completed!");
             }
@@ -235,11 +268,18 @@ namespace EpistWinform.Forms
         {
             try
             {
+                string saveGameFileInTxt = saveGamePath + $"{currentChoosenGame.GameName}" + ".txt";
+                string currentGameExtractFolder = "";
+                using (StreamReader sr = new StreamReader(saveGameFileInTxt))
+                {
+                    currentGameExtractFolder = sr.ReadLine();
+                }
+
                 // Tên của tệp batch bạn muốn chạy
                 string batchFileName = "__Start game + create shortcut.bat";
 
                 // Đường dẫn đầy đủ đến tệp batch sau khi giải nén
-                string batchFilePath = Path.Combine(extractFolder, batchFileName);
+                string batchFilePath = Path.Combine(currentGameExtractFolder, batchFileName);
 
                 // Kiểm tra xem tệp batch có tồn tại không
                 if (File.Exists(batchFilePath))
@@ -275,6 +315,26 @@ namespace EpistWinform.Forms
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
+
+        private void SaveInstallGamePath()
+        {
+            string saveGameFileInTxt = saveGamePath + $"{currentInstallingGame.GameName}" + ".txt";
+            using (StreamWriter sw = new StreamWriter(saveGameFileInTxt, true))
+            {
+                sw.WriteLine(extractFolder);
+            }
+        }
+
+        private bool CheckIfGameHasDownloaded()
+        {
+            string saveGameFileInTxt = saveGamePath + $"{currentChoosenGame.GameName}" + ".txt";
+
+            if (File.Exists(saveGameFileInTxt))
+                return true;
+            else
+                return false;
+
+        }
         #endregion
 
         #region events
@@ -287,11 +347,12 @@ namespace EpistWinform.Forms
             installBtn.Visible = false;
             uninstallBtn.Visible = false;
             downloadProgressBar.Visible = false;
+            installPanel.Visible = false;
 
-            if (CheckInstallBtnText())
-                ChangeInstallBtnStyleToInstall();
-            else
-                ChangeInstallBtnStyleToPlay();
+            //if (CheckInstallBtnText())
+            //    ChangeInstallBtnStyleToInstall();
+            //else
+            //    ChangeInstallBtnStyleToPlay();
 
             LoadGameList();
 
@@ -322,33 +383,77 @@ namespace EpistWinform.Forms
             if (isDownloading)
             {
                 // Nếu đang tải xuống, không làm gì khi click nút
+                MessageBox.Show("Another Game is installing, please wait.", "Warning");
                 return;
             }
 
             if (CheckInstallBtnText())
             {
-                downloadProgressBar.Visible = true;
-                isDownloading = true;
+                try
+                {
+                    downloadProgressBar.Visible = true;
+                    isDownloading = true;
+                    currentInstallingGame = currentChoosenGame;
 
-                // Đặt trạng thái nút là "Installing"
-                ChangeInstallBtnToInstalling();
+                    // Đặt trạng thái nút là "Installing"
+                    ChangeInstallBtnToInstalling();
 
-                await InstallGame();
+                    await InstallGame();
 
-                // Sau khi cài đặt xong, chuyển trạng thái nút và giao diện
-                installBtn.Text = "Play";
-                uninstallBtn.Visible = true;
-
-                ChangeInstallBtnStyleToPlay();
-                installBtn.Enabled = true; // Kích hoạt lại nút
-                downloadProgressBar.Visible = false;
-                isDownloading = false;
+                    // Sau khi cài đặt xong, chuyển trạng thái nút và giao diện
+                    if (currentChoosenGame.GameName == currentInstallingGame.GameName)
+                        ChangeInstallBtnStyleToPlay();
+                    SaveInstallGamePath();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}");
+                }
+                finally
+                {
+                    installBtn.Enabled = true; // Kích hoạt lại nút
+                    downloadProgressBar.Visible = false;
+                    isDownloading = false;
+                }
             }
             else
                 PlayGame();
 
 
 
+        }
+
+        private void uninstallBtn_Click(object sender, EventArgs e)
+        {
+            string saveGameFileInTxt = saveGamePath + $"{currentChoosenGame.GameName}" + ".txt";
+            string currentGameExtractFolder = "";
+
+            using (StreamReader sr = new StreamReader(saveGameFileInTxt))
+            {
+                currentGameExtractFolder = sr.ReadLine();
+            }
+
+            // Yêu cầu xác nhận trước khi xóa thư mục của game
+            DialogResult result = MessageBox.Show("Are you sure you want to uninstall the game?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    if (Directory.Exists(currentGameExtractFolder))
+                    {
+                        Directory.Delete(currentGameExtractFolder, true); // Xóa thư mục và tất cả các tệp con
+                    }
+
+                    File.Delete(saveGameFileInTxt);
+                    ChangeInstallBtnStyleToInstall();
+                    MessageBox.Show("Uninstall completed!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error during uninstallation: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
