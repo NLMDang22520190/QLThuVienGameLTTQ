@@ -22,7 +22,8 @@ namespace EpistWinform.Forms
         private Account currentUserAccount;
         private Game currentChoosenGame;
         private Game currentInstallingGame;
-        private const string connectionString = "DefaultEndpointsProtocol=https;AccountName=gamesdata;AccountKey=+o4CkMa2drN/78K4nMuSwpp11HMU9r+3Wv5fmLOnKq/wOt3CXTSF+Z8PgRLVnyxoXO6tQabL403z+AStDdx0dg==;EndpointSuffix=core.windows.net";
+        //private const string connectionString = "DefaultEndpointsProtocol=https;AccountName=gamesdata;AccountKey=+o4CkMa2drN/78K4nMuSwpp11HMU9r+3Wv5fmLOnKq/wOt3CXTSF+Z8PgRLVnyxoXO6tQabL403z+AStDdx0dg==;EndpointSuffix=core.windows.net";
+        private const string connectionString = "DefaultEndpointsProtocol=https;AccountName=gamedatalttq;AccountKey=D8SYJRzwjmzZt04xBKbZWIP/dKdrDpWUKoTCfqUmzSUhYhX7h6ueLNOLH+aXQm0LIEyhHZqtq4BU+AStCzOf0g==;EndpointSuffix=core.windows.net";
         private string extractFolder;
         private string saveGamePath = "./Download/Path/";
         private bool isDownloading = false;
