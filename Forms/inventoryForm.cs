@@ -26,12 +26,21 @@ namespace EpistWinform.Forms
         private const string connectionString = "DefaultEndpointsProtocol=https;AccountName=gamedatalttq;AccountKey=D8SYJRzwjmzZt04xBKbZWIP/dKdrDpWUKoTCfqUmzSUhYhX7h6ueLNOLH+aXQm0LIEyhHZqtq4BU+AStCzOf0g==;EndpointSuffix=core.windows.net";
         private string extractFolder;
         private string saveGamePath = "./Download/Path/";
+        private string defaultSaveGameFolder = "./Download/Game/";
         private bool isDownloading = false;
 
         public inventoryForm(Account currentUserAccount)
         {
             InitializeComponent();
             this.currentUserAccount = currentUserAccount;
+            if(!Directory.Exists(saveGamePath))
+            {
+                Directory.CreateDirectory(saveGamePath);
+            }
+            if(!Directory.Exists(defaultSaveGameFolder))
+            {
+                Directory.CreateDirectory(defaultSaveGameFolder);
+            }
 
         }
         #region method
@@ -160,7 +169,7 @@ namespace EpistWinform.Forms
 
         private async Task InstallGame()
         {
-            DialogResult result = MessageBox.Show("Do you want to choose your own download path ?", "Confirmation", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Do you want to choose your own download path ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -201,7 +210,20 @@ namespace EpistWinform.Forms
             }
             else
             {
+                string defaultFolderPath = defaultSaveGameFolder;
+                string destinationFilePath = Path.Combine(defaultFolderPath, $"{currentInstallingGame.GameName}.zip");
 
+                try
+                {
+                    await Task.Run(() => DownloadBlobAsync("gamefiledata", $"{currentInstallingGame.GameName}.zip", destinationFilePath));
+                    extractFolder = Path.Combine(defaultFolderPath, Path.GetFileNameWithoutExtension(destinationFilePath));
+                    ExtractZipFile(destinationFilePath, extractFolder);
+                    File.Delete(destinationFilePath);
+                }
+                catch (Exception)
+                {
+                    ChangeInstallBtnStyleToInstall();
+                }
             }
         }
 
@@ -245,7 +267,7 @@ namespace EpistWinform.Forms
                 }
 
 
-                MessageBox.Show("Download completed!");
+                MessageBox.Show("Download completed!", "Download Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -448,7 +470,7 @@ namespace EpistWinform.Forms
 
                     File.Delete(saveGameFileInTxt);
                     ChangeInstallBtnStyleToInstall();
-                    MessageBox.Show("Uninstall completed!");
+                    MessageBox.Show("Uninstall completed!", "Uninstall Status", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
