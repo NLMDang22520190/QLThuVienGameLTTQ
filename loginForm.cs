@@ -79,5 +79,10 @@ namespace EpistWinform
                 showPassBtn.IconChar = FontAwesome.Sharp.IconChar.Eye;
             }
         }
+
+        private void usernameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
