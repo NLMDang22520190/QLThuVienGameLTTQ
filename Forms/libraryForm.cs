@@ -289,7 +289,7 @@ namespace EpistWinform.Forms
             obj.Dock = DockStyle.Top;
             obj.Font = new Font("Tahoma", 10.125F, FontStyle.Regular, GraphicsUnit.Point);
             obj.ForeColor = Color.White;
-            obj.Size = new Size(444, 58);
+            obj.Size = new Size((int)(0.8 * this.tagsFlowPanel.Size.Width), 50);
             obj.Text = s;
             obj.UseVisualStyleBackColor = false;
             return obj;
