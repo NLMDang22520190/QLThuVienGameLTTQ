@@ -19,6 +19,7 @@ namespace EpistWinform.DAO
             private set { GamesDAO.instance = value; }
         }
 
+
         private GamesDAO() { }
 
         public List<Game> LoadGamesList()
@@ -36,6 +37,7 @@ namespace EpistWinform.DAO
 
             return gameList;
         }
+        
         public List<Game> LoadOwnGamesList(int userID)
         {
             List<Game> gameList = new List<Game>();

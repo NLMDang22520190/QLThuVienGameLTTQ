@@ -25,7 +25,7 @@ namespace EpistWinform
         private Color pressColor;
         private Form currentChildForm;
         private FormWindowState lastWindowState = FormWindowState.Normal;
-        private libraryForm libraryForm;
+        private libraryForm_Alt_Ver_ libraryForm;
         private inventoryForm inventoryForm;
         private userForm userForm;
         private adminForm adminForm;
@@ -51,7 +51,7 @@ namespace EpistWinform
             navigationPanel.Controls.Add(downBorderBtn);
             pressColor = Color.LightPink;
 
-            libraryForm = new libraryForm();
+            libraryForm = new libraryForm_Alt_Ver_();
             inventoryForm = new inventoryForm(currentUserAccount);
             userForm = new userForm();
             adminForm = new adminForm();
