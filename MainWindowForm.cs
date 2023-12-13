@@ -187,13 +187,22 @@ namespace EpistWinform
         }
         private void MainWindowForm_Load(object sender, EventArgs e)
         {
-            libraryBtn.Width = Screen.PrimaryScreen.Bounds.Width / 12;
-            inventoryBtn.Width = Screen.PrimaryScreen.Bounds.Width / 10;
-            userBtn.Width = Screen.PrimaryScreen.Bounds.Width / 17;
-            adminBtn.Width = Screen.PrimaryScreen.Bounds.Width / 15;
-            exitBtn.Width = Screen.PrimaryScreen.Bounds.Width / 19;
+            //libraryBtn.Width = Screen.PrimaryScreen.Bounds.Width / 12;
+            //inventoryBtn.Width = Screen.PrimaryScreen.Bounds.Width / 10;
+            //userBtn.Width = Screen.PrimaryScreen.Bounds.Width / 17;
+            //adminBtn.Width = Screen.PrimaryScreen.Bounds.Width / 15;
+            //exitBtn.Width = Screen.PrimaryScreen.Bounds.Width / 19;
 
+            float width_ratio = (Screen.PrimaryScreen.Bounds.Width / 1920);
+            float heigh_ratio = (Screen.PrimaryScreen.Bounds.Height / 1080);
 
+            SizeF scale = new SizeF(width_ratio, heigh_ratio);
+            this.Scale(scale);
+
+            foreach (Control control in this.Controls)
+            {
+                control.Font = new Font("Tahoma", control.Font.SizeInPoints * heigh_ratio * width_ratio);
+            }
 
             currentBtn = libraryBtn;
             currentBtn.ForeColor = pressColor;
