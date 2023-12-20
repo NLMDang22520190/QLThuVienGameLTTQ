@@ -107,7 +107,7 @@
             // gameDataGridView
             // 
             gameDataGridView.BackgroundColor = Color.FromArgb(171, 239, 255);
-            gameDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gameDataGridView.ColumnHeadersHeight = 29;
             gameDataGridView.Dock = DockStyle.Fill;
             gameDataGridView.Location = new Point(3, 111);
             gameDataGridView.Name = "gameDataGridView";
@@ -348,7 +348,6 @@
             // 
             // DescriptionTextBox
             // 
-            DescriptionTextBox.AllowDrop = true;
             DescriptionTextBox.Location = new Point(4, 33);
             DescriptionTextBox.Name = "DescriptionTextBox";
             DescriptionTextBox.Size = new Size(322, 38);

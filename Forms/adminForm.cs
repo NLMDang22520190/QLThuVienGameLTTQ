@@ -14,7 +14,8 @@ namespace EpistWinform.Forms
 {
     public partial class adminForm : Form
     {
-        int baseSize = 1007;
+        int baseWidth = 1007;
+        int minimumControlWidth = 1007;
         public adminForm()
         {
             InitializeComponent();
@@ -73,21 +74,32 @@ namespace EpistWinform.Forms
 
         private void adminForm_Resize(object sender, EventArgs e)
         {
-            FixControl();
+            //FixControl();
         }
 
         #endregion
 
         #region FixUI
 
-        void FixControl()
-        {
-            int sizeMultiplier = this.Width / baseSize;
-            foreach (Control control in this.Controls)
-            {
-                control.Width = (int)control.Width * sizeMultiplier;
-            }
-        }
+        //void FixControl()
+        //{
+        //    int sizeMultiplier = this.Width / baseWidth;
+
+        //    foreach (Control control in mainControlPanel.Controls)
+        //    {
+        //        int newWidth = (int)(control.Width * sizeMultiplier);
+
+        //        // Set a minimum width to prevent very narrow controls
+        //        newWidth = Math.Max(newWidth, minimumControlWidth);
+
+        //        // Calculate the corresponding height to maintain the aspect ratio
+        //        int newHeight = (int)(control.Height * ((double)newWidth / control.Width));
+
+        //        // Update the control size
+        //        control.Size = new Size(newWidth, newHeight);
+        //    }
+        //}
+
         #endregion
 
 
