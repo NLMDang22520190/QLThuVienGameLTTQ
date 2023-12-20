@@ -19,7 +19,7 @@ namespace EpistWinform.Forms
         public event EventHandler<Game> InventoryButtonClicked;
         private List<Game> filteredGames;
 
-        List<Game> gameList = GamesDAO.Instance.LoadGamesList();
+        List<Game> gameList = GamesDAO.Instance.ListAllGames;
         List<Tag> tagList = TagDAO.Instance.LoadTagsList();
         List<GameTags> gameTagsList = GameTagsDAO.Instance.LoadGameTagsList();
 

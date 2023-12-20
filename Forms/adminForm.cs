@@ -28,7 +28,7 @@ namespace EpistWinform.Forms
 
         void LoadGame()
         {
-            List<Game> gameList = GamesDAO.Instance.LoadGamesList();
+            List<Game> gameList = GamesDAO.Instance.ListAllGames;
             gameComboBox.DataSource = gameList;
             gameComboBox.DisplayMember = "gameName";
             gameDataGridView.DataSource = gameList;

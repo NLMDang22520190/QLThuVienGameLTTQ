@@ -19,6 +19,12 @@ namespace EpistWinform.DAO
             private set { GamesDAO.instance = value; }
         }
 
+        public List<Game> ListAllGames {
+            get { if (listAllGames.Count <= 0) listAllGames = LoadGamesList(); return listAllGames; }
+        }
+
+        private List<Game> listAllGames = new List<Game> { };
+
 
         private GamesDAO() { }
 
