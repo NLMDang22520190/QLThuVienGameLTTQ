@@ -15,15 +15,18 @@ namespace EpistWinform.DAO
 
         public static GamesDAO Instance
         {
-            get { if (instance == null) instance = new GamesDAO(); return GamesDAO.instance; } 
+            get { if (instance == null) instance = new GamesDAO(); return GamesDAO.instance; }
             private set { GamesDAO.instance = value; }
         }
 
-        public List<Game> ListAllGames {
+        public List<Game> ListAllGames
+        {
             get { if (listAllGames.Count <= 0) listAllGames = LoadGamesList(); return listAllGames; }
         }
 
-        private List<Game> listAllGames = new List<Game> { };
+        private List<Game> listAllGames = new List<Game>();
+
+        private List<Game> listOwnGames = new List<Game>();
 
 
         private GamesDAO() { }
@@ -43,21 +46,26 @@ namespace EpistWinform.DAO
 
             return gameList;
         }
-        
+
         public List<Game> LoadOwnGamesList(int userID)
         {
-            List<Game> gameList = new List<Game>();
-
-            string querry = "GetOwnGameList @userID";
-
-            DataTable data = DataProvider.Instance.ExecuteQuery(querry, new object[] {userID});
-            foreach (DataRow row in data.Rows)
+            if(listOwnGames.Count <= 0)
             {
-                Game game = new Game(row);
-                gameList.Add(game);
-            }
+                List<Game> gameList = new List<Game>();
 
-            return gameList;
+                string querry = "GetOwnGameList @userID";
+
+                DataTable data = DataProvider.Instance.ExecuteQuery(querry, new object[] { userID });
+                foreach (DataRow row in data.Rows)
+                {
+                    Game game = new Game(row);
+                    gameList.Add(game);
+                }
+                listOwnGames = gameList;
+            }
+            
+
+            return listOwnGames;
         }
 
         public bool InsertGame(string gameName, string gameInfo, string picture1, string picture2, string picture3)
