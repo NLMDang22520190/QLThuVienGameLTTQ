@@ -31,18 +31,19 @@
             leftPanel = new Panel();
             rightPanel = new Panel();
             mainPanel = new Panel();
+            gameInfoFlowLayoutPanel = new FlowLayoutPanel();
+            gameNameLabel = new Label();
             controlPanel = new Panel();
             moreInfoButton = new Button();
             addGameButton = new Button();
-            detailFlowLayoutPanel = new FlowLayoutPanel();
             mainPanel.SuspendLayout();
             controlPanel.SuspendLayout();
             SuspendLayout();
             // 
             // leftPanel
             // 
-            leftPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             leftPanel.BackColor = Color.FromArgb(0, 199, 139);
+            leftPanel.Dock = DockStyle.Left;
             leftPanel.Location = new Point(0, 0);
             leftPanel.Name = "leftPanel";
             leftPanel.Size = new Size(140, 531);
@@ -50,8 +51,8 @@
             // 
             // rightPanel
             // 
-            rightPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             rightPanel.BackColor = Color.FromArgb(0, 199, 139);
+            rightPanel.Dock = DockStyle.Right;
             rightPanel.Location = new Point(849, 0);
             rightPanel.Name = "rightPanel";
             rightPanel.Size = new Size(140, 531);
@@ -59,22 +60,45 @@
             // 
             // mainPanel
             // 
-            mainPanel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             mainPanel.BackColor = Color.MediumSpringGreen;
+            mainPanel.Controls.Add(gameInfoFlowLayoutPanel);
+            mainPanel.Controls.Add(gameNameLabel);
             mainPanel.Controls.Add(controlPanel);
-            mainPanel.Controls.Add(detailFlowLayoutPanel);
+            mainPanel.Dock = DockStyle.Fill;
             mainPanel.Location = new Point(140, 0);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(710, 536);
+            mainPanel.Size = new Size(709, 531);
             mainPanel.TabIndex = 3;
+            // 
+            // gameInfoFlowLayoutPanel
+            // 
+            gameInfoFlowLayoutPanel.AutoScroll = true;
+            gameInfoFlowLayoutPanel.Dock = DockStyle.Fill;
+            gameInfoFlowLayoutPanel.Location = new Point(0, 41);
+            gameInfoFlowLayoutPanel.Name = "gameInfoFlowLayoutPanel";
+            gameInfoFlowLayoutPanel.Size = new Size(709, 434);
+            gameInfoFlowLayoutPanel.TabIndex = 3;
+            // 
+            // gameNameLabel
+            // 
+            gameNameLabel.BackColor = Color.Transparent;
+            gameNameLabel.Dock = DockStyle.Top;
+            gameNameLabel.Font = new Font("Tahoma", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            gameNameLabel.Location = new Point(0, 0);
+            gameNameLabel.Name = "gameNameLabel";
+            gameNameLabel.Size = new Size(709, 41);
+            gameNameLabel.TabIndex = 4;
+            gameNameLabel.Text = "Game Name";
+            gameNameLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // controlPanel
             // 
             controlPanel.Controls.Add(moreInfoButton);
             controlPanel.Controls.Add(addGameButton);
-            controlPanel.Location = new Point(3, 474);
+            controlPanel.Dock = DockStyle.Bottom;
+            controlPanel.Location = new Point(0, 475);
             controlPanel.Name = "controlPanel";
-            controlPanel.Size = new Size(701, 56);
+            controlPanel.Size = new Size(709, 56);
             controlPanel.TabIndex = 2;
             // 
             // moreInfoButton
@@ -86,6 +110,7 @@
             moreInfoButton.TabIndex = 1;
             moreInfoButton.Text = "MORE INFO";
             moreInfoButton.UseVisualStyleBackColor = true;
+            moreInfoButton.Click += MoreInfoButton_Click;
             // 
             // addGameButton
             // 
@@ -96,14 +121,7 @@
             addGameButton.TabIndex = 0;
             addGameButton.Text = "ADD GAME";
             addGameButton.UseVisualStyleBackColor = true;
-            // 
-            // detailFlowLayoutPanel
-            // 
-            detailFlowLayoutPanel.AutoScroll = true;
-            detailFlowLayoutPanel.Location = new Point(3, 43);
-            detailFlowLayoutPanel.Name = "detailFlowLayoutPanel";
-            detailFlowLayoutPanel.Size = new Size(704, 425);
-            detailFlowLayoutPanel.TabIndex = 1;
+            addGameButton.Click += AddToInventoryButton_Click;
             // 
             // gameInfoForm
             // 
@@ -115,6 +133,7 @@
             Controls.Add(leftPanel);
             Name = "gameInfoForm";
             Text = "gameInfoForm";
+            SizeChanged += gameInfoForm_SizeChanged;
             mainPanel.ResumeLayout(false);
             controlPanel.ResumeLayout(false);
             ResumeLayout(false);
@@ -126,8 +145,10 @@
         private Panel rightPanel;
         private Panel mainPanel;
         private Panel controlPanel;
-        private FlowLayoutPanel detailFlowLayoutPanel;
         private Button moreInfoButton;
         private Button addGameButton;
+        private Label label1;
+        private FlowLayoutPanel gameInfoFlowLayoutPanel;
+        private Label gameNameLabel;
     }
 }

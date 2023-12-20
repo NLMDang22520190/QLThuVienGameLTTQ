@@ -24,9 +24,10 @@ namespace EpistWinform.DAO
         {
             List<Tag> tagList = new List<Tag>();
 
-            string querry = "GetTagList";
+            string query = "GetTagList";
 
-            DataTable data = DataProvider.Instance.ExecuteQuery(querry);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            
             foreach (DataRow row in data.Rows)
             {
                 Tag tag = new Tag(row);
@@ -35,8 +36,5 @@ namespace EpistWinform.DAO
 
             return tagList;
         }
-
     }
-
-
 }

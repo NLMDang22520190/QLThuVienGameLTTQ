@@ -30,9 +30,11 @@
         {
             bannerPictureBox = new PictureBox();
             TagsFlowLayoutPanel = new FlowLayoutPanel();
+            tagLabel = new Label();
             gamesFlowLayoutPanel = new FlowLayoutPanel();
             searchGameComboBox = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)bannerPictureBox).BeginInit();
+            TagsFlowLayoutPanel.SuspendLayout();
             SuspendLayout();
             // 
             // bannerPictureBox
@@ -48,11 +50,23 @@
             // 
             TagsFlowLayoutPanel.AutoScroll = true;
             TagsFlowLayoutPanel.BackColor = Color.FromArgb(0, 199, 139);
+            TagsFlowLayoutPanel.Controls.Add(tagLabel);
             TagsFlowLayoutPanel.Dock = DockStyle.Left;
             TagsFlowLayoutPanel.Location = new Point(0, 198);
             TagsFlowLayoutPanel.Name = "TagsFlowLayoutPanel";
             TagsFlowLayoutPanel.Size = new Size(274, 248);
             TagsFlowLayoutPanel.TabIndex = 1;
+            // 
+            // tagLabel
+            // 
+            tagLabel.Font = new Font("Tahoma", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            tagLabel.ForeColor = Color.White;
+            tagLabel.Location = new Point(3, 0);
+            tagLabel.Name = "tagLabel";
+            tagLabel.Size = new Size(268, 43);
+            tagLabel.TabIndex = 0;
+            tagLabel.Text = "Tags";
+            tagLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // gamesFlowLayoutPanel
             // 
@@ -70,6 +84,8 @@
             searchGameComboBox.Name = "searchGameComboBox";
             searchGameComboBox.Size = new Size(451, 28);
             searchGameComboBox.TabIndex = 0;
+            searchGameComboBox.DropDown += searchGameComboBox_DropDown;
+            searchGameComboBox.TextChanged += searchGameComboBox_TextChanged;
             // 
             // libraryForm_Alt_Ver_
             // 
@@ -84,6 +100,7 @@
             Text = "libraryForm_Alt_Ver_";
             Resize += libraryForm_Alt_Ver__Resize;
             ((System.ComponentModel.ISupportInitialize)bannerPictureBox).EndInit();
+            TagsFlowLayoutPanel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -94,5 +111,6 @@
         private FlowLayoutPanel gamesFlowLayoutPanel;
         private ComboBox searchGameComboBox;
         private Label tagsLabel;
+        private Label tagLabel;
     }
 }

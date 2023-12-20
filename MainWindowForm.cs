@@ -26,6 +26,7 @@ namespace EpistWinform
         private Form currentChildForm;
         private FormWindowState lastWindowState = FormWindowState.Normal;
         private libraryForm_Alt_Ver_ libraryForm;
+        private gameInfoForm gameInfoForm;
         private inventoryForm inventoryForm;
         private userForm userForm;
         private adminForm adminForm;
@@ -53,6 +54,7 @@ namespace EpistWinform
 
             libraryForm = new libraryForm_Alt_Ver_();
             inventoryForm = new inventoryForm(currentUserAccount);
+            
             userForm = new userForm();
             adminForm = new adminForm();
             this.currentUserAccount = currentUserAccount;
@@ -103,10 +105,13 @@ namespace EpistWinform
             }
         }
 
-        private void LibraryForm_InventoryButtonClicked(object sender, EventArgs e)
+        private void LibraryForm_InventoryButtonClicked(object sender, Game currentGame)
         {
+            gameInfoForm gameInfoForm = new gameInfoForm(currentGame);
+            OpenChildForm(gameInfoForm);
+
             // Mở inventoryForm trong changeFormPanel
-            OpenChildForm(inventoryForm);
+            //OpenChildForm(inventoryForm);
 
             // Hoặc thực hiện các hành động khác tùy thuộc vào yêu cầu của bạn
         }

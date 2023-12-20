@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EpistWinform.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,66 +13,24 @@ namespace EpistWinform.Forms
 {
     public partial class gameInfoForm : Form
     {
-        public gameInfoForm(string gameName, Image[] gamePictures, string gameDetail)
+        int verticalScrollWidth;
+
+        private Game game;
+        // Declare an event
+        public event EventHandler InventoryButtonClicked;
+
+        // Trigger the event when the inventory button is clicked
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            InventoryButtonClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        public gameInfoForm(Game game)
         {
             InitializeComponent();
 
-            // Game Name Label
-            Label nameLabel = new Label
-            {
-                Text = "Game Name: " + gameName,
-                Font = new Font("Tahoma", 12, FontStyle.Bold),
-                AutoSize = true
-            };
-
-            // Game Pictures PictureBoxes
-            PictureBox[] pictureBoxes = new PictureBox[gamePictures.Length];
-            for (int i = 0; i < gamePictures.Length; i++)
-            {
-                pictureBoxes[i] = new PictureBox
-                {
-                    Image = gamePictures[i],
-                    SizeMode = PictureBoxSizeMode.Zoom,
-                    Size = new Size(100, 100),
-                    Margin = new Padding(5)
-                };
-            }
-
-            // Game Detail Label
-            Label detailLabel = new Label
-            {
-                Text = "Game Detail: " + gameDetail,
-                Font = new Font("Tahoma", 10),
-                AutoSize = true
-            };
-
-            // Add to Inventory Button
-            Button addToInventoryButton = new Button
-            {
-                Text = "Add to Inventory",
-                Size = new Size(150, 30),
-                Margin = new Padding(10)
-            };
-            addToInventoryButton.Click += AddToInventoryButton_Click;
-
-            // More Info Button
-            Button moreInfoButton = new Button
-            {
-                Text = "More Info",
-                Size = new Size(150, 30),
-                Margin = new Padding(10)
-            };
-            moreInfoButton.Click += MoreInfoButton_Click;
-
-            // Flow Layout Panel
-            FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
-            flowLayoutPanel.Controls.Add(nameLabel);
-            flowLayoutPanel.Controls.AddRange(pictureBoxes);
-            flowLayoutPanel.Controls.Add(detailLabel);
-            flowLayoutPanel.Controls.Add(addToInventoryButton);
-            flowLayoutPanel.Controls.Add(moreInfoButton);
-
-            this.Controls.Add(flowLayoutPanel);
+            this.game = game;
+            InitializeGameDetails(game);
         }
 
         private void AddToInventoryButton_Click(object sender, EventArgs e)
@@ -84,6 +43,59 @@ namespace EpistWinform.Forms
         {
             // Handle more info button click
             // You can provide additional information or actions here
+        }
+
+        private void InitializeGameDetails(Game game)
+        {
+            gameNameLabel.Text = game.GameName;
+
+            if (game != null)
+            {
+
+                List<PictureBox> gamePictureBoxes = new List<PictureBox>();
+
+                for (int i = 0; i < 3; i++)
+                {
+                    verticalScrollWidth = gameInfoFlowLayoutPanel.VerticalScroll.Visible ? SystemInformation.VerticalScrollBarWidth : 0;
+                    gamePictureBoxes.Add(new PictureBox());
+                    gamePictureBoxes[i].Width = gameInfoFlowLayoutPanel.Width - verticalScrollWidth;
+                    gamePictureBoxes[i].Height = gamePictureBoxes[i].Width / 2;
+                    gamePictureBoxes[i].BackgroundImageLayout = ImageLayout.Stretch;
+                    gameInfoFlowLayoutPanel.Controls.Add(gamePictureBoxes[i]);
+                }
+
+                gamePictureBoxes[0].BackgroundImage = Image.FromFile(game.Picture1);
+                gamePictureBoxes[1].BackgroundImage = Image.FromFile(game.Picture2);
+                gamePictureBoxes[2].BackgroundImage = Image.FromFile(game.Picture3);
+
+                Label gameDetailLabel = new Label();
+                verticalScrollWidth = gameInfoFlowLayoutPanel.VerticalScroll.Visible ? SystemInformation.VerticalScrollBarWidth : 0;
+                gameDetailLabel.Width = gameInfoFlowLayoutPanel.Width - verticalScrollWidth;
+                gameDetailLabel.AutoSize = true;
+                gameDetailLabel.Text = game.GameInfo.ToString();
+
+                gameInfoFlowLayoutPanel.Controls.Add(gameDetailLabel);
+            }
+            else MessageBox.Show("game is null");
+        }
+
+        private void gameInfoForm_SizeChanged(object sender, EventArgs e)
+        {
+            FixMainPanelSize();
+        }
+
+        private void FixMainPanelSize()
+        {
+            foreach (Control control in gameInfoFlowLayoutPanel.Controls)
+            {
+                if (control is PictureBox gamePictureBox)
+                {
+                    verticalScrollWidth = gameInfoFlowLayoutPanel.VerticalScroll.Visible ? SystemInformation.VerticalScrollBarWidth : 0;
+                    gamePictureBox.Width = gameInfoFlowLayoutPanel.Width - verticalScrollWidth;
+                    gamePictureBox.Height = gamePictureBox.Width / 2;
+                    gameInfoFlowLayoutPanel.HorizontalScroll.Visible = false;
+                }
+            }
         }
     }
 }
