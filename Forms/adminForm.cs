@@ -14,11 +14,15 @@ namespace EpistWinform.Forms
 {
     public partial class adminForm : Form
     {
-        int baseWidth = 1007;
-        int minimumControlWidth = 1007;
+        int descriptionTextBoxHeight;
+
+
         public adminForm()
         {
             InitializeComponent();
+
+            descriptionTextBoxHeight = descriptionTextBox.Height;
+
             LoadGame();
 
             AddGameBinding();
@@ -40,7 +44,7 @@ namespace EpistWinform.Forms
         void AddGameBinding()
         {
             gameNameTextBox.DataBindings.Add(new Binding("Text", gameDataGridView.DataSource, "GameName"));
-            DescriptionTextBox.DataBindings.Add(new Binding("Text", gameDataGridView.DataSource, "GameInfo"));
+            descriptionTextBox.DataBindings.Add(new Binding("Text", gameDataGridView.DataSource, "GameInfo"));
 
         }
 
@@ -84,23 +88,25 @@ namespace EpistWinform.Forms
 
         void SetReadOnly()
         {
-            //foreach (Control control in mainControl.Controls)
-            //{
-            //    if (control is TextBox textBox)
-            //    {
-            //        textBox.ReadOnly = true;
-            //    }
-            //}
-
 
             gameNameTextBox.ReadOnly = true;
-            gameNameTextBox.TabStop = false;
+            gameNameTextBox.Enabled = false;
 
-            //DescriptionTextBox.ReadOnly = true;
+            descriptionTextBox.ReadOnly = true;
+            descriptionTextBox.Enabled = false;
+
+
         }
 
         #endregion
 
 
+        private void DescriptionTextBox_TextChanged(object sender, EventArgs e)
+        {
+            descriptionTextBox.WordWrap = true;
+            descriptionTextBox.Multiline = true;
+            descriptionTextBox.Height = descriptionTextBox.GetLineFromCharIndex(int.MaxValue) * descriptionTextBoxHeight;
+            MessageBox.Show(descriptionTextBox.GetLineFromCharIndex(int.MaxValue).ToString());
+        }
     }
 }

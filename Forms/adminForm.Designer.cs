@@ -51,7 +51,7 @@
             gameFilelabel = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel3 = new Panel();
-            DescriptionTextBox = new TextBox();
+            descriptionTextBox = new TextBox();
             gameDetailLabel = new Label();
             TagsTabPage = new TabPage();
             tabControl1 = new TabControl();
@@ -296,19 +296,22 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(DescriptionTextBox);
+            panel3.Controls.Add(descriptionTextBox);
             panel3.Controls.Add(gameDetailLabel);
             panel3.Location = new Point(3, 352);
             panel3.Name = "panel3";
             panel3.Size = new Size(323, 125);
             panel3.TabIndex = 5;
             // 
-            // DescriptionTextBox
+            // descriptionTextBox
             // 
-            DescriptionTextBox.Location = new Point(4, 33);
-            DescriptionTextBox.Name = "DescriptionTextBox";
-            DescriptionTextBox.Size = new Size(322, 38);
-            DescriptionTextBox.TabIndex = 1;
+            descriptionTextBox.Location = new Point(4, 33);
+            descriptionTextBox.Multiline = true;
+            descriptionTextBox.Name = "descriptionTextBox";
+            descriptionTextBox.Size = new Size(316, 38);
+            descriptionTextBox.TabIndex = 1;
+            descriptionTextBox.WordWrap = false;
+            descriptionTextBox.TextChanged += DescriptionTextBox_TextChanged;
             // 
             // gameDetailLabel
             // 
@@ -448,5 +451,6 @@
         private Label gameDetailLabel;
         private FileSystemWatcher fileSystemWatcher1;
         private TextBox DescriptionTextBox;
+        private TextBox descriptionTextBox;
     }
 }
