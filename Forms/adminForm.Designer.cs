@@ -32,11 +32,8 @@
             GameTabPage = new TabPage();
             gameDataGridView = new DataGridView();
             mainControlPanel = new Panel();
-            searchButton = new Button();
             gameComboBox = new ComboBox();
-            viewButton = new Button();
             editButton = new Button();
-            removeButton = new Button();
             addButton = new Button();
             InfoFlowLayoutPanel = new FlowLayoutPanel();
             gameNamePanel = new Panel();
@@ -119,11 +116,8 @@
             // mainControlPanel
             // 
             mainControlPanel.BackColor = Color.FromArgb(117, 250, 141);
-            mainControlPanel.Controls.Add(searchButton);
             mainControlPanel.Controls.Add(gameComboBox);
-            mainControlPanel.Controls.Add(viewButton);
             mainControlPanel.Controls.Add(editButton);
-            mainControlPanel.Controls.Add(removeButton);
             mainControlPanel.Controls.Add(addButton);
             mainControlPanel.Dock = DockStyle.Top;
             mainControlPanel.Location = new Point(3, 3);
@@ -131,38 +125,13 @@
             mainControlPanel.Size = new Size(643, 108);
             mainControlPanel.TabIndex = 2;
             // 
-            // searchButton
-            // 
-            searchButton.BackColor = Color.FromArgb(97, 255, 116);
-            searchButton.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            searchButton.ForeColor = Color.FromArgb(23, 61, 28);
-            searchButton.Location = new Point(486, 60);
-            searchButton.Name = "searchButton";
-            searchButton.Size = new Size(155, 38);
-            searchButton.TabIndex = 5;
-            searchButton.Text = "SEARCH";
-            searchButton.UseVisualStyleBackColor = false;
-            searchButton.Click += searchButton_Click;
-            // 
             // gameComboBox
             // 
             gameComboBox.FormattingEnabled = true;
             gameComboBox.Location = new Point(3, 60);
             gameComboBox.Name = "gameComboBox";
-            gameComboBox.Size = new Size(477, 38);
+            gameComboBox.Size = new Size(634, 38);
             gameComboBox.TabIndex = 4;
-            // 
-            // viewButton
-            // 
-            viewButton.BackColor = Color.FromArgb(97, 255, 116);
-            viewButton.ForeColor = Color.FromArgb(23, 61, 28);
-            viewButton.Location = new Point(486, 3);
-            viewButton.Name = "viewButton";
-            viewButton.Size = new Size(155, 51);
-            viewButton.TabIndex = 3;
-            viewButton.Text = "VIEW";
-            viewButton.UseVisualStyleBackColor = false;
-            viewButton.Click += viewButton_Click;
             // 
             // editButton
             // 
@@ -173,23 +142,11 @@
             editButton.ForeColor = Color.FromArgb(23, 61, 28);
             editButton.Location = new Point(325, 3);
             editButton.Name = "editButton";
-            editButton.Size = new Size(155, 51);
+            editButton.Size = new Size(312, 51);
             editButton.TabIndex = 2;
             editButton.Text = "EDIT";
             editButton.UseVisualStyleBackColor = false;
             editButton.Click += editButton_Click;
-            // 
-            // removeButton
-            // 
-            removeButton.BackColor = Color.FromArgb(97, 255, 116);
-            removeButton.ForeColor = Color.FromArgb(23, 61, 28);
-            removeButton.Location = new Point(164, 3);
-            removeButton.Name = "removeButton";
-            removeButton.Size = new Size(155, 51);
-            removeButton.TabIndex = 1;
-            removeButton.Text = "REMOVE";
-            removeButton.UseVisualStyleBackColor = false;
-            removeButton.Click += removeButton_Click;
             // 
             // addButton
             // 
@@ -197,7 +154,7 @@
             addButton.ForeColor = Color.FromArgb(23, 61, 28);
             addButton.Location = new Point(3, 3);
             addButton.Name = "addButton";
-            addButton.Size = new Size(155, 51);
+            addButton.Size = new Size(316, 51);
             addButton.TabIndex = 0;
             addButton.Text = "ADD";
             addButton.UseVisualStyleBackColor = false;

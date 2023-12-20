@@ -22,6 +22,7 @@ namespace EpistWinform.Forms
             LoadGame();
 
             AddGameBinding();
+            SetReadOnly();
         }
 
         #region Method
@@ -79,26 +80,24 @@ namespace EpistWinform.Forms
 
         #endregion
 
-        #region FixUI
+        #region SetReadOnly
 
-        //void FixControl()
-        //{
-        //    int sizeMultiplier = this.Width / baseWidth;
+        void SetReadOnly()
+        {
+            //foreach (Control control in mainControl.Controls)
+            //{
+            //    if (control is TextBox textBox)
+            //    {
+            //        textBox.ReadOnly = true;
+            //    }
+            //}
 
-        //    foreach (Control control in mainControlPanel.Controls)
-        //    {
-        //        int newWidth = (int)(control.Width * sizeMultiplier);
 
-        //        // Set a minimum width to prevent very narrow controls
-        //        newWidth = Math.Max(newWidth, minimumControlWidth);
+            gameNameTextBox.ReadOnly = true;
+            gameNameTextBox.TabStop = false;
 
-        //        // Calculate the corresponding height to maintain the aspect ratio
-        //        int newHeight = (int)(control.Height * ((double)newWidth / control.Width));
-
-        //        // Update the control size
-        //        control.Size = new Size(newWidth, newHeight);
-        //    }
-        //}
+            //DescriptionTextBox.ReadOnly = true;
+        }
 
         #endregion
 
