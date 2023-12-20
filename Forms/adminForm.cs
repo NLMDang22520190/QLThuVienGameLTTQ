@@ -24,9 +24,10 @@ namespace EpistWinform.Forms
             descriptionTextBoxHeight = descriptionTextBox.Height;
 
             LoadGame();
-
             AddGameBinding();
             SetReadOnly();
+            //ChangeDataGridViewSize();
+
         }
 
         #region Method
@@ -37,8 +38,7 @@ namespace EpistWinform.Forms
             gameComboBox.DataSource = gameList;
             gameComboBox.DisplayMember = "gameName";
             gameDataGridView.DataSource = gameList;
-
-
+            gameDataGridView.ReadOnly = true;
         }
 
         void AddGameBinding()
@@ -79,7 +79,8 @@ namespace EpistWinform.Forms
 
         private void adminForm_Resize(object sender, EventArgs e)
         {
-            //FixControl();
+           ChangeDataGridViewSize();
+
         }
 
         #endregion
@@ -93,9 +94,10 @@ namespace EpistWinform.Forms
             gameNameTextBox.Enabled = false;
 
             descriptionTextBox.ReadOnly = true;
+            //descriptionTextBox.AutoSize = false;
+            //descriptionTextBox.WordWrap = true;
+            //descriptionTextBox.Multiline = true;
             descriptionTextBox.Enabled = false;
-
-
         }
 
         #endregion
@@ -103,10 +105,26 @@ namespace EpistWinform.Forms
 
         private void DescriptionTextBox_TextChanged(object sender, EventArgs e)
         {
-            descriptionTextBox.WordWrap = true;
-            descriptionTextBox.Multiline = true;
-            descriptionTextBox.Height = descriptionTextBox.GetLineFromCharIndex(int.MaxValue) * descriptionTextBoxHeight;
-            MessageBox.Show(descriptionTextBox.GetLineFromCharIndex(int.MaxValue).ToString());
+
+            //descriptionTextBox.Height = descriptionTextBox.GetLineFromCharIndex(int.MaxValue) * descriptionTextBoxHeight;
+            //MessageBox.Show(descriptionTextBox.GetLineFromCharIndex(int.MaxValue).ToString());
+        }
+
+        void ChangeDataGridViewSize()
+        {
+            if (gameDataGridView.ColumnCount > 0)
+            {
+                for (int i = 0; i < gameDataGridView.ColumnCount; i++)
+                {
+                    if (i == 2)
+                        continue;
+                    gameDataGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                }
+            }
+
+            gameDataGridView.AutoResizeColumnHeadersHeight();
+            gameDataGridView.AutoResizeRows();
+            ad
         }
     }
 }

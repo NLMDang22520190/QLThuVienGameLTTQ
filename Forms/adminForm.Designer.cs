@@ -82,9 +82,10 @@
             adminTabControl.Controls.Add(UserTabPage);
             adminTabControl.Dock = DockStyle.Fill;
             adminTabControl.Location = new Point(0, 0);
+            adminTabControl.Margin = new Padding(4, 4, 4, 4);
             adminTabControl.Name = "adminTabControl";
             adminTabControl.SelectedIndex = 0;
-            adminTabControl.Size = new Size(989, 446);
+            adminTabControl.Size = new Size(1236, 558);
             adminTabControl.TabIndex = 0;
             // 
             // GameTabPage
@@ -93,10 +94,11 @@
             GameTabPage.Controls.Add(mainControlPanel);
             GameTabPage.Controls.Add(InfoFlowLayoutPanel);
             GameTabPage.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            GameTabPage.Location = new Point(4, 29);
+            GameTabPage.Location = new Point(4, 34);
+            GameTabPage.Margin = new Padding(4, 4, 4, 4);
             GameTabPage.Name = "GameTabPage";
-            GameTabPage.Padding = new Padding(3);
-            GameTabPage.Size = new Size(981, 413);
+            GameTabPage.Padding = new Padding(4, 4, 4, 4);
+            GameTabPage.Size = new Size(1228, 520);
             GameTabPage.TabIndex = 0;
             GameTabPage.Text = "Games";
             GameTabPage.UseVisualStyleBackColor = true;
@@ -106,11 +108,12 @@
             gameDataGridView.BackgroundColor = Color.FromArgb(171, 239, 255);
             gameDataGridView.ColumnHeadersHeight = 29;
             gameDataGridView.Dock = DockStyle.Fill;
-            gameDataGridView.Location = new Point(3, 111);
+            gameDataGridView.Location = new Point(4, 139);
+            gameDataGridView.Margin = new Padding(4, 4, 4, 4);
             gameDataGridView.Name = "gameDataGridView";
             gameDataGridView.RowHeadersWidth = 100;
             gameDataGridView.RowTemplate.Height = 29;
-            gameDataGridView.Size = new Size(643, 299);
+            gameDataGridView.Size = new Size(805, 377);
             gameDataGridView.TabIndex = 3;
             // 
             // mainControlPanel
@@ -120,17 +123,19 @@
             mainControlPanel.Controls.Add(editButton);
             mainControlPanel.Controls.Add(addButton);
             mainControlPanel.Dock = DockStyle.Top;
-            mainControlPanel.Location = new Point(3, 3);
+            mainControlPanel.Location = new Point(4, 4);
+            mainControlPanel.Margin = new Padding(4, 4, 4, 4);
             mainControlPanel.Name = "mainControlPanel";
-            mainControlPanel.Size = new Size(643, 108);
+            mainControlPanel.Size = new Size(805, 135);
             mainControlPanel.TabIndex = 2;
             // 
             // gameComboBox
             // 
             gameComboBox.FormattingEnabled = true;
-            gameComboBox.Location = new Point(3, 60);
+            gameComboBox.Location = new Point(4, 75);
+            gameComboBox.Margin = new Padding(4, 4, 4, 4);
             gameComboBox.Name = "gameComboBox";
-            gameComboBox.Size = new Size(634, 38);
+            gameComboBox.Size = new Size(792, 44);
             gameComboBox.TabIndex = 4;
             // 
             // editButton
@@ -140,9 +145,10 @@
             editButton.FlatAppearance.BorderColor = Color.DarkGreen;
             editButton.FlatAppearance.BorderSize = 5;
             editButton.ForeColor = Color.FromArgb(23, 61, 28);
-            editButton.Location = new Point(325, 3);
+            editButton.Location = new Point(406, 4);
+            editButton.Margin = new Padding(4, 4, 4, 4);
             editButton.Name = "editButton";
-            editButton.Size = new Size(312, 51);
+            editButton.Size = new Size(390, 64);
             editButton.TabIndex = 2;
             editButton.Text = "EDIT";
             editButton.UseVisualStyleBackColor = false;
@@ -152,9 +158,10 @@
             // 
             addButton.BackColor = Color.FromArgb(97, 255, 116);
             addButton.ForeColor = Color.FromArgb(23, 61, 28);
-            addButton.Location = new Point(3, 3);
+            addButton.Location = new Point(4, 4);
+            addButton.Margin = new Padding(4, 4, 4, 4);
             addButton.Name = "addButton";
-            addButton.Size = new Size(316, 51);
+            addButton.Size = new Size(395, 64);
             addButton.TabIndex = 0;
             addButton.Text = "ADD";
             addButton.UseVisualStyleBackColor = false;
@@ -169,9 +176,10 @@
             InfoFlowLayoutPanel.Controls.Add(flowLayoutPanel1);
             InfoFlowLayoutPanel.Controls.Add(panel3);
             InfoFlowLayoutPanel.Dock = DockStyle.Right;
-            InfoFlowLayoutPanel.Location = new Point(646, 3);
+            InfoFlowLayoutPanel.Location = new Point(809, 4);
+            InfoFlowLayoutPanel.Margin = new Padding(4, 4, 4, 4);
             InfoFlowLayoutPanel.Name = "InfoFlowLayoutPanel";
-            InfoFlowLayoutPanel.Size = new Size(332, 407);
+            InfoFlowLayoutPanel.Size = new Size(415, 512);
             InfoFlowLayoutPanel.TabIndex = 0;
             // 
             // gameNamePanel
@@ -179,24 +187,27 @@
             gameNamePanel.Controls.Add(gameNameTextBox);
             gameNamePanel.Controls.Add(nameLabel);
             gameNamePanel.Dock = DockStyle.Top;
-            gameNamePanel.Location = new Point(3, 3);
+            gameNamePanel.Location = new Point(4, 4);
+            gameNamePanel.Margin = new Padding(4, 4, 4, 4);
             gameNamePanel.Name = "gameNamePanel";
-            gameNamePanel.Size = new Size(326, 77);
+            gameNamePanel.Size = new Size(408, 96);
             gameNamePanel.TabIndex = 0;
             // 
             // gameNameTextBox
             // 
-            gameNameTextBox.Location = new Point(3, 33);
+            gameNameTextBox.Location = new Point(4, 41);
+            gameNameTextBox.Margin = new Padding(4, 4, 4, 4);
             gameNameTextBox.Name = "gameNameTextBox";
-            gameNameTextBox.Size = new Size(320, 38);
+            gameNameTextBox.Size = new Size(399, 44);
             gameNameTextBox.TabIndex = 1;
             // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new Point(4, 0);
+            nameLabel.Location = new Point(5, 0);
+            nameLabel.Margin = new Padding(4, 0, 4, 0);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(77, 30);
+            nameLabel.Size = new Size(92, 36);
             nameLabel.TabIndex = 0;
             nameLabel.Text = "Name";
             // 
@@ -205,9 +216,10 @@
             picturePanel.Controls.Add(panel2);
             picturePanel.Controls.Add(PictueFileLabel);
             picturePanel.Dock = DockStyle.Top;
-            picturePanel.Location = new Point(3, 86);
+            picturePanel.Location = new Point(4, 108);
+            picturePanel.Margin = new Padding(4, 4, 4, 4);
             picturePanel.Name = "picturePanel";
-            picturePanel.Size = new Size(326, 172);
+            picturePanel.Size = new Size(408, 215);
             picturePanel.TabIndex = 2;
             // 
             // panel2
@@ -218,45 +230,51 @@
             panel2.Controls.Add(label1);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(4, 4, 4, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(326, 166);
+            panel2.Size = new Size(408, 208);
             panel2.TabIndex = 3;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(3, 121);
+            textBox3.Location = new Point(4, 151);
+            textBox3.Margin = new Padding(4, 4, 4, 4);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(320, 38);
+            textBox3.Size = new Size(399, 44);
             textBox3.TabIndex = 4;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(3, 77);
+            textBox2.Location = new Point(4, 96);
+            textBox2.Margin = new Padding(4, 4, 4, 4);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(320, 38);
+            textBox2.Size = new Size(399, 44);
             textBox2.TabIndex = 3;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(3, 33);
+            textBox1.Location = new Point(4, 41);
+            textBox1.Margin = new Padding(4, 4, 4, 4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(320, 38);
+            textBox1.Size = new Size(399, 44);
             textBox1.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(3, 0);
+            label1.Location = new Point(4, 0);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(100, 30);
+            label1.Size = new Size(120, 36);
             label1.TabIndex = 0;
             label1.Text = "Pictures";
             // 
             // PictueFileLabel
             // 
-            PictueFileLabel.Location = new Point(3, 0);
+            PictueFileLabel.Location = new Point(4, 0);
+            PictueFileLabel.Margin = new Padding(4, 0, 4, 0);
             PictueFileLabel.Name = "PictueFileLabel";
-            PictueFileLabel.Size = new Size(320, 30);
+            PictueFileLabel.Size = new Size(400, 38);
             PictueFileLabel.TabIndex = 0;
             PictueFileLabel.Text = "Pictures";
             // 
@@ -265,31 +283,35 @@
             panel1.Controls.Add(gameFiletextBox);
             panel1.Controls.Add(gameFilelabel);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(3, 264);
+            panel1.Location = new Point(4, 331);
+            panel1.Margin = new Padding(4, 4, 4, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(326, 76);
+            panel1.Size = new Size(408, 95);
             panel1.TabIndex = 3;
             // 
             // gameFiletextBox
             // 
-            gameFiletextBox.Location = new Point(3, 33);
+            gameFiletextBox.Location = new Point(4, 41);
+            gameFiletextBox.Margin = new Padding(4, 4, 4, 4);
             gameFiletextBox.Name = "gameFiletextBox";
-            gameFiletextBox.Size = new Size(320, 38);
+            gameFiletextBox.Size = new Size(399, 44);
             gameFiletextBox.TabIndex = 5;
             // 
             // gameFilelabel
             // 
             gameFilelabel.AutoSize = true;
-            gameFilelabel.Location = new Point(4, 0);
+            gameFilelabel.Location = new Point(5, 0);
+            gameFilelabel.Margin = new Padding(4, 0, 4, 0);
             gameFilelabel.Name = "gameFilelabel";
-            gameFilelabel.Size = new Size(123, 30);
+            gameFilelabel.Size = new Size(147, 36);
             gameFilelabel.TabIndex = 0;
             gameFilelabel.Text = "Game File";
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoSize = true;
-            flowLayoutPanel1.Location = new Point(3, 346);
+            flowLayoutPanel1.Location = new Point(4, 434);
+            flowLayoutPanel1.Margin = new Padding(4, 4, 4, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(0, 0);
             flowLayoutPanel1.TabIndex = 4;
@@ -298,37 +320,40 @@
             // 
             panel3.Controls.Add(descriptionTextBox);
             panel3.Controls.Add(gameDetailLabel);
-            panel3.Location = new Point(3, 352);
+            panel3.Location = new Point(4, 442);
+            panel3.Margin = new Padding(4, 4, 4, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(323, 125);
+            panel3.Size = new Size(404, 156);
             panel3.TabIndex = 5;
             // 
             // descriptionTextBox
             // 
-            descriptionTextBox.Location = new Point(4, 33);
+            descriptionTextBox.Location = new Point(5, 41);
+            descriptionTextBox.Margin = new Padding(4, 4, 4, 4);
             descriptionTextBox.Multiline = true;
             descriptionTextBox.Name = "descriptionTextBox";
-            descriptionTextBox.Size = new Size(316, 38);
+            descriptionTextBox.Size = new Size(394, 46);
             descriptionTextBox.TabIndex = 1;
-            descriptionTextBox.WordWrap = false;
             descriptionTextBox.TextChanged += DescriptionTextBox_TextChanged;
             // 
             // gameDetailLabel
             // 
             gameDetailLabel.AutoSize = true;
-            gameDetailLabel.Location = new Point(3, 0);
+            gameDetailLabel.Location = new Point(4, 0);
+            gameDetailLabel.Margin = new Padding(4, 0, 4, 0);
             gameDetailLabel.Name = "gameDetailLabel";
-            gameDetailLabel.Size = new Size(204, 30);
+            gameDetailLabel.Size = new Size(243, 36);
             gameDetailLabel.TabIndex = 0;
             gameDetailLabel.Text = "Game Decripition";
             // 
             // TagsTabPage
             // 
             TagsTabPage.Controls.Add(tabControl1);
-            TagsTabPage.Location = new Point(4, 29);
+            TagsTabPage.Location = new Point(4, 34);
+            TagsTabPage.Margin = new Padding(4, 4, 4, 4);
             TagsTabPage.Name = "TagsTabPage";
-            TagsTabPage.Padding = new Padding(3);
-            TagsTabPage.Size = new Size(981, 413);
+            TagsTabPage.Padding = new Padding(4, 4, 4, 4);
+            TagsTabPage.Size = new Size(1228, 520);
             TagsTabPage.TabIndex = 1;
             TagsTabPage.Text = "Tags";
             TagsTabPage.UseVisualStyleBackColor = true;
@@ -337,38 +362,42 @@
             // 
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
-            tabControl1.Location = new Point(248, 72);
+            tabControl1.Location = new Point(310, 90);
+            tabControl1.Margin = new Padding(4, 4, 4, 4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(8, 8);
+            tabControl1.Size = new Size(10, 10);
             tabControl1.TabIndex = 0;
             // 
             // tabPage2
             // 
-            tabPage2.Location = new Point(4, 29);
+            tabPage2.Location = new Point(4, 34);
+            tabPage2.Margin = new Padding(4, 4, 4, 4);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(0, 0);
+            tabPage2.Padding = new Padding(4, 4, 4, 4);
+            tabPage2.Size = new Size(2, 0);
             tabPage2.TabIndex = 0;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
-            tabPage3.Location = new Point(4, 29);
+            tabPage3.Location = new Point(4, 34);
+            tabPage3.Margin = new Padding(4, 4, 4, 4);
             tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(0, 0);
+            tabPage3.Padding = new Padding(4, 4, 4, 4);
+            tabPage3.Size = new Size(2, 0);
             tabPage3.TabIndex = 1;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
             // 
             // UserTabPage
             // 
-            UserTabPage.Location = new Point(4, 29);
+            UserTabPage.Location = new Point(4, 34);
+            UserTabPage.Margin = new Padding(4, 4, 4, 4);
             UserTabPage.Name = "UserTabPage";
-            UserTabPage.Padding = new Padding(3);
-            UserTabPage.Size = new Size(981, 413);
+            UserTabPage.Padding = new Padding(4, 4, 4, 4);
+            UserTabPage.Size = new Size(1228, 520);
             UserTabPage.TabIndex = 2;
             UserTabPage.Text = "Users";
             UserTabPage.UseVisualStyleBackColor = true;
@@ -384,9 +413,9 @@
             // 
             // adminForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(989, 446);
+            ClientSize = new Size(1236, 558);
             Controls.Add(adminTabControl);
             Margin = new Padding(2);
             Name = "adminForm";
