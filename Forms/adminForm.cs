@@ -54,7 +54,24 @@ namespace EpistWinform.Forms
         #region Event
         private void addButton_Click(object sender, EventArgs e)
         {
+            SetEnable(true);
 
+            // Tạo một đối tượng Game mới
+            Game newGame = new Game(gameDataGridView.Rows.Count + 1);
+
+            // Thêm đối tượng mới vào danh sách và DataGridView
+            List<Game> gameList = (List<Game>)gameDataGridView.DataSource;
+            gameList.Add(newGame);
+            gameDataGridView.DataSource = null;
+            gameDataGridView.DataSource = gameList;
+
+            // Tự động chọn dòng mới được thêm
+            int rowIndex = gameDataGridView.Rows.Count - 1;
+            gameDataGridView.CurrentCell = gameDataGridView.Rows[rowIndex].Cells[0];
+
+            // Thực hiện binding để hiển thị thông tin của đối tượng mới
+            gameNameTextBox.DataBindings[0].ReadValue();
+            descriptionTextBox.DataBindings[0].ReadValue();
         }
 
         private void removeButton_Click(object sender, EventArgs e)
@@ -79,7 +96,7 @@ namespace EpistWinform.Forms
 
         private void adminForm_Resize(object sender, EventArgs e)
         {
-           ChangeDataGridViewSize();
+            ChangeDataGridViewSize();
 
         }
 
@@ -98,6 +115,16 @@ namespace EpistWinform.Forms
             //descriptionTextBox.WordWrap = true;
             //descriptionTextBox.Multiline = true;
             descriptionTextBox.Enabled = false;
+        }
+
+        void SetEnable(bool enable)
+        {
+            gameNameTextBox.ReadOnly = !enable;
+            descriptionTextBox.ReadOnly = !enable;
+
+            gameNameTextBox.Enabled = enable;
+            descriptionTextBox.Enabled = enable;
+
         }
 
         #endregion
@@ -124,7 +151,6 @@ namespace EpistWinform.Forms
 
             gameDataGridView.AutoResizeColumnHeadersHeight();
             gameDataGridView.AutoResizeRows();
-            ad
         }
     }
 }
