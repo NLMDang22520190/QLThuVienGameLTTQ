@@ -9,6 +9,7 @@ namespace EpistWinform
     {
         private Account currentUserAccount;
         private DataTable currentUserData;
+        private int status = 1;
         public loginForm()
         {
             InitializeComponent();
@@ -30,7 +31,8 @@ namespace EpistWinform
         #region methods
         bool Login(string userName, string passWord)
         {
-            currentUserData = AccountDAO.Instance.Login(userName, passWord);
+            currentUserData = AccountDAO.Instance.Login(userName, passWord, ref status);
+            MessageBox.Show(status.ToString());
             return currentUserData.Rows.Count > 0;
         }
 
@@ -46,7 +48,7 @@ namespace EpistWinform
         {
             
             passwordTextBox.Text = "123";
-            if (Login(usernameTextBox.Text, passwordTextBox.Text))
+            if (Login(usernameTextBox.Text, passwordTextBox.Text) && status != -1)
             {
                 DataRow row = currentUserData.Rows[0];
                 currentUserAccount = new Account(row);
@@ -55,7 +57,7 @@ namespace EpistWinform
                 mainWindowForm.ShowDialog();
                 this.Show();
             }
-            else
+            else if(status != -1)
                 MessageBox.Show("Incorrect Username or Password");
 
 
