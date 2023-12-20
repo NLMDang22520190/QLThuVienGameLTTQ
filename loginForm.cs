@@ -32,7 +32,6 @@ namespace EpistWinform
         bool Login(string userName, string passWord)
         {
             currentUserData = AccountDAO.Instance.Login(userName, passWord, ref status);
-            MessageBox.Show(status.ToString());
             return currentUserData.Rows.Count > 0;
         }
 
