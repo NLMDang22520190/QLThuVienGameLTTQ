@@ -31,6 +31,7 @@ namespace EpistWinform
         private userForm userForm;
         private adminForm adminForm;
         private Account currentUserAccount;
+        private List<Game> listAllGames;
         #endregion
 
         #region other
