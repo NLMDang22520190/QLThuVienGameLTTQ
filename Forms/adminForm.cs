@@ -14,24 +14,22 @@ namespace EpistWinform.Forms
 {
     public partial class adminForm : Form
     {
-        int descriptionTextBoxHeight;
-
 
         public adminForm()
         {
             InitializeComponent();
+            LoadGameTab();
+        }
 
-            descriptionTextBoxHeight = descriptionTextBox.Height;
+        #region GameTab
+        #region Method
 
+        void LoadGameTab()
+        {
             LoadGame();
             AddGameBinding();
             SetReadOnly();
-            //ChangeDataGridViewSize();
-
         }
-
-        #region Method
-
         void LoadGame()
         {
             List<Game> gameList = GamesDAO.Instance.ListAllGames;
@@ -55,7 +53,6 @@ namespace EpistWinform.Forms
         private void addButton_Click(object sender, EventArgs e)
         {
             SetEnable(true);
-
             // Tạo một đối tượng Game mới
             Game newGame = new Game(gameDataGridView.Rows.Count + 1);
 
@@ -72,10 +69,7 @@ namespace EpistWinform.Forms
             // Thực hiện binding để hiển thị thông tin của đối tượng mới
             gameNameTextBox.DataBindings[0].ReadValue();
             descriptionTextBox.DataBindings[0].ReadValue();
-        }
-
-        private void removeButton_Click(object sender, EventArgs e)
-        {
+            ChangeGameDataGridViewSize();
 
         }
 
@@ -84,22 +78,7 @@ namespace EpistWinform.Forms
 
         }
 
-        private void viewButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void adminForm_Resize(object sender, EventArgs e)
-        {
-            ChangeDataGridViewSize();
-
-        }
-
+       
         #endregion
 
         #region SetReadOnly
@@ -137,7 +116,7 @@ namespace EpistWinform.Forms
             //MessageBox.Show(descriptionTextBox.GetLineFromCharIndex(int.MaxValue).ToString());
         }
 
-        void ChangeDataGridViewSize()
+        void ChangeGameDataGridViewSize()
         {
             if (gameDataGridView.ColumnCount > 0)
             {
@@ -152,5 +131,13 @@ namespace EpistWinform.Forms
             gameDataGridView.AutoResizeColumnHeadersHeight();
             gameDataGridView.AutoResizeRows();
         }
+        #endregion
+
+        private void adminForm_Resize(object sender, EventArgs e)
+        {
+            ChangeGameDataGridViewSize();
+        }
+
+
     }
 }
