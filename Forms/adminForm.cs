@@ -26,7 +26,6 @@ namespace EpistWinform.Forms
         {
             InitializeComponent();
 
-            LoadGame();
 
             #region Tag
             LoadTags();
@@ -34,80 +33,131 @@ namespace EpistWinform.Forms
             tagsComboBox.SelectedItem = 0;
             #endregion
 
-
-            AddGameBinding();
-            SetReadOnly();
         }
 
-        #region Method
-
-        void LoadGame()
-        {
-            List<Game> gameList = GamesDAO.Instance.ListAllGames;
-            gameComboBox.DataSource = gameList;
-            gameComboBox.DisplayMember = "gameName";
-            gameDataGridView.DataSource = gameList;
+     
 
 
-        }
-
-        void AddGameBinding()
-        {
-            gameNameTextBox.DataBindings.Add(new Binding("Text", gameDataGridView.DataSource, "GameName"));
-            descriptionTextBox.DataBindings.Add(new Binding("Text", gameDataGridView.DataSource, "GameInfo"));
-
-        }
-
-        #endregion
 
 
-        #region Event
-        private void addButton_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void removeButton_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void editButton_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void viewButton_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void searchButton_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void adminForm_Resize(object sender, EventArgs e)
-        {
-            FixTagButtonSize();
-        }
 
-        #endregion
 
-        #region SetReadOnly
 
-        void SetReadOnly()
-        {
 
-            gameNameTextBox.ReadOnly = true;
-            gameNameTextBox.Enabled = false;
 
-            descriptionTextBox.ReadOnly = true;
-            descriptionTextBox.Enabled = false;
 
-        }
 
-        #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -334,6 +384,6 @@ namespace EpistWinform.Forms
 
         #endregion
         #endregion
-
+    
     }
 }
