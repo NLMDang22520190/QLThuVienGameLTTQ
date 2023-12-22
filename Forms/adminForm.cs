@@ -15,8 +15,6 @@ namespace EpistWinform.Forms
 {
     public partial class adminForm : Form
     {
-        int descriptionTextBoxHeight;
-        int actualGamesFlowLayoutPanelSize;
 
         int tagButtonWidth;
 
@@ -27,8 +25,6 @@ namespace EpistWinform.Forms
         public adminForm()
         {
             InitializeComponent();
-
-            descriptionTextBoxHeight = descriptionTextBox.Height;
 
             LoadGame();
 
@@ -185,6 +181,8 @@ namespace EpistWinform.Forms
 
 
         // Modify LoadGamesWithTag to use LINQ for better readability
+        int actualGamesFlowLayoutPanelSize;
+
         void LoadGamesWithTag(Tag tag)
         {
             // Clear existing controls in the gamesFlowLayoutPanel
