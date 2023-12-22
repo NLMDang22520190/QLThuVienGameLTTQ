@@ -1,4 +1,6 @@
-﻿namespace EpistWinform.Forms
+﻿using Microsoft.VisualBasic.ApplicationServices;
+
+namespace EpistWinform.Forms
 {
     partial class Forgot
     {
@@ -280,7 +282,7 @@
             // 
             // Code_picturebox
             // 
-            Code_picturebox.BackgroundImage = Properties.Resources.gmail_icon;
+            Code_picturebox.BackgroundImage = Image.FromFile(".\\\\Icon\\gmail_icon.png");
             Code_picturebox.BackgroundImageLayout = ImageLayout.Stretch;
             Code_picturebox.Location = new Point(102, 81);
             Code_picturebox.Name = "Code_picturebox";

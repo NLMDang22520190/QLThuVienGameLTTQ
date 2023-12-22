@@ -1,4 +1,5 @@
 using EpistWinform.DAO;
+using EpistWinform.Forms;
 using System.Runtime.InteropServices;
 
 namespace EpistWinform
@@ -78,6 +79,18 @@ namespace EpistWinform
                 passwordTextBox.PasswordChar = '*';
                 showPassBtn.IconChar = FontAwesome.Sharp.IconChar.Eye;
             }
+        }
+
+        private void createAccountLabel_Click(object sender, EventArgs e)
+        {
+            var signUpForm = new SignUp_form();
+            signUpForm.ShowDialog();
+        }
+
+        private void forgotpassLabel_Click(object sender, EventArgs e)
+        {
+            var forgotPassForm = new Forgot();
+            forgotPassForm.ShowDialog();
         }
     }
 }
