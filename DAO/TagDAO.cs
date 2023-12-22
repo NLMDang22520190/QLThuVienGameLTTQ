@@ -36,5 +36,23 @@ namespace EpistWinform.DAO
 
             return tagList;
         }
+
+        private List<Tag> allTagsList = new List<Tag>();
+        public List<Tag> AllTagsList
+        {
+            get 
+            {
+                if (allTagsList.Count <= 0) allTagsList = LoadTagsList();
+                return allTagsList; 
+            }
+        }
+
+        public bool AddTag(int tagID, string tagName, string tagDescripstion)
+        {
+            string query = string.Format("INSERT dbo.Tags (tagID, tagName, tagDecription) VALUES ({0}, N'{1}', N'2')", tagID, tagName, tagDescripstion);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
     }
 }

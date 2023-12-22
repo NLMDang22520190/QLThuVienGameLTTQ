@@ -11,14 +11,17 @@ namespace EpistWinform.DTO
     {
         private int tagID;
         private string tagName;
+        private string tagDescription;
 
         public int TagID { get => tagID; set => tagID = value; }
         public string TagName { get => tagName; set => tagName = value; }
+        public string TagDescription { get => tagDescription; set => tagDescription = value; }
 
-        public Tag(int tagID, string tagName)
+        public Tag(int tagID, string tagName, string tagDescription)
         {
             this.tagID = tagID;
             this.tagName = tagName;
+            this.tagDescription = tagDescription;
         }
 
         public Tag() { }
@@ -27,6 +30,7 @@ namespace EpistWinform.DTO
         {
             this.tagID = (int)row["tagID"];
             this.tagName = row["tagName"].ToString();
+            this.TagDescription = row["tagDecription"].ToString();
         }
     }
 }

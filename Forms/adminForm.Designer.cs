@@ -54,12 +54,27 @@
             descriptionTextBox = new TextBox();
             gameDetailLabel = new Label();
             TagsTabPage = new TabPage();
-            tabControl1 = new TabControl();
-            tabPage2 = new TabPage();
-            tabPage3 = new TabPage();
+            gamesAndTagsPanel = new Panel();
+            gamesPanel = new Panel();
+            gamesFlowLayoutPanel = new FlowLayoutPanel();
+            gameFakeLable = new Button();
+            tagsPanel = new Panel();
+            tagFlowLayoutPanel = new FlowLayoutPanel();
+            allTagsButton = new Button();
+            EditPanel = new Panel();
+            tagDescriptionTextBox = new TextBox();
+            tagNameTextBox = new TextBox();
+            descriptionButton = new Button();
+            tagNameButton = new Button();
+            tagMainControlPanel = new Panel();
+            removeTagButton = new Button();
+            tagsComboBox = new ComboBox();
+            editTagButton = new Button();
+            addTagButton = new Button();
             UserTabPage = new TabPage();
             OpenFileDialog = new OpenFileDialog();
             fileSystemWatcher1 = new FileSystemWatcher();
+            editGameTagButton = new Button();
             adminTabControl.SuspendLayout();
             GameTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gameDataGridView).BeginInit();
@@ -71,7 +86,11 @@
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             TagsTabPage.SuspendLayout();
-            tabControl1.SuspendLayout();
+            gamesAndTagsPanel.SuspendLayout();
+            gamesPanel.SuspendLayout();
+            tagsPanel.SuspendLayout();
+            EditPanel.SuspendLayout();
+            tagMainControlPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             SuspendLayout();
             // 
@@ -81,6 +100,7 @@
             adminTabControl.Controls.Add(TagsTabPage);
             adminTabControl.Controls.Add(UserTabPage);
             adminTabControl.Dock = DockStyle.Fill;
+            adminTabControl.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
             adminTabControl.Location = new Point(0, 0);
             adminTabControl.Name = "adminTabControl";
             adminTabControl.SelectedIndex = 0;
@@ -93,10 +113,10 @@
             GameTabPage.Controls.Add(mainControlPanel);
             GameTabPage.Controls.Add(InfoFlowLayoutPanel);
             GameTabPage.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            GameTabPage.Location = new Point(4, 29);
+            GameTabPage.Location = new Point(4, 33);
             GameTabPage.Name = "GameTabPage";
             GameTabPage.Padding = new Padding(3);
-            GameTabPage.Size = new Size(981, 413);
+            GameTabPage.Size = new Size(981, 409);
             GameTabPage.TabIndex = 0;
             GameTabPage.Text = "Games";
             GameTabPage.UseVisualStyleBackColor = true;
@@ -110,7 +130,7 @@
             gameDataGridView.Name = "gameDataGridView";
             gameDataGridView.RowHeadersWidth = 100;
             gameDataGridView.RowTemplate.Height = 29;
-            gameDataGridView.Size = new Size(643, 299);
+            gameDataGridView.Size = new Size(643, 295);
             gameDataGridView.TabIndex = 3;
             // 
             // mainControlPanel
@@ -171,7 +191,7 @@
             InfoFlowLayoutPanel.Dock = DockStyle.Right;
             InfoFlowLayoutPanel.Location = new Point(646, 3);
             InfoFlowLayoutPanel.Name = "InfoFlowLayoutPanel";
-            InfoFlowLayoutPanel.Size = new Size(332, 407);
+            InfoFlowLayoutPanel.Size = new Size(332, 403);
             InfoFlowLayoutPanel.TabIndex = 0;
             // 
             // gameNamePanel
@@ -324,51 +344,203 @@
             // 
             // TagsTabPage
             // 
-            TagsTabPage.Controls.Add(tabControl1);
-            TagsTabPage.Location = new Point(4, 29);
+            TagsTabPage.Controls.Add(gamesAndTagsPanel);
+            TagsTabPage.Controls.Add(EditPanel);
+            TagsTabPage.Controls.Add(tagMainControlPanel);
+            TagsTabPage.Location = new Point(4, 33);
             TagsTabPage.Name = "TagsTabPage";
             TagsTabPage.Padding = new Padding(3);
-            TagsTabPage.Size = new Size(981, 413);
+            TagsTabPage.Size = new Size(981, 409);
             TagsTabPage.TabIndex = 1;
             TagsTabPage.Text = "Tags";
             TagsTabPage.UseVisualStyleBackColor = true;
             // 
-            // tabControl1
+            // gamesAndTagsPanel
             // 
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage3);
-            tabControl1.Location = new Point(248, 72);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(8, 8);
-            tabControl1.TabIndex = 0;
+            gamesAndTagsPanel.BackColor = Color.Cyan;
+            gamesAndTagsPanel.Controls.Add(gamesPanel);
+            gamesAndTagsPanel.Controls.Add(tagsPanel);
+            gamesAndTagsPanel.Dock = DockStyle.Fill;
+            gamesAndTagsPanel.Location = new Point(3, 189);
+            gamesAndTagsPanel.Name = "gamesAndTagsPanel";
+            gamesAndTagsPanel.Size = new Size(975, 217);
+            gamesAndTagsPanel.TabIndex = 5;
             // 
-            // tabPage2
+            // gamesPanel
             // 
-            tabPage2.Location = new Point(4, 29);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(0, 0);
-            tabPage2.TabIndex = 0;
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
+            gamesPanel.Controls.Add(gamesFlowLayoutPanel);
+            gamesPanel.Controls.Add(gameFakeLable);
+            gamesPanel.Dock = DockStyle.Fill;
+            gamesPanel.Location = new Point(262, 0);
+            gamesPanel.Name = "gamesPanel";
+            gamesPanel.Size = new Size(713, 217);
+            gamesPanel.TabIndex = 1;
             // 
-            // tabPage3
+            // gamesFlowLayoutPanel
             // 
-            tabPage3.Location = new Point(4, 29);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(0, 0);
-            tabPage3.TabIndex = 1;
-            tabPage3.Text = "tabPage3";
-            tabPage3.UseVisualStyleBackColor = true;
+            gamesFlowLayoutPanel.Dock = DockStyle.Fill;
+            gamesFlowLayoutPanel.Location = new Point(0, 42);
+            gamesFlowLayoutPanel.Name = "gamesFlowLayoutPanel";
+            gamesFlowLayoutPanel.Size = new Size(713, 175);
+            gamesFlowLayoutPanel.TabIndex = 1;
+            // 
+            // gameFakeLable
+            // 
+            gameFakeLable.BackColor = Color.FromArgb(128, 255, 255);
+            gameFakeLable.Dock = DockStyle.Top;
+            gameFakeLable.Location = new Point(0, 0);
+            gameFakeLable.Name = "gameFakeLable";
+            gameFakeLable.Size = new Size(713, 42);
+            gameFakeLable.TabIndex = 0;
+            gameFakeLable.Text = "GAMES";
+            gameFakeLable.UseVisualStyleBackColor = false;
+            // 
+            // tagsPanel
+            // 
+            tagsPanel.Controls.Add(tagFlowLayoutPanel);
+            tagsPanel.Controls.Add(allTagsButton);
+            tagsPanel.Dock = DockStyle.Left;
+            tagsPanel.Location = new Point(0, 0);
+            tagsPanel.Name = "tagsPanel";
+            tagsPanel.Size = new Size(262, 217);
+            tagsPanel.TabIndex = 0;
+            // 
+            // tagFlowLayoutPanel
+            // 
+            tagFlowLayoutPanel.AutoScroll = true;
+            tagFlowLayoutPanel.Dock = DockStyle.Fill;
+            tagFlowLayoutPanel.Location = new Point(0, 42);
+            tagFlowLayoutPanel.Name = "tagFlowLayoutPanel";
+            tagFlowLayoutPanel.Size = new Size(262, 175);
+            tagFlowLayoutPanel.TabIndex = 1;
+            // 
+            // allTagsButton
+            // 
+            allTagsButton.BackColor = Color.FromArgb(128, 255, 255);
+            allTagsButton.Dock = DockStyle.Top;
+            allTagsButton.Location = new Point(0, 0);
+            allTagsButton.Name = "allTagsButton";
+            allTagsButton.Size = new Size(262, 42);
+            allTagsButton.TabIndex = 0;
+            allTagsButton.Text = "TAGS";
+            allTagsButton.UseVisualStyleBackColor = false;
+            // 
+            // EditPanel
+            // 
+            EditPanel.BackColor = Color.FromArgb(255, 253, 104);
+            EditPanel.Controls.Add(tagDescriptionTextBox);
+            EditPanel.Controls.Add(tagNameTextBox);
+            EditPanel.Controls.Add(descriptionButton);
+            EditPanel.Controls.Add(tagNameButton);
+            EditPanel.Dock = DockStyle.Top;
+            EditPanel.Location = new Point(3, 101);
+            EditPanel.Name = "EditPanel";
+            EditPanel.Size = new Size(975, 88);
+            EditPanel.TabIndex = 4;
+            // 
+            // tagDescriptionTextBox
+            // 
+            tagDescriptionTextBox.Location = new Point(170, 48);
+            tagDescriptionTextBox.Name = "tagDescriptionTextBox";
+            tagDescriptionTextBox.Size = new Size(799, 32);
+            tagDescriptionTextBox.TabIndex = 3;
+            // 
+            // tagNameTextBox
+            // 
+            tagNameTextBox.Location = new Point(170, 7);
+            tagNameTextBox.Name = "tagNameTextBox";
+            tagNameTextBox.Size = new Size(799, 32);
+            tagNameTextBox.TabIndex = 2;
+            // 
+            // descriptionButton
+            // 
+            descriptionButton.BackColor = Color.FromArgb(255, 254, 145);
+            descriptionButton.Location = new Point(5, 44);
+            descriptionButton.Name = "descriptionButton";
+            descriptionButton.Size = new Size(159, 38);
+            descriptionButton.TabIndex = 1;
+            descriptionButton.Text = "Description";
+            descriptionButton.UseVisualStyleBackColor = false;
+            // 
+            // tagNameButton
+            // 
+            tagNameButton.BackColor = Color.FromArgb(255, 254, 145);
+            tagNameButton.Location = new Point(5, 3);
+            tagNameButton.Name = "tagNameButton";
+            tagNameButton.Size = new Size(159, 38);
+            tagNameButton.TabIndex = 0;
+            tagNameButton.Text = "Name";
+            tagNameButton.UseVisualStyleBackColor = false;
+            // 
+            // tagMainControlPanel
+            // 
+            tagMainControlPanel.BackColor = Color.FromArgb(117, 250, 141);
+            tagMainControlPanel.Controls.Add(editGameTagButton);
+            tagMainControlPanel.Controls.Add(removeTagButton);
+            tagMainControlPanel.Controls.Add(tagsComboBox);
+            tagMainControlPanel.Controls.Add(editTagButton);
+            tagMainControlPanel.Controls.Add(addTagButton);
+            tagMainControlPanel.Dock = DockStyle.Top;
+            tagMainControlPanel.Location = new Point(3, 3);
+            tagMainControlPanel.Name = "tagMainControlPanel";
+            tagMainControlPanel.Size = new Size(975, 98);
+            tagMainControlPanel.TabIndex = 3;
+            // 
+            // removeTagButton
+            // 
+            removeTagButton.BackColor = Color.FromArgb(97, 255, 116);
+            removeTagButton.FlatAppearance.BorderColor = Color.DarkGreen;
+            removeTagButton.FlatAppearance.BorderSize = 5;
+            removeTagButton.ForeColor = Color.FromArgb(23, 61, 28);
+            removeTagButton.Location = new Point(245, 3);
+            removeTagButton.Name = "removeTagButton";
+            removeTagButton.Size = new Size(236, 51);
+            removeTagButton.TabIndex = 5;
+            removeTagButton.Text = "REMOVE";
+            removeTagButton.UseVisualStyleBackColor = false;
+            removeTagButton.Click += removeTagButton_Click;
+            // 
+            // tagsComboBox
+            // 
+            tagsComboBox.FormattingEnabled = true;
+            tagsComboBox.Location = new Point(3, 60);
+            tagsComboBox.Name = "tagsComboBox";
+            tagsComboBox.Size = new Size(966, 32);
+            tagsComboBox.TabIndex = 4;
+            tagsComboBox.TextChanged += tagsComboBox_TextChanged;
+            // 
+            // editTagButton
+            // 
+            editTagButton.BackColor = Color.FromArgb(97, 255, 116);
+            editTagButton.FlatAppearance.BorderColor = Color.DarkGreen;
+            editTagButton.FlatAppearance.BorderSize = 5;
+            editTagButton.ForeColor = Color.FromArgb(23, 61, 28);
+            editTagButton.Location = new Point(491, 3);
+            editTagButton.Name = "editTagButton";
+            editTagButton.Size = new Size(236, 51);
+            editTagButton.TabIndex = 2;
+            editTagButton.Text = "EDIT TAG";
+            editTagButton.UseVisualStyleBackColor = false;
+            editTagButton.Click += editTagButton_Click;
+            // 
+            // addTagButton
+            // 
+            addTagButton.BackColor = Color.FromArgb(97, 255, 116);
+            addTagButton.ForeColor = Color.FromArgb(23, 61, 28);
+            addTagButton.Location = new Point(3, 3);
+            addTagButton.Name = "addTagButton";
+            addTagButton.Size = new Size(236, 51);
+            addTagButton.TabIndex = 0;
+            addTagButton.Text = "ADD";
+            addTagButton.UseVisualStyleBackColor = false;
+            addTagButton.Click += addTagButton_Click;
             // 
             // UserTabPage
             // 
-            UserTabPage.Location = new Point(4, 29);
+            UserTabPage.Location = new Point(4, 33);
             UserTabPage.Name = "UserTabPage";
             UserTabPage.Padding = new Padding(3);
-            UserTabPage.Size = new Size(981, 413);
+            UserTabPage.Size = new Size(981, 409);
             UserTabPage.TabIndex = 2;
             UserTabPage.Text = "Users";
             UserTabPage.UseVisualStyleBackColor = true;
@@ -381,6 +553,20 @@
             // 
             fileSystemWatcher1.EnableRaisingEvents = true;
             fileSystemWatcher1.SynchronizingObject = this;
+            // 
+            // editGameTagButton
+            // 
+            editGameTagButton.BackColor = Color.FromArgb(97, 255, 116);
+            editGameTagButton.FlatAppearance.BorderColor = Color.DarkGreen;
+            editGameTagButton.FlatAppearance.BorderSize = 5;
+            editGameTagButton.ForeColor = Color.FromArgb(23, 61, 28);
+            editGameTagButton.Location = new Point(733, 3);
+            editGameTagButton.Name = "editGameTagButton";
+            editGameTagButton.Size = new Size(236, 51);
+            editGameTagButton.TabIndex = 6;
+            editGameTagButton.Text = "EDIT GAME TAG";
+            editGameTagButton.UseVisualStyleBackColor = false;
+            editGameTagButton.Click += editGameTagButton_Click;
             // 
             // adminForm
             // 
@@ -408,7 +594,12 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             TagsTabPage.ResumeLayout(false);
-            tabControl1.ResumeLayout(false);
+            gamesAndTagsPanel.ResumeLayout(false);
+            gamesPanel.ResumeLayout(false);
+            tagsPanel.ResumeLayout(false);
+            EditPanel.ResumeLayout(false);
+            EditPanel.PerformLayout();
+            tagMainControlPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             ResumeLayout(false);
         }
@@ -433,7 +624,7 @@
         private ComboBox gameComboBox;
         private Button viewButton;
         private Button editButton;
-        private Button removeButton;
+        private Button removeTagButton;
         private Button addButton;
         private TextBox gameNameTextBox;
         private Button searchButton;
@@ -452,5 +643,32 @@
         private FileSystemWatcher fileSystemWatcher1;
         private TextBox DescriptionTextBox;
         private TextBox descriptionTextBox;
+        private Panel panel4;
+        private ComboBox comboBox1;
+        private Button editTagButton;
+        private Button addTagButton;
+        private Panel panel5;
+        private Panel panel7;
+        private Panel panel6;
+        private Button TagsFakeLabel;
+        private FlowLayoutPanel flowLayoutPanel3;
+        private Button gameFakeLable;
+        private FlowLayoutPanel flowLayoutPanel2;
+        private Panel tagMainControlPanel;
+        private Panel gamesWithTagsPanel;
+        private Panel gamesWithTagPanel;
+        private Panel gamesAndTagsPanel;
+        private Panel gamesPanel;
+        private FlowLayoutPanel gamesFlowLayoutPanel;
+        private Panel tagsPanel;
+        private FlowLayoutPanel tagFlowLayoutPanel;
+        private ComboBox tagsComboBox;
+        private Button allTagsButton;
+        private Panel EditPanel;
+        private Button descriptionButton;
+        private Button tagNameButton;
+        private TextBox tagDescriptionTextBox;
+        private TextBox tagNameTextBox;
+        private Button editGameTagButton;
     }
 }
