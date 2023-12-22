@@ -109,22 +109,42 @@ namespace EpistWinform.Forms
 
         #endregion
 
-        private void DescriptionTextBox_TextChanged(object sender, EventArgs e)
-        {
-            AdjustTextBoxHeight();
-        }
 
-        void AdjustTextBoxHeight()
-        {
-            // Set a maximum height to avoid making it too large
-            int maxHeight = 200;
 
-            // Calculate the required height based on the text and the TextBox's width
-            //int requiredHeight = TextRenderer.MeasureText(DescriptionTextBox.Text, DescriptionTextBox.Font, new Size(DescriptionTextBox.Width, int.MaxValue)).Height;
 
-            // Set the TextBox's height but ensure it doesn't exceed the maximum height
-            //DescriptionTextBox.Height = Math.Min(requiredHeight, maxHeight);
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         // -------------Tag--------------
@@ -314,8 +334,6 @@ namespace EpistWinform.Forms
 
         #endregion
         #endregion
-
-
 
     }
 }
