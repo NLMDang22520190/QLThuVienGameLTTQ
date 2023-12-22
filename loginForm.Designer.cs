@@ -144,7 +144,7 @@
             userNameIcon.IconChar = FontAwesome.Sharp.IconChar.CircleUser;
             userNameIcon.IconColor = Color.White;
             userNameIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            userNameIcon.IconSize = 50;
+            userNameIcon.IconSize = 46;
             userNameIcon.Location = new Point(68, 65);
             userNameIcon.Name = "userNameIcon";
             userNameIcon.Size = new Size(46, 46);
@@ -284,6 +284,7 @@
             createAccountLabel.Size = new Size(209, 27);
             createAccountLabel.TabIndex = 1;
             createAccountLabel.Text = "Create New Account";
+            createAccountLabel.Click += createAccountLabel_Click;
             // 
             // forgotpassLabel
             // 
@@ -295,6 +296,7 @@
             forgotpassLabel.Size = new Size(183, 27);
             forgotpassLabel.TabIndex = 0;
             forgotpassLabel.Text = "Forgot Password?";
+            forgotpassLabel.Click += forgotpassLabel_Click;
             // 
             // loginForm
             // 

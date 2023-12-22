@@ -158,7 +158,7 @@
             // 
             // Gmail_picturebox
             // 
-            Gmail_picturebox.BackgroundImage = Properties.Resources.gmail_icon;
+            Gmail_picturebox.BackgroundImage = Image.FromFile(".\\\\Icon\\gmail_icon.png");
             Gmail_picturebox.BackgroundImageLayout = ImageLayout.Stretch;
             Gmail_picturebox.Location = new Point(102, 79);
             Gmail_picturebox.Name = "Gmail_picturebox";
@@ -308,7 +308,7 @@
             // 
             // Code_picturebox
             // 
-            Code_picturebox.BackgroundImage = Properties.Resources.gmail_icon;
+            Code_picturebox.BackgroundImage = Image.FromFile(".\\\\Icon\\gmail_icon.png");
             Code_picturebox.BackgroundImageLayout = ImageLayout.Stretch;
             Code_picturebox.Location = new Point(102, 81);
             Code_picturebox.Name = "Code_picturebox";
