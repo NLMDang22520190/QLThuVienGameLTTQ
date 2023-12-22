@@ -14,7 +14,7 @@ namespace EpistWinform.Forms
 {
     public partial class adminForm : Form
     {
-
+        private string currentAddedGameFilePath;
         public adminForm()
         {
             InitializeComponent();
@@ -43,8 +43,12 @@ namespace EpistWinform.Forms
         {
             gameNameTextBox.DataBindings.Add(new Binding("Text", gameDataGridView.DataSource, "GameName"));
             descriptionTextBox.DataBindings.Add(new Binding("Text", gameDataGridView.DataSource, "GameInfo"));
-
+            gamePictureBox1.DataBindings.Add(new Binding("ImageLocation", gameDataGridView.DataSource, "Picture1"));
+            gamePictureBox2.DataBindings.Add(new Binding("ImageLocation", gameDataGridView.DataSource, "Picture2"));
+            gamePictureBox3.DataBindings.Add(new Binding("ImageLocation", gameDataGridView.DataSource, "Picture3"));
         }
+
+        void 
 
         #endregion
 
@@ -52,9 +56,14 @@ namespace EpistWinform.Forms
         #region Event
         private void addButton_Click(object sender, EventArgs e)
         {
+            Game newGame = new Game(gameDataGridView.Rows.Count + 1);
+            string filePath = "";
+            AddGameForm form = new AddGameForm(ref newGame, ref filePath);
+            form.currentAddedGameChanged += 
+            form.ShowDialog();
+            MessageBox.Show(newGame.GameName + " " + newGame.GameInfo + " " + filePath);
             SetEnable(true);
             // Tạo một đối tượng Game mới
-            Game newGame = new Game(gameDataGridView.Rows.Count + 1);
 
             // Thêm đối tượng mới vào danh sách và DataGridView
             List<Game> gameList = (List<Game>)gameDataGridView.DataSource;
@@ -78,7 +87,7 @@ namespace EpistWinform.Forms
 
         }
 
-       
+
         #endregion
 
         #region SetReadOnly
