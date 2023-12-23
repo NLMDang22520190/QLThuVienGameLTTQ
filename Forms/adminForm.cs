@@ -482,6 +482,12 @@ namespace EpistWinform.Forms
                         // Bind the selected tag to the text boxes
                         tagNameTextBox.DataBindings.Clear();
                         tagNameTextBox.DataBindings.Add("Text", selectedTag, "TagName");
+        }
+
+        void SetEnable(bool enable)
+        {
+            gameNameTextBox.ReadOnly = !enable;
+            descriptionTextBox.ReadOnly = !enable;
 
                         tagDescriptionTextBox.DataBindings.Clear();
                         tagDescriptionTextBox.DataBindings.Add("Text", selectedTag, "TagDescription");

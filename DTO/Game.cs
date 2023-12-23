@@ -27,7 +27,7 @@ namespace EpistWinform.DTO
         private string picture3;
         public string Picture3 { get => picture3; set => picture3 = value; }
 
-        public Game(int gameID, string gameName, string gameInfo, string picture1, string picture2, string picture3)
+        public Game(int gameID = 0, string gameName = "", string gameInfo = "", string picture1 = "", string picture2 = "", string picture3 = "")
         {
             this.gameID = gameID;
             this.gameName = gameName;
