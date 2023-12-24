@@ -16,11 +16,10 @@ namespace EpistWinform.Forms
         private Game currentAddedGame = new Game();
         private string currentAddedGameFilePath;
         public event EventHandler<string> currentAddedGameChanged;
-        public AddGameForm(ref Game currentGame, ref string currentGameFilePath)
+        public AddGameForm(ref Game currentGame)
         {
             InitializeComponent();
             currentAddedGame = currentGame;
-            currentAddedGameFilePath = currentGameFilePath;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -30,7 +29,7 @@ namespace EpistWinform.Forms
             currentAddedGame.Picture1 = gamePictureBox1.ImageLocation;
             currentAddedGame.Picture2 = gamePictureBox2.ImageLocation;
             currentAddedGame.Picture3 = gamePictureBox3.ImageLocation;
-            
+
             currentAddedGameFilePath = gameFileTextBox.Text;
             currentAddedGameChanged?.Invoke(this, currentAddedGameFilePath);
             this.Close();

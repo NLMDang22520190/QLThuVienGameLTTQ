@@ -68,7 +68,7 @@
             addGamePanel.Dock = DockStyle.Fill;
             addGamePanel.Location = new Point(0, 0);
             addGamePanel.Name = "addGamePanel";
-            addGamePanel.Size = new Size(880, 470);
+            addGamePanel.Size = new Size(1032, 470);
             addGamePanel.TabIndex = 0;
             // 
             // cancleBtn
@@ -247,7 +247,7 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 24F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(880, 470);
+            ClientSize = new Size(1032, 470);
             ControlBox = false;
             Controls.Add(addGamePanel);
             Font = new Font("Tahoma", 10F, FontStyle.Regular, GraphicsUnit.Point);

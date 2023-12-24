@@ -48,7 +48,10 @@ namespace EpistWinform.Forms
             gamePictureBox3.DataBindings.Add(new Binding("ImageLocation", gameDataGridView.DataSource, "Picture3"));
         }
 
-        void 
+        void ChangeCurrentGameAddedPath(object sender ,string currentGameAddedPath)
+        {
+            currentAddedGameFilePath = currentGameAddedPath;
+        }
 
         #endregion
 
@@ -57,11 +60,19 @@ namespace EpistWinform.Forms
         private void addButton_Click(object sender, EventArgs e)
         {
             Game newGame = new Game(gameDataGridView.Rows.Count + 1);
-            string filePath = "";
-            AddGameForm form = new AddGameForm(ref newGame, ref filePath);
-            form.currentAddedGameChanged += 
+
+            AddGameForm form = new AddGameForm(ref newGame);
+            form.currentAddedGameChanged += ChangeCurrentGameAddedPath;
+            form.FormBorderStyle = FormBorderStyle.None;
             form.ShowDialog();
-            MessageBox.Show(newGame.GameName + " " + newGame.GameInfo + " " + filePath);
+            
+            MessageBox.Show(newGame.GameName + " " + newGame.GameInfo + " " + currentAddedGameFilePath);
+
+
+
+
+
+
             SetEnable(true);
             // Tạo một đối tượng Game mới
 
