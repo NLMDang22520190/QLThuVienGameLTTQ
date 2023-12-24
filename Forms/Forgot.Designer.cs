@@ -74,8 +74,9 @@ namespace EpistWinform.Forms
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1184, 192);
+            panel1.Size = new Size(914, 150);
             panel1.TabIndex = 1;
             // 
             // closeBtn
@@ -87,10 +88,10 @@ namespace EpistWinform.Forms
             closeBtn.IconChar = FontAwesome.Sharp.IconChar.TimesRectangle;
             closeBtn.IconColor = Color.White;
             closeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            closeBtn.Location = new Point(1117, 6);
-            closeBtn.Margin = new Padding(6);
+            closeBtn.Location = new Point(862, 5);
+            closeBtn.Margin = new Padding(5, 5, 5, 5);
             closeBtn.Name = "closeBtn";
-            closeBtn.Size = new Size(52, 51);
+            closeBtn.Size = new Size(40, 40);
             closeBtn.TabIndex = 9;
             closeBtn.UseVisualStyleBackColor = true;
             closeBtn.Click += closeBtn_Click;
@@ -100,35 +101,39 @@ namespace EpistWinform.Forms
             loginLabel.AutoSize = true;
             loginLabel.Font = new Font("Tahoma", 26F, FontStyle.Bold, GraphicsUnit.Point);
             loginLabel.ForeColor = Color.White;
-            loginLabel.Location = new Point(289, 45);
+            loginLabel.Location = new Point(222, 35);
+            loginLabel.Margin = new Padding(2, 0, 2, 0);
             loginLabel.Name = "loginLabel";
-            loginLabel.Size = new Size(802, 84);
+            loginLabel.Size = new Size(599, 63);
             loginLabel.TabIndex = 8;
             loginLabel.Text = "Forgot your password";
             // 
             // logoPictureBox
             // 
             logoPictureBox.Image = (Image)resources.GetObject("logoPictureBox.Image");
-            logoPictureBox.Location = new Point(55, 0);
+            logoPictureBox.Location = new Point(42, 0);
+            logoPictureBox.Margin = new Padding(2, 2, 2, 2);
             logoPictureBox.Name = "logoPictureBox";
-            logoPictureBox.Size = new Size(195, 192);
+            logoPictureBox.Size = new Size(150, 150);
             logoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             logoPictureBox.TabIndex = 7;
             logoPictureBox.TabStop = false;
             // 
             // label2
             // 
-            label2.Location = new Point(682, 73);
+            label2.Location = new Point(525, 57);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(176, 72);
+            label2.Size = new Size(135, 56);
             label2.TabIndex = 2;
             // 
             // label1
             // 
             label1.Dock = DockStyle.Left;
             label1.Location = new Point(0, 0);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(110, 192);
+            label1.Size = new Size(85, 150);
             label1.TabIndex = 1;
             // 
             // userNamePanel
@@ -140,29 +145,33 @@ namespace EpistWinform.Forms
             userNamePanel.Controls.Add(usernameTextBox);
             userNamePanel.Controls.Add(usernameLabel);
             userNamePanel.Dock = DockStyle.Top;
-            userNamePanel.Location = new Point(0, 192);
+            userNamePanel.Location = new Point(0, 150);
+            userNamePanel.Margin = new Padding(2, 2, 2, 2);
             userNamePanel.Name = "userNamePanel";
-            userNamePanel.Size = new Size(1184, 154);
+            userNamePanel.Size = new Size(914, 120);
             userNamePanel.TabIndex = 5;
             // 
             // label_countdown
             // 
             label_countdown.ForeColor = Color.FromArgb(58, 175, 131);
-            label_countdown.Location = new Point(1061, 32);
+            label_countdown.Location = new Point(816, 25);
+            label_countdown.Margin = new Padding(2, 0, 2, 0);
             label_countdown.Name = "label_countdown";
-            label_countdown.Size = new Size(68, 44);
+            label_countdown.Size = new Size(52, 34);
             label_countdown.TabIndex = 9;
             label_countdown.Text = "label5";
             // 
             // button_sendcode
             // 
+            button_sendcode.AutoSize = true;
             button_sendcode.BackColor = Color.FromArgb(58, 175, 131);
             button_sendcode.Cursor = Cursors.Hand;
             button_sendcode.Font = new Font("Tahoma", 11F, FontStyle.Regular, GraphicsUnit.Point);
             button_sendcode.ForeColor = Color.White;
-            button_sendcode.Location = new Point(975, 83);
+            button_sendcode.Location = new Point(750, 65);
+            button_sendcode.Margin = new Padding(2, 2, 2, 2);
             button_sendcode.Name = "button_sendcode";
-            button_sendcode.Size = new Size(153, 56);
+            button_sendcode.Size = new Size(123, 44);
             button_sendcode.TabIndex = 8;
             button_sendcode.Text = "Send code";
             button_sendcode.UseVisualStyleBackColor = false;
@@ -174,10 +183,11 @@ namespace EpistWinform.Forms
             userNameIcon.IconChar = FontAwesome.Sharp.IconChar.CircleUser;
             userNameIcon.IconColor = Color.White;
             userNameIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            userNameIcon.IconSize = 59;
-            userNameIcon.Location = new Point(88, 83);
+            userNameIcon.IconSize = 46;
+            userNameIcon.Location = new Point(68, 65);
+            userNameIcon.Margin = new Padding(2, 2, 2, 2);
             userNameIcon.Name = "userNameIcon";
-            userNameIcon.Size = new Size(60, 59);
+            userNameIcon.Size = new Size(46, 46);
             userNameIcon.TabIndex = 2;
             userNameIcon.TabStop = false;
             // 
@@ -186,9 +196,10 @@ namespace EpistWinform.Forms
             usernameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             usernameTextBox.BackColor = Color.FromArgb(221, 216, 216);
             usernameTextBox.Font = new Font("Tahoma", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            usernameTextBox.Location = new Point(185, 83);
+            usernameTextBox.Location = new Point(142, 65);
+            usernameTextBox.Margin = new Padding(2, 2, 2, 2);
             usernameTextBox.Name = "usernameTextBox";
-            usernameTextBox.Size = new Size(730, 59);
+            usernameTextBox.Size = new Size(565, 46);
             usernameTextBox.TabIndex = 1;
             // 
             // usernameLabel
@@ -196,9 +207,10 @@ namespace EpistWinform.Forms
             usernameLabel.AutoSize = true;
             usernameLabel.Font = new Font("Tahoma", 16F, FontStyle.Bold, GraphicsUnit.Point);
             usernameLabel.ForeColor = Color.FromArgb(58, 175, 131);
-            usernameLabel.Location = new Point(75, 15);
+            usernameLabel.Location = new Point(58, 12);
+            usernameLabel.Margin = new Padding(2, 0, 2, 0);
             usernameLabel.Name = "usernameLabel";
-            usernameLabel.Size = new Size(264, 52);
+            usernameLabel.Size = new Size(200, 39);
             usernameLabel.TabIndex = 0;
             usernameLabel.Text = "USERNAME";
             // 
@@ -211,9 +223,10 @@ namespace EpistWinform.Forms
             passWordPanel.Controls.Add(passwordTextBox);
             passWordPanel.Controls.Add(passwordLabel);
             passWordPanel.Dock = DockStyle.Top;
-            passWordPanel.Location = new Point(0, 346);
+            passWordPanel.Location = new Point(0, 270);
+            passWordPanel.Margin = new Padding(2, 2, 2, 2);
             passWordPanel.Name = "passWordPanel";
-            passWordPanel.Size = new Size(1184, 134);
+            passWordPanel.Size = new Size(914, 105);
             passWordPanel.TabIndex = 6;
             // 
             // reenter
@@ -221,9 +234,10 @@ namespace EpistWinform.Forms
             reenter.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             reenter.BackColor = Color.FromArgb(221, 216, 216);
             reenter.Font = new Font("Tahoma", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            reenter.Location = new Point(662, 68);
+            reenter.Location = new Point(509, 53);
+            reenter.Margin = new Padding(2, 2, 2, 2);
             reenter.Name = "reenter";
-            reenter.Size = new Size(388, 59);
+            reenter.Size = new Size(302, 46);
             reenter.TabIndex = 5;
             // 
             // label3
@@ -231,9 +245,10 @@ namespace EpistWinform.Forms
             label3.AutoSize = true;
             label3.Font = new Font("Tahoma", 16F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(58, 175, 131);
-            label3.Location = new Point(608, 3);
+            label3.Location = new Point(468, 2);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(590, 52);
+            label3.Size = new Size(437, 39);
             label3.TabIndex = 4;
             label3.Text = "Re-Enter New PASSWORD";
             // 
@@ -243,10 +258,11 @@ namespace EpistWinform.Forms
             passwordIcon.IconChar = FontAwesome.Sharp.IconChar.Lock;
             passwordIcon.IconColor = Color.White;
             passwordIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            passwordIcon.IconSize = 59;
-            passwordIcon.Location = new Point(88, 68);
+            passwordIcon.IconSize = 46;
+            passwordIcon.Location = new Point(68, 53);
+            passwordIcon.Margin = new Padding(2, 2, 2, 2);
             passwordIcon.Name = "passwordIcon";
-            passwordIcon.Size = new Size(60, 59);
+            passwordIcon.Size = new Size(46, 46);
             passwordIcon.SizeMode = PictureBoxSizeMode.StretchImage;
             passwordIcon.TabIndex = 3;
             passwordIcon.TabStop = false;
@@ -256,9 +272,10 @@ namespace EpistWinform.Forms
             passwordTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             passwordTextBox.BackColor = Color.FromArgb(221, 216, 216);
             passwordTextBox.Font = new Font("Tahoma", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            passwordTextBox.Location = new Point(185, 68);
+            passwordTextBox.Location = new Point(142, 53);
+            passwordTextBox.Margin = new Padding(2, 2, 2, 2);
             passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.Size = new Size(362, 59);
+            passwordTextBox.Size = new Size(282, 46);
             passwordTextBox.TabIndex = 1;
             passwordTextBox.TextChanged += passwordTextBox_TextChanged;
             // 
@@ -267,9 +284,10 @@ namespace EpistWinform.Forms
             passwordLabel.AutoSize = true;
             passwordLabel.Font = new Font("Tahoma", 16F, FontStyle.Bold, GraphicsUnit.Point);
             passwordLabel.ForeColor = Color.FromArgb(58, 175, 131);
-            passwordLabel.Location = new Point(75, 3);
+            passwordLabel.Location = new Point(58, 2);
+            passwordLabel.Margin = new Padding(2, 0, 2, 0);
             passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new Size(390, 52);
+            passwordLabel.Size = new Size(292, 39);
             passwordLabel.TabIndex = 0;
             passwordLabel.Text = "NEW PASSWORD";
             // 
@@ -281,17 +299,19 @@ namespace EpistWinform.Forms
             panel2.Controls.Add(label4);
             panel2.Controls.Add(button1);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 480);
+            panel2.Location = new Point(0, 375);
+            panel2.Margin = new Padding(2, 2, 2, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1184, 346);
+            panel2.Size = new Size(914, 282);
             panel2.TabIndex = 8;
             // 
             // Code_picturebox
             // 
             Code_picturebox.BackgroundImageLayout = ImageLayout.Stretch;
-            Code_picturebox.Location = new Point(88, 70);
+            Code_picturebox.Location = new Point(68, 55);
+            Code_picturebox.Margin = new Padding(2, 2, 2, 2);
             Code_picturebox.Name = "Code_picturebox";
-            Code_picturebox.Size = new Size(60, 59);
+            Code_picturebox.Size = new Size(46, 46);
             Code_picturebox.TabIndex = 9;
             Code_picturebox.TabStop = false;
             // 
@@ -300,9 +320,10 @@ namespace EpistWinform.Forms
             code_textfield.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             code_textfield.BackColor = Color.FromArgb(221, 216, 216);
             code_textfield.Font = new Font("Tahoma", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            code_textfield.Location = new Point(185, 70);
+            code_textfield.Location = new Point(142, 55);
+            code_textfield.Margin = new Padding(2, 2, 2, 2);
             code_textfield.Name = "code_textfield";
-            code_textfield.Size = new Size(866, 59);
+            code_textfield.Size = new Size(670, 46);
             code_textfield.TabIndex = 8;
             // 
             // label4
@@ -310,9 +331,10 @@ namespace EpistWinform.Forms
             label4.AutoSize = true;
             label4.Font = new Font("Tahoma", 16F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(58, 175, 131);
-            label4.Location = new Point(75, 3);
+            label4.Location = new Point(58, 2);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(131, 52);
+            label4.Size = new Size(97, 39);
             label4.TabIndex = 7;
             label4.Text = "Code";
             // 
@@ -323,9 +345,10 @@ namespace EpistWinform.Forms
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(337, 189);
+            button1.Location = new Point(259, 148);
+            button1.Margin = new Padding(2, 2, 2, 2);
             button1.Name = "button1";
-            button1.Size = new Size(519, 91);
+            button1.Size = new Size(402, 83);
             button1.TabIndex = 1;
             button1.Text = "Confirm";
             button1.UseVisualStyleBackColor = false;
@@ -333,15 +356,16 @@ namespace EpistWinform.Forms
             // 
             // Forgot
             // 
-            AutoScaleDimensions = new SizeF(13F, 32F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1184, 826);
+            ClientSize = new Size(914, 657);
             Controls.Add(panel2);
             Controls.Add(passWordPanel);
             Controls.Add(userNamePanel);
             Controls.Add(panel1);
-            MaximumSize = new Size(1210, 897);
-            MinimumSize = new Size(1210, 897);
+            Margin = new Padding(2, 2, 2, 2);
+            MaximumSize = new Size(936, 713);
+            MinimumSize = new Size(936, 713);
             Name = "Forgot";
             Text = "    ";
             panel1.ResumeLayout(false);

@@ -41,7 +41,7 @@ namespace EpistWinform.Forms
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             InitializeComponent();
             create_image();
-           
+
             timer = new System.Windows.Forms.Timer();
             timer.Interval = 1000;
             this.label_countdown.Visible = false;
