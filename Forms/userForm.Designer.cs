@@ -54,6 +54,7 @@
             // 
             // PasswordTextBox
             // 
+            PasswordTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             PasswordTextBox.Location = new Point(285, 227);
             PasswordTextBox.Name = "PasswordTextBox";
             PasswordTextBox.Size = new Size(285, 27);
@@ -67,6 +68,7 @@
             EditButton.TabIndex = 3;
             EditButton.Text = "Edit";
             EditButton.UseVisualStyleBackColor = true;
+            EditButton.Click += EditButton_Click;
             // 
             // SaveButton
             // 
@@ -76,6 +78,7 @@
             SaveButton.TabIndex = 4;
             SaveButton.Text = "Save";
             SaveButton.UseVisualStyleBackColor = true;
+            SaveButton.Click += SaveButton_Click;
             // 
             // CancelButton
             // 
@@ -85,6 +88,7 @@
             CancelButton.TabIndex = 5;
             CancelButton.Text = "Cancel";
             CancelButton.UseVisualStyleBackColor = true;
+            CancelButton.Click += CancelButton_Click;
             // 
             // userForm
             // 
@@ -97,9 +101,10 @@
             Controls.Add(PasswordTextBox);
             Controls.Add(UsernameTextBox);
             Controls.Add(DisplayNameTextBox);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "userForm";
             Text = "userForm";
+            Load += userForm_Load_1;
             ResumeLayout(false);
             PerformLayout();
         }
