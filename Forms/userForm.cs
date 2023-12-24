@@ -54,6 +54,14 @@ namespace EpistWinform.Forms
             DisplayNameTextBox.ReadOnly = readOnly;
             UsernameTextBox.ReadOnly = readOnly;
             PasswordTextBox.ReadOnly = readOnly;
+            if (readOnly)
+            {
+                PasswordTextBox.PasswordChar = '*'; 
+            }
+            else
+            {
+                PasswordTextBox.PasswordChar = '\0'; // Khi đang chỉnh sửa, hiển thị bình thường (không có ký tự đặc biệt)
+            }
         }
 
         private bool AreTextBoxesReadOnly()

@@ -68,7 +68,6 @@
             EditButton.TabIndex = 3;
             EditButton.Text = "Edit";
             EditButton.UseVisualStyleBackColor = true;
-            EditButton.Click += EditButton_Click;
             // 
             // SaveButton
             // 
@@ -78,7 +77,6 @@
             SaveButton.TabIndex = 4;
             SaveButton.Text = "Save";
             SaveButton.UseVisualStyleBackColor = true;
-            SaveButton.Click += SaveButton_Click;
             // 
             // CancelButton
             // 
@@ -88,7 +86,6 @@
             CancelButton.TabIndex = 5;
             CancelButton.Text = "Cancel";
             CancelButton.UseVisualStyleBackColor = true;
-            CancelButton.Click += CancelButton_Click;
             // 
             // userForm
             // 
