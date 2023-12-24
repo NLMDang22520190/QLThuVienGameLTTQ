@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddGameForm));
             addGamePanel = new Panel();
+            tagsFlowLayoutPanel = new FlowLayoutPanel();
+            tagLabel = new Label();
             cancleBtn = new Button();
             saveBtn = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
@@ -48,6 +50,7 @@
             gameFileTextBox = new TextBox();
             gameFileLabel = new Label();
             addGamePanel.SuspendLayout();
+            tagsFlowLayoutPanel.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gamePictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gamePictureBox2).BeginInit();
@@ -59,6 +62,7 @@
             // 
             // addGamePanel
             // 
+            addGamePanel.Controls.Add(tagsFlowLayoutPanel);
             addGamePanel.Controls.Add(cancleBtn);
             addGamePanel.Controls.Add(saveBtn);
             addGamePanel.Controls.Add(flowLayoutPanel1);
@@ -70,6 +74,24 @@
             addGamePanel.Name = "addGamePanel";
             addGamePanel.Size = new Size(1032, 470);
             addGamePanel.TabIndex = 0;
+            // 
+            // tagsFlowLayoutPanel
+            // 
+            tagsFlowLayoutPanel.Controls.Add(tagLabel);
+            tagsFlowLayoutPanel.FlowDirection = FlowDirection.TopDown;
+            tagsFlowLayoutPanel.Location = new Point(873, 12);
+            tagsFlowLayoutPanel.Name = "tagsFlowLayoutPanel";
+            tagsFlowLayoutPanel.Size = new Size(156, 453);
+            tagsFlowLayoutPanel.TabIndex = 6;
+            // 
+            // tagLabel
+            // 
+            tagLabel.Location = new Point(3, 0);
+            tagLabel.Name = "tagLabel";
+            tagLabel.Size = new Size(153, 24);
+            tagLabel.TabIndex = 0;
+            tagLabel.Text = "Tags";
+            tagLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // cancleBtn
             // 
@@ -197,7 +219,6 @@
             // 
             // gameNameLabel
             // 
-            gameNameLabel.AutoSize = true;
             gameNameLabel.Location = new Point(3, 10);
             gameNameLabel.Name = "gameNameLabel";
             gameNameLabel.Size = new Size(118, 24);
@@ -256,7 +277,9 @@
             ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "AddGameForm";
+            Load += AddGameForm_Load;
             addGamePanel.ResumeLayout(false);
+            tagsFlowLayoutPanel.ResumeLayout(false);
             flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)gamePictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)gamePictureBox2).EndInit();
@@ -290,5 +313,7 @@
         private Button openGameFileBtn;
         private TextBox gameFileTextBox;
         private Label label1;
+        private FlowLayoutPanel tagsFlowLayoutPanel;
+        private Label tagLabel;
     }
 }

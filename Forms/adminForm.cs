@@ -1,5 +1,6 @@
 ﻿using EpistWinform.DAO;
 using EpistWinform.DTO;
+using EpistWinform.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace EpistWinform.Forms
     public partial class adminForm : Form
     {
         private string currentAddedGameFilePath;
+        private List<int> currentAddGameTagsList = new List<int>();
         public adminForm()
         {
             InitializeComponent();
@@ -53,6 +55,11 @@ namespace EpistWinform.Forms
             currentAddedGameFilePath = currentGameAddedPath;
         }
 
+        void ChangeCurrentGameAddedTagsList(object sender, List<int> selectedTagsList)
+        {
+            currentAddGameTagsList = selectedTagsList;
+        }
+
         #endregion
 
 
@@ -60,18 +67,18 @@ namespace EpistWinform.Forms
         private void addButton_Click(object sender, EventArgs e)
         {
             Game newGame = new Game(gameDataGridView.Rows.Count + 1);
+            newGame.Picture1 = $".\\Resource\\GamesPicture\\{newGame.GameID}\\Picture1.jpg";
+            newGame.Picture2 = $".\\Resource\\GamesPicture\\{newGame.GameID}\\Picture2.jpg";
+            newGame.Picture3 = $".\\Resource\\GamesPicture\\{newGame.GameID}\\Picture3.jpg";
+
 
             AddGameForm form = new AddGameForm(ref newGame);
             form.currentAddedGameChanged += ChangeCurrentGameAddedPath;
+            form.currentAddedGameTagsListChanged += ChangeCurrentGameAddedTagsList;
             form.FormBorderStyle = FormBorderStyle.None;
             form.ShowDialog();
             
-            MessageBox.Show(newGame.GameName + " " + newGame.GameInfo + " " + currentAddedGameFilePath);
-
-
-
-
-
+            //MessageBox.Show(newGame.GameName + " " + newGame.GameInfo + " " + currentAddedGameFilePath);
 
             SetEnable(true);
             // Tạo một đối tượng Game mới

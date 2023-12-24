@@ -290,61 +290,6 @@ namespace EpistWinform.Forms
             ZipFile.ExtractToDirectory(zipFilePath, extractFolder);
         }
 
-        //private async Task PlayGame()
-        //{
-        //    try
-        //    {
-        //        isPlaying = true;
-        //        string saveGameFileInTxt = saveGamePath + $"{currentChoosenGame.GameName}" + ".txt";
-        //        string currentGameExtractFolder = "";
-
-        //        using (StreamReader sr = new StreamReader(saveGameFileInTxt))
-        //        {
-        //            currentGameExtractFolder = sr.ReadLine();
-        //        }
-
-        //        // Tên của tệp batch bạn muốn chạy
-        //        string batchFileName = "__Start game + create shortcut.bat";
-
-        //        // Đường dẫn đầy đủ đến tệp batch sau khi giải nén
-        //        string batchFilePath = Path.Combine(currentGameExtractFolder, batchFileName);
-
-        //        // Kiểm tra xem tệp batch có tồn tại không
-        //        if (File.Exists(batchFilePath))
-        //        {
-        //            // Định cấu hình cho quá trình
-        //            ProcessStartInfo processStartInfo = new ProcessStartInfo
-        //            {
-        //                FileName = "cmd.exe",  // Sử dụng Command Prompt để thực hiện tệp batch
-        //                Arguments = $"/c \"{batchFilePath}\"",  // /c để chạy và đóng Command Prompt sau khi hoàn thành
-        //                RedirectStandardOutput = true,
-        //                RedirectStandardError = true,
-        //                UseShellExecute = false,
-        //                CreateNoWindow = true
-        //            };
-
-        //            // Thực hiện quá trình và đọc kết quả đầu ra (nếu cần)
-        //            using (Process process = new Process { StartInfo = processStartInfo })
-        //            {
-        //                process.Start();
-        //                string output = process.StandardOutput.ReadToEnd();
-        //                string error = process.StandardError.ReadToEnd();
-        //                process.WaitForExit();
-
-        //            }
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Không tìm thấy tệp batch.");
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show($"Error: {ex.Message}");
-        //    }
-        //    finally
-        //    { isPlaying = false; }
-        //}
         private void PlayGame()
         {
             try
