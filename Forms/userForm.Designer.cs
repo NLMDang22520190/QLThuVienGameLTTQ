@@ -104,7 +104,7 @@
             Margin = new Padding(2);
             Name = "userForm";
             Text = "userForm";
-            Load += userForm_Load_1;
+            Load += userForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

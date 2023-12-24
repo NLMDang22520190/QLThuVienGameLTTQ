@@ -97,10 +97,5 @@ namespace EpistWinform.Forms
             DisplayUserData();
             SetTextBoxesReadOnly(true);
         }
-
-        private void userForm_Load_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
