@@ -181,47 +181,47 @@ namespace EpistWinform.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String s1 = "";
-            String s2 = "";
-            String s3 = "";
-            int n = 3;
-            if (check_password() == false)
-            {
-                s1 = "Password is error";
-                n--;
-            }
-            if (check_user() == false)
-            {
-                s2 = "User is error";
-                n--;
-            }
-            if (check_code() == false)
-            {
-                s3 = "Code is error";
-                n--;
-            }
-            if (n == 3)
-            {
-                update_data();
-                MessageBox.Show("Confirm completely");
-            }
-            else
-            {
-                String s = "";
-                if (s1 != "")
-                {
-                    s = s + s1 + ". \n";
-                }
-                if (s2 != "")
-                {
-                    s = s + s2 + ". \n";
-                }
-                if (s3 != "")
-                {
-                    s = s + s3 + ". \n";
-                }
-                MessageBox.Show("Please check your information again: \n" + s);
-            }
+             String s1 = "";
+             String s2 = "";
+             String s3 = "";
+             int n = 3;
+             if (check_password() == false)
+             {
+                 s1 = "Password is error";
+                 n--;
+             }
+             if (check_user() == false)
+             {
+                 s2 = "User must be not null or not exists";
+                 n--;
+             }
+             if (check_code() == false)
+             {
+                 s3 = "Code must be not null or it is wrong";
+                 n--;
+             }
+             if (n == 3)
+             {
+                 update_data();
+                 MessageBox.Show("Confirm completely");
+             }
+             else
+             {
+                 String s = "";
+                 if (s1 != "")
+                 {
+                     s = s + s1 + ". \n";
+                 }
+                 if (s2 != "")
+                 {
+                     s = s + s2 + ". \n";
+                 }
+                 if (s3 != "")
+                 {
+                     s = s + s3 + ". \n";
+                 }
+                 MessageBox.Show("Please check your information again: \n" + s);
+             }
         }
         private void update_data()
         {
