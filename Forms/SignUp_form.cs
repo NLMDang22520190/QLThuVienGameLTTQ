@@ -211,28 +211,28 @@ namespace EpistWinform.Forms
             {
                 Flag_connect = 1;
                 connect_to_database();
-
+            
             }
             int n = 4;
             if (Check_display() == false)
             {
                 n = n - 1;
-                s1 = "DisplayName is error";
+                s1 = "DisplayName must be not null";
             }
             if (check_username() == false)
             {
                 n = n - 1;
-                s2 = "User is error";
+                s2 = "User must be not null or it already been signed up";
             }
             if (check_password() == false)
             {
                 n = n - 1;
-                s3 = "Password is error";
+                s3 = "Password must be not null";
             }
             if (Checkcode() == false)
             {
                 n = n - 1;
-                s4 = "Code is error";
+                s4 = "Code is must be not null or code is wrong";
             }
             if (n == 4)
             {
