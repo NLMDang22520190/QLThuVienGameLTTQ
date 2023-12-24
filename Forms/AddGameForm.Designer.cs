@@ -216,6 +216,7 @@
             gameNameTextBox.Name = "gameNameTextBox";
             gameNameTextBox.Size = new Size(324, 32);
             gameNameTextBox.TabIndex = 0;
+            gameNameTextBox.KeyPress += gameNameTextBox_KeyPress;
             // 
             // gameNameLabel
             // 

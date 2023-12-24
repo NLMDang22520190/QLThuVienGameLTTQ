@@ -71,8 +71,8 @@ namespace EpistWinform.DAO
         public bool InsertGame(string gameName, string gameInfo, string picture1, string picture2, string picture3)
         {
 
-            string query = string.Format($"INSERT dbo.Game ( gameName, gameInfo, picture1, picture2, picture3) VALUES (N'{0}', {1}, {2}, N'{3}', N'{4}', N'{5}')", gameName, gameInfo, picture1, picture2, picture3);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            string query = $"INSERT dbo.Game (gameName, gameInfo, picture1, picture2, picture3) VALUES ( @gameName , @gameInfo , @picture1 , @picture2 , @picture3 )";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] {gameName, gameInfo, picture1, picture2, picture3});
             return result > 0;
         }
 

@@ -29,7 +29,7 @@ public class FileUploader
     {
         BlobServiceClient blobServiceClient = new BlobServiceClient(_connectionString);
         BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(_gameContainerName);
-        BlobClient blobClient = containerClient.GetBlobClient(blobName);
+        BlobClient blobClient = containerClient.GetBlobClient(blobName + ".zip");
 
         using (FileStream fs = File.OpenRead(filePath))
         {
@@ -42,7 +42,7 @@ public class FileUploader
         BlobServiceClient blobServiceClient = new BlobServiceClient(_connectionString);
         BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient("game"+pictureContainterId);
         containerClient.CreateIfNotExists();
-        BlobClient blobClient = containerClient.GetBlobClient(blobName);
+        BlobClient blobClient = containerClient.GetBlobClient(blobName + ".jpg");
 
         using (FileStream fs = File.OpenRead(filePath))
         {

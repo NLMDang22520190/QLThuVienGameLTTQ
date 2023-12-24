@@ -58,17 +58,19 @@ namespace EpistWinform.Forms
             currentAddedGame.Picture1 = $".\\Resource\\GamesPicture\\{currentAddedGame.GameID}\\Picture1.jpg";
             currentAddedGame.Picture2 = $".\\Resource\\GamesPicture\\{currentAddedGame.GameID}\\Picture2.jpg";
             currentAddedGame.Picture3 = $".\\Resource\\GamesPicture\\{currentAddedGame.GameID}\\Picture3.jpg";
-            
+
             currentAddedGameFilePath = gameFileTextBox.Text;
 
             currentAddedGameChanged?.Invoke(this, currentAddedGameFilePath);
             currentAddedGameTagsListChanged?.Invoke(this, listSelectedTags);
 
-            FileUploader.Instance.UploadPictureFile(gamePictureBox1.ImageLocation, "Picture1", currentAddedGame.GameID.ToString());
-            FileUploader.Instance.UploadPictureFile(gamePictureBox2.ImageLocation, "Picture2", currentAddedGame.GameID.ToString());
-            FileUploader.Instance.UploadPictureFile(gamePictureBox3.ImageLocation, "Picture3", currentAddedGame.GameID.ToString());
-            FileUploader.Instance.UploadGameFile(gameFileTextBox.Text, currentAddedGame.GameName);
+            //FileUploader.Instance.UploadPictureFile(gamePictureBox1.ImageLocation, "Picture1", currentAddedGame.GameID.ToString());
+            //FileUploader.Instance.UploadPictureFile(gamePictureBox2.ImageLocation, "Picture2", currentAddedGame.GameID.ToString());
+            //FileUploader.Instance.UploadPictureFile(gamePictureBox3.ImageLocation, "Picture3", currentAddedGame.GameID.ToString());
+            //FileUploader.Instance.UploadGameFile(gameFileTextBox.Text, currentAddedGame.GameName);
+            GamesDAO.Instance.InsertGame(currentAddedGame.GameName, currentAddedGame.GameInfo, currentAddedGame.Picture1, currentAddedGame.Picture2, currentAddedGame.Picture3);
 
+            MessageBox.Show("Game Added Success fully");
 
             this.Close();
         }
@@ -104,6 +106,16 @@ namespace EpistWinform.Forms
                 string zipFilePath = openFileDialog.FileName;
                 gameFileTextBox.Text = zipFilePath;
                 // Thực hiện xử lý của bạn với đường dẫn file zip
+            }
+        }
+
+        private void gameNameTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Kiểm tra nếu kí tự không phải là chữ, số, khoảng trắng, hoặc phím Backspace, và không có tổ hợp phím Ctrl
+            if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != '\b' && !ModifierKeys.HasFlag(Keys.Control))
+            {
+                e.Handled = true;
+                MessageBox.Show("Please enter only alphanumeric characters and spaces.", "Invalid Character", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
