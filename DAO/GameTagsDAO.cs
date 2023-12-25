@@ -1,7 +1,10 @@
 ﻿using EpistWinform.DTO;
+using EpistWinform.Forms;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,5 +39,26 @@ namespace EpistWinform.DAO
 
             return gameTagsLists;
         }
+
+        public bool InsertGameTags(int gameID, List<int> selectedTagID)
+        {
+            // Tạo câu lệnh SQL
+            string query = "INSERT INTO GameTags (gameID, tagID) VALUES ";
+
+            // Tạo danh sách các giá trị (gameID, tagID)
+            List<string> values = new List<string>();
+            foreach (int tagID in selectedTagID)
+            {
+                values.Add($"({gameID}, {tagID})");
+            }
+
+            // Ghép các giá trị vào câu lệnh SQL
+            query += string.Join(", ", values);
+            MessageBox.Show(query);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
+
     }
 }

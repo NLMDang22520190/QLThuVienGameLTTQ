@@ -51,10 +51,6 @@ namespace EpistWinform.Forms
             currentAddedGame.GameName = gameNameTextBox.Text;
             currentAddedGame.GameInfo = gameDecTextBox.Text;
 
-            //currentAddedGame.Picture1 = gamePictureBox1.ImageLocation;
-            //currentAddedGame.Picture2 = gamePictureBox2.ImageLocation;
-            //currentAddedGame.Picture3 = gamePictureBox3.ImageLocation;
-
             currentAddedGame.Picture1 = $".\\Resource\\GamesPicture\\{currentAddedGame.GameID}\\Picture1.jpg";
             currentAddedGame.Picture2 = $".\\Resource\\GamesPicture\\{currentAddedGame.GameID}\\Picture2.jpg";
             currentAddedGame.Picture3 = $".\\Resource\\GamesPicture\\{currentAddedGame.GameID}\\Picture3.jpg";
@@ -64,13 +60,18 @@ namespace EpistWinform.Forms
             currentAddedGameChanged?.Invoke(this, currentAddedGameFilePath);
             currentAddedGameTagsListChanged?.Invoke(this, listSelectedTags);
 
-            //FileUploader.Instance.UploadPictureFile(gamePictureBox1.ImageLocation, "Picture1", currentAddedGame.GameID.ToString());
-            //FileUploader.Instance.UploadPictureFile(gamePictureBox2.ImageLocation, "Picture2", currentAddedGame.GameID.ToString());
-            //FileUploader.Instance.UploadPictureFile(gamePictureBox3.ImageLocation, "Picture3", currentAddedGame.GameID.ToString());
-            //FileUploader.Instance.UploadGameFile(gameFileTextBox.Text, currentAddedGame.GameName);
+            FileUploader.Instance.UploadPictureFile(gamePictureBox1.ImageLocation, "Picture1", currentAddedGame.GameID.ToString());
+            FileUploader.Instance.UploadPictureFile(gamePictureBox2.ImageLocation, "Picture2", currentAddedGame.GameID.ToString());
+            FileUploader.Instance.UploadPictureFile(gamePictureBox3.ImageLocation, "Picture3", currentAddedGame.GameID.ToString());
+
+            FileUploader.Instance.UploadGameFile(gameFileTextBox.Text, currentAddedGame.GameID.ToString());
+
             GamesDAO.Instance.InsertGame(currentAddedGame.GameName, currentAddedGame.GameInfo, currentAddedGame.Picture1, currentAddedGame.Picture2, currentAddedGame.Picture3);
 
-            MessageBox.Show("Game Added Success fully");
+            GameTagsDAO.Instance.InsertGameTags(currentAddedGame.GameID, listSelectedTags);
+
+            MessageBox.Show("Game added successfully!\n\nGames added will show up when the app is restarted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
             this.Close();
         }
