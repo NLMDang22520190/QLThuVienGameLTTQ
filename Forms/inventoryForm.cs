@@ -177,7 +177,7 @@ namespace EpistWinform.Forms
             if (result == DialogResult.Yes)
             {
                 string destinationFilePath;
-                string defaultFileName = $"{currentInstallingGame.GameName}.zip";
+                string defaultFileName = $"{currentInstallingGame.GameID}.zip";
 
                 try
                 {
@@ -214,11 +214,11 @@ namespace EpistWinform.Forms
             else
             {
                 string defaultFolderPath = defaultSaveGameFolder;
-                string destinationFilePath = Path.Combine(defaultFolderPath, $"{currentInstallingGame.GameName}.zip");
+                string destinationFilePath = Path.Combine(defaultFolderPath, $"{currentInstallingGame.GameID}.zip");
 
                 try
                 {
-                    await Task.Run(() => DownloadBlobAsync("gamefiledata", $"{currentInstallingGame.GameName}.zip", destinationFilePath));
+                    await Task.Run(() => DownloadBlobAsync("gamefiledata", $"{currentInstallingGame.GameID}.zip", destinationFilePath));
                     extractFolder = Path.Combine(defaultFolderPath, Path.GetFileNameWithoutExtension(destinationFilePath));
                     ExtractZipFile(destinationFilePath, extractFolder);
                     File.Delete(destinationFilePath);
