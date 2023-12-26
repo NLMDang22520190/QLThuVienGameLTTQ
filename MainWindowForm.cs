@@ -1,4 +1,5 @@
-﻿using EpistWinform.DTO;
+﻿using EpistWinform.DAO;
+using EpistWinform.DTO;
 using EpistWinform.Forms;
 using FontAwesome.Sharp;
 using System;
@@ -31,7 +32,7 @@ namespace EpistWinform
         private userForm userForm;
         private adminForm adminForm;
         private Account currentUserAccount;
-        private List<Game> listAllGames;
+        private List<Game> listAllGames = GamesDAO.Instance.ListAllGames;
         private loginForm parentForm;
         #endregion
 
@@ -122,6 +123,33 @@ namespace EpistWinform
 
             // Hoặc thực hiện các hành động khác tùy thuộc vào yêu cầu của bạn
         }
+
+        private void CheckAndDownloadImagesForGames(List<Game> games)
+        {
+            foreach (Game game in games)
+            {
+                string gameFolderPath = $".\\Resource\\GamesPicture\\{game.GameID}";
+
+                // Check if the folder for the game exists, if not, create it
+                if (!System.IO.Directory.Exists(gameFolderPath))
+                {
+                    System.IO.Directory.CreateDirectory(gameFolderPath);
+                }
+
+                // Check if all three images exist for the game, if not, download them
+                string[] imageNames = { "Picture1.jpg", "Picture2.jpg", "Picture3.jpg" };
+                foreach (string imageName in imageNames)
+                {
+                    string imagePath = $"{gameFolderPath}\\{imageName}";
+
+                    if (!System.IO.File.Exists(imagePath))
+                    {
+                        // Download the image from Azure Blob Storage
+                        FileUploader.Instance.DownloadImageFromBlobStorage(game, imageName, imagePath);
+                    }
+                }
+            }
+        }
         #endregion
 
         #region events
@@ -200,11 +228,6 @@ namespace EpistWinform
         }
         private void MainWindowForm_Load(object sender, EventArgs e)
         {
-            //libraryBtn.Width = Screen.PrimaryScreen.Bounds.Width / 12;
-            //inventoryBtn.Width = Screen.PrimaryScreen.Bounds.Width / 10;
-            //userBtn.Width = Screen.PrimaryScreen.Bounds.Width / 17;
-            //adminBtn.Width = Screen.PrimaryScreen.Bounds.Width / 15;
-            //exitBtn.Width = Screen.PrimaryScreen.Bounds.Width / 19;
 
             float width_ratio = (Screen.PrimaryScreen.Bounds.Width / 1920);
             float heigh_ratio = (Screen.PrimaryScreen.Bounds.Height / 1080);
@@ -230,6 +253,8 @@ namespace EpistWinform
             OpenChildForm(libraryForm);
 
             libraryForm.InventoryButtonClicked += LibraryForm_InventoryButtonClicked;
+
+            CheckAndDownloadImagesForGames(listAllGames);
 
         }
 

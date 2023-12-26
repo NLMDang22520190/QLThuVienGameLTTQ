@@ -2,6 +2,7 @@
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 using EpistWinform.DAO;
+using EpistWinform.DTO;
 using WebRequestFile = System.Net.WebRequestMethods.File;
 
 public class FileUploader
@@ -47,6 +48,24 @@ public class FileUploader
         using (FileStream fs = File.OpenRead(filePath))
         {
             blobClient.Upload(fs, true);
+        }
+    }
+
+    public void DownloadImageFromBlobStorage(Game game, string imageName, string localImagePath)
+    {
+        // Replace with your Azure Blob Storage container name
+        string containerName = $"game{game.GameID}";
+
+        BlobServiceClient blobServiceClient = new Azure.Storage.Blobs.BlobServiceClient(_connectionString);
+        BlobContainerClient containerClient = blobServiceClient.GetBlobContainerClient(containerName);
+
+        // Replace "your_blob_directory" with the directory where your images are stored
+        BlobClient blobClient = containerClient.GetBlobClient($"your_blob_directory/{imageName}");
+
+        using (var stream = System.IO.File.OpenWrite(localImagePath))
+        {
+            var response = blobClient.DownloadTo(stream);
+            stream.Close();
         }
     }
 }
