@@ -1,5 +1,6 @@
 ﻿using EpistWinform.DAO;
 using EpistWinform.DTO;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +9,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace EpistWinform.Forms
@@ -21,6 +24,7 @@ namespace EpistWinform.Forms
         List<Game> gameList = GamesDAO.Instance.ListAllGames;
         List<Tag> tagsList = TagDAO.Instance.AllTagsList;
         List<GameTags> gameTagsList = GameTagsDAO.Instance.ListAllGameTags;
+        List<Account> accountList = AccountDAO.Instance.ListAllAccounts;
 
         public adminForm()
         {
@@ -31,6 +35,12 @@ namespace EpistWinform.Forms
             LoadTags();
             EditPanel.Visible = false;
             tagsComboBox.SelectedItem = 0;
+            #endregion
+
+            #region User/Account
+            LoadAccount();
+            confirmButton.Visible = false;
+            searchUserComboBox.SelectedItem = 0;
             #endregion
 
         }
@@ -62,37 +72,35 @@ namespace EpistWinform.Forms
             gamePictureBox3.DataBindings.Add(new Binding("ImageLocation", gameDataGridView.DataSource, "Picture3"));
         }
 
-        void
-
         #endregion
 
 
         #region Event
         private void addButton_Click(object sender, EventArgs e)
         {
-            Game newGame = new Game(gameDataGridView.Rows.Count + 1);
-            string filePath = "";
-            AddGameForm form = new AddGameForm(ref newGame, ref filePath);
-            form.currentAddedGameChanged +=
-            form.ShowDialog();
-            MessageBox.Show(newGame.GameName + " " + newGame.GameInfo + " " + filePath);
-            SetEnable(true);
-            // Tạo một đối tượng Game mới
+            //Game newGame = new Game(gameDataGridView.Rows.Count + 1);
+            //string filePath = "";
+            //AddGameForm form = new AddGameForm(ref newGame, ref filePath);
+            //form.currentAddedGameChanged +=
+            //form.ShowDialog();
+            //MessageBox.Show(newGame.GameName + " " + newGame.GameInfo + " " + filePath);
+            //SetEnable(true);
+            //// Tạo một đối tượng Game mới
 
-            // Thêm đối tượng mới vào danh sách và DataGridView
-            List<Game> gameList = (List<Game>)gameDataGridView.DataSource;
-            gameList.Add(newGame);
-            gameDataGridView.DataSource = null;
-            gameDataGridView.DataSource = gameList;
+            //// Thêm đối tượng mới vào danh sách và DataGridView
+            //List<Game> gameList = (List<Game>)gameDataGridView.DataSource;
+            //gameList.Add(newGame);
+            //gameDataGridView.DataSource = null;
+            //gameDataGridView.DataSource = gameList;
 
-            // Tự động chọn dòng mới được thêm
-            int rowIndex = gameDataGridView.Rows.Count - 1;
-            gameDataGridView.CurrentCell = gameDataGridView.Rows[rowIndex].Cells[0];
+            //// Tự động chọn dòng mới được thêm
+            //int rowIndex = gameDataGridView.Rows.Count - 1;
+            //gameDataGridView.CurrentCell = gameDataGridView.Rows[rowIndex].Cells[0];
 
-            // Thực hiện binding để hiển thị thông tin của đối tượng mới
-            gameNameTextBox.DataBindings[0].ReadValue();
-            descriptionTextBox.DataBindings[0].ReadValue();
-            ChangeGameDataGridViewSize();
+            //// Thực hiện binding để hiển thị thông tin của đối tượng mới
+            //gameNameTextBox.DataBindings[0].ReadValue();
+            //descriptionTextBox.DataBindings[0].ReadValue();
+            //ChangeGameDataGridViewSize();
 
         }
 
@@ -159,164 +167,8 @@ namespace EpistWinform.Forms
         private void adminForm_Resize(object sender, EventArgs e)
         {
             ChangeGameDataGridViewSize();
+            FixUserPanels();
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -482,12 +334,12 @@ namespace EpistWinform.Forms
                         // Bind the selected tag to the text boxes
                         tagNameTextBox.DataBindings.Clear();
                         tagNameTextBox.DataBindings.Add("Text", selectedTag, "TagName");
-        }
+                    }
 
-        void SetEnable(bool enable)
-        {
-            gameNameTextBox.ReadOnly = !enable;
-            descriptionTextBox.ReadOnly = !enable;
+                    void SetEnable(bool enable)
+                    {
+                        gameNameTextBox.ReadOnly = !enable;
+                        descriptionTextBox.ReadOnly = !enable;
 
                         tagDescriptionTextBox.DataBindings.Clear();
                         tagDescriptionTextBox.DataBindings.Add("Text", selectedTag, "TagDescription");
@@ -514,9 +366,348 @@ namespace EpistWinform.Forms
             EditPanel.Visible = false;
         }
 
+        #endregion
+        #endregion
+
+
+
+
+
+        // ------------- User / Account --------------
+
+        #region User
+
+        #region Method
+
+        #region Load
+
+        void LoadAccount()
+        {
+            searchUserComboBox.DataSource = accountList;
+            searchUserComboBox.DisplayMember = "Username";
+
+            List<string> columnNames = new List<string> { "UserID", "Username", "DisplayName", "Gmail" };
+            searchUserByColumnComboBox.DataSource = columnNames;
+            searchUserByColumnComboBox.DisplayMember = "UserName";
+
+            userInfoDataGridView.DataSource = accountList;
+            userInfoDataGridView.ReadOnly = true;
+            AddAccountBinding();
+            FixUserPanels();
+        }
+
+        string SetSearchUserByColumn()
+        {
+            string column = searchUserByColumnComboBox.SelectedItem.ToString();
+            return column;
+        }
+
+        void SetUserInfoTextBoxToNull()
+        {
+            foreach (Control control in userInfoFlowLayoutPanel.Controls)
+            {
+                if (control is FlowLayoutPanel flowLayoutPanel)
+                {
+                    foreach (Control subControl in flowLayoutPanel.Controls)
+                        if (subControl is TextBox textBox)
+                            textBox.Text = string.Empty;
+                }
+            }
+        }
+
+        void SetUserInfoEnable(bool enable)
+        {
+            foreach (Control control in userInfoFlowLayoutPanel.Controls)
+            {
+                if (control is FlowLayoutPanel flowLayoutPanel)
+                {
+                    foreach (Control subControl in flowLayoutPanel.Controls)
+                    {
+                        subControl.Enabled = enable;
+                    }
+                }
+            }
+        }
+
+        void AddAccountBinding()
+        {
+            // Clear existing bindings
+            userIDTextBox.DataBindings.Clear();
+            usernameTextBox.DataBindings.Clear();
+            passwordTextBox.DataBindings.Clear();
+            displayNameTextBox.DataBindings.Clear();
+            gmailTextBox.DataBindings.Clear();
+            adminCheckBox.DataBindings.Clear();
+
+            // Add new bindings
+            userIDTextBox.DataBindings.Add(new Binding("Text", userInfoDataGridView.DataSource, "UserID", true, DataSourceUpdateMode.Never));
+            usernameTextBox.DataBindings.Add(new Binding("Text", userInfoDataGridView.DataSource, "Username", true, DataSourceUpdateMode.Never));
+            passwordTextBox.DataBindings.Add(new Binding("Text", userInfoDataGridView.DataSource, "Password", true, DataSourceUpdateMode.Never));
+            displayNameTextBox.DataBindings.Add(new Binding("Text", userInfoDataGridView.DataSource, "DisplayName", true, DataSourceUpdateMode.Never));
+            gmailTextBox.DataBindings.Add(new Binding("Text", userInfoDataGridView.DataSource, "Gmail", true, DataSourceUpdateMode.Never));
+
+            Binding adminBinding = new Binding("Checked", userInfoDataGridView.DataSource, "isAdmin", true, DataSourceUpdateMode.Never);
+            adminBinding.Format += (s, e) => e.Value = ((int)e.Value) == 1; // Convert int to bool
+            adminCheckBox.DataBindings.Add(adminBinding);
+        }
+
+        #endregion
+
+        void FixUserPanels()
+        {
+
+            foreach (Control control in userInfoFlowLayoutPanel.Controls)
+            {
+                if (control is FlowLayoutPanel flowLayoutPanel)
+                {
+                    flowLayoutPanel.Width = userInfoFlowLayoutPanel.Width;
+                    foreach (Control control1 in flowLayoutPanel.Controls)
+                    {
+                        if (control1 is TextBox textBox)
+                        {
+                            textBox.Width = flowLayoutPanel.Width;
+                        }
+                    }
+                }
+            }
+        }
+
+        #region Tools
+
+        int userToolsIndex;
+        string username, password, displayName, gmail;
+        int userID, isAdmin;
+
+        void GetUserInfo()
+        {
+            // Check if userIDTextBox.Text can be parsed to an integer
+            if (int.TryParse(userIDTextBox.Text, out int parsedUserID))
+            {
+                userID = parsedUserID;
+            }
+            else
+            {
+                // Handle the case where the input is not a valid integer
+                // You may show an error message or take appropriate action
+                MessageBox.Show("Invalid UserID. Please enter a valid integer.");
+                return; // Exit the method
+            }
+
+            username = usernameTextBox.Text;
+            password = passwordTextBox.Text;
+            displayName = displayNameTextBox.Text;
+            gmail = gmailTextBox.Text;
+
+            if (adminCheckBox.CheckState == CheckState.Checked)
+            {
+                isAdmin = 1;
+            }
+            else
+            {
+                isAdmin = 0;
+            }
+        }
+
+
+        #region Check ID
+        bool IsUserIDInt(out int parsedUserID)
+        {
+            if (int.TryParse(userIDTextBox.Text, out parsedUserID))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Invalid UserID. Please enter a valid integer.");
+                return false;
+            }
+        }
+
+        bool IsUserIDUnique(int userID)
+        {
+            return !accountList.Any(account => account.UserID == userID);
+        }
+
+
+        bool IsUserIDValidForAdd(int userID)
+        {
+            return IsUserIDInt(out _) && IsUserIDUnique(userID);
+        }
+
+        bool IsUserIDValidForRemove(int userID)
+        {
+            return true; // No specific conditions for removal
+        }
+
+        bool IsUserIDValidForEdit(int userID)
+        {
+            return IsUserIDInt(out _);
+        }
+
+        #endregion
+
+
+        void AddUser()
+        {
+            GetUserInfo();
+            if (AccountDAO.Instance.Add(userID, username, password, displayName, gmail, isAdmin))
+            {
+                MessageBox.Show("Add user successfully.");
+                accountList = AccountDAO.Instance.LoadAccountList();
+                LoadAccount();
+            }
+            else
+            {
+                MessageBox.Show("Error.");
+            }
+        }
+
+        void RemoveUser()
+        {
+            GetUserInfo();
+            if (!AccountDAO.Instance.RemoveAllGameFromUser(userID))
+            {
+                MessageBox.Show("Error: Remove games from user");
+            }
+            if (AccountDAO.Instance.Remove(userID))
+            {
+                MessageBox.Show("Remove user successfully.");
+                accountList = AccountDAO.Instance.LoadAccountList();
+                LoadAccount();
+            }
+            else
+            {
+                MessageBox.Show("Error.");
+            }
+        }
+
+        void EditUser()
+        {
+            GetUserInfo();
+            if (AccountDAO.Instance.Edit(userID, username, password, displayName, gmail, isAdmin))
+            {
+                MessageBox.Show("Edit user successfully.");
+                accountList = AccountDAO.Instance.LoadAccountList();
+                LoadAccount();
+            }
+            else
+            {
+                MessageBox.Show("Error.");
+            }
+        }
+
+        void ViewUser()
+        {
+
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Event
+
+        private void searchUserByColumnComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            searchUserComboBox.DisplayMember = SetSearchUserByColumn();
+        }
+
+        private void addUserButton_Click(object sender, EventArgs e)
+        {
+            userToolsIndex = 0;
+            confirmButton.Text = "ADD USER";
+            confirmButton.Visible = true;
+            userInfoDataGridView.Enabled = false;
+
+            SetUserInfoTextBoxToNull();
+            SetUserInfoEnable(true);
+        }
+
+        private void removeUserButton_Click(object sender, EventArgs e)
+        {
+            userToolsIndex = 1;
+            confirmButton.Text = "REMOVE USER";
+            confirmButton.Visible = true;
+            userInfoDataGridView.Enabled = true;
+
+            SetUserInfoTextBoxToNull();
+            SetUserInfoEnable(false);
+        }
+
+        private void editUserButton_Click(object sender, EventArgs e)
+        {
+            userToolsIndex = 2;
+            confirmButton.Text = "EDIT USER";
+            confirmButton.Visible = true;
+            userInfoDataGridView.Enabled = true;
+
+            SetUserInfoTextBoxToNull();
+            SetUserInfoEnable(true);
+
+            userIDTextBox.Enabled = false;
+        }
+
+        private void viewButton_Click(object sender, EventArgs e)
+        {
+            userToolsIndex = 3;
+            confirmButton.Visible = false;
+            userInfoDataGridView.Enabled = true;
+
+            SetUserInfoTextBoxToNull();
+
+        }
+
+        private void confirmButton_Click(object sender, EventArgs e)
+        {
+            int parsedUserID;
+
+            if (!IsUserIDInt(out parsedUserID))
+            {
+                return; // Exit if parsing failed
+            }
+
+            DialogResult result = MessageBox.Show("Are you sure you want to proceed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            switch (userToolsIndex)
+            {
+                case 0: // AddUser
+                    if (IsUserIDValidForAdd(parsedUserID) && result == DialogResult.Yes)
+                    {
+                        AddUser();
+                    }
+                    break;
+                case 1: // RemoveUser
+                    if (IsUserIDValidForRemove(parsedUserID) && result == DialogResult.Yes)
+                    {
+                        RemoveUser();
+                    }
+                    break;
+                case 2: // EditUser
+                    if (IsUserIDValidForEdit(parsedUserID) && result == DialogResult.Yes)
+                    {
+                        EditUser();
+                    }
+                    break;
+                case 3: // ViewUser
+                    if (result == DialogResult.Yes)
+                    {
+                        ViewUser();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
 
         #endregion
         #endregion
+
+
 
     }
+
+
+
 }
