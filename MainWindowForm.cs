@@ -53,7 +53,7 @@ namespace EpistWinform
             navigationPanel.Controls.Add(downBorderBtn);
             pressColor = Color.LightPink;
 
-            libraryForm = new libraryForm_Alt_Ver_();
+            libraryForm = new libraryForm_Alt_Ver_(currentUserAccount);
             inventoryForm = new inventoryForm(currentUserAccount);
             
             userForm = new userForm();
@@ -108,7 +108,7 @@ namespace EpistWinform
 
         private void LibraryForm_InventoryButtonClicked(object sender, Game currentGame)
         {
-            gameInfoForm gameInfoForm = new gameInfoForm(currentGame);
+            gameInfoForm gameInfoForm = new gameInfoForm(currentGame, currentUserAccount.UserID);
             OpenChildForm(gameInfoForm);
 
             // Mở inventoryForm trong changeFormPanel

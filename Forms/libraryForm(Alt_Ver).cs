@@ -19,16 +19,20 @@ namespace EpistWinform.Forms
         public event EventHandler<Game> InventoryButtonClicked;
         private List<Game> filteredGames;
 
+        private Account currentAccount;
+
         List<Game> gameList = GamesDAO.Instance.ListAllGames;
         List<Tag> tagList = TagDAO.Instance.AllTagsList;
         List<GameTags> gameTagsList = GameTagsDAO.Instance.ListAllGameTags;
 
-        public libraryForm_Alt_Ver_()
+        public libraryForm_Alt_Ver_(Account currentAccount)
         {
             InitializeComponent();  
 
             LoadGame();
             LoadTag();
+
+            this.currentAccount = currentAccount;
         }
 
         #region Method

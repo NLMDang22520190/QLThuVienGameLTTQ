@@ -3,6 +3,7 @@ using EpistWinform.Forms;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,7 +50,7 @@ namespace EpistWinform.DAO
 
         public List<Game> LoadOwnGamesList(int userID)
         {
-            if(listOwnGames.Count <= 0)
+            if (listOwnGames.Count <= 0)
             {
                 List<Game> gameList = new List<Game>();
 
@@ -63,7 +64,7 @@ namespace EpistWinform.DAO
                 }
                 listOwnGames = gameList;
             }
-            
+
 
             return listOwnGames;
         }
@@ -75,6 +76,44 @@ namespace EpistWinform.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public bool InsertGameToOwnedGames(int gameID, int userID)
+        {
+            string query = string.Format("INSERT dbo.OwnedGame ( gameID, userID) VALUES ({0}, {1})", gameID, userID);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
+        public bool IsGameInOwnedGames(int gameID, int userID)
+        {
+            string query = string.Format("SELECT COUNT(*) FROM OwnedGame WHERE gameID = {0} AND userID = {1}", gameID, userID);
+
+            // Use ExecuteScalar to retrieve the count
+            object result = DataProvider.Instance.ExecuteScalar(query);
+
+            // If result is not null and can be converted to an integer, check if it's greater than 0
+            if (result != null && int.TryParse(result.ToString(), out int count))
+            {
+                return count > 0;
+            }
+
+            // If there's an issue with the query or conversion, return false
+            return false;
+        }
+
 
     }
 }

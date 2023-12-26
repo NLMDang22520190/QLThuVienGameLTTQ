@@ -121,7 +121,6 @@
             addGameButton.TabIndex = 0;
             addGameButton.Text = "ADD GAME";
             addGameButton.UseVisualStyleBackColor = true;
-            addGameButton.Click += AddToInventoryButton_Click;
             // 
             // gameInfoForm
             // 
