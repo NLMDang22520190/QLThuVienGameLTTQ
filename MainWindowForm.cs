@@ -32,6 +32,7 @@ namespace EpistWinform
         private adminForm adminForm;
         private Account currentUserAccount;
         private List<Game> listAllGames;
+        private loginForm parentForm;
         #endregion
 
         #region other
@@ -42,7 +43,7 @@ namespace EpistWinform
 
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         #endregion
-        public MainWindowForm(Account currentUserAccount)
+        public MainWindowForm(Account currentUserAccount, loginForm parentForm)
         {
             InitializeComponent();
             this.Text = string.Empty;
@@ -55,11 +56,16 @@ namespace EpistWinform
 
             libraryForm = new libraryForm_Alt_Ver_();
             inventoryForm = new inventoryForm(currentUserAccount);
-            
+
             userForm = new userForm();
             adminForm = new adminForm();
             this.currentUserAccount = currentUserAccount;
-            //MessageBox.Show(currentUserAccount.UserID.ToString() + " " + currentUserAccount.UserName.ToString());
+            this.parentForm = parentForm;
+
+            if(currentUserAccount.IsAdmin == 0)
+                adminBtn.Visible = false;
+            else
+                adminBtn.Visible = true;
         }
 
         #region privateMethods
@@ -122,6 +128,7 @@ namespace EpistWinform
 
         private void closeBtn_Click(object sender, EventArgs e)
         {
+            this.parentForm.Close();
             this.Close();
         }
 
@@ -226,8 +233,12 @@ namespace EpistWinform
 
         }
 
-
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         #endregion
+
 
 
 

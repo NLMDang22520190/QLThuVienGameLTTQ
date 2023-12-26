@@ -52,10 +52,11 @@ namespace EpistWinform
             {
                 DataRow row = currentUserData.Rows[0];
                 currentUserAccount = new Account(row);
-                var mainWindowForm = new MainWindowForm(currentUserAccount);
+                var mainWindowForm = new MainWindowForm(currentUserAccount, this);
                 this.Hide();
                 mainWindowForm.ShowDialog();
-                this.Show();
+                if(this.IsDisposed == false)
+                    this.Show();
             }
             else if(status != -1)
                 MessageBox.Show("Incorrect Username or Password");
