@@ -136,7 +136,6 @@
             // editButton
             // 
             editButton.BackColor = Color.FromArgb(97, 255, 116);
-            editButton.Enabled = false;
             editButton.FlatAppearance.BorderColor = Color.DarkGreen;
             editButton.FlatAppearance.BorderSize = 5;
             editButton.ForeColor = Color.FromArgb(23, 61, 28);

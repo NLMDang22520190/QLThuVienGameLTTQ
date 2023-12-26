@@ -50,7 +50,7 @@ namespace EpistWinform.Forms
             gamePictureBox3.DataBindings.Add(new Binding("ImageLocation", gameDataGridView.DataSource, "Picture3"));
         }
 
-        void ChangeCurrentGameAddedPath(object sender ,string currentGameAddedPath)
+        void ChangeCurrentGameAddedPath(object sender, string currentGameAddedPath)
         {
             currentAddedGameFilePath = currentGameAddedPath;
         }
@@ -77,27 +77,24 @@ namespace EpistWinform.Forms
             form.currentAddedGameTagsListChanged += ChangeCurrentGameAddedTagsList;
             form.FormBorderStyle = FormBorderStyle.None;
             form.ShowDialog();
-            
-            //MessageBox.Show(newGame.GameName + " " + newGame.GameInfo + " " + currentAddedGameFilePath);
 
-            SetEnable(true);
-            // Tạo một đối tượng Game mới
+            if (!string.IsNullOrEmpty(newGame.GameName))
+            {
+                // Thêm đối tượng mới vào danh sách và DataGridView
+                List<Game> gameList = (List<Game>)gameDataGridView.DataSource;
+                gameList.Add(newGame);
+                gameDataGridView.DataSource = null;
+                gameDataGridView.DataSource = gameList;
 
-            // Thêm đối tượng mới vào danh sách và DataGridView
-            List<Game> gameList = (List<Game>)gameDataGridView.DataSource;
-            gameList.Add(newGame);
-            gameDataGridView.DataSource = null;
-            gameDataGridView.DataSource = gameList;
+                // Tự động chọn dòng mới được thêm
+                int rowIndex = gameDataGridView.Rows.Count - 1;
+                gameDataGridView.CurrentCell = gameDataGridView.Rows[rowIndex].Cells[0];
 
-            // Tự động chọn dòng mới được thêm
-            int rowIndex = gameDataGridView.Rows.Count - 1;
-            gameDataGridView.CurrentCell = gameDataGridView.Rows[rowIndex].Cells[0];
-
-            // Thực hiện binding để hiển thị thông tin của đối tượng mới
-            gameNameTextBox.DataBindings[0].ReadValue();
-            descriptionTextBox.DataBindings[0].ReadValue();
-            ChangeGameDataGridViewSize();
-
+                // Thực hiện binding để hiển thị thông tin của đối tượng mới
+                gameNameTextBox.DataBindings[0].ReadValue();
+                descriptionTextBox.DataBindings[0].ReadValue();
+                ChangeGameDataGridViewSize();
+            }
         }
 
         private void editButton_Click(object sender, EventArgs e)

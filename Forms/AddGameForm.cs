@@ -47,33 +47,13 @@ namespace EpistWinform.Forms
                 return;
             }
 
+            DialogResult result = MessageBox.Show("Are you sure you want to save the game with the provided information? After saving, you won't be able to change the game file, game tag, and game pictures.", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-            currentAddedGame.GameName = gameNameTextBox.Text;
-            currentAddedGame.GameInfo = gameDecTextBox.Text;
-
-            currentAddedGame.Picture1 = $".\\Resource\\GamesPicture\\{currentAddedGame.GameID}\\Picture1.jpg";
-            currentAddedGame.Picture2 = $".\\Resource\\GamesPicture\\{currentAddedGame.GameID}\\Picture2.jpg";
-            currentAddedGame.Picture3 = $".\\Resource\\GamesPicture\\{currentAddedGame.GameID}\\Picture3.jpg";
-
-            currentAddedGameFilePath = gameFileTextBox.Text;
-
-            currentAddedGameChanged?.Invoke(this, currentAddedGameFilePath);
-            currentAddedGameTagsListChanged?.Invoke(this, listSelectedTags);
-
-            FileUploader.Instance.UploadPictureFile(gamePictureBox1.ImageLocation, "Picture1", currentAddedGame.GameID.ToString());
-            FileUploader.Instance.UploadPictureFile(gamePictureBox2.ImageLocation, "Picture2", currentAddedGame.GameID.ToString());
-            FileUploader.Instance.UploadPictureFile(gamePictureBox3.ImageLocation, "Picture3", currentAddedGame.GameID.ToString());
-
-            FileUploader.Instance.UploadGameFile(gameFileTextBox.Text, currentAddedGame.GameID.ToString());
-
-            GamesDAO.Instance.InsertGame(currentAddedGame.GameName, currentAddedGame.GameInfo, currentAddedGame.Picture1, currentAddedGame.Picture2, currentAddedGame.Picture3);
-
-            GameTagsDAO.Instance.InsertGameTags(currentAddedGame.GameID, listSelectedTags);
-
-            MessageBox.Show("Game added successfully!\n\nGames added will show up when the app is restarted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-            this.Close();
+            // If the user clicks "OK", set the userConfirmed flag to true and proceed to save the game
+            if (result == DialogResult.OK)
+            {
+                SaveGame();
+            }
         }
 
         private void cancleBtn_Click(object sender, EventArgs e)
@@ -155,6 +135,33 @@ namespace EpistWinform.Forms
                     }
                 }
             }
+        }
+        private void SaveGame()
+        {
+            // The rest of your existing save logic goes here...
+            currentAddedGame.GameName = gameNameTextBox.Text;
+            currentAddedGame.GameInfo = gameDecTextBox.Text;
+            currentAddedGame.Picture1 = $".\\Resource\\GamesPicture\\{currentAddedGame.GameID}\\Picture1.jpg";
+            currentAddedGame.Picture2 = $".\\Resource\\GamesPicture\\{currentAddedGame.GameID}\\Picture2.jpg";
+            currentAddedGame.Picture3 = $".\\Resource\\GamesPicture\\{currentAddedGame.GameID}\\Picture3.jpg";
+            currentAddedGameFilePath = gameFileTextBox.Text;
+
+            currentAddedGameChanged?.Invoke(this, currentAddedGameFilePath);
+            currentAddedGameTagsListChanged?.Invoke(this, listSelectedTags);
+
+            FileUploader.Instance.UploadPictureFile(gamePictureBox1.ImageLocation, "Picture1", currentAddedGame.GameID.ToString());
+            FileUploader.Instance.UploadPictureFile(gamePictureBox2.ImageLocation, "Picture2", currentAddedGame.GameID.ToString());
+            FileUploader.Instance.UploadPictureFile(gamePictureBox3.ImageLocation, "Picture3", currentAddedGame.GameID.ToString());
+
+            FileUploader.Instance.UploadGameFile(gameFileTextBox.Text, currentAddedGame.GameID.ToString());
+
+            GamesDAO.Instance.InsertGame(currentAddedGame.GameName, currentAddedGame.GameInfo, currentAddedGame.Picture1, currentAddedGame.Picture2, currentAddedGame.Picture3);
+
+            GameTagsDAO.Instance.InsertGameTags(currentAddedGame.GameID, listSelectedTags);
+
+            MessageBox.Show("Game added successfully!\n\nGames added will show up when the app is restarted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.Close();
         }
     }
 }
