@@ -76,5 +76,13 @@ namespace EpistWinform.DAO
             return result > 0;
         }
 
+        public bool EditGame(int gameID, string newGameName, string newGameInfo)
+        {
+            string query = "UPDATE dbo.Game SET gameName = @newGameName , gameInfo = @newGameInfo WHERE gameID = @gameID ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { newGameName, newGameInfo, gameID });
+            return result > 0;
+        }
+
+
     }
 }

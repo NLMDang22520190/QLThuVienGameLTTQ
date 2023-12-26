@@ -17,6 +17,7 @@ namespace EpistWinform.Forms
     {
         private string currentAddedGameFilePath;
         private List<int> currentAddGameTagsList = new List<int>();
+        private bool isEditing = false;
         public adminForm()
         {
             InitializeComponent();
@@ -31,6 +32,9 @@ namespace EpistWinform.Forms
             LoadGame();
             AddGameBinding();
             SetReadOnly();
+            editPanel.Visible = false;
+            gameDataGridView.SelectionChanged += gameDataGridView_SelectionChanged;
+      
         }
         void LoadGame()
         {
@@ -99,7 +103,7 @@ namespace EpistWinform.Forms
 
         private void editButton_Click(object sender, EventArgs e)
         {
-
+            SetEditPanelEnable(true);
         }
 
 
@@ -114,31 +118,39 @@ namespace EpistWinform.Forms
             gameNameTextBox.Enabled = false;
 
             descriptionTextBox.ReadOnly = true;
-            //descriptionTextBox.AutoSize = false;
-            //descriptionTextBox.WordWrap = true;
-            //descriptionTextBox.Multiline = true;
             descriptionTextBox.Enabled = false;
         }
 
-        void SetEnable(bool enable)
+        void SetEditPanelEnable(bool enable)
         {
-            gameNameTextBox.ReadOnly = !enable;
-            descriptionTextBox.ReadOnly = !enable;
+            isEditing = enable;
+            editPanel.Visible = enable;
+            addButton.Enabled = !enable;
+            gameDataGridView.Enabled = !enable;
+            SetGameNameAndDecPanelEnable(!enable);
+        }
 
-            gameNameTextBox.Enabled = enable;
-            descriptionTextBox.Enabled = enable;
+        void SetGameNameAndDecPanelEnable(bool enable)
+        {
+            gameNameTextBox.ReadOnly = enable;
+            gameNameTextBox.Enabled = !enable;
 
+            descriptionTextBox.ReadOnly = enable;
+            descriptionTextBox.Enabled = !enable;
+        }
+
+
+        private void gameDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (isEditing)
+            {
+                // Prevent selecting another game while editing
+                gameDataGridView.ClearSelection();
+            }
         }
 
         #endregion
 
-
-        private void DescriptionTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-            //descriptionTextBox.Height = descriptionTextBox.GetLineFromCharIndex(int.MaxValue) * descriptionTextBoxHeight;
-            //MessageBox.Show(descriptionTextBox.GetLineFromCharIndex(int.MaxValue).ToString());
-        }
 
         void ChangeGameDataGridViewSize()
         {
@@ -160,6 +172,35 @@ namespace EpistWinform.Forms
         private void adminForm_Resize(object sender, EventArgs e)
         {
             ChangeGameDataGridViewSize();
+        }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to update the current information?", "Confirmation", MessageBoxButtons.OKCancel);
+
+            if (result == DialogResult.OK)
+            {
+                // Get the selected game
+                Game selectedGame = (Game)gameDataGridView.CurrentRow.DataBoundItem;
+
+                // Perform the update in the database
+                bool isUpdated = GamesDAO.Instance.EditGame(selectedGame.GameID, gameNameTextBox.Text, descriptionTextBox.Text);
+
+                if (isUpdated)
+                {
+                    MessageBox.Show("Information has been updated. Changes will take effect after restarting the app.", "Success");
+                    SetEditPanelEnable(false);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update information.", "Error");
+                }
+            }
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            SetEditPanelEnable(false);
         }
 
 

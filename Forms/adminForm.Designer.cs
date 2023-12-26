@@ -47,6 +47,9 @@
             gamePictureBox1 = new PictureBox();
             gamePictureBox2 = new PictureBox();
             gamePictureBox3 = new PictureBox();
+            editPanel = new Panel();
+            cancelBtn = new Button();
+            saveBtn = new Button();
             TagsTabPage = new TabPage();
             tabControl1 = new TabControl();
             tabPage2 = new TabPage();
@@ -65,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)gamePictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gamePictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gamePictureBox3).BeginInit();
+            editPanel.SuspendLayout();
             TagsTabPage.SuspendLayout();
             tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
@@ -168,6 +172,7 @@
             InfoFlowLayoutPanel.Controls.Add(gameNamePanel);
             InfoFlowLayoutPanel.Controls.Add(gameDecPanel);
             InfoFlowLayoutPanel.Controls.Add(flowLayoutPanel1);
+            InfoFlowLayoutPanel.Controls.Add(editPanel);
             InfoFlowLayoutPanel.Dock = DockStyle.Right;
             InfoFlowLayoutPanel.Location = new Point(809, 4);
             InfoFlowLayoutPanel.Margin = new Padding(4);
@@ -206,12 +211,13 @@
             // 
             // gameDecPanel
             // 
+            gameDecPanel.AutoSize = true;
             gameDecPanel.Controls.Add(descriptionTextBox);
             gameDecPanel.Controls.Add(gameDetailLabel);
             gameDecPanel.Location = new Point(4, 108);
             gameDecPanel.Margin = new Padding(4);
             gameDecPanel.Name = "gameDecPanel";
-            gameDecPanel.Size = new Size(404, 96);
+            gameDecPanel.Size = new Size(403, 345);
             gameDecPanel.TabIndex = 5;
             // 
             // descriptionTextBox
@@ -220,9 +226,8 @@
             descriptionTextBox.Margin = new Padding(4);
             descriptionTextBox.Multiline = true;
             descriptionTextBox.Name = "descriptionTextBox";
-            descriptionTextBox.Size = new Size(394, 46);
+            descriptionTextBox.Size = new Size(394, 300);
             descriptionTextBox.TabIndex = 1;
-            descriptionTextBox.TextChanged += DescriptionTextBox_TextChanged;
             // 
             // gameDetailLabel
             // 
@@ -241,7 +246,7 @@
             flowLayoutPanel1.Controls.Add(gamePictureBox2);
             flowLayoutPanel1.Controls.Add(gamePictureBox3);
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Location = new Point(3, 211);
+            flowLayoutPanel1.Location = new Point(3, 460);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(404, 433);
             flowLayoutPanel1.TabIndex = 6;
@@ -281,6 +286,35 @@
             gamePictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             gamePictureBox3.TabIndex = 2;
             gamePictureBox3.TabStop = false;
+            // 
+            // editPanel
+            // 
+            editPanel.Controls.Add(cancelBtn);
+            editPanel.Controls.Add(saveBtn);
+            editPanel.Location = new Point(3, 899);
+            editPanel.Name = "editPanel";
+            editPanel.Size = new Size(384, 64);
+            editPanel.TabIndex = 7;
+            // 
+            // cancelBtn
+            // 
+            cancelBtn.Location = new Point(205, 6);
+            cancelBtn.Name = "cancelBtn";
+            cancelBtn.Size = new Size(163, 50);
+            cancelBtn.TabIndex = 1;
+            cancelBtn.Text = "CANCEL";
+            cancelBtn.UseVisualStyleBackColor = true;
+            cancelBtn.Click += cancelBtn_Click;
+            // 
+            // saveBtn
+            // 
+            saveBtn.Location = new Point(16, 6);
+            saveBtn.Name = "saveBtn";
+            saveBtn.Size = new Size(163, 50);
+            saveBtn.TabIndex = 0;
+            saveBtn.Text = "SAVE";
+            saveBtn.UseVisualStyleBackColor = true;
+            saveBtn.Click += saveBtn_Click;
             // 
             // TagsTabPage
             // 
@@ -362,6 +396,7 @@
             ((System.ComponentModel.ISupportInitialize)gameDataGridView).EndInit();
             mainControlPanel.ResumeLayout(false);
             InfoFlowLayoutPanel.ResumeLayout(false);
+            InfoFlowLayoutPanel.PerformLayout();
             gameNamePanel.ResumeLayout(false);
             gameNamePanel.PerformLayout();
             gameDecPanel.ResumeLayout(false);
@@ -371,6 +406,7 @@
             ((System.ComponentModel.ISupportInitialize)gamePictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)gamePictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)gamePictureBox3).EndInit();
+            editPanel.ResumeLayout(false);
             TagsTabPage.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
@@ -414,5 +450,8 @@
         private Label pictureLabel;
         private PictureBox gamePictureBox2;
         private PictureBox gamePictureBox3;
+        private Panel editPanel;
+        private Button cancelBtn;
+        private Button saveBtn;
     }
 }
