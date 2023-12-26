@@ -67,6 +67,8 @@ namespace EpistWinform
                 adminBtn.Visible = false;
             else
                 adminBtn.Visible = true;
+
+            userBtn.Text = currentUserAccount.DisplayName;
         }
 
         #region privateMethods
