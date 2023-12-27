@@ -134,7 +134,7 @@
             displayNameIcon.IconColor = Color.White;
             displayNameIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             displayNameIcon.IconSize = 37;
-            displayNameIcon.Location = new Point(42, 76);
+            displayNameIcon.Location = new Point(42, 65);
             displayNameIcon.Name = "displayNameIcon";
             displayNameIcon.Size = new Size(37, 37);
             displayNameIcon.TabIndex = 2;
