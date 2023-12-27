@@ -54,7 +54,7 @@ namespace EpistWinform.Forms
         private void SetTextBoxesReadOnly(bool readOnly)
         {
             DisplayNameTextBox.ReadOnly = readOnly;
-            UsernameTextBox.ReadOnly = readOnly;
+            UsernameTextBox.ReadOnly = true;
             PasswordTextBox.ReadOnly = readOnly;
             if (readOnly)
             {
