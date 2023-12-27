@@ -47,6 +47,8 @@
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
             panel1 = new Panel();
+            splitContainer3 = new SplitContainer();
+            splitContainer4 = new SplitContainer();
             displayNamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)displayNameIcon).BeginInit();
             userNamePanel.SuspendLayout();
@@ -60,6 +62,14 @@
             splitContainer2.Panel1.SuspendLayout();
             splitContainer2.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer3).BeginInit();
+            splitContainer3.Panel1.SuspendLayout();
+            splitContainer3.Panel2.SuspendLayout();
+            splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)splitContainer4).BeginInit();
+            splitContainer4.Panel1.SuspendLayout();
+            splitContainer4.Panel2.SuspendLayout();
+            splitContainer4.SuspendLayout();
             SuspendLayout();
             // 
             // DisplayNameTextBox
@@ -94,7 +104,7 @@
             EditButton.BackColor = Color.FromArgb(58, 175, 131);
             EditButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             EditButton.ForeColor = Color.White;
-            EditButton.Location = new Point(3, 49);
+            EditButton.Location = new Point(3, 31);
             EditButton.Name = "EditButton";
             EditButton.Size = new Size(155, 50);
             EditButton.TabIndex = 3;
@@ -107,7 +117,7 @@
             SaveButton.BackColor = Color.FromArgb(58, 175, 131);
             SaveButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             SaveButton.ForeColor = Color.White;
-            SaveButton.Location = new Point(191, 49);
+            SaveButton.Location = new Point(3, 31);
             SaveButton.Name = "SaveButton";
             SaveButton.Size = new Size(155, 50);
             SaveButton.TabIndex = 4;
@@ -120,7 +130,7 @@
             CancelButton.BackColor = Color.FromArgb(58, 175, 131);
             CancelButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             CancelButton.ForeColor = Color.White;
-            CancelButton.Location = new Point(367, 49);
+            CancelButton.Location = new Point(14, 31);
             CancelButton.Name = "CancelButton";
             CancelButton.Size = new Size(155, 50);
             CancelButton.TabIndex = 5;
@@ -282,14 +292,49 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(EditButton);
-            panel1.Controls.Add(CancelButton);
-            panel1.Controls.Add(SaveButton);
+            panel1.Controls.Add(splitContainer3);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 410);
             panel1.Name = "panel1";
             panel1.Size = new Size(522, 237);
             panel1.TabIndex = 9;
+            // 
+            // splitContainer3
+            // 
+            splitContainer3.Dock = DockStyle.Fill;
+            splitContainer3.Location = new Point(0, 0);
+            splitContainer3.Name = "splitContainer3";
+            // 
+            // splitContainer3.Panel1
+            // 
+            splitContainer3.Panel1.Controls.Add(EditButton);
+            splitContainer3.Panel1.Paint += splitContainer3_Panel1_Paint;
+            // 
+            // splitContainer3.Panel2
+            // 
+            splitContainer3.Panel2.Controls.Add(splitContainer4);
+            splitContainer3.Size = new Size(522, 237);
+            splitContainer3.SplitterDistance = 172;
+            splitContainer3.TabIndex = 0;
+            splitContainer3.SplitterMoved += splitContainer3_SplitterMoved;
+            // 
+            // splitContainer4
+            // 
+            splitContainer4.Dock = DockStyle.Fill;
+            splitContainer4.Location = new Point(0, 0);
+            splitContainer4.Name = "splitContainer4";
+            // 
+            // splitContainer4.Panel1
+            // 
+            splitContainer4.Panel1.Controls.Add(SaveButton);
+            // 
+            // splitContainer4.Panel2
+            // 
+            splitContainer4.Panel2.Controls.Add(CancelButton);
+            splitContainer4.Size = new Size(346, 237);
+            splitContainer4.SplitterDistance = 173;
+            splitContainer4.TabIndex = 0;
+            splitContainer4.SplitterMoved += splitContainer4_SplitterMoved;
             // 
             // userForm
             // 
@@ -318,6 +363,14 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
             splitContainer2.ResumeLayout(false);
             panel1.ResumeLayout(false);
+            splitContainer3.Panel1.ResumeLayout(false);
+            splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer3).EndInit();
+            splitContainer3.ResumeLayout(false);
+            splitContainer4.Panel1.ResumeLayout(false);
+            splitContainer4.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer4).EndInit();
+            splitContainer4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -341,5 +394,7 @@
         private SplitContainer splitContainer1;
         private SplitContainer splitContainer2;
         private Panel panel1;
+        private SplitContainer splitContainer3;
+        private SplitContainer splitContainer4;
     }
 }

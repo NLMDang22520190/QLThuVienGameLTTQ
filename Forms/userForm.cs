@@ -108,5 +108,20 @@ namespace EpistWinform.Forms
         {
 
         }
+
+        private void splitContainer3_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void splitContainer3_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void splitContainer4_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
     }
 }
