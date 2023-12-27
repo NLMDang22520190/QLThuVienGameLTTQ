@@ -104,7 +104,7 @@
             EditButton.BackColor = Color.FromArgb(58, 175, 131);
             EditButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             EditButton.ForeColor = Color.White;
-            EditButton.Location = new Point(3, 31);
+            EditButton.Location = new Point(15, 31);
             EditButton.Name = "EditButton";
             EditButton.Size = new Size(155, 50);
             EditButton.TabIndex = 3;
@@ -117,7 +117,7 @@
             SaveButton.BackColor = Color.FromArgb(58, 175, 131);
             SaveButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             SaveButton.ForeColor = Color.White;
-            SaveButton.Location = new Point(3, 31);
+            SaveButton.Location = new Point(15, 31);
             SaveButton.Name = "SaveButton";
             SaveButton.Size = new Size(155, 50);
             SaveButton.TabIndex = 4;
