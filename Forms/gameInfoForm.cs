@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace EpistWinform.Forms
 {
@@ -70,6 +71,8 @@ namespace EpistWinform.Forms
                 gameDetailLabel.Font = new Font(gameDetailLabel.Font.FontFamily, 14);
                 gameDetailLabel.AutoSize = true;
                 gameDetailLabel.Text = game.GameInfo.ToString();
+                gameDetailLabel.ForeColor = Color.MintCream;
+
 
                 gameInfoFlowLayoutPanel.Controls.Add(gameDetailLabel);
 

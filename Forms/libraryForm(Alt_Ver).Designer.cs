@@ -119,6 +119,8 @@
             searchGameComboBox.Name = "searchGameComboBox";
             searchGameComboBox.Size = new Size(481, 28);
             searchGameComboBox.TabIndex = 1;
+            searchGameComboBox.DropDown += searchGameComboBox_DropDown;
+            searchGameComboBox.TextChanged += searchGameComboBox_TextChanged;
             // 
             // panel1
             // 

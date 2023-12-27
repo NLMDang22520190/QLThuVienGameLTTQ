@@ -101,10 +101,6 @@ namespace EpistWinform.Forms
             InventoryButtonClicked?.Invoke(this, clickedGame);
         }
 
-        void LoadImage()
-        {
-            
-        }
 
         private void LoadTag()
         {
@@ -179,8 +175,6 @@ namespace EpistWinform.Forms
             }
 
         }
-
-        private void FixSearchComboBox
 
         #endregion
 

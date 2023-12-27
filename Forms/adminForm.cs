@@ -41,6 +41,9 @@ namespace EpistWinform.Forms
             LoadAccount();
             confirmButton.Visible = false;
             searchUserComboBox.SelectedItem = 0;
+            SetUserInfoEnable(false);
+            userInfoDataGridView.Enabled = false;
+
             #endregion
 
         }
@@ -65,12 +68,10 @@ namespace EpistWinform.Forms
 
         void AddGameBinding()
         {
-            gameNameTextBox.DataBindings.Add(new Binding("Text", gameDataGridView.DataSource, "GameName"));
-            descriptionTextBox.DataBindings.Add(new Binding("Text", gameDataGridView.DataSource, "GameInfo"));
-            gamePictureBox1.DataBindings.Add(new Binding("ImageLocation", gameDataGridView.DataSource, "Picture1"));
-            gamePictureBox2.DataBindings.Add(new Binding("ImageLocation", gameDataGridView.DataSource, "Picture2"));
-            gamePictureBox3.DataBindings.Add(new Binding("ImageLocation", gameDataGridView.DataSource, "Picture3"));
+
         }
+
+
 
         #endregion
 
@@ -120,11 +121,11 @@ namespace EpistWinform.Forms
             gameNameTextBox.ReadOnly = true;
             gameNameTextBox.Enabled = false;
 
-            descriptionTextBox.ReadOnly = true;
+            //descriptionTextBox.ReadOnly = true;
             //descriptionTextBox.AutoSize = false;
             //descriptionTextBox.WordWrap = true;
             //descriptionTextBox.Multiline = true;
-            descriptionTextBox.Enabled = false;
+            //descriptionTextBox.Enabled = false;
         }
 
         void SetEnable(bool enable)
@@ -168,6 +169,8 @@ namespace EpistWinform.Forms
         {
             ChangeGameDataGridViewSize();
             FixUserPanels();
+            FixUserDataGridView();
+
         }
 
 
@@ -386,7 +389,7 @@ namespace EpistWinform.Forms
             searchUserComboBox.DataSource = accountList;
             searchUserComboBox.DisplayMember = "Username";
 
-            List<string> columnNames = new List<string> { "UserID", "Username", "DisplayName", "Gmail" };
+            List<string> columnNames = new List<string> { "UserID", "UserName", "DisplayName", "Gmail" };
             searchUserByColumnComboBox.DataSource = columnNames;
             searchUserByColumnComboBox.DisplayMember = "UserName";
 
@@ -398,19 +401,28 @@ namespace EpistWinform.Forms
 
         string SetSearchUserByColumn()
         {
-            string column = searchUserByColumnComboBox.SelectedItem.ToString();
-            return column;
+            // Check if an item is selected in the searchUserByColumnComboBox
+            if (searchUserByColumnComboBox.SelectedItem != null)
+            {
+                // Retrieve the selected column name
+                string column = searchUserByColumnComboBox.SelectedItem.ToString();
+                return column;
+            }
+            else
+            {
+                // Handle the case where no item is selected (return a default column name or handle accordingly)
+                return "DefaultColumnName"; // Change this to the default column name or handle as needed
+            }
         }
+
 
         void SetUserInfoTextBoxToNull()
         {
             foreach (Control control in userInfoFlowLayoutPanel.Controls)
             {
-                if (control is FlowLayoutPanel flowLayoutPanel)
+                if (control is TextBox textBox)
                 {
-                    foreach (Control subControl in flowLayoutPanel.Controls)
-                        if (subControl is TextBox textBox)
-                            textBox.Text = string.Empty;
+                    textBox.Text = string.Empty;
                 }
             }
         }
@@ -419,14 +431,12 @@ namespace EpistWinform.Forms
         {
             foreach (Control control in userInfoFlowLayoutPanel.Controls)
             {
-                if (control is FlowLayoutPanel flowLayoutPanel)
+                if (control is TextBox textBox)
                 {
-                    foreach (Control subControl in flowLayoutPanel.Controls)
-                    {
-                        subControl.Enabled = enable;
-                    }
+                    textBox.Enabled = enable;
                 }
             }
+            adminCheckBox.Enabled = enable;
         }
 
         void AddAccountBinding()
@@ -458,17 +468,29 @@ namespace EpistWinform.Forms
 
             foreach (Control control in userInfoFlowLayoutPanel.Controls)
             {
-                if (control is FlowLayoutPanel flowLayoutPanel)
+                if (control is TextBox textBox)
                 {
-                    flowLayoutPanel.Width = userInfoFlowLayoutPanel.Width;
-                    foreach (Control control1 in flowLayoutPanel.Controls)
+                    textBox.Width = userInfoFlowLayoutPanel.VerticalScroll.Visible ? userInfoFlowLayoutPanel.Width - SystemInformation.VerticalScrollBarWidth : userInfoFlowLayoutPanel.Width;
+                }
+            }
+        }
+
+        void FixUserDataGridView()
+        {
+            if (userInfoDataGridView.ColumnCount > 0)
+            {
+                for (int i = 0; i < userInfoDataGridView.ColumnCount; i++)
+                {
+                    userInfoDataGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    if (i == userInfoDataGridView.ColumnCount - 1)
                     {
-                        if (control1 is TextBox textBox)
-                        {
-                            textBox.Width = flowLayoutPanel.Width;
-                        }
+                        userInfoDataGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     }
                 }
+
+                userInfoDataGridView.AutoResizeColumnHeadersHeight();
+                userInfoDataGridView.AutoResizeRows();
+
             }
         }
 
@@ -654,6 +676,7 @@ namespace EpistWinform.Forms
             userInfoDataGridView.Enabled = true;
 
             SetUserInfoTextBoxToNull();
+            SetUserInfoEnable(false);
 
         }
 
@@ -699,10 +722,58 @@ namespace EpistWinform.Forms
             }
         }
 
+        private void searchUserComboBox_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = searchUserComboBox.Text.ToLower();
+
+            string selectedColumnName = SetSearchUserByColumn();
+
+            // Filter the accountList based on the selected column and entered text
+            List<Account> filteredAccounts = accountList
+                .Where(account =>
+                {
+                    object propertyValue = GetPropertyValue(account, selectedColumnName);
+                    return propertyValue != null && propertyValue.ToString().ToLower().Contains(searchText);
+                })
+                .ToList();
+
+            // Use BeginInvoke only if the form's handle has been created
+            if (IsHandleCreated)
+            {
+                BeginInvoke(new Action(() =>
+                {
+                    // Update the userInfoDataGridView with the filtered accounts
+                    userInfoDataGridView.DataSource = filteredAccounts;
+
+                    // Reset the bindings to update the TextBoxes
+                    AddAccountBinding();
+                }));
+            }
+            else
+            {
+                // Update the userInfoDataGridView directly if the handle is not created yet
+                userInfoDataGridView.DataSource = filteredAccounts;
+
+                // Reset the bindings to update the TextBoxes
+                AddAccountBinding();
+            }
+        }
+
+
+
+
+        // Helper method to get the value of a property dynamically
+        private object GetPropertyValue(object obj, string propertyName)
+        {
+            var prop = obj.GetType().GetProperty(propertyName);
+            return prop != null ? prop.GetValue(obj) : null;
+        }
 
 
         #endregion
         #endregion
+
+
 
 
 
