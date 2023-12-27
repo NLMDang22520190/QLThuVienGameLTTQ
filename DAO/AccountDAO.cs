@@ -31,14 +31,10 @@ namespace EpistWinform.DAO
             return result;
         }
         // Khai báo một biến static để lưu userID của người dùng đăng nhập
-        private static int loggedInUserID;
+        public static int loggedInUserID;
 
-        // Thuộc tính public cho phép truy cập đến userID của người dùng đã đăng nhập
-        public static int LoggedInUserID
-        {
-            get { return loggedInUserID; }
-            private set { loggedInUserID = value; }
-        }
+        
+        
         public bool GetUserId(string username, string password)
         {
             // Thực hiện truy vấn để kiểm tra thông tin đăng nhập và lấy userID từ cơ sở dữ liệu

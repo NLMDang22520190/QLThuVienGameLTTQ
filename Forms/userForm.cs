@@ -29,11 +29,13 @@ namespace EpistWinform.Forms
             SetTextBoxesReadOnly(true);
 
         }
+
+
         private void DisplayUserData()
         {
             // Ví dụ: Lấy thông tin của người dùng có userID = 1 từ cơ sở dữ liệu
             string query = "SELECT display_name, username, password FROM UserInfo WHERE userID = @userID";
-            object[] parameters = new object[] { 1 }; // Thay 1 bằng userID mong muốn
+            object[] parameters = new object[] { AccountDAO.loggedInUserID }; // Thay 1 bằng userID mong muốn
 
             DataTable userData = DataProvider.Instance.ExecuteQuery(query, parameters);
 
@@ -56,7 +58,7 @@ namespace EpistWinform.Forms
             PasswordTextBox.ReadOnly = readOnly;
             if (readOnly)
             {
-                PasswordTextBox.PasswordChar = '*'; 
+                PasswordTextBox.PasswordChar = '*';
             }
             else
             {
@@ -95,6 +97,16 @@ namespace EpistWinform.Forms
             // Hiển thị lại dữ liệu ban đầu từ cơ sở dữ liệu
             DisplayUserData();
             SetTextBoxesReadOnly(true);
+        }
+
+        private void EditButton_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SaveButton_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -44,8 +44,9 @@ namespace EpistWinform
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            
+
             passwordTextBox.Text = "123";
+            AccountDAO.Instance.GetUserId(usernameTextBox.Text, passwordTextBox.Text);
             if (Login(usernameTextBox.Text, passwordTextBox.Text))
             {
                 DataRow row = currentUserData.Rows[0];
@@ -57,7 +58,7 @@ namespace EpistWinform
             }
             else
                 MessageBox.Show("Incorrect Username or Password");
-
+            
 
         }
 
@@ -96,6 +97,10 @@ namespace EpistWinform
 
 
 
-       
+
+        private void userNamePanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
