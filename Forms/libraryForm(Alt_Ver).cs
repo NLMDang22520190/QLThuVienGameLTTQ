@@ -27,12 +27,13 @@ namespace EpistWinform.Forms
 
         public libraryForm_Alt_Ver_(Account currentAccount)
         {
-            InitializeComponent();  
+            InitializeComponent();
 
             LoadGame();
             LoadTag();
 
             this.currentAccount = currentAccount;
+            this.DoubleBuffered = true;
         }
 
         #region Method
@@ -98,6 +99,11 @@ namespace EpistWinform.Forms
             //gameInfoForm gameInfoForm = new gameInfoForm(clickedGame);
             //gameInfoForm.ShowDialog(); // Use ShowDialog to make it a modal form
             InventoryButtonClicked?.Invoke(this, clickedGame);
+        }
+
+        void LoadImage()
+        {
+            
         }
 
         private void LoadTag()
@@ -174,8 +180,12 @@ namespace EpistWinform.Forms
 
         }
 
+        private void FixSearchComboBox
+
         #endregion
 
+
+        #region Event
         private void libraryForm_Alt_Ver__Resize(object sender, EventArgs e)
         {
             FixTagButtons();
@@ -260,6 +270,17 @@ namespace EpistWinform.Forms
                     searchGameComboBox.Items.Add(game.GameName);
                 }
             }
+        }
+        #endregion
+
+        private void tagLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TagsFlowLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
         #endregion
     }

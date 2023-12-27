@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -59,6 +60,9 @@ namespace EpistWinform
             userForm = new userForm();
             adminForm = new adminForm();
             this.currentUserAccount = currentUserAccount;
+
+
+            this.DoubleBuffered = true;
             //MessageBox.Show(currentUserAccount.UserID.ToString() + " " + currentUserAccount.UserName.ToString());
         }
 
@@ -108,8 +112,10 @@ namespace EpistWinform
 
         private void LibraryForm_InventoryButtonClicked(object sender, Game currentGame)
         {
-            gameInfoForm gameInfoForm = new gameInfoForm(currentGame, currentUserAccount.UserID);
+            gameInfoForm gameInfoForm = new gameInfoForm(currentGame, currentUserAccount);
+            gameInfoForm.OpenInventoryClicked += GameInfoForm_OpenInventoryClicked;
             OpenChildForm(gameInfoForm);
+
 
             // Mở inventoryForm trong changeFormPanel
             //OpenChildForm(inventoryForm);
@@ -224,6 +230,14 @@ namespace EpistWinform
 
             libraryForm.InventoryButtonClicked += LibraryForm_InventoryButtonClicked;
 
+        }
+
+
+        private void GameInfoForm_OpenInventoryClicked(object sender, EventArgs e)
+        {
+            // Handle the event, e.g., open the inventoryForm
+            ActivateButton(inventoryBtn, pressColor);
+            OpenChildForm(inventoryForm);
         }
 
 

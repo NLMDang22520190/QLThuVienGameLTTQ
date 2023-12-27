@@ -1,5 +1,6 @@
 ﻿using EpistWinform.DAO;
 using EpistWinform.DTO;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,9 @@ namespace EpistWinform.Forms
         int verticalScrollWidth;
 
         private Game game;
-        private int userID;
+        private Account account;
+        private inventoryForm inventoryForm;
+
         // Declare an event
         public event EventHandler InventoryButtonClicked;
 
@@ -27,12 +30,12 @@ namespace EpistWinform.Forms
             InventoryButtonClicked?.Invoke(this, EventArgs.Empty);
         }
 
-        public gameInfoForm(Game game, int userID)
+        public gameInfoForm(Game game, Account account)
         {
             InitializeComponent();
 
             this.game = game;
-            this.userID = userID;
+            this.account = account;
             InitializeGameDetails(game);
         }
 
@@ -64,13 +67,14 @@ namespace EpistWinform.Forms
                 Label gameDetailLabel = new Label();
                 verticalScrollWidth = gameInfoFlowLayoutPanel.VerticalScroll.Visible ? SystemInformation.VerticalScrollBarWidth : 0;
                 gameDetailLabel.Width = gameInfoFlowLayoutPanel.Width - verticalScrollWidth;
+                gameDetailLabel.Font = new Font(gameDetailLabel.Font.FontFamily, 14);
                 gameDetailLabel.AutoSize = true;
                 gameDetailLabel.Text = game.GameInfo.ToString();
 
                 gameInfoFlowLayoutPanel.Controls.Add(gameDetailLabel);
 
                 // Check if the game is already in the user's inventory
-                bool isInInventory = GamesDAO.Instance.IsGameInOwnedGames(game.GameID, userID);
+                bool isInInventory = GamesDAO.Instance.IsGameInOwnedGames(game.GameID, account.UserID);
 
                 // Clear existing event handlers
                 addGameButton.Click -= OpenInventoryButton_Click;
@@ -120,9 +124,12 @@ namespace EpistWinform.Forms
         {
             // Handle add to inventory button click
             // You can add the game to the user's inventory here
-            if (GamesDAO.Instance.InsertGameToOwnedGames(game.GameID, userID))
+            if (GamesDAO.Instance.InsertGameToOwnedGames(game.GameID, account.UserID))
             {
                 MessageBox.Show("Game was added into your Inventory.");
+                addGameButton.Click -= AddToInventoryButton_Click;
+                addGameButton.Text = "OPEN INVENTORY";
+                addGameButton.Click += OpenInventoryButton_Click;
             }
             else
             {
@@ -132,21 +139,17 @@ namespace EpistWinform.Forms
 
         }
 
+        public event EventHandler OpenInventoryClicked;
         private void OpenInventoryButton_Click(object sender, EventArgs e)
         {
-            // Handle open inventory button click
-            // You can open the user's inventory here
-            // For example, open the inventory form or perform other actions
-            // MessageBox.Show("Open Inventory clicked");
+            // Assuming inventoryForm is an instance variable of gameInfoForm
+            inventoryForm = new inventoryForm(account);
 
-            // Raise the event to notify the parent form (MainWindowForm) about the button click
-            InventoryButtonClicked?.Invoke(this, EventArgs.Empty);
-        }
+            // Trigger the event to notify MainWindowForm about the button click
+            OpenInventoryClicked?.Invoke(this, EventArgs.Empty);
 
-        private void MoreInfoButton_Click(object sender, EventArgs e)
-        {
-            // Handle more info button click
-            // You can provide additional information or actions here
+            // Close the current gameInfoForm when opening the inventoryForm
+            this.Close();
         }
 
         private void gameInfoForm_SizeChanged(object sender, EventArgs e)

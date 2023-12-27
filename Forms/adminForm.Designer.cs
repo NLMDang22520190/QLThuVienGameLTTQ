@@ -966,12 +966,13 @@
             // 
             // adminCheckBox
             // 
+            adminCheckBox.AutoSize = true;
             adminCheckBox.CheckAlign = ContentAlignment.MiddleRight;
             adminCheckBox.Dock = DockStyle.Left;
             adminCheckBox.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
             adminCheckBox.Location = new Point(3, 379);
             adminCheckBox.Name = "adminCheckBox";
-            adminCheckBox.Size = new Size(105, 0);
+            adminCheckBox.Size = new Size(105, 34);
             adminCheckBox.TabIndex = 2;
             adminCheckBox.Text = "Admin";
             adminCheckBox.UseVisualStyleBackColor = true;
