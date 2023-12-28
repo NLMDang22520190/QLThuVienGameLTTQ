@@ -55,12 +55,12 @@ namespace EpistWinform
                 var mainWindowForm = new MainWindowForm(currentUserAccount, this);
                 this.Hide();
                 mainWindowForm.ShowDialog();
-                if(this.IsDisposed == false)
+                if (this.IsDisposed == false)
                     this.Show();
             }
-            else if(status != -1)
+            else if (status != -1)
                 MessageBox.Show("Incorrect Username or Password");
-            
+
 
         }
 
@@ -108,7 +108,7 @@ namespace EpistWinform
             forgotPassForm.ShowDialog();
         }
 
-       
+
         #endregion
 
 

@@ -67,9 +67,9 @@
             controlBarPanel.Controls.Add(loginLabel);
             controlBarPanel.Dock = DockStyle.Top;
             controlBarPanel.Location = new Point(0, 0);
-            controlBarPanel.Margin = new Padding(2, 2, 2, 2);
+            controlBarPanel.Margin = new Padding(2);
             controlBarPanel.Name = "controlBarPanel";
-            controlBarPanel.Size = new Size(626, 120);
+            controlBarPanel.Size = new Size(782, 150);
             controlBarPanel.TabIndex = 6;
             controlBarPanel.MouseDown += controlBarPanel_MouseDown;
             // 
@@ -82,10 +82,10 @@
             minimizeBtn.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             minimizeBtn.IconColor = Color.White;
             minimizeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            minimizeBtn.Location = new Point(552, 4);
-            minimizeBtn.Margin = new Padding(2, 2, 2, 2);
+            minimizeBtn.Location = new Point(690, 5);
+            minimizeBtn.Margin = new Padding(2);
             minimizeBtn.Name = "minimizeBtn";
-            minimizeBtn.Size = new Size(32, 32);
+            minimizeBtn.Size = new Size(40, 40);
             minimizeBtn.TabIndex = 9;
             minimizeBtn.UseVisualStyleBackColor = true;
             minimizeBtn.Click += minimizeBtn_Click;
@@ -99,10 +99,10 @@
             closeBtn.IconChar = FontAwesome.Sharp.IconChar.TimesRectangle;
             closeBtn.IconColor = Color.White;
             closeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            closeBtn.Location = new Point(590, 4);
-            closeBtn.Margin = new Padding(4, 4, 4, 4);
+            closeBtn.Location = new Point(738, 5);
+            closeBtn.Margin = new Padding(5, 5, 5, 5);
             closeBtn.Name = "closeBtn";
-            closeBtn.Size = new Size(32, 32);
+            closeBtn.Size = new Size(40, 40);
             closeBtn.TabIndex = 8;
             closeBtn.UseVisualStyleBackColor = true;
             closeBtn.Click += closeBtn_Click;
@@ -110,10 +110,10 @@
             // logoPictureBox
             // 
             logoPictureBox.Image = (Image)resources.GetObject("logoPictureBox.Image");
-            logoPictureBox.Location = new Point(22, 0);
-            logoPictureBox.Margin = new Padding(2, 2, 2, 2);
+            logoPictureBox.Location = new Point(28, 0);
+            logoPictureBox.Margin = new Padding(2);
             logoPictureBox.Name = "logoPictureBox";
-            logoPictureBox.Size = new Size(120, 120);
+            logoPictureBox.Size = new Size(150, 150);
             logoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             logoPictureBox.TabIndex = 6;
             logoPictureBox.TabStop = false;
@@ -123,10 +123,10 @@
             loginLabel.AutoSize = true;
             loginLabel.Font = new Font("Tahoma", 26F, FontStyle.Bold, GraphicsUnit.Point);
             loginLabel.ForeColor = Color.White;
-            loginLabel.Location = new Point(160, 38);
+            loginLabel.Location = new Point(200, 48);
             loginLabel.Margin = new Padding(2, 0, 2, 0);
             loginLabel.Name = "loginLabel";
-            loginLabel.Size = new Size(315, 53);
+            loginLabel.Size = new Size(372, 63);
             loginLabel.TabIndex = 4;
             loginLabel.Text = "EPIST LOGIN";
             // 
@@ -137,10 +137,10 @@
             userNamePanel.Controls.Add(usernameTextBox);
             userNamePanel.Controls.Add(usernameLabel);
             userNamePanel.Dock = DockStyle.Top;
-            userNamePanel.Location = new Point(0, 120);
-            userNamePanel.Margin = new Padding(2, 2, 2, 2);
+            userNamePanel.Location = new Point(0, 150);
+            userNamePanel.Margin = new Padding(2);
             userNamePanel.Name = "userNamePanel";
-            userNamePanel.Size = new Size(626, 120);
+            userNamePanel.Size = new Size(782, 150);
             userNamePanel.TabIndex = 0;
             userNamePanel.Paint += userNamePanel_Paint;
             // 
@@ -152,8 +152,9 @@
             userNameIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             userNameIcon.IconSize = 46;
             userNameIcon.Location = new Point(68, 65);
+            userNameIcon.Margin = new Padding(4, 4, 4, 4);
             userNameIcon.Name = "userNameIcon";
-            userNameIcon.Size = new Size(37, 37);
+            userNameIcon.Size = new Size(46, 46);
             userNameIcon.TabIndex = 2;
             userNameIcon.TabStop = false;
             // 
@@ -162,10 +163,10 @@
             usernameTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             usernameTextBox.BackColor = Color.FromArgb(221, 216, 216);
             usernameTextBox.Font = new Font("Tahoma", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            usernameTextBox.Location = new Point(113, 52);
-            usernameTextBox.Margin = new Padding(2, 2, 2, 2);
+            usernameTextBox.Location = new Point(141, 65);
+            usernameTextBox.Margin = new Padding(2);
             usernameTextBox.Name = "usernameTextBox";
-            usernameTextBox.Size = new Size(459, 40);
+            usernameTextBox.Size = new Size(573, 46);
             usernameTextBox.TabIndex = 1;
             // 
             // usernameLabel
@@ -173,10 +174,10 @@
             usernameLabel.AutoSize = true;
             usernameLabel.Font = new Font("Tahoma", 16F, FontStyle.Bold, GraphicsUnit.Point);
             usernameLabel.ForeColor = Color.FromArgb(58, 175, 131);
-            usernameLabel.Location = new Point(47, 10);
+            usernameLabel.Location = new Point(59, 12);
             usernameLabel.Margin = new Padding(2, 0, 2, 0);
             usernameLabel.Name = "usernameLabel";
-            usernameLabel.Size = new Size(169, 33);
+            usernameLabel.Size = new Size(200, 39);
             usernameLabel.TabIndex = 0;
             usernameLabel.Text = "USERNAME";
             // 
@@ -188,10 +189,10 @@
             passWordPanel.Controls.Add(passwordTextBox);
             passWordPanel.Controls.Add(passwordLabel);
             passWordPanel.Dock = DockStyle.Top;
-            passWordPanel.Location = new Point(0, 240);
-            passWordPanel.Margin = new Padding(2, 2, 2, 2);
+            passWordPanel.Location = new Point(0, 300);
+            passWordPanel.Margin = new Padding(2);
             passWordPanel.Name = "passWordPanel";
-            passWordPanel.Size = new Size(626, 120);
+            passWordPanel.Size = new Size(782, 150);
             passWordPanel.TabIndex = 2;
             // 
             // showPassBtn
@@ -203,10 +204,10 @@
             showPassBtn.IconColor = Color.White;
             showPassBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             showPassBtn.IconSize = 55;
-            showPassBtn.Location = new Point(576, 57);
-            showPassBtn.Margin = new Padding(2, 2, 2, 2);
+            showPassBtn.Location = new Point(720, 71);
+            showPassBtn.Margin = new Padding(2);
             showPassBtn.Name = "showPassBtn";
-            showPassBtn.Size = new Size(37, 37);
+            showPassBtn.Size = new Size(46, 46);
             showPassBtn.TabIndex = 1;
             showPassBtn.UseVisualStyleBackColor = false;
             showPassBtn.Click += showPassBtn_Click;
@@ -217,11 +218,11 @@
             passwordIcon.IconChar = FontAwesome.Sharp.IconChar.Lock;
             passwordIcon.IconColor = Color.White;
             passwordIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            passwordIcon.IconSize = 37;
-            passwordIcon.Location = new Point(54, 57);
-            passwordIcon.Margin = new Padding(2, 2, 2, 2);
+            passwordIcon.IconSize = 46;
+            passwordIcon.Location = new Point(68, 71);
+            passwordIcon.Margin = new Padding(2);
             passwordIcon.Name = "passwordIcon";
-            passwordIcon.Size = new Size(37, 37);
+            passwordIcon.Size = new Size(46, 46);
             passwordIcon.SizeMode = PictureBoxSizeMode.StretchImage;
             passwordIcon.TabIndex = 3;
             passwordIcon.TabStop = false;
@@ -231,11 +232,11 @@
             passwordTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             passwordTextBox.BackColor = Color.FromArgb(221, 216, 216);
             passwordTextBox.Font = new Font("Tahoma", 16F, FontStyle.Regular, GraphicsUnit.Point);
-            passwordTextBox.Location = new Point(113, 57);
-            passwordTextBox.Margin = new Padding(2, 2, 2, 2);
+            passwordTextBox.Location = new Point(141, 71);
+            passwordTextBox.Margin = new Padding(2);
             passwordTextBox.Name = "passwordTextBox";
             passwordTextBox.PasswordChar = '*';
-            passwordTextBox.Size = new Size(459, 40);
+            passwordTextBox.Size = new Size(573, 46);
             passwordTextBox.TabIndex = 1;
             // 
             // passwordLabel
@@ -243,10 +244,10 @@
             passwordLabel.AutoSize = true;
             passwordLabel.Font = new Font("Tahoma", 16F, FontStyle.Bold, GraphicsUnit.Point);
             passwordLabel.ForeColor = Color.FromArgb(58, 175, 131);
-            passwordLabel.Location = new Point(47, 16);
+            passwordLabel.Location = new Point(59, 20);
             passwordLabel.Margin = new Padding(2, 0, 2, 0);
             passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new Size(174, 33);
+            passwordLabel.Size = new Size(205, 39);
             passwordLabel.TabIndex = 0;
             passwordLabel.Text = "PASSWORD";
             // 
@@ -255,10 +256,10 @@
             loginBtnPanel.BackColor = Color.White;
             loginBtnPanel.Controls.Add(loginBtn);
             loginBtnPanel.Dock = DockStyle.Top;
-            loginBtnPanel.Location = new Point(0, 360);
-            loginBtnPanel.Margin = new Padding(2, 2, 2, 2);
+            loginBtnPanel.Location = new Point(0, 450);
+            loginBtnPanel.Margin = new Padding(2);
             loginBtnPanel.Name = "loginBtnPanel";
-            loginBtnPanel.Size = new Size(626, 80);
+            loginBtnPanel.Size = new Size(782, 100);
             loginBtnPanel.TabIndex = 3;
             // 
             // loginBtn
@@ -268,10 +269,10 @@
             loginBtn.Cursor = Cursors.Hand;
             loginBtn.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             loginBtn.ForeColor = Color.White;
-            loginBtn.Location = new Point(54, 16);
-            loginBtn.Margin = new Padding(2, 2, 2, 2);
+            loginBtn.Location = new Point(68, 20);
+            loginBtn.Margin = new Padding(2);
             loginBtn.Name = "loginBtn";
-            loginBtn.Size = new Size(517, 50);
+            loginBtn.Size = new Size(646, 62);
             loginBtn.TabIndex = 0;
             loginBtn.Text = "LOGIN";
             loginBtn.UseVisualStyleBackColor = false;
@@ -283,10 +284,10 @@
             forgotPassAndCreateAccPanel.Controls.Add(createAccountLabel);
             forgotPassAndCreateAccPanel.Controls.Add(forgotpassLabel);
             forgotPassAndCreateAccPanel.Dock = DockStyle.Fill;
-            forgotPassAndCreateAccPanel.Location = new Point(0, 440);
-            forgotPassAndCreateAccPanel.Margin = new Padding(2, 2, 2, 2);
+            forgotPassAndCreateAccPanel.Location = new Point(0, 550);
+            forgotPassAndCreateAccPanel.Margin = new Padding(2);
             forgotPassAndCreateAccPanel.Name = "forgotPassAndCreateAccPanel";
-            forgotPassAndCreateAccPanel.Size = new Size(626, 82);
+            forgotPassAndCreateAccPanel.Size = new Size(782, 91);
             forgotPassAndCreateAccPanel.TabIndex = 5;
             // 
             // createAccountLabel
@@ -295,10 +296,10 @@
             createAccountLabel.AutoSize = true;
             createAccountLabel.Cursor = Cursors.Hand;
             createAccountLabel.Font = new Font("Tahoma", 11F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point);
-            createAccountLabel.Location = new Point(414, 6);
+            createAccountLabel.Location = new Point(518, 8);
             createAccountLabel.Margin = new Padding(2, 0, 2, 0);
             createAccountLabel.Name = "createAccountLabel";
-            createAccountLabel.Size = new Size(180, 23);
+            createAccountLabel.Size = new Size(209, 27);
             createAccountLabel.TabIndex = 1;
             createAccountLabel.Text = "Create New Account";
             createAccountLabel.Click += createAccountLabel_Click;
@@ -308,20 +309,20 @@
             forgotpassLabel.AutoSize = true;
             forgotpassLabel.Cursor = Cursors.Hand;
             forgotpassLabel.Font = new Font("Tahoma", 11F, FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point);
-            forgotpassLabel.Location = new Point(10, 6);
+            forgotpassLabel.Location = new Point(12, 8);
             forgotpassLabel.Margin = new Padding(2, 0, 2, 0);
             forgotpassLabel.Name = "forgotpassLabel";
-            forgotpassLabel.Size = new Size(157, 23);
+            forgotpassLabel.Size = new Size(183, 27);
             forgotpassLabel.TabIndex = 0;
             forgotpassLabel.Text = "Forgot Password?";
             forgotpassLabel.Click += forgotpassLabel_Click;
             // 
             // loginForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(0, 113, 84);
-            ClientSize = new Size(626, 522);
+            ClientSize = new Size(782, 641);
             ControlBox = false;
             Controls.Add(forgotPassAndCreateAccPanel);
             Controls.Add(loginBtnPanel);
@@ -329,9 +330,9 @@
             Controls.Add(userNamePanel);
             Controls.Add(controlBarPanel);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(2, 2, 2, 2);
-            MaximumSize = new Size(804, 569);
-            MinimumSize = new Size(644, 569);
+            Margin = new Padding(2);
+            MaximumSize = new Size(1000, 697);
+            MinimumSize = new Size(800, 697);
             Name = "loginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
