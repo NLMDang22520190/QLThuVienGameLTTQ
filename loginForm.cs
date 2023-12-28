@@ -46,7 +46,7 @@ namespace EpistWinform
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            
+
             passwordTextBox.Text = "123";
             if (Login(usernameTextBox.Text, passwordTextBox.Text) && status != -1)
             {
@@ -60,7 +60,7 @@ namespace EpistWinform
             }
             else if(status != -1)
                 MessageBox.Show("Incorrect Username or Password");
-
+            
 
         }
 
@@ -113,6 +113,10 @@ namespace EpistWinform
 
 
 
-       
+
+        private void userNamePanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
