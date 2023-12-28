@@ -58,7 +58,7 @@ namespace EpistWinform
             libraryForm = new libraryForm_Alt_Ver_();
             inventoryForm = new inventoryForm(currentUserAccount);
 
-            userForm = new userForm();
+            userForm = new userForm(currentUserAccount);
             adminForm = new adminForm();
             this.currentUserAccount = currentUserAccount;
             this.parentForm = parentForm;

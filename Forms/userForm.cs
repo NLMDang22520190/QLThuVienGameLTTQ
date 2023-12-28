@@ -1,4 +1,5 @@
 ﻿using EpistWinform.DAO;
+using EpistWinform.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,8 @@ namespace EpistWinform.Forms
 {
     public partial class userForm : Form
     {
-        public userForm()
+        private Account currentUserAccount;
+        public userForm(Account currentUser)
         {
             InitializeComponent();
             // Gắn sự kiện Load cho Form
@@ -22,6 +24,8 @@ namespace EpistWinform.Forms
             EditButton.Click += new EventHandler(EditButton_Click);
             SaveButton.Click += new EventHandler(SaveButton_Click);
             CancelButton.Click += new EventHandler(CancelButton_Click);
+
+            currentUserAccount = currentUser;
         }
         private void userForm_Load(object sender, EventArgs e)
         {
@@ -35,7 +39,7 @@ namespace EpistWinform.Forms
         {
             // Ví dụ: Lấy thông tin của người dùng có userID = 1 từ cơ sở dữ liệu
             string query = "SELECT display_name, username, password FROM UserInfo WHERE userID = @userID";
-            object[] parameters = new object[] { AccountDAO.loggedInUserID }; // Thay 1 bằng userID mong muốn
+            object[] parameters = new object[] { currentUserAccount.UserID }; // Thay 1 bằng userID mong muốn
 
             DataTable userData = DataProvider.Instance.ExecuteQuery(query, parameters);
 
