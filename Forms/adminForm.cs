@@ -34,7 +34,7 @@ namespace EpistWinform.Forms
             SetReadOnly();
             editPanel.Visible = false;
             gameDataGridView.SelectionChanged += gameDataGridView_SelectionChanged;
-      
+
         }
         void LoadGame()
         {

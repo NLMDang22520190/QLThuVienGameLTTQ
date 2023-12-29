@@ -50,10 +50,6 @@
             editPanel = new Panel();
             cancelBtn = new Button();
             saveBtn = new Button();
-            TagsTabPage = new TabPage();
-            tabControl1 = new TabControl();
-            tabPage2 = new TabPage();
-            tabPage3 = new TabPage();
             UserTabPage = new TabPage();
             OpenFileDialog = new OpenFileDialog();
             fileSystemWatcher1 = new FileSystemWatcher();
@@ -69,15 +65,12 @@
             ((System.ComponentModel.ISupportInitialize)gamePictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gamePictureBox3).BeginInit();
             editPanel.SuspendLayout();
-            TagsTabPage.SuspendLayout();
-            tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             SuspendLayout();
             // 
             // adminTabControl
             // 
             adminTabControl.Controls.Add(GameTabPage);
-            adminTabControl.Controls.Add(TagsTabPage);
             adminTabControl.Controls.Add(UserTabPage);
             adminTabControl.Dock = DockStyle.Fill;
             adminTabControl.Location = new Point(0, 0);
@@ -316,51 +309,6 @@
             saveBtn.UseVisualStyleBackColor = true;
             saveBtn.Click += saveBtn_Click;
             // 
-            // TagsTabPage
-            // 
-            TagsTabPage.Controls.Add(tabControl1);
-            TagsTabPage.Location = new Point(4, 34);
-            TagsTabPage.Margin = new Padding(4);
-            TagsTabPage.Name = "TagsTabPage";
-            TagsTabPage.Padding = new Padding(4);
-            TagsTabPage.Size = new Size(1228, 520);
-            TagsTabPage.TabIndex = 1;
-            TagsTabPage.Text = "Tags";
-            TagsTabPage.UseVisualStyleBackColor = true;
-            // 
-            // tabControl1
-            // 
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage3);
-            tabControl1.Location = new Point(310, 90);
-            tabControl1.Margin = new Padding(4);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(10, 10);
-            tabControl1.TabIndex = 0;
-            // 
-            // tabPage2
-            // 
-            tabPage2.Location = new Point(4, 34);
-            tabPage2.Margin = new Padding(4);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(4);
-            tabPage2.Size = new Size(2, 0);
-            tabPage2.TabIndex = 0;
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            tabPage3.Location = new Point(4, 34);
-            tabPage3.Margin = new Padding(4);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(4);
-            tabPage3.Size = new Size(2, 0);
-            tabPage3.TabIndex = 1;
-            tabPage3.Text = "tabPage3";
-            tabPage3.UseVisualStyleBackColor = true;
-            // 
             // UserTabPage
             // 
             UserTabPage.Location = new Point(4, 34);
@@ -407,8 +355,6 @@
             ((System.ComponentModel.ISupportInitialize)gamePictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)gamePictureBox3).EndInit();
             editPanel.ResumeLayout(false);
-            TagsTabPage.ResumeLayout(false);
-            tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             ResumeLayout(false);
         }
@@ -417,12 +363,8 @@
 
         private TabControl adminTabControl;
         private TabPage GameTabPage;
-        private TabPage TagsTabPage;
         private FlowLayoutPanel InfoFlowLayoutPanel;
         private Panel gameNamePanel;
-        private TabControl tabControl1;
-        private TabPage tabPage2;
-        private TabPage tabPage3;
         private TabPage UserTabPage;
         private Panel picturePanel;
         private DataGridView gameDataGridView;
