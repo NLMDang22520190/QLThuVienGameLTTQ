@@ -753,8 +753,6 @@
             Resize += adminForm_Resize;
             adminTabControl.ResumeLayout(false);
             GameTabPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)gameDataGridView).EndInit();
-            mainControlPanel.ResumeLayout(false);
             InfoFlowLayoutPanel.ResumeLayout(false);
             InfoFlowLayoutPanel.PerformLayout();
             gameNamePanel.ResumeLayout(false);

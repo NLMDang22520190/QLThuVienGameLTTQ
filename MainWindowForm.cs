@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -55,7 +56,7 @@ namespace EpistWinform
             navigationPanel.Controls.Add(downBorderBtn);
             pressColor = Color.LightPink;
 
-            libraryForm = new libraryForm_Alt_Ver_();
+            libraryForm = new libraryForm_Alt_Ver_(currentUserAccount);
             inventoryForm = new inventoryForm(currentUserAccount);
 
             userForm = new userForm(currentUserAccount);
@@ -69,6 +70,10 @@ namespace EpistWinform
                 adminBtn.Visible = true;
 
             userBtn.Text = currentUserAccount.DisplayName;
+
+
+            this.DoubleBuffered = true;
+            //MessageBox.Show(currentUserAccount.UserID.ToString() + " " + currentUserAccount.UserName.ToString());
         }
 
         #region privateMethods
@@ -117,8 +122,10 @@ namespace EpistWinform
 
         private void LibraryForm_InventoryButtonClicked(object sender, Game currentGame)
         {
-            gameInfoForm gameInfoForm = new gameInfoForm(currentGame);
+            gameInfoForm gameInfoForm = new gameInfoForm(currentGame, currentUserAccount);
+            gameInfoForm.OpenInventoryClicked += GameInfoForm_OpenInventoryClicked;
             OpenChildForm(gameInfoForm);
+
 
             // Mở inventoryForm trong changeFormPanel
             //OpenChildForm(inventoryForm);
@@ -264,6 +271,15 @@ namespace EpistWinform
         {
             this.Close();
         }
+
+        private void GameInfoForm_OpenInventoryClicked(object sender, EventArgs e)
+        {
+            // Handle the event, e.g., open the inventoryForm
+            ActivateButton(inventoryBtn, pressColor);
+            OpenChildForm(inventoryForm);
+        }
+
+
         #endregion
 
 

@@ -9,7 +9,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 namespace EpistWinform.Forms
 {
@@ -218,6 +221,8 @@ namespace EpistWinform.Forms
         private void adminForm_Resize(object sender, EventArgs e)
         {
             ChangeGameDataGridViewSize();
+            FixUserPanels();
+            FixUserDataGridView();
         }
 
         // ------------- User / Account --------------

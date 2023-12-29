@@ -60,5 +60,15 @@ namespace EpistWinform.DAO
         }
 
 
+
+        private List<GameTags> allGameTagsList = new List<GameTags>();
+        public List<GameTags> ListAllGameTags
+        {
+            get 
+            { 
+                if (allGameTagsList.Count <= 0) allGameTagsList = LoadGameTagsList();
+                return allGameTagsList;
+            }
+        }
     }
 }

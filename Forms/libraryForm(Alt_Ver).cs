@@ -19,16 +19,21 @@ namespace EpistWinform.Forms
         public event EventHandler<Game> InventoryButtonClicked;
         private List<Game> filteredGames;
 
-        List<Game> gameList = GamesDAO.Instance.ListAllGames;
-        List<Tag> tagList = TagDAO.Instance.LoadTagsList();
-        List<GameTags> gameTagsList = GameTagsDAO.Instance.LoadGameTagsList();
+        private Account currentAccount;
 
-        public libraryForm_Alt_Ver_()
+        List<Game> gameList = GamesDAO.Instance.ListAllGames;
+        List<Tag> tagList = TagDAO.Instance.AllTagsList;
+        List<GameTags> gameTagsList = GameTagsDAO.Instance.ListAllGameTags;
+
+        public libraryForm_Alt_Ver_(Account currentAccount)
         {
-            InitializeComponent();  
+            InitializeComponent();
 
             LoadGame();
             LoadTag();
+
+            this.currentAccount = currentAccount;
+            this.DoubleBuffered = true;
         }
 
         #region Method
@@ -95,6 +100,7 @@ namespace EpistWinform.Forms
             //gameInfoForm.ShowDialog(); // Use ShowDialog to make it a modal form
             InventoryButtonClicked?.Invoke(this, clickedGame);
         }
+
 
         private void LoadTag()
         {
@@ -172,6 +178,8 @@ namespace EpistWinform.Forms
 
         #endregion
 
+
+        #region Event
         private void libraryForm_Alt_Ver__Resize(object sender, EventArgs e)
         {
             FixTagButtons();
@@ -256,6 +264,17 @@ namespace EpistWinform.Forms
                     searchGameComboBox.Items.Add(game.GameName);
                 }
             }
+        }
+        #endregion
+
+        private void tagLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TagsFlowLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
         #endregion
     }
