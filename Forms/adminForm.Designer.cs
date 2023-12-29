@@ -50,7 +50,6 @@
             editPanel = new Panel();
             cancelBtn = new Button();
             saveBtn = new Button();
-            UserTabPage = new TabPage();
             OpenFileDialog = new OpenFileDialog();
             fileSystemWatcher1 = new FileSystemWatcher();
             adminTabControl.SuspendLayout();
@@ -71,7 +70,6 @@
             // adminTabControl
             // 
             adminTabControl.Controls.Add(GameTabPage);
-            adminTabControl.Controls.Add(UserTabPage);
             adminTabControl.Dock = DockStyle.Fill;
             adminTabControl.Location = new Point(0, 0);
             adminTabControl.Margin = new Padding(4);
@@ -309,17 +307,6 @@
             saveBtn.UseVisualStyleBackColor = true;
             saveBtn.Click += saveBtn_Click;
             // 
-            // UserTabPage
-            // 
-            UserTabPage.Location = new Point(4, 34);
-            UserTabPage.Margin = new Padding(4);
-            UserTabPage.Name = "UserTabPage";
-            UserTabPage.Padding = new Padding(4);
-            UserTabPage.Size = new Size(1228, 520);
-            UserTabPage.TabIndex = 2;
-            UserTabPage.Text = "Users";
-            UserTabPage.UseVisualStyleBackColor = true;
-            // 
             // OpenFileDialog
             // 
             OpenFileDialog.FileName = "openFileDialog";
@@ -365,7 +352,6 @@
         private TabPage GameTabPage;
         private FlowLayoutPanel InfoFlowLayoutPanel;
         private Panel gameNamePanel;
-        private TabPage UserTabPage;
         private Panel picturePanel;
         private DataGridView gameDataGridView;
         private Panel mainControlPanel;
