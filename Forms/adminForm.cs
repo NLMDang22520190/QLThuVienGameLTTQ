@@ -19,17 +19,13 @@ namespace EpistWinform.Forms
     public partial class adminForm : Form
     {
 
-        int tagButtonWidth;
-
         List<Game> gameList = GamesDAO.Instance.ListAllGames;
-        List<Tag> tagsList = TagDAO.Instance.AllTagsList;
         List<GameTags> gameTagsList = GameTagsDAO.Instance.ListAllGameTags;
         List<Account> accountList = AccountDAO.Instance.ListAllAccounts;
 
         public adminForm()
         {
             InitializeComponent();
-            LoadGameTab();
 
             #region User/Account
             LoadAccount();
@@ -42,136 +38,14 @@ namespace EpistWinform.Forms
 
         }
 
-        #region GameTab
-        #region Method
 
-        void LoadGameTab()
-        {
-            LoadGame();
-            AddGameBinding();
-            SetReadOnly();
-        }
-        void LoadGame()
-        {
-            List<Game> gameList = GamesDAO.Instance.ListAllGames;
-            gameComboBox.DataSource = gameList;
-            gameComboBox.DisplayMember = "gameName";
-            gameDataGridView.DataSource = gameList;
-            gameDataGridView.ReadOnly = true;
-        }
-
-        void AddGameBinding()
-        {
-
-        }
-
-
-
-        #endregion
-
-
-        #region Event
-        private void addButton_Click(object sender, EventArgs e)
-        {
-            //Game newGame = new Game(gameDataGridView.Rows.Count + 1);
-            //string filePath = "";
-            //AddGameForm form = new AddGameForm(ref newGame, ref filePath);
-            //form.currentAddedGameChanged +=
-            //form.ShowDialog();
-            //MessageBox.Show(newGame.GameName + " " + newGame.GameInfo + " " + filePath);
-            //SetEnable(true);
-            //// Tạo một đối tượng Game mới
-
-            //// Thêm đối tượng mới vào danh sách và DataGridView
-            //List<Game> gameList = (List<Game>)gameDataGridView.DataSource;
-            //gameList.Add(newGame);
-            //gameDataGridView.DataSource = null;
-            //gameDataGridView.DataSource = gameList;
-
-            //// Tự động chọn dòng mới được thêm
-            //int rowIndex = gameDataGridView.Rows.Count - 1;
-            //gameDataGridView.CurrentCell = gameDataGridView.Rows[rowIndex].Cells[0];
-
-            //// Thực hiện binding để hiển thị thông tin của đối tượng mới
-            //gameNameTextBox.DataBindings[0].ReadValue();
-            //descriptionTextBox.DataBindings[0].ReadValue();
-            //ChangeGameDataGridViewSize();
-
-        }
-
-        private void editButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        #endregion
-
-        #region SetReadOnly
-
-        void SetReadOnly()
-        {
-
-            gameNameTextBox.ReadOnly = true;
-            gameNameTextBox.Enabled = false;
-
-            //descriptionTextBox.ReadOnly = true;
-            //descriptionTextBox.AutoSize = false;
-            //descriptionTextBox.WordWrap = true;
-            //descriptionTextBox.Multiline = true;
-            //descriptionTextBox.Enabled = false;
-        }
-
-        void SetEnable(bool enable)
-        {
-            gameNameTextBox.ReadOnly = !enable;
-            descriptionTextBox.ReadOnly = !enable;
-
-            gameNameTextBox.Enabled = enable;
-            descriptionTextBox.Enabled = enable;
-
-        }
-
-        #endregion
-
-
-        private void DescriptionTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-            //descriptionTextBox.Height = descriptionTextBox.GetLineFromCharIndex(int.MaxValue) * descriptionTextBoxHeight;
-            //MessageBox.Show(descriptionTextBox.GetLineFromCharIndex(int.MaxValue).ToString());
-        }
-
-        void ChangeGameDataGridViewSize()
-        {
-            if (gameDataGridView.ColumnCount > 0)
-            {
-                for (int i = 0; i < gameDataGridView.ColumnCount; i++)
-                {
-                    if (i == 2)
-                        continue;
-                    gameDataGridView.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                }
-            }
-
-            gameDataGridView.AutoResizeColumnHeadersHeight();
-            gameDataGridView.AutoResizeRows();
-        }
-        #endregion
 
         private void adminForm_Resize(object sender, EventArgs e)
         {
-            ChangeGameDataGridViewSize();
             FixUserPanels();
             FixUserDataGridView();
 
         }
-
-
-
-
-
-
 
 
         // ------------- User / Account --------------
