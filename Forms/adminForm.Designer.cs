@@ -52,6 +52,7 @@
             saveBtn = new Button();
             OpenFileDialog = new OpenFileDialog();
             fileSystemWatcher1 = new FileSystemWatcher();
+            UserTabPage = new TabPage();
             adminTabControl.SuspendLayout();
             GameTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)gameDataGridView).BeginInit();
@@ -70,6 +71,7 @@
             // adminTabControl
             // 
             adminTabControl.Controls.Add(GameTabPage);
+            adminTabControl.Controls.Add(UserTabPage);
             adminTabControl.Dock = DockStyle.Fill;
             adminTabControl.Location = new Point(0, 0);
             adminTabControl.Margin = new Padding(4);
@@ -316,6 +318,16 @@
             fileSystemWatcher1.EnableRaisingEvents = true;
             fileSystemWatcher1.SynchronizingObject = this;
             // 
+            // UserTabPage
+            // 
+            UserTabPage.Location = new Point(4, 34);
+            UserTabPage.Name = "UserTabPage";
+            UserTabPage.Padding = new Padding(3);
+            UserTabPage.Size = new Size(1228, 520);
+            UserTabPage.TabIndex = 1;
+            UserTabPage.Text = "Users";
+            UserTabPage.UseVisualStyleBackColor = true;
+            // 
             // adminForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -381,5 +393,6 @@
         private Panel editPanel;
         private Button cancelBtn;
         private Button saveBtn;
+        private TabPage UserTabPage;
     }
 }
