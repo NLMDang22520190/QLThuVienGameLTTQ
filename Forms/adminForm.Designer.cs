@@ -32,111 +32,86 @@
             saveFileDialog1 = new SaveFileDialog();
             UserTabPage = new TabPage();
             mainSplitContainer = new SplitContainer();
-            userInfoDataGridView = new DataGridView();
+            confirmButton = new Button();
+            userInfoFlowLayoutPanel = new FlowLayoutPanel();
+            adminCheckBox = new CheckBox();
+            gmailTextBox = new TextBox();
+            gmailLabel = new Label();
+            displayNameTextBox = new TextBox();
+            displayNameLabel = new Label();
+            passwordTextBox = new TextBox();
+            passwordLabel = new Label();
+            usernameTextBox = new TextBox();
+            usernameLabel = new Label();
+            userIDTextBox = new TextBox();
+            userIDLabel = new Label();
+            adminFlowLayoutPanel = new FlowLayoutPanel();
             toolsPanel = new Panel();
-            searchSplitContainer = new SplitContainer();
-            searchUserComboBox = new ComboBox();
-            searchUserByColumnComboBox = new ComboBox();
             mainToolsPanel = new Panel();
             toolsSplitContainer = new SplitContainer();
-            addAndRemoveSplitContainer = new SplitContainer();
-            addUserButton = new Button();
-            removeUserButton = new Button();
             EditAndViewSplitContainer = new SplitContainer();
-            editUserButton = new Button();
             viewButton = new Button();
-            userInfoFlowLayoutPanel = new FlowLayoutPanel();
-            adminFlowLayoutPanel = new FlowLayoutPanel();
-            userIDLabel = new Label();
-            userIDTextBox = new TextBox();
-            usernameLabel = new Label();
-            usernameTextBox = new TextBox();
-            passwordLabel = new Label();
-            passwordTextBox = new TextBox();
-            displayNameLabel = new Label();
-            displayNameTextBox = new TextBox();
-            gmailLabel = new Label();
-            gmailTextBox = new TextBox();
-            adminCheckBox = new CheckBox();
-            confirmButton = new Button();
-            TagsTabPage = new TabPage();
-            gamesAndTagsPanel = new Panel();
-            gamesPanel = new Panel();
-            gamesFlowLayoutPanel = new FlowLayoutPanel();
-            gameFakeLable = new Button();
-            tagsPanel = new Panel();
-            tagFlowLayoutPanel = new FlowLayoutPanel();
-            allTagsButton = new Button();
-            EditPanel = new Panel();
-            tagDescriptionTextBox = new TextBox();
-            tagNameTextBox = new TextBox();
-            descriptionButton = new Button();
-            tagNameButton = new Button();
-            tagMainControlPanel = new Panel();
-            editGameTagButton = new Button();
-            removeTagButton = new Button();
-            tagsComboBox = new ComboBox();
-            editTagButton = new Button();
-            addTagButton = new Button();
+            editUserButton = new Button();
+            addAndRemoveSplitContainer = new SplitContainer();
+            removeUserButton = new Button();
+            addUserButton = new Button();
+            searchSplitContainer = new SplitContainer();
+            searchUserByColumnComboBox = new ComboBox();
+            searchUserComboBox = new ComboBox();
+            userInfoDataGridView = new DataGridView();
             GameTabPage = new TabPage();
-            gameDataGridView = new DataGridView();
-            mainControlPanel = new Panel();
-            gameComboBox = new ComboBox();
-            editButton = new Button();
-            addButton = new Button();
             InfoFlowLayoutPanel = new FlowLayoutPanel();
-            gameNamePanel = new Panel();
-            gameNameTextBox = new TextBox();
-            nameLabel = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            gamePictureBox3 = new PictureBox();
+            gamePictureBox2 = new PictureBox();
+            gamePictureBox1 = new PictureBox();
+            pictureLabel = new Label();
             gameDecPanel = new Panel();
             gameDetailLabel = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            pictureLabel = new Label();
-            gamePictureBox1 = new PictureBox();
-            gamePictureBox2 = new PictureBox();
-            gamePictureBox3 = new PictureBox();
+            gameNamePanel = new Panel();
+            nameLabel = new Label();
+            gameNameTextBox = new TextBox();
+            mainControlPanel = new Panel();
+            addButton = new Button();
+            editButton = new Button();
+            gameComboBox = new ComboBox();
+            gameDataGridView = new DataGridView();
             adminTabControl = new TabControl();
             UserTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)mainSplitContainer).BeginInit();
             mainSplitContainer.Panel1.SuspendLayout();
             mainSplitContainer.Panel2.SuspendLayout();
             mainSplitContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)userInfoDataGridView).BeginInit();
+            userInfoFlowLayoutPanel.SuspendLayout();
             toolsPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)searchSplitContainer).BeginInit();
-            searchSplitContainer.Panel1.SuspendLayout();
-            searchSplitContainer.Panel2.SuspendLayout();
-            searchSplitContainer.SuspendLayout();
             mainToolsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)toolsSplitContainer).BeginInit();
             toolsSplitContainer.Panel1.SuspendLayout();
             toolsSplitContainer.Panel2.SuspendLayout();
             toolsSplitContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)addAndRemoveSplitContainer).BeginInit();
-            addAndRemoveSplitContainer.Panel1.SuspendLayout();
-            addAndRemoveSplitContainer.Panel2.SuspendLayout();
-            addAndRemoveSplitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)EditAndViewSplitContainer).BeginInit();
             EditAndViewSplitContainer.Panel1.SuspendLayout();
             EditAndViewSplitContainer.Panel2.SuspendLayout();
             EditAndViewSplitContainer.SuspendLayout();
-            userInfoFlowLayoutPanel.SuspendLayout();
-            TagsTabPage.SuspendLayout();
-            gamesAndTagsPanel.SuspendLayout();
-            gamesPanel.SuspendLayout();
-            tagsPanel.SuspendLayout();
-            EditPanel.SuspendLayout();
-            tagMainControlPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)addAndRemoveSplitContainer).BeginInit();
+            addAndRemoveSplitContainer.Panel1.SuspendLayout();
+            addAndRemoveSplitContainer.Panel2.SuspendLayout();
+            addAndRemoveSplitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)searchSplitContainer).BeginInit();
+            searchSplitContainer.Panel1.SuspendLayout();
+            searchSplitContainer.Panel2.SuspendLayout();
+            searchSplitContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)userInfoDataGridView).BeginInit();
             GameTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gameDataGridView).BeginInit();
-            mainControlPanel.SuspendLayout();
             InfoFlowLayoutPanel.SuspendLayout();
-            gameNamePanel.SuspendLayout();
-            gameDecPanel.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gamePictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)gamePictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gamePictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gamePictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gamePictureBox1).BeginInit();
+            gameDecPanel.SuspendLayout();
+            gameNamePanel.SuspendLayout();
+            mainControlPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gameDataGridView).BeginInit();
             adminTabControl.SuspendLayout();
             SuspendLayout();
             // 
@@ -177,199 +152,21 @@
             mainSplitContainer.SplitterDistance = 788;
             mainSplitContainer.TabIndex = 0;
             // 
-            // userInfoDataGridView
+            // confirmButton
             // 
-            userInfoDataGridView.AllowUserToAddRows = false;
-            userInfoDataGridView.AllowUserToDeleteRows = false;
-            userInfoDataGridView.AllowUserToOrderColumns = true;
-            userInfoDataGridView.BackgroundColor = Color.FromArgb(171, 253, 255);
-            userInfoDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            userInfoDataGridView.Dock = DockStyle.Fill;
-            userInfoDataGridView.Location = new Point(0, 178);
-            userInfoDataGridView.Margin = new Padding(4, 4, 4, 4);
-            userInfoDataGridView.Name = "userInfoDataGridView";
-            userInfoDataGridView.RowHeadersWidth = 51;
-            userInfoDataGridView.RowTemplate.Height = 29;
-            userInfoDataGridView.Size = new Size(788, 334);
-            userInfoDataGridView.TabIndex = 1;
-            // 
-            // toolsPanel
-            // 
-            toolsPanel.Controls.Add(searchSplitContainer);
-            toolsPanel.Controls.Add(mainToolsPanel);
-            toolsPanel.Dock = DockStyle.Top;
-            toolsPanel.Location = new Point(0, 0);
-            toolsPanel.Margin = new Padding(4, 4, 4, 4);
-            toolsPanel.Name = "toolsPanel";
-            toolsPanel.Size = new Size(788, 178);
-            toolsPanel.TabIndex = 0;
-            // 
-            // searchSplitContainer
-            // 
-            searchSplitContainer.Dock = DockStyle.Fill;
-            searchSplitContainer.Location = new Point(0, 125);
-            searchSplitContainer.Margin = new Padding(4, 4, 4, 4);
-            searchSplitContainer.Name = "searchSplitContainer";
-            // 
-            // searchSplitContainer.Panel1
-            // 
-            searchSplitContainer.Panel1.Controls.Add(searchUserComboBox);
-            // 
-            // searchSplitContainer.Panel2
-            // 
-            searchSplitContainer.Panel2.Controls.Add(searchUserByColumnComboBox);
-            searchSplitContainer.Size = new Size(788, 53);
-            searchSplitContainer.SplitterDistance = 494;
-            searchSplitContainer.TabIndex = 1;
-            // 
-            // searchUserComboBox
-            // 
-            searchUserComboBox.Dock = DockStyle.Fill;
-            searchUserComboBox.Font = new Font("Tahoma", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            searchUserComboBox.FormattingEnabled = true;
-            searchUserComboBox.Location = new Point(0, 0);
-            searchUserComboBox.Margin = new Padding(4, 4, 4, 4);
-            searchUserComboBox.Name = "searchUserComboBox";
-            searchUserComboBox.Size = new Size(494, 42);
-            searchUserComboBox.TabIndex = 0;
-            searchUserComboBox.TextChanged += searchUserComboBox_TextChanged;
-            // 
-            // searchUserByColumnComboBox
-            // 
-            searchUserByColumnComboBox.Dock = DockStyle.Fill;
-            searchUserByColumnComboBox.Font = new Font("Tahoma", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            searchUserByColumnComboBox.FormattingEnabled = true;
-            searchUserByColumnComboBox.Location = new Point(0, 0);
-            searchUserByColumnComboBox.Margin = new Padding(4, 4, 4, 4);
-            searchUserByColumnComboBox.Name = "searchUserByColumnComboBox";
-            searchUserByColumnComboBox.Size = new Size(290, 42);
-            searchUserByColumnComboBox.TabIndex = 0;
-            searchUserByColumnComboBox.SelectedIndexChanged += searchUserByColumnComboBox_SelectedIndexChanged;
-            // 
-            // mainToolsPanel
-            // 
-            mainToolsPanel.Controls.Add(toolsSplitContainer);
-            mainToolsPanel.Dock = DockStyle.Top;
-            mainToolsPanel.Location = new Point(0, 0);
-            mainToolsPanel.Margin = new Padding(4, 4, 4, 4);
-            mainToolsPanel.Name = "mainToolsPanel";
-            mainToolsPanel.Size = new Size(788, 125);
-            mainToolsPanel.TabIndex = 0;
-            // 
-            // toolsSplitContainer
-            // 
-            toolsSplitContainer.Dock = DockStyle.Fill;
-            toolsSplitContainer.IsSplitterFixed = true;
-            toolsSplitContainer.Location = new Point(0, 0);
-            toolsSplitContainer.Margin = new Padding(4, 4, 4, 4);
-            toolsSplitContainer.Name = "toolsSplitContainer";
-            // 
-            // toolsSplitContainer.Panel1
-            // 
-            toolsSplitContainer.Panel1.BackColor = Color.FromArgb(171, 253, 255);
-            toolsSplitContainer.Panel1.Controls.Add(addAndRemoveSplitContainer);
-            // 
-            // toolsSplitContainer.Panel2
-            // 
-            toolsSplitContainer.Panel2.Controls.Add(EditAndViewSplitContainer);
-            toolsSplitContainer.Size = new Size(788, 125);
-            toolsSplitContainer.SplitterDistance = 390;
-            toolsSplitContainer.SplitterWidth = 5;
-            toolsSplitContainer.TabIndex = 1;
-            // 
-            // addAndRemoveSplitContainer
-            // 
-            addAndRemoveSplitContainer.Dock = DockStyle.Fill;
-            addAndRemoveSplitContainer.IsSplitterFixed = true;
-            addAndRemoveSplitContainer.Location = new Point(0, 0);
-            addAndRemoveSplitContainer.Margin = new Padding(4, 4, 4, 4);
-            addAndRemoveSplitContainer.Name = "addAndRemoveSplitContainer";
-            // 
-            // addAndRemoveSplitContainer.Panel1
-            // 
-            addAndRemoveSplitContainer.Panel1.Controls.Add(addUserButton);
-            // 
-            // addAndRemoveSplitContainer.Panel2
-            // 
-            addAndRemoveSplitContainer.Panel2.Controls.Add(removeUserButton);
-            addAndRemoveSplitContainer.Size = new Size(390, 125);
-            addAndRemoveSplitContainer.SplitterDistance = 191;
-            addAndRemoveSplitContainer.TabIndex = 0;
-            // 
-            // addUserButton
-            // 
-            addUserButton.BackColor = Color.Cyan;
-            addUserButton.Dock = DockStyle.Fill;
-            addUserButton.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            addUserButton.Location = new Point(0, 0);
-            addUserButton.Margin = new Padding(4, 4, 4, 4);
-            addUserButton.Name = "addUserButton";
-            addUserButton.Size = new Size(191, 125);
-            addUserButton.TabIndex = 0;
-            addUserButton.Text = "ADD";
-            addUserButton.UseVisualStyleBackColor = false;
-            addUserButton.Click += addUserButton_Click;
-            // 
-            // removeUserButton
-            // 
-            removeUserButton.BackColor = Color.Cyan;
-            removeUserButton.Dock = DockStyle.Fill;
-            removeUserButton.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            removeUserButton.Location = new Point(0, 0);
-            removeUserButton.Margin = new Padding(4, 4, 4, 4);
-            removeUserButton.Name = "removeUserButton";
-            removeUserButton.Size = new Size(195, 125);
-            removeUserButton.TabIndex = 0;
-            removeUserButton.Text = "REMOVE";
-            removeUserButton.UseVisualStyleBackColor = false;
-            removeUserButton.Click += removeUserButton_Click;
-            // 
-            // EditAndViewSplitContainer
-            // 
-            EditAndViewSplitContainer.Dock = DockStyle.Fill;
-            EditAndViewSplitContainer.IsSplitterFixed = true;
-            EditAndViewSplitContainer.Location = new Point(0, 0);
-            EditAndViewSplitContainer.Margin = new Padding(4, 4, 4, 4);
-            EditAndViewSplitContainer.Name = "EditAndViewSplitContainer";
-            // 
-            // EditAndViewSplitContainer.Panel1
-            // 
-            EditAndViewSplitContainer.Panel1.Controls.Add(editUserButton);
-            // 
-            // EditAndViewSplitContainer.Panel2
-            // 
-            EditAndViewSplitContainer.Panel2.Controls.Add(viewButton);
-            EditAndViewSplitContainer.Size = new Size(393, 125);
-            EditAndViewSplitContainer.SplitterDistance = 193;
-            EditAndViewSplitContainer.TabIndex = 0;
-            // 
-            // editUserButton
-            // 
-            editUserButton.BackColor = Color.Cyan;
-            editUserButton.Dock = DockStyle.Fill;
-            editUserButton.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            editUserButton.Location = new Point(0, 0);
-            editUserButton.Margin = new Padding(4, 4, 4, 4);
-            editUserButton.Name = "editUserButton";
-            editUserButton.Size = new Size(193, 125);
-            editUserButton.TabIndex = 0;
-            editUserButton.Text = "EDIT";
-            editUserButton.UseVisualStyleBackColor = false;
-            editUserButton.Click += editUserButton_Click;
-            // 
-            // viewButton
-            // 
-            viewButton.BackColor = Color.Cyan;
-            viewButton.Dock = DockStyle.Fill;
-            viewButton.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            viewButton.Location = new Point(0, 0);
-            viewButton.Margin = new Padding(4, 4, 4, 4);
-            viewButton.Name = "viewButton";
-            viewButton.Size = new Size(196, 125);
-            viewButton.TabIndex = 5;
-            viewButton.Text = "VIEW";
-            viewButton.UseVisualStyleBackColor = false;
-            viewButton.Click += viewButton_Click;
+            confirmButton.AutoSize = true;
+            confirmButton.BackColor = Color.Cyan;
+            confirmButton.Dock = DockStyle.Bottom;
+            confirmButton.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            confirmButton.ForeColor = Color.MidnightBlue;
+            confirmButton.Location = new Point(0, 427);
+            confirmButton.Margin = new Padding(4);
+            confirmButton.Name = "confirmButton";
+            confirmButton.Size = new Size(395, 85);
+            confirmButton.TabIndex = 0;
+            confirmButton.Text = "CONFIRM CHANGE";
+            confirmButton.UseVisualStyleBackColor = false;
+            confirmButton.Click += confirmButton_Click;
             // 
             // userInfoFlowLayoutPanel
             // 
@@ -389,104 +186,31 @@
             userInfoFlowLayoutPanel.Dock = DockStyle.Fill;
             userInfoFlowLayoutPanel.FlowDirection = FlowDirection.TopDown;
             userInfoFlowLayoutPanel.Location = new Point(0, 0);
-            userInfoFlowLayoutPanel.Margin = new Padding(4, 4, 4, 4);
+            userInfoFlowLayoutPanel.Margin = new Padding(4);
             userInfoFlowLayoutPanel.Name = "userInfoFlowLayoutPanel";
             userInfoFlowLayoutPanel.Size = new Size(395, 427);
             userInfoFlowLayoutPanel.TabIndex = 0;
             // 
-            // adminFlowLayoutPanel
+            // adminCheckBox
             // 
-            adminFlowLayoutPanel.AutoSize = true;
-            adminFlowLayoutPanel.FlowDirection = FlowDirection.TopDown;
-            adminFlowLayoutPanel.Location = new Point(4, 4);
-            adminFlowLayoutPanel.Margin = new Padding(4, 4, 4, 4);
-            adminFlowLayoutPanel.Name = "adminFlowLayoutPanel";
-            adminFlowLayoutPanel.Size = new Size(0, 0);
-            adminFlowLayoutPanel.TabIndex = 4;
+            adminCheckBox.AutoSize = true;
+            adminCheckBox.Dock = DockStyle.Top;
+            adminCheckBox.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            adminCheckBox.Location = new Point(208, 48);
+            adminCheckBox.Margin = new Padding(4);
+            adminCheckBox.Name = "adminCheckBox";
+            adminCheckBox.Size = new Size(389, 40);
+            adminCheckBox.TabIndex = 2;
+            adminCheckBox.Text = "Admin";
+            adminCheckBox.UseVisualStyleBackColor = true;
             // 
-            // userIDLabel
+            // gmailTextBox
             // 
-            userIDLabel.AutoSize = true;
-            userIDLabel.Dock = DockStyle.Top;
-            userIDLabel.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            userIDLabel.Location = new Point(4, 8);
-            userIDLabel.Margin = new Padding(4, 0, 4, 0);
-            userIDLabel.Name = "userIDLabel";
-            userIDLabel.Size = new Size(196, 36);
-            userIDLabel.TabIndex = 0;
-            userIDLabel.Text = "ID";
-            // 
-            // userIDTextBox
-            // 
-            userIDTextBox.Dock = DockStyle.Top;
-            userIDTextBox.Location = new Point(4, 48);
-            userIDTextBox.Margin = new Padding(4, 4, 4, 4);
-            userIDTextBox.Name = "userIDTextBox";
-            userIDTextBox.Size = new Size(196, 36);
-            userIDTextBox.TabIndex = 1;
-            // 
-            // usernameLabel
-            // 
-            usernameLabel.AutoSize = true;
-            usernameLabel.Dock = DockStyle.Top;
-            usernameLabel.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            usernameLabel.Location = new Point(4, 88);
-            usernameLabel.Margin = new Padding(4, 0, 4, 0);
-            usernameLabel.Name = "usernameLabel";
-            usernameLabel.Size = new Size(196, 36);
-            usernameLabel.TabIndex = 0;
-            usernameLabel.Text = "Username";
-            // 
-            // usernameTextBox
-            // 
-            usernameTextBox.Dock = DockStyle.Top;
-            usernameTextBox.Location = new Point(4, 128);
-            usernameTextBox.Margin = new Padding(4, 4, 4, 4);
-            usernameTextBox.Name = "usernameTextBox";
-            usernameTextBox.Size = new Size(196, 36);
-            usernameTextBox.TabIndex = 1;
-            // 
-            // passwordLabel
-            // 
-            passwordLabel.AutoSize = true;
-            passwordLabel.Dock = DockStyle.Top;
-            passwordLabel.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            passwordLabel.Location = new Point(4, 168);
-            passwordLabel.Margin = new Padding(4, 0, 4, 0);
-            passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new Size(196, 36);
-            passwordLabel.TabIndex = 0;
-            passwordLabel.Text = "Password";
-            // 
-            // passwordTextBox
-            // 
-            passwordTextBox.Dock = DockStyle.Top;
-            passwordTextBox.Location = new Point(4, 208);
-            passwordTextBox.Margin = new Padding(4, 4, 4, 4);
-            passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.Size = new Size(196, 36);
-            passwordTextBox.TabIndex = 1;
-            // 
-            // displayNameLabel
-            // 
-            displayNameLabel.AutoSize = true;
-            displayNameLabel.Dock = DockStyle.Top;
-            displayNameLabel.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            displayNameLabel.Location = new Point(4, 248);
-            displayNameLabel.Margin = new Padding(4, 0, 4, 0);
-            displayNameLabel.Name = "displayNameLabel";
-            displayNameLabel.Size = new Size(196, 36);
-            displayNameLabel.TabIndex = 0;
-            displayNameLabel.Text = "Display Name";
-            // 
-            // displayNameTextBox
-            // 
-            displayNameTextBox.Dock = DockStyle.Top;
-            displayNameTextBox.Location = new Point(4, 288);
-            displayNameTextBox.Margin = new Padding(4, 4, 4, 4);
-            displayNameTextBox.Name = "displayNameTextBox";
-            displayNameTextBox.Size = new Size(196, 36);
-            displayNameTextBox.TabIndex = 1;
+            gmailTextBox.Location = new Point(208, 4);
+            gmailTextBox.Margin = new Padding(4);
+            gmailTextBox.Name = "gmailTextBox";
+            gmailTextBox.Size = new Size(389, 36);
+            gmailTextBox.TabIndex = 1;
             // 
             // gmailLabel
             // 
@@ -500,268 +224,293 @@
             gmailLabel.TabIndex = 0;
             gmailLabel.Text = "Gmail";
             // 
-            // gmailTextBox
+            // displayNameTextBox
             // 
-            gmailTextBox.Location = new Point(208, 4);
-            gmailTextBox.Margin = new Padding(4, 4, 4, 4);
-            gmailTextBox.Name = "gmailTextBox";
-            gmailTextBox.Size = new Size(389, 36);
-            gmailTextBox.TabIndex = 1;
+            displayNameTextBox.Dock = DockStyle.Top;
+            displayNameTextBox.Location = new Point(4, 288);
+            displayNameTextBox.Margin = new Padding(4);
+            displayNameTextBox.Name = "displayNameTextBox";
+            displayNameTextBox.Size = new Size(196, 36);
+            displayNameTextBox.TabIndex = 1;
             // 
-            // adminCheckBox
+            // displayNameLabel
             // 
-            adminCheckBox.AutoSize = true;
-            adminCheckBox.Dock = DockStyle.Top;
-            adminCheckBox.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            adminCheckBox.Location = new Point(208, 48);
-            adminCheckBox.Margin = new Padding(4, 4, 4, 4);
-            adminCheckBox.Name = "adminCheckBox";
-            adminCheckBox.Size = new Size(389, 40);
-            adminCheckBox.TabIndex = 2;
-            adminCheckBox.Text = "Admin";
-            adminCheckBox.UseVisualStyleBackColor = true;
+            displayNameLabel.AutoSize = true;
+            displayNameLabel.Dock = DockStyle.Top;
+            displayNameLabel.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            displayNameLabel.Location = new Point(4, 248);
+            displayNameLabel.Margin = new Padding(4, 0, 4, 0);
+            displayNameLabel.Name = "displayNameLabel";
+            displayNameLabel.Size = new Size(196, 36);
+            displayNameLabel.TabIndex = 0;
+            displayNameLabel.Text = "Display Name";
             // 
-            // confirmButton
+            // passwordTextBox
             // 
-            confirmButton.AutoSize = true;
-            confirmButton.BackColor = Color.Cyan;
-            confirmButton.Dock = DockStyle.Bottom;
-            confirmButton.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            confirmButton.ForeColor = Color.MidnightBlue;
-            confirmButton.Location = new Point(0, 427);
-            confirmButton.Margin = new Padding(4, 4, 4, 4);
-            confirmButton.Name = "confirmButton";
-            confirmButton.Size = new Size(395, 85);
-            confirmButton.TabIndex = 0;
-            confirmButton.Text = "CONFIRM CHANGE";
-            confirmButton.UseVisualStyleBackColor = false;
-            confirmButton.Click += confirmButton_Click;
+            passwordTextBox.Dock = DockStyle.Top;
+            passwordTextBox.Location = new Point(4, 208);
+            passwordTextBox.Margin = new Padding(4);
+            passwordTextBox.Name = "passwordTextBox";
+            passwordTextBox.Size = new Size(196, 36);
+            passwordTextBox.TabIndex = 1;
             // 
-            // TagsTabPage
+            // passwordLabel
             // 
-            TagsTabPage.Controls.Add(gamesAndTagsPanel);
-            TagsTabPage.Controls.Add(EditPanel);
-            TagsTabPage.Controls.Add(tagMainControlPanel);
-            TagsTabPage.Location = new Point(4, 38);
-            TagsTabPage.Margin = new Padding(2);
-            TagsTabPage.Name = "TagsTabPage";
-            TagsTabPage.Padding = new Padding(2);
-            TagsTabPage.Size = new Size(1191, 516);
-            TagsTabPage.TabIndex = 1;
-            TagsTabPage.Text = "Tags";
-            TagsTabPage.UseVisualStyleBackColor = true;
+            passwordLabel.AutoSize = true;
+            passwordLabel.Dock = DockStyle.Top;
+            passwordLabel.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            passwordLabel.Location = new Point(4, 168);
+            passwordLabel.Margin = new Padding(4, 0, 4, 0);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new Size(196, 36);
+            passwordLabel.TabIndex = 0;
+            passwordLabel.Text = "Password";
             // 
-            // gamesAndTagsPanel
+            // usernameTextBox
             // 
-            gamesAndTagsPanel.BackColor = Color.Cyan;
-            gamesAndTagsPanel.Controls.Add(gamesPanel);
-            gamesAndTagsPanel.Controls.Add(tagsPanel);
-            gamesAndTagsPanel.Dock = DockStyle.Fill;
-            gamesAndTagsPanel.Location = new Point(2, 188);
-            gamesAndTagsPanel.Margin = new Padding(2);
-            gamesAndTagsPanel.Name = "gamesAndTagsPanel";
-            gamesAndTagsPanel.Size = new Size(1187, 326);
-            gamesAndTagsPanel.TabIndex = 5;
+            usernameTextBox.Dock = DockStyle.Top;
+            usernameTextBox.Location = new Point(4, 128);
+            usernameTextBox.Margin = new Padding(4);
+            usernameTextBox.Name = "usernameTextBox";
+            usernameTextBox.Size = new Size(196, 36);
+            usernameTextBox.TabIndex = 1;
             // 
-            // gamesPanel
+            // usernameLabel
             // 
-            gamesPanel.Controls.Add(gamesFlowLayoutPanel);
-            gamesPanel.Controls.Add(gameFakeLable);
-            gamesPanel.Dock = DockStyle.Fill;
-            gamesPanel.Location = new Point(262, 0);
-            gamesPanel.Margin = new Padding(2);
-            gamesPanel.Name = "gamesPanel";
-            gamesPanel.Size = new Size(925, 326);
-            gamesPanel.TabIndex = 1;
+            usernameLabel.AutoSize = true;
+            usernameLabel.Dock = DockStyle.Top;
+            usernameLabel.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            usernameLabel.Location = new Point(4, 88);
+            usernameLabel.Margin = new Padding(4, 0, 4, 0);
+            usernameLabel.Name = "usernameLabel";
+            usernameLabel.Size = new Size(196, 36);
+            usernameLabel.TabIndex = 0;
+            usernameLabel.Text = "Username";
             // 
-            // gamesFlowLayoutPanel
+            // userIDTextBox
             // 
-            gamesFlowLayoutPanel.Dock = DockStyle.Fill;
-            gamesFlowLayoutPanel.Location = new Point(0, 42);
-            gamesFlowLayoutPanel.Margin = new Padding(2);
-            gamesFlowLayoutPanel.Name = "gamesFlowLayoutPanel";
-            gamesFlowLayoutPanel.Size = new Size(925, 284);
-            gamesFlowLayoutPanel.TabIndex = 1;
+            userIDTextBox.Dock = DockStyle.Top;
+            userIDTextBox.Location = new Point(4, 48);
+            userIDTextBox.Margin = new Padding(4);
+            userIDTextBox.Name = "userIDTextBox";
+            userIDTextBox.Size = new Size(196, 36);
+            userIDTextBox.TabIndex = 1;
             // 
-            // gameFakeLable
+            // userIDLabel
             // 
-            gameFakeLable.BackColor = Color.FromArgb(128, 255, 255);
-            gameFakeLable.Dock = DockStyle.Top;
-            gameFakeLable.Location = new Point(0, 0);
-            gameFakeLable.Margin = new Padding(2);
-            gameFakeLable.Name = "gameFakeLable";
-            gameFakeLable.Size = new Size(925, 42);
-            gameFakeLable.TabIndex = 0;
-            gameFakeLable.Text = "GAMES";
-            gameFakeLable.UseVisualStyleBackColor = false;
+            userIDLabel.AutoSize = true;
+            userIDLabel.Dock = DockStyle.Top;
+            userIDLabel.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            userIDLabel.Location = new Point(4, 8);
+            userIDLabel.Margin = new Padding(4, 0, 4, 0);
+            userIDLabel.Name = "userIDLabel";
+            userIDLabel.Size = new Size(196, 36);
+            userIDLabel.TabIndex = 0;
+            userIDLabel.Text = "ID";
             // 
-            // tagsPanel
+            // adminFlowLayoutPanel
             // 
-            tagsPanel.Controls.Add(tagFlowLayoutPanel);
-            tagsPanel.Controls.Add(allTagsButton);
-            tagsPanel.Dock = DockStyle.Left;
-            tagsPanel.Location = new Point(0, 0);
-            tagsPanel.Margin = new Padding(2);
-            tagsPanel.Name = "tagsPanel";
-            tagsPanel.Size = new Size(262, 326);
-            tagsPanel.TabIndex = 0;
+            adminFlowLayoutPanel.AutoSize = true;
+            adminFlowLayoutPanel.FlowDirection = FlowDirection.TopDown;
+            adminFlowLayoutPanel.Location = new Point(4, 4);
+            adminFlowLayoutPanel.Margin = new Padding(4);
+            adminFlowLayoutPanel.Name = "adminFlowLayoutPanel";
+            adminFlowLayoutPanel.Size = new Size(0, 0);
+            adminFlowLayoutPanel.TabIndex = 4;
             // 
-            // tagFlowLayoutPanel
+            // toolsPanel
             // 
-            tagFlowLayoutPanel.AutoScroll = true;
-            tagFlowLayoutPanel.Dock = DockStyle.Fill;
-            tagFlowLayoutPanel.Location = new Point(0, 42);
-            tagFlowLayoutPanel.Margin = new Padding(2);
-            tagFlowLayoutPanel.Name = "tagFlowLayoutPanel";
-            tagFlowLayoutPanel.Size = new Size(262, 284);
-            tagFlowLayoutPanel.TabIndex = 1;
+            toolsPanel.Controls.Add(searchSplitContainer);
+            toolsPanel.Controls.Add(mainToolsPanel);
+            toolsPanel.Dock = DockStyle.Top;
+            toolsPanel.Location = new Point(0, 0);
+            toolsPanel.Margin = new Padding(4);
+            toolsPanel.Name = "toolsPanel";
+            toolsPanel.Size = new Size(788, 178);
+            toolsPanel.TabIndex = 0;
             // 
-            // allTagsButton
+            // mainToolsPanel
             // 
-            allTagsButton.BackColor = Color.FromArgb(128, 255, 255);
-            allTagsButton.Dock = DockStyle.Top;
-            allTagsButton.Location = new Point(0, 0);
-            allTagsButton.Margin = new Padding(2);
-            allTagsButton.Name = "allTagsButton";
-            allTagsButton.Size = new Size(262, 42);
-            allTagsButton.TabIndex = 0;
-            allTagsButton.Text = "TAGS";
-            allTagsButton.UseVisualStyleBackColor = false;
+            mainToolsPanel.Controls.Add(toolsSplitContainer);
+            mainToolsPanel.Dock = DockStyle.Top;
+            mainToolsPanel.Location = new Point(0, 0);
+            mainToolsPanel.Margin = new Padding(4);
+            mainToolsPanel.Name = "mainToolsPanel";
+            mainToolsPanel.Size = new Size(788, 125);
+            mainToolsPanel.TabIndex = 0;
             // 
-            // EditPanel
+            // toolsSplitContainer
             // 
-            EditPanel.BackColor = Color.FromArgb(255, 253, 104);
-            EditPanel.Controls.Add(tagDescriptionTextBox);
-            EditPanel.Controls.Add(tagNameTextBox);
-            EditPanel.Controls.Add(descriptionButton);
-            EditPanel.Controls.Add(tagNameButton);
-            EditPanel.Dock = DockStyle.Top;
-            EditPanel.Location = new Point(2, 100);
-            EditPanel.Margin = new Padding(2);
-            EditPanel.Name = "EditPanel";
-            EditPanel.Size = new Size(1187, 88);
-            EditPanel.TabIndex = 4;
+            toolsSplitContainer.Dock = DockStyle.Fill;
+            toolsSplitContainer.IsSplitterFixed = true;
+            toolsSplitContainer.Location = new Point(0, 0);
+            toolsSplitContainer.Margin = new Padding(4);
+            toolsSplitContainer.Name = "toolsSplitContainer";
             // 
-            // tagDescriptionTextBox
+            // toolsSplitContainer.Panel1
             // 
-            tagDescriptionTextBox.Location = new Point(170, 48);
-            tagDescriptionTextBox.Margin = new Padding(2);
-            tagDescriptionTextBox.Name = "tagDescriptionTextBox";
-            tagDescriptionTextBox.Size = new Size(799, 36);
-            tagDescriptionTextBox.TabIndex = 3;
+            toolsSplitContainer.Panel1.BackColor = Color.FromArgb(171, 253, 255);
+            toolsSplitContainer.Panel1.Controls.Add(addAndRemoveSplitContainer);
             // 
-            // tagNameTextBox
+            // toolsSplitContainer.Panel2
             // 
-            tagNameTextBox.Location = new Point(170, 8);
-            tagNameTextBox.Margin = new Padding(2);
-            tagNameTextBox.Name = "tagNameTextBox";
-            tagNameTextBox.Size = new Size(799, 36);
-            tagNameTextBox.TabIndex = 2;
+            toolsSplitContainer.Panel2.Controls.Add(EditAndViewSplitContainer);
+            toolsSplitContainer.Size = new Size(788, 125);
+            toolsSplitContainer.SplitterDistance = 390;
+            toolsSplitContainer.SplitterWidth = 5;
+            toolsSplitContainer.TabIndex = 1;
             // 
-            // descriptionButton
+            // EditAndViewSplitContainer
             // 
-            descriptionButton.BackColor = Color.FromArgb(255, 254, 145);
-            descriptionButton.Location = new Point(5, 44);
-            descriptionButton.Margin = new Padding(2);
-            descriptionButton.Name = "descriptionButton";
-            descriptionButton.Size = new Size(159, 38);
-            descriptionButton.TabIndex = 1;
-            descriptionButton.Text = "Description";
-            descriptionButton.UseVisualStyleBackColor = false;
+            EditAndViewSplitContainer.Dock = DockStyle.Fill;
+            EditAndViewSplitContainer.IsSplitterFixed = true;
+            EditAndViewSplitContainer.Location = new Point(0, 0);
+            EditAndViewSplitContainer.Margin = new Padding(4);
+            EditAndViewSplitContainer.Name = "EditAndViewSplitContainer";
             // 
-            // tagNameButton
+            // EditAndViewSplitContainer.Panel1
             // 
-            tagNameButton.BackColor = Color.FromArgb(255, 254, 145);
-            tagNameButton.Location = new Point(5, 2);
-            tagNameButton.Margin = new Padding(2);
-            tagNameButton.Name = "tagNameButton";
-            tagNameButton.Size = new Size(159, 38);
-            tagNameButton.TabIndex = 0;
-            tagNameButton.Text = "Name";
-            tagNameButton.UseVisualStyleBackColor = false;
+            EditAndViewSplitContainer.Panel1.Controls.Add(editUserButton);
             // 
-            // tagMainControlPanel
+            // EditAndViewSplitContainer.Panel2
             // 
-            tagMainControlPanel.BackColor = Color.FromArgb(117, 250, 141);
-            tagMainControlPanel.Controls.Add(editGameTagButton);
-            tagMainControlPanel.Controls.Add(removeTagButton);
-            tagMainControlPanel.Controls.Add(tagsComboBox);
-            tagMainControlPanel.Controls.Add(editTagButton);
-            tagMainControlPanel.Controls.Add(addTagButton);
-            tagMainControlPanel.Dock = DockStyle.Top;
-            tagMainControlPanel.Location = new Point(2, 2);
-            tagMainControlPanel.Margin = new Padding(2);
-            tagMainControlPanel.Name = "tagMainControlPanel";
-            tagMainControlPanel.Size = new Size(1187, 98);
-            tagMainControlPanel.TabIndex = 3;
+            EditAndViewSplitContainer.Panel2.Controls.Add(viewButton);
+            EditAndViewSplitContainer.Size = new Size(393, 125);
+            EditAndViewSplitContainer.SplitterDistance = 193;
+            EditAndViewSplitContainer.TabIndex = 0;
             // 
-            // editGameTagButton
+            // viewButton
             // 
-            editGameTagButton.BackColor = Color.FromArgb(97, 255, 116);
-            editGameTagButton.FlatAppearance.BorderColor = Color.DarkGreen;
-            editGameTagButton.FlatAppearance.BorderSize = 5;
-            editGameTagButton.ForeColor = Color.FromArgb(23, 61, 28);
-            editGameTagButton.Location = new Point(732, 2);
-            editGameTagButton.Margin = new Padding(2);
-            editGameTagButton.Name = "editGameTagButton";
-            editGameTagButton.Size = new Size(236, 51);
-            editGameTagButton.TabIndex = 6;
-            editGameTagButton.Text = "EDIT GAME TAG";
-            editGameTagButton.UseVisualStyleBackColor = false;
-            editGameTagButton.Click += editGameTagButton_Click;
+            viewButton.BackColor = Color.Cyan;
+            viewButton.Dock = DockStyle.Fill;
+            viewButton.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            viewButton.Location = new Point(0, 0);
+            viewButton.Margin = new Padding(4);
+            viewButton.Name = "viewButton";
+            viewButton.Size = new Size(196, 125);
+            viewButton.TabIndex = 5;
+            viewButton.Text = "VIEW";
+            viewButton.UseVisualStyleBackColor = false;
+            viewButton.Click += viewButton_Click;
             // 
-            // removeTagButton
+            // editUserButton
             // 
-            removeTagButton.BackColor = Color.FromArgb(97, 255, 116);
-            removeTagButton.FlatAppearance.BorderColor = Color.DarkGreen;
-            removeTagButton.FlatAppearance.BorderSize = 5;
-            removeTagButton.ForeColor = Color.FromArgb(23, 61, 28);
-            removeTagButton.Location = new Point(245, 2);
-            removeTagButton.Margin = new Padding(2);
-            removeTagButton.Name = "removeTagButton";
-            removeTagButton.Size = new Size(236, 51);
-            removeTagButton.TabIndex = 5;
-            removeTagButton.Text = "REMOVE";
-            removeTagButton.UseVisualStyleBackColor = false;
-            removeTagButton.Click += removeTagButton_Click;
+            editUserButton.BackColor = Color.Cyan;
+            editUserButton.Dock = DockStyle.Fill;
+            editUserButton.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            editUserButton.Location = new Point(0, 0);
+            editUserButton.Margin = new Padding(4);
+            editUserButton.Name = "editUserButton";
+            editUserButton.Size = new Size(193, 125);
+            editUserButton.TabIndex = 0;
+            editUserButton.Text = "EDIT";
+            editUserButton.UseVisualStyleBackColor = false;
+            editUserButton.Click += editUserButton_Click;
             // 
-            // tagsComboBox
+            // addAndRemoveSplitContainer
             // 
-            tagsComboBox.FormattingEnabled = true;
-            tagsComboBox.Location = new Point(2, 60);
-            tagsComboBox.Margin = new Padding(2);
-            tagsComboBox.Name = "tagsComboBox";
-            tagsComboBox.Size = new Size(966, 37);
-            tagsComboBox.TabIndex = 4;
-            tagsComboBox.TextChanged += tagsComboBox_TextChanged;
+            addAndRemoveSplitContainer.Dock = DockStyle.Fill;
+            addAndRemoveSplitContainer.IsSplitterFixed = true;
+            addAndRemoveSplitContainer.Location = new Point(0, 0);
+            addAndRemoveSplitContainer.Margin = new Padding(4);
+            addAndRemoveSplitContainer.Name = "addAndRemoveSplitContainer";
             // 
-            // editTagButton
+            // addAndRemoveSplitContainer.Panel1
             // 
-            editTagButton.BackColor = Color.FromArgb(97, 255, 116);
-            editTagButton.FlatAppearance.BorderColor = Color.DarkGreen;
-            editTagButton.FlatAppearance.BorderSize = 5;
-            editTagButton.ForeColor = Color.FromArgb(23, 61, 28);
-            editTagButton.Location = new Point(491, 2);
-            editTagButton.Margin = new Padding(2);
-            editTagButton.Name = "editTagButton";
-            editTagButton.Size = new Size(236, 51);
-            editTagButton.TabIndex = 2;
-            editTagButton.Text = "EDIT TAG";
-            editTagButton.UseVisualStyleBackColor = false;
-            editTagButton.Click += editTagButton_Click;
+            addAndRemoveSplitContainer.Panel1.Controls.Add(addUserButton);
             // 
-            // addTagButton
+            // addAndRemoveSplitContainer.Panel2
             // 
-            addTagButton.BackColor = Color.FromArgb(97, 255, 116);
-            addTagButton.ForeColor = Color.FromArgb(23, 61, 28);
-            addTagButton.Location = new Point(2, 2);
-            addTagButton.Margin = new Padding(2);
-            addTagButton.Name = "addTagButton";
-            addTagButton.Size = new Size(236, 51);
-            addTagButton.TabIndex = 0;
-            addTagButton.Text = "ADD";
-            addTagButton.UseVisualStyleBackColor = false;
-            addTagButton.Click += addTagButton_Click;
+            addAndRemoveSplitContainer.Panel2.Controls.Add(removeUserButton);
+            addAndRemoveSplitContainer.Size = new Size(390, 125);
+            addAndRemoveSplitContainer.SplitterDistance = 191;
+            addAndRemoveSplitContainer.TabIndex = 0;
+            // 
+            // removeUserButton
+            // 
+            removeUserButton.BackColor = Color.Cyan;
+            removeUserButton.Dock = DockStyle.Fill;
+            removeUserButton.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            removeUserButton.Location = new Point(0, 0);
+            removeUserButton.Margin = new Padding(4);
+            removeUserButton.Name = "removeUserButton";
+            removeUserButton.Size = new Size(195, 125);
+            removeUserButton.TabIndex = 0;
+            removeUserButton.Text = "REMOVE";
+            removeUserButton.UseVisualStyleBackColor = false;
+            removeUserButton.Click += removeUserButton_Click;
+            // 
+            // addUserButton
+            // 
+            addUserButton.BackColor = Color.Cyan;
+            addUserButton.Dock = DockStyle.Fill;
+            addUserButton.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            addUserButton.Location = new Point(0, 0);
+            addUserButton.Margin = new Padding(4);
+            addUserButton.Name = "addUserButton";
+            addUserButton.Size = new Size(191, 125);
+            addUserButton.TabIndex = 0;
+            addUserButton.Text = "ADD";
+            addUserButton.UseVisualStyleBackColor = false;
+            addUserButton.Click += addUserButton_Click;
+            // 
+            // searchSplitContainer
+            // 
+            searchSplitContainer.Dock = DockStyle.Fill;
+            searchSplitContainer.Location = new Point(0, 125);
+            searchSplitContainer.Margin = new Padding(4);
+            searchSplitContainer.Name = "searchSplitContainer";
+            // 
+            // searchSplitContainer.Panel1
+            // 
+            searchSplitContainer.Panel1.Controls.Add(searchUserComboBox);
+            // 
+            // searchSplitContainer.Panel2
+            // 
+            searchSplitContainer.Panel2.Controls.Add(searchUserByColumnComboBox);
+            searchSplitContainer.Size = new Size(788, 53);
+            searchSplitContainer.SplitterDistance = 494;
+            searchSplitContainer.TabIndex = 1;
+            // 
+            // searchUserByColumnComboBox
+            // 
+            searchUserByColumnComboBox.Dock = DockStyle.Fill;
+            searchUserByColumnComboBox.Font = new Font("Tahoma", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            searchUserByColumnComboBox.FormattingEnabled = true;
+            searchUserByColumnComboBox.Location = new Point(0, 0);
+            searchUserByColumnComboBox.Margin = new Padding(4);
+            searchUserByColumnComboBox.Name = "searchUserByColumnComboBox";
+            searchUserByColumnComboBox.Size = new Size(290, 42);
+            searchUserByColumnComboBox.TabIndex = 0;
+            searchUserByColumnComboBox.SelectedIndexChanged += searchUserByColumnComboBox_SelectedIndexChanged;
+            // 
+            // searchUserComboBox
+            // 
+            searchUserComboBox.Dock = DockStyle.Fill;
+            searchUserComboBox.Font = new Font("Tahoma", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            searchUserComboBox.FormattingEnabled = true;
+            searchUserComboBox.Location = new Point(0, 0);
+            searchUserComboBox.Margin = new Padding(4);
+            searchUserComboBox.Name = "searchUserComboBox";
+            searchUserComboBox.Size = new Size(494, 42);
+            searchUserComboBox.TabIndex = 0;
+            searchUserComboBox.TextChanged += searchUserComboBox_TextChanged;
+            // 
+            // userInfoDataGridView
+            // 
+            userInfoDataGridView.AllowUserToAddRows = false;
+            userInfoDataGridView.AllowUserToDeleteRows = false;
+            userInfoDataGridView.AllowUserToOrderColumns = true;
+            userInfoDataGridView.BackgroundColor = Color.FromArgb(171, 253, 255);
+            userInfoDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            userInfoDataGridView.Dock = DockStyle.Fill;
+            userInfoDataGridView.Location = new Point(0, 178);
+            userInfoDataGridView.Margin = new Padding(4);
+            userInfoDataGridView.Name = "userInfoDataGridView";
+            userInfoDataGridView.RowHeadersWidth = 51;
+            userInfoDataGridView.RowTemplate.Height = 29;
+            userInfoDataGridView.Size = new Size(788, 334);
+            userInfoDataGridView.TabIndex = 1;
             // 
             // GameTabPage
             // 
@@ -770,77 +519,13 @@
             GameTabPage.Controls.Add(InfoFlowLayoutPanel);
             GameTabPage.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
             GameTabPage.Location = new Point(4, 38);
-            GameTabPage.Margin = new Padding(4, 4, 4, 4);
+            GameTabPage.Margin = new Padding(4);
             GameTabPage.Name = "GameTabPage";
-            GameTabPage.Padding = new Padding(4, 4, 4, 4);
+            GameTabPage.Padding = new Padding(4);
             GameTabPage.Size = new Size(1191, 516);
             GameTabPage.TabIndex = 0;
             GameTabPage.Text = "Games";
             GameTabPage.UseVisualStyleBackColor = true;
-            // 
-            // gameDataGridView
-            // 
-            gameDataGridView.BackgroundColor = Color.FromArgb(171, 239, 255);
-            gameDataGridView.ColumnHeadersHeight = 29;
-            gameDataGridView.Dock = DockStyle.Fill;
-            gameDataGridView.Location = new Point(4, 139);
-            gameDataGridView.Margin = new Padding(4, 4, 4, 4);
-            gameDataGridView.Name = "gameDataGridView";
-            gameDataGridView.RowHeadersWidth = 100;
-            gameDataGridView.RowTemplate.Height = 29;
-            gameDataGridView.Size = new Size(768, 373);
-            gameDataGridView.TabIndex = 3;
-            // 
-            // mainControlPanel
-            // 
-            mainControlPanel.BackColor = Color.FromArgb(117, 250, 141);
-            mainControlPanel.Controls.Add(gameComboBox);
-            mainControlPanel.Controls.Add(editButton);
-            mainControlPanel.Controls.Add(addButton);
-            mainControlPanel.Dock = DockStyle.Top;
-            mainControlPanel.Location = new Point(4, 4);
-            mainControlPanel.Margin = new Padding(4, 4, 4, 4);
-            mainControlPanel.Name = "mainControlPanel";
-            mainControlPanel.Size = new Size(768, 135);
-            mainControlPanel.TabIndex = 2;
-            // 
-            // gameComboBox
-            // 
-            gameComboBox.FormattingEnabled = true;
-            gameComboBox.Location = new Point(4, 75);
-            gameComboBox.Margin = new Padding(4, 4, 4, 4);
-            gameComboBox.Name = "gameComboBox";
-            gameComboBox.Size = new Size(792, 44);
-            gameComboBox.TabIndex = 4;
-            // 
-            // editButton
-            // 
-            editButton.BackColor = Color.FromArgb(97, 255, 116);
-            editButton.Enabled = false;
-            editButton.FlatAppearance.BorderColor = Color.DarkGreen;
-            editButton.FlatAppearance.BorderSize = 5;
-            editButton.ForeColor = Color.FromArgb(23, 61, 28);
-            editButton.Location = new Point(406, 4);
-            editButton.Margin = new Padding(4, 4, 4, 4);
-            editButton.Name = "editButton";
-            editButton.Size = new Size(390, 64);
-            editButton.TabIndex = 2;
-            editButton.Text = "EDIT";
-            editButton.UseVisualStyleBackColor = false;
-            editButton.Click += editButton_Click;
-            // 
-            // addButton
-            // 
-            addButton.BackColor = Color.FromArgb(97, 255, 116);
-            addButton.ForeColor = Color.FromArgb(23, 61, 28);
-            addButton.Location = new Point(4, 4);
-            addButton.Margin = new Padding(4, 4, 4, 4);
-            addButton.Name = "addButton";
-            addButton.Size = new Size(395, 64);
-            addButton.TabIndex = 0;
-            addButton.Text = "ADD";
-            addButton.UseVisualStyleBackColor = false;
-            addButton.Click += addButton_Click;
             // 
             // InfoFlowLayoutPanel
             // 
@@ -851,58 +536,10 @@
             InfoFlowLayoutPanel.Controls.Add(flowLayoutPanel1);
             InfoFlowLayoutPanel.Dock = DockStyle.Right;
             InfoFlowLayoutPanel.Location = new Point(772, 4);
-            InfoFlowLayoutPanel.Margin = new Padding(4, 4, 4, 4);
+            InfoFlowLayoutPanel.Margin = new Padding(4);
             InfoFlowLayoutPanel.Name = "InfoFlowLayoutPanel";
             InfoFlowLayoutPanel.Size = new Size(415, 508);
             InfoFlowLayoutPanel.TabIndex = 0;
-            // 
-            // gameNamePanel
-            // 
-            gameNamePanel.Controls.Add(gameNameTextBox);
-            gameNamePanel.Controls.Add(nameLabel);
-            gameNamePanel.Dock = DockStyle.Top;
-            gameNamePanel.Location = new Point(4, 4);
-            gameNamePanel.Margin = new Padding(4, 4, 4, 4);
-            gameNamePanel.Name = "gameNamePanel";
-            gameNamePanel.Size = new Size(408, 96);
-            gameNamePanel.TabIndex = 0;
-            // 
-            // gameNameTextBox
-            // 
-            gameNameTextBox.Location = new Point(4, 41);
-            gameNameTextBox.Margin = new Padding(4, 4, 4, 4);
-            gameNameTextBox.Name = "gameNameTextBox";
-            gameNameTextBox.Size = new Size(399, 44);
-            gameNameTextBox.TabIndex = 1;
-            // 
-            // nameLabel
-            // 
-            nameLabel.AutoSize = true;
-            nameLabel.Location = new Point(5, 0);
-            nameLabel.Margin = new Padding(4, 0, 4, 0);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(92, 36);
-            nameLabel.TabIndex = 0;
-            nameLabel.Text = "Name";
-            // 
-            // gameDecPanel
-            // 
-            gameDecPanel.Controls.Add(gameDetailLabel);
-            gameDecPanel.Location = new Point(4, 108);
-            gameDecPanel.Margin = new Padding(4, 4, 4, 4);
-            gameDecPanel.Name = "gameDecPanel";
-            gameDecPanel.Size = new Size(404, 96);
-            gameDecPanel.TabIndex = 5;
-            // 
-            // gameDetailLabel
-            // 
-            gameDetailLabel.AutoSize = true;
-            gameDetailLabel.Location = new Point(4, 0);
-            gameDetailLabel.Margin = new Padding(4, 0, 4, 0);
-            gameDetailLabel.Name = "gameDetailLabel";
-            gameDetailLabel.Size = new Size(243, 36);
-            gameDetailLabel.TabIndex = 0;
-            gameDetailLabel.Text = "Game Decripition";
             // 
             // flowLayoutPanel1
             // 
@@ -917,25 +554,15 @@
             flowLayoutPanel1.Size = new Size(404, 432);
             flowLayoutPanel1.TabIndex = 6;
             // 
-            // pictureLabel
+            // gamePictureBox3
             // 
-            pictureLabel.AutoSize = true;
-            pictureLabel.Location = new Point(2, 0);
-            pictureLabel.Margin = new Padding(2, 0, 2, 0);
-            pictureLabel.Name = "pictureLabel";
-            pictureLabel.Size = new Size(193, 36);
-            pictureLabel.TabIndex = 0;
-            pictureLabel.Text = "Game Picture";
-            // 
-            // gamePictureBox1
-            // 
-            gamePictureBox1.Location = new Point(2, 38);
-            gamePictureBox1.Margin = new Padding(2);
-            gamePictureBox1.Name = "gamePictureBox1";
-            gamePictureBox1.Size = new Size(398, 124);
-            gamePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            gamePictureBox1.TabIndex = 1;
-            gamePictureBox1.TabStop = false;
+            gamePictureBox3.Location = new Point(2, 294);
+            gamePictureBox3.Margin = new Padding(2);
+            gamePictureBox3.Name = "gamePictureBox3";
+            gamePictureBox3.Size = new Size(398, 124);
+            gamePictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            gamePictureBox3.TabIndex = 2;
+            gamePictureBox3.TabStop = false;
             // 
             // gamePictureBox2
             // 
@@ -947,20 +574,141 @@
             gamePictureBox2.TabIndex = 3;
             gamePictureBox2.TabStop = false;
             // 
-            // gamePictureBox3
+            // gamePictureBox1
             // 
-            gamePictureBox3.Location = new Point(2, 294);
-            gamePictureBox3.Margin = new Padding(2);
-            gamePictureBox3.Name = "gamePictureBox3";
-            gamePictureBox3.Size = new Size(398, 124);
-            gamePictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            gamePictureBox3.TabIndex = 2;
-            gamePictureBox3.TabStop = false;
+            gamePictureBox1.Location = new Point(2, 38);
+            gamePictureBox1.Margin = new Padding(2);
+            gamePictureBox1.Name = "gamePictureBox1";
+            gamePictureBox1.Size = new Size(398, 124);
+            gamePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            gamePictureBox1.TabIndex = 1;
+            gamePictureBox1.TabStop = false;
+            // 
+            // pictureLabel
+            // 
+            pictureLabel.AutoSize = true;
+            pictureLabel.Location = new Point(2, 0);
+            pictureLabel.Margin = new Padding(2, 0, 2, 0);
+            pictureLabel.Name = "pictureLabel";
+            pictureLabel.Size = new Size(193, 36);
+            pictureLabel.TabIndex = 0;
+            pictureLabel.Text = "Game Picture";
+            // 
+            // gameDecPanel
+            // 
+            gameDecPanel.Controls.Add(gameDetailLabel);
+            gameDecPanel.Location = new Point(4, 108);
+            gameDecPanel.Margin = new Padding(4);
+            gameDecPanel.Name = "gameDecPanel";
+            gameDecPanel.Size = new Size(404, 96);
+            gameDecPanel.TabIndex = 5;
+            // 
+            // gameDetailLabel
+            // 
+            gameDetailLabel.AutoSize = true;
+            gameDetailLabel.Location = new Point(4, 0);
+            gameDetailLabel.Margin = new Padding(4, 0, 4, 0);
+            gameDetailLabel.Name = "gameDetailLabel";
+            gameDetailLabel.Size = new Size(243, 36);
+            gameDetailLabel.TabIndex = 0;
+            gameDetailLabel.Text = "Game Decripition";
+            // 
+            // gameNamePanel
+            // 
+            gameNamePanel.Controls.Add(gameNameTextBox);
+            gameNamePanel.Controls.Add(nameLabel);
+            gameNamePanel.Dock = DockStyle.Top;
+            gameNamePanel.Location = new Point(4, 4);
+            gameNamePanel.Margin = new Padding(4);
+            gameNamePanel.Name = "gameNamePanel";
+            gameNamePanel.Size = new Size(408, 96);
+            gameNamePanel.TabIndex = 0;
+            // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new Point(5, 0);
+            nameLabel.Margin = new Padding(4, 0, 4, 0);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new Size(92, 36);
+            nameLabel.TabIndex = 0;
+            nameLabel.Text = "Name";
+            // 
+            // gameNameTextBox
+            // 
+            gameNameTextBox.Location = new Point(4, 41);
+            gameNameTextBox.Margin = new Padding(4);
+            gameNameTextBox.Name = "gameNameTextBox";
+            gameNameTextBox.Size = new Size(399, 44);
+            gameNameTextBox.TabIndex = 1;
+            // 
+            // mainControlPanel
+            // 
+            mainControlPanel.BackColor = Color.FromArgb(117, 250, 141);
+            mainControlPanel.Controls.Add(gameComboBox);
+            mainControlPanel.Controls.Add(editButton);
+            mainControlPanel.Controls.Add(addButton);
+            mainControlPanel.Dock = DockStyle.Top;
+            mainControlPanel.Location = new Point(4, 4);
+            mainControlPanel.Margin = new Padding(4);
+            mainControlPanel.Name = "mainControlPanel";
+            mainControlPanel.Size = new Size(768, 135);
+            mainControlPanel.TabIndex = 2;
+            // 
+            // addButton
+            // 
+            addButton.BackColor = Color.FromArgb(97, 255, 116);
+            addButton.ForeColor = Color.FromArgb(23, 61, 28);
+            addButton.Location = new Point(4, 4);
+            addButton.Margin = new Padding(4);
+            addButton.Name = "addButton";
+            addButton.Size = new Size(395, 64);
+            addButton.TabIndex = 0;
+            addButton.Text = "ADD";
+            addButton.UseVisualStyleBackColor = false;
+            addButton.Click += addButton_Click;
+            // 
+            // editButton
+            // 
+            editButton.BackColor = Color.FromArgb(97, 255, 116);
+            editButton.Enabled = false;
+            editButton.FlatAppearance.BorderColor = Color.DarkGreen;
+            editButton.FlatAppearance.BorderSize = 5;
+            editButton.ForeColor = Color.FromArgb(23, 61, 28);
+            editButton.Location = new Point(406, 4);
+            editButton.Margin = new Padding(4);
+            editButton.Name = "editButton";
+            editButton.Size = new Size(390, 64);
+            editButton.TabIndex = 2;
+            editButton.Text = "EDIT";
+            editButton.UseVisualStyleBackColor = false;
+            editButton.Click += editButton_Click;
+            // 
+            // gameComboBox
+            // 
+            gameComboBox.FormattingEnabled = true;
+            gameComboBox.Location = new Point(4, 75);
+            gameComboBox.Margin = new Padding(4);
+            gameComboBox.Name = "gameComboBox";
+            gameComboBox.Size = new Size(792, 44);
+            gameComboBox.TabIndex = 4;
+            // 
+            // gameDataGridView
+            // 
+            gameDataGridView.BackgroundColor = Color.FromArgb(171, 239, 255);
+            gameDataGridView.ColumnHeadersHeight = 29;
+            gameDataGridView.Dock = DockStyle.Fill;
+            gameDataGridView.Location = new Point(4, 139);
+            gameDataGridView.Margin = new Padding(4);
+            gameDataGridView.Name = "gameDataGridView";
+            gameDataGridView.RowHeadersWidth = 100;
+            gameDataGridView.RowTemplate.Height = 29;
+            gameDataGridView.Size = new Size(768, 373);
+            gameDataGridView.TabIndex = 3;
             // 
             // adminTabControl
             // 
             adminTabControl.Controls.Add(GameTabPage);
-            adminTabControl.Controls.Add(TagsTabPage);
             adminTabControl.Controls.Add(UserTabPage);
             adminTabControl.Dock = DockStyle.Fill;
             adminTabControl.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -987,141 +735,114 @@
             mainSplitContainer.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)mainSplitContainer).EndInit();
             mainSplitContainer.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)userInfoDataGridView).EndInit();
+            userInfoFlowLayoutPanel.ResumeLayout(false);
+            userInfoFlowLayoutPanel.PerformLayout();
             toolsPanel.ResumeLayout(false);
-            searchSplitContainer.Panel1.ResumeLayout(false);
-            searchSplitContainer.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)searchSplitContainer).EndInit();
-            searchSplitContainer.ResumeLayout(false);
             mainToolsPanel.ResumeLayout(false);
             toolsSplitContainer.Panel1.ResumeLayout(false);
             toolsSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)toolsSplitContainer).EndInit();
             toolsSplitContainer.ResumeLayout(false);
-            addAndRemoveSplitContainer.Panel1.ResumeLayout(false);
-            addAndRemoveSplitContainer.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)addAndRemoveSplitContainer).EndInit();
-            addAndRemoveSplitContainer.ResumeLayout(false);
             EditAndViewSplitContainer.Panel1.ResumeLayout(false);
             EditAndViewSplitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)EditAndViewSplitContainer).EndInit();
             EditAndViewSplitContainer.ResumeLayout(false);
-            userInfoFlowLayoutPanel.ResumeLayout(false);
-            userInfoFlowLayoutPanel.PerformLayout();
-            TagsTabPage.ResumeLayout(false);
-            gamesAndTagsPanel.ResumeLayout(false);
-            gamesPanel.ResumeLayout(false);
-            tagsPanel.ResumeLayout(false);
-            EditPanel.ResumeLayout(false);
-            EditPanel.PerformLayout();
-            tagMainControlPanel.ResumeLayout(false);
+            addAndRemoveSplitContainer.Panel1.ResumeLayout(false);
+            addAndRemoveSplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)addAndRemoveSplitContainer).EndInit();
+            addAndRemoveSplitContainer.ResumeLayout(false);
+            searchSplitContainer.Panel1.ResumeLayout(false);
+            searchSplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)searchSplitContainer).EndInit();
+            searchSplitContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)userInfoDataGridView).EndInit();
             GameTabPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)gameDataGridView).EndInit();
-            mainControlPanel.ResumeLayout(false);
             InfoFlowLayoutPanel.ResumeLayout(false);
-            gameNamePanel.ResumeLayout(false);
-            gameNamePanel.PerformLayout();
-            gameDecPanel.ResumeLayout(false);
-            gameDecPanel.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)gamePictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)gamePictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)gamePictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gamePictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gamePictureBox1).EndInit();
+            gameDecPanel.ResumeLayout(false);
+            gameDecPanel.PerformLayout();
+            gameNamePanel.ResumeLayout(false);
+            gameNamePanel.PerformLayout();
+            mainControlPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gameDataGridView).EndInit();
             adminTabControl.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private TabControl adminTabControl;
-        private TabPage GameTabPage;
-        private TabPage TagsTabPage;
-        private FlowLayoutPanel InfoFlowLayoutPanel;
-        private Panel gameNamePanel;
         private TabControl tabControl1;
         private TabPage tabPage2;
         private TabPage tabPage3;
-        private TabPage UserTabPage;
         private Panel picturePanel;
-        private DataGridView gameDataGridView;
-        private Panel mainControlPanel;
         private Button button5;
-        private ComboBox gameComboBox;
-        private Button viewButton;
-        private Button editButton;
-        private Button removeTagButton;
-        private Button addButton;
-        private TextBox gameNameTextBox;
         private Button searchButton;
-        private Label nameLabel;
         private Label PictueFileLabel;
         private OpenFileDialog OpenFileDialog;
-        private Panel gameDecPanel;
-        private Label gameDetailLabel;
         private TextBox DescriptionTextBox;
         private TextBox descriptionTextBox;
-        private Button editTagButton;
-        private Button addTagButton;
         private Panel panel7;
         private Panel panel6;
         private Button TagsFakeLabel;
         private FlowLayoutPanel displayNameFlowLayoutPanel;
-        private Button gameFakeLable;
-        private Panel tagMainControlPanel;
         private Panel gamesWithTagsPanel;
         private Panel gamesWithTagPanel;
-        private Panel gamesAndTagsPanel;
-        private Panel gamesPanel;
-        private FlowLayoutPanel gamesFlowLayoutPanel;
-        private Panel tagsPanel;
-        private FlowLayoutPanel tagFlowLayoutPanel;
-        private ComboBox tagsComboBox;
-        private Button allTagsButton;
-        private Panel EditPanel;
-        private Button descriptionButton;
-        private Button tagNameButton;
-        private TextBox tagDescriptionTextBox;
-        private TextBox tagNameTextBox;
-        private Button editGameTagButton;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private PictureBox gamePictureBox1;
-        private Label pictureLabel;
-        private PictureBox gamePictureBox2;
-        private PictureBox gamePictureBox3;
-        private SplitContainer mainSplitContainer;
-        private FlowLayoutPanel userInfoFlowLayoutPanel;
         private SaveFileDialog saveFileDialog1;
         private FlowLayoutPanel passwordFlowLayoutPanel;
+        private FlowLayoutPanel gmailFlowLayoutPanel;
+        private SplitContainer removeAndEditSplitContainer;
+        private SplitContainer splitContainer1;
+        private FlowLayoutPanel UserIDFlowLayoutPanel;
+        private FlowLayoutPanel userNameFlowLayoutPanel;
+        private TabPage UserTabPage;
+        private SplitContainer mainSplitContainer;
+        private DataGridView userInfoDataGridView;
+        private Panel toolsPanel;
+        private SplitContainer searchSplitContainer;
+        private ComboBox searchUserComboBox;
+        private ComboBox searchUserByColumnComboBox;
+        private Panel mainToolsPanel;
+        private SplitContainer toolsSplitContainer;
+        private SplitContainer addAndRemoveSplitContainer;
+        private Button addUserButton;
+        private Button removeUserButton;
+        private SplitContainer EditAndViewSplitContainer;
+        private Button editUserButton;
+        private Button viewButton;
+        private FlowLayoutPanel userInfoFlowLayoutPanel;
+        private FlowLayoutPanel adminFlowLayoutPanel;
+        private Label userIDLabel;
+        private TextBox userIDTextBox;
+        private Label usernameLabel;
+        private TextBox usernameTextBox;
         private Label passwordLabel;
         private TextBox passwordTextBox;
         private Label displayNameLabel;
         private TextBox displayNameTextBox;
-        private FlowLayoutPanel gmailFlowLayoutPanel;
         private Label gmailLabel;
         private TextBox gmailTextBox;
-        private FlowLayoutPanel adminFlowLayoutPanel;
         private CheckBox adminCheckBox;
-        private Panel toolsPanel;
-        private DataGridView userInfoDataGridView;
-        private Button addUserButton;
-        private Button removeUserButton;
-        private Button editUserButton;
-        private Panel mainToolsPanel;
-        private SplitContainer toolsSplitContainer;
-        private SplitContainer removeAndEditSplitContainer;
-        private SplitContainer searchSplitContainer;
-        private ComboBox searchUserComboBox;
-        private ComboBox searchUserByColumnComboBox;
-        private SplitContainer splitContainer1;
-        private SplitContainer addAndRemoveSplitContainer;
-        private SplitContainer EditAndViewSplitContainer;
-        private FlowLayoutPanel UserIDFlowLayoutPanel;
-        private Label userIDLabel;
-        private TextBox userIDTextBox;
-        private FlowLayoutPanel userNameFlowLayoutPanel;
-        private Label usernameLabel;
-        private TextBox usernameTextBox;
         private Button confirmButton;
+        private TabPage GameTabPage;
+        private DataGridView gameDataGridView;
+        private Panel mainControlPanel;
+        private ComboBox gameComboBox;
+        private Button editButton;
+        private Button addButton;
+        private FlowLayoutPanel InfoFlowLayoutPanel;
+        private Panel gameNamePanel;
+        private TextBox gameNameTextBox;
+        private Label nameLabel;
+        private Panel gameDecPanel;
+        private Label gameDetailLabel;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Label pictureLabel;
+        private PictureBox gamePictureBox1;
+        private PictureBox gamePictureBox2;
+        private PictureBox gamePictureBox3;
+        private TabControl adminTabControl;
     }
 }
