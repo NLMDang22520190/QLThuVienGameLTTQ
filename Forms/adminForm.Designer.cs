@@ -148,11 +148,11 @@
             // 
             UserTabPage.BackColor = Color.FromArgb(171, 253, 255);
             UserTabPage.Controls.Add(mainSplitContainer);
-            UserTabPage.Location = new Point(4, 33);
+            UserTabPage.Location = new Point(4, 38);
             UserTabPage.Margin = new Padding(2);
             UserTabPage.Name = "UserTabPage";
             UserTabPage.Padding = new Padding(2);
-            UserTabPage.Size = new Size(951, 409);
+            UserTabPage.Size = new Size(1191, 516);
             UserTabPage.TabIndex = 2;
             UserTabPage.Text = "Users";
             // 
@@ -173,9 +173,8 @@
             mainSplitContainer.Panel2.Controls.Add(userInfoFlowLayoutPanel);
             mainSplitContainer.Panel2.Controls.Add(confirmButton);
             mainSplitContainer.Panel2MinSize = 100;
-            mainSplitContainer.Size = new Size(947, 405);
-            mainSplitContainer.SplitterDistance = 629;
-            mainSplitContainer.SplitterWidth = 3;
+            mainSplitContainer.Size = new Size(1187, 512);
+            mainSplitContainer.SplitterDistance = 788;
             mainSplitContainer.TabIndex = 0;
             // 
             // userInfoDataGridView
@@ -186,11 +185,12 @@
             userInfoDataGridView.BackgroundColor = Color.FromArgb(171, 253, 255);
             userInfoDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             userInfoDataGridView.Dock = DockStyle.Fill;
-            userInfoDataGridView.Location = new Point(0, 142);
+            userInfoDataGridView.Location = new Point(0, 178);
+            userInfoDataGridView.Margin = new Padding(4, 4, 4, 4);
             userInfoDataGridView.Name = "userInfoDataGridView";
             userInfoDataGridView.RowHeadersWidth = 51;
             userInfoDataGridView.RowTemplate.Height = 29;
-            userInfoDataGridView.Size = new Size(629, 263);
+            userInfoDataGridView.Size = new Size(788, 334);
             userInfoDataGridView.TabIndex = 1;
             // 
             // toolsPanel
@@ -199,14 +199,16 @@
             toolsPanel.Controls.Add(mainToolsPanel);
             toolsPanel.Dock = DockStyle.Top;
             toolsPanel.Location = new Point(0, 0);
+            toolsPanel.Margin = new Padding(4, 4, 4, 4);
             toolsPanel.Name = "toolsPanel";
-            toolsPanel.Size = new Size(629, 142);
+            toolsPanel.Size = new Size(788, 178);
             toolsPanel.TabIndex = 0;
             // 
             // searchSplitContainer
             // 
             searchSplitContainer.Dock = DockStyle.Fill;
-            searchSplitContainer.Location = new Point(0, 100);
+            searchSplitContainer.Location = new Point(0, 125);
+            searchSplitContainer.Margin = new Padding(4, 4, 4, 4);
             searchSplitContainer.Name = "searchSplitContainer";
             // 
             // searchSplitContainer.Panel1
@@ -216,9 +218,8 @@
             // searchSplitContainer.Panel2
             // 
             searchSplitContainer.Panel2.Controls.Add(searchUserByColumnComboBox);
-            searchSplitContainer.Size = new Size(629, 42);
-            searchSplitContainer.SplitterDistance = 395;
-            searchSplitContainer.SplitterWidth = 3;
+            searchSplitContainer.Size = new Size(788, 53);
+            searchSplitContainer.SplitterDistance = 494;
             searchSplitContainer.TabIndex = 1;
             // 
             // searchUserComboBox
@@ -227,8 +228,9 @@
             searchUserComboBox.Font = new Font("Tahoma", 14F, FontStyle.Regular, GraphicsUnit.Point);
             searchUserComboBox.FormattingEnabled = true;
             searchUserComboBox.Location = new Point(0, 0);
+            searchUserComboBox.Margin = new Padding(4, 4, 4, 4);
             searchUserComboBox.Name = "searchUserComboBox";
-            searchUserComboBox.Size = new Size(395, 36);
+            searchUserComboBox.Size = new Size(494, 42);
             searchUserComboBox.TabIndex = 0;
             searchUserComboBox.TextChanged += searchUserComboBox_TextChanged;
             // 
@@ -238,8 +240,9 @@
             searchUserByColumnComboBox.Font = new Font("Tahoma", 14F, FontStyle.Regular, GraphicsUnit.Point);
             searchUserByColumnComboBox.FormattingEnabled = true;
             searchUserByColumnComboBox.Location = new Point(0, 0);
+            searchUserByColumnComboBox.Margin = new Padding(4, 4, 4, 4);
             searchUserByColumnComboBox.Name = "searchUserByColumnComboBox";
-            searchUserByColumnComboBox.Size = new Size(231, 36);
+            searchUserByColumnComboBox.Size = new Size(290, 42);
             searchUserByColumnComboBox.TabIndex = 0;
             searchUserByColumnComboBox.SelectedIndexChanged += searchUserByColumnComboBox_SelectedIndexChanged;
             // 
@@ -248,8 +251,9 @@
             mainToolsPanel.Controls.Add(toolsSplitContainer);
             mainToolsPanel.Dock = DockStyle.Top;
             mainToolsPanel.Location = new Point(0, 0);
+            mainToolsPanel.Margin = new Padding(4, 4, 4, 4);
             mainToolsPanel.Name = "mainToolsPanel";
-            mainToolsPanel.Size = new Size(629, 100);
+            mainToolsPanel.Size = new Size(788, 125);
             mainToolsPanel.TabIndex = 0;
             // 
             // toolsSplitContainer
@@ -257,6 +261,7 @@
             toolsSplitContainer.Dock = DockStyle.Fill;
             toolsSplitContainer.IsSplitterFixed = true;
             toolsSplitContainer.Location = new Point(0, 0);
+            toolsSplitContainer.Margin = new Padding(4, 4, 4, 4);
             toolsSplitContainer.Name = "toolsSplitContainer";
             // 
             // toolsSplitContainer.Panel1
@@ -267,8 +272,9 @@
             // toolsSplitContainer.Panel2
             // 
             toolsSplitContainer.Panel2.Controls.Add(EditAndViewSplitContainer);
-            toolsSplitContainer.Size = new Size(629, 100);
-            toolsSplitContainer.SplitterDistance = 312;
+            toolsSplitContainer.Size = new Size(788, 125);
+            toolsSplitContainer.SplitterDistance = 390;
+            toolsSplitContainer.SplitterWidth = 5;
             toolsSplitContainer.TabIndex = 1;
             // 
             // addAndRemoveSplitContainer
@@ -276,6 +282,7 @@
             addAndRemoveSplitContainer.Dock = DockStyle.Fill;
             addAndRemoveSplitContainer.IsSplitterFixed = true;
             addAndRemoveSplitContainer.Location = new Point(0, 0);
+            addAndRemoveSplitContainer.Margin = new Padding(4, 4, 4, 4);
             addAndRemoveSplitContainer.Name = "addAndRemoveSplitContainer";
             // 
             // addAndRemoveSplitContainer.Panel1
@@ -285,9 +292,8 @@
             // addAndRemoveSplitContainer.Panel2
             // 
             addAndRemoveSplitContainer.Panel2.Controls.Add(removeUserButton);
-            addAndRemoveSplitContainer.Size = new Size(312, 100);
-            addAndRemoveSplitContainer.SplitterDistance = 153;
-            addAndRemoveSplitContainer.SplitterWidth = 3;
+            addAndRemoveSplitContainer.Size = new Size(390, 125);
+            addAndRemoveSplitContainer.SplitterDistance = 191;
             addAndRemoveSplitContainer.TabIndex = 0;
             // 
             // addUserButton
@@ -296,8 +302,9 @@
             addUserButton.Dock = DockStyle.Fill;
             addUserButton.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
             addUserButton.Location = new Point(0, 0);
+            addUserButton.Margin = new Padding(4, 4, 4, 4);
             addUserButton.Name = "addUserButton";
-            addUserButton.Size = new Size(153, 100);
+            addUserButton.Size = new Size(191, 125);
             addUserButton.TabIndex = 0;
             addUserButton.Text = "ADD";
             addUserButton.UseVisualStyleBackColor = false;
@@ -309,8 +316,9 @@
             removeUserButton.Dock = DockStyle.Fill;
             removeUserButton.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
             removeUserButton.Location = new Point(0, 0);
+            removeUserButton.Margin = new Padding(4, 4, 4, 4);
             removeUserButton.Name = "removeUserButton";
-            removeUserButton.Size = new Size(156, 100);
+            removeUserButton.Size = new Size(195, 125);
             removeUserButton.TabIndex = 0;
             removeUserButton.Text = "REMOVE";
             removeUserButton.UseVisualStyleBackColor = false;
@@ -321,6 +329,7 @@
             EditAndViewSplitContainer.Dock = DockStyle.Fill;
             EditAndViewSplitContainer.IsSplitterFixed = true;
             EditAndViewSplitContainer.Location = new Point(0, 0);
+            EditAndViewSplitContainer.Margin = new Padding(4, 4, 4, 4);
             EditAndViewSplitContainer.Name = "EditAndViewSplitContainer";
             // 
             // EditAndViewSplitContainer.Panel1
@@ -330,9 +339,8 @@
             // EditAndViewSplitContainer.Panel2
             // 
             EditAndViewSplitContainer.Panel2.Controls.Add(viewButton);
-            EditAndViewSplitContainer.Size = new Size(313, 100);
-            EditAndViewSplitContainer.SplitterDistance = 154;
-            EditAndViewSplitContainer.SplitterWidth = 3;
+            EditAndViewSplitContainer.Size = new Size(393, 125);
+            EditAndViewSplitContainer.SplitterDistance = 193;
             EditAndViewSplitContainer.TabIndex = 0;
             // 
             // editUserButton
@@ -341,8 +349,9 @@
             editUserButton.Dock = DockStyle.Fill;
             editUserButton.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
             editUserButton.Location = new Point(0, 0);
+            editUserButton.Margin = new Padding(4, 4, 4, 4);
             editUserButton.Name = "editUserButton";
-            editUserButton.Size = new Size(154, 100);
+            editUserButton.Size = new Size(193, 125);
             editUserButton.TabIndex = 0;
             editUserButton.Text = "EDIT";
             editUserButton.UseVisualStyleBackColor = false;
@@ -354,8 +363,9 @@
             viewButton.Dock = DockStyle.Fill;
             viewButton.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
             viewButton.Location = new Point(0, 0);
+            viewButton.Margin = new Padding(4, 4, 4, 4);
             viewButton.Name = "viewButton";
-            viewButton.Size = new Size(156, 100);
+            viewButton.Size = new Size(196, 125);
             viewButton.TabIndex = 5;
             viewButton.Text = "VIEW";
             viewButton.UseVisualStyleBackColor = false;
@@ -379,15 +389,17 @@
             userInfoFlowLayoutPanel.Dock = DockStyle.Fill;
             userInfoFlowLayoutPanel.FlowDirection = FlowDirection.TopDown;
             userInfoFlowLayoutPanel.Location = new Point(0, 0);
+            userInfoFlowLayoutPanel.Margin = new Padding(4, 4, 4, 4);
             userInfoFlowLayoutPanel.Name = "userInfoFlowLayoutPanel";
-            userInfoFlowLayoutPanel.Size = new Size(315, 337);
+            userInfoFlowLayoutPanel.Size = new Size(395, 427);
             userInfoFlowLayoutPanel.TabIndex = 0;
             // 
             // adminFlowLayoutPanel
             // 
             adminFlowLayoutPanel.AutoSize = true;
             adminFlowLayoutPanel.FlowDirection = FlowDirection.TopDown;
-            adminFlowLayoutPanel.Location = new Point(3, 3);
+            adminFlowLayoutPanel.Location = new Point(4, 4);
+            adminFlowLayoutPanel.Margin = new Padding(4, 4, 4, 4);
             adminFlowLayoutPanel.Name = "adminFlowLayoutPanel";
             adminFlowLayoutPanel.Size = new Size(0, 0);
             adminFlowLayoutPanel.TabIndex = 4;
@@ -397,18 +409,20 @@
             userIDLabel.AutoSize = true;
             userIDLabel.Dock = DockStyle.Top;
             userIDLabel.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            userIDLabel.Location = new Point(3, 6);
+            userIDLabel.Location = new Point(4, 8);
+            userIDLabel.Margin = new Padding(4, 0, 4, 0);
             userIDLabel.Name = "userIDLabel";
-            userIDLabel.Size = new Size(164, 30);
+            userIDLabel.Size = new Size(196, 36);
             userIDLabel.TabIndex = 0;
             userIDLabel.Text = "ID";
             // 
             // userIDTextBox
             // 
             userIDTextBox.Dock = DockStyle.Top;
-            userIDTextBox.Location = new Point(3, 39);
+            userIDTextBox.Location = new Point(4, 48);
+            userIDTextBox.Margin = new Padding(4, 4, 4, 4);
             userIDTextBox.Name = "userIDTextBox";
-            userIDTextBox.Size = new Size(164, 32);
+            userIDTextBox.Size = new Size(196, 36);
             userIDTextBox.TabIndex = 1;
             // 
             // usernameLabel
@@ -416,18 +430,20 @@
             usernameLabel.AutoSize = true;
             usernameLabel.Dock = DockStyle.Top;
             usernameLabel.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            usernameLabel.Location = new Point(3, 74);
+            usernameLabel.Location = new Point(4, 88);
+            usernameLabel.Margin = new Padding(4, 0, 4, 0);
             usernameLabel.Name = "usernameLabel";
-            usernameLabel.Size = new Size(164, 30);
+            usernameLabel.Size = new Size(196, 36);
             usernameLabel.TabIndex = 0;
             usernameLabel.Text = "Username";
             // 
             // usernameTextBox
             // 
             usernameTextBox.Dock = DockStyle.Top;
-            usernameTextBox.Location = new Point(3, 107);
+            usernameTextBox.Location = new Point(4, 128);
+            usernameTextBox.Margin = new Padding(4, 4, 4, 4);
             usernameTextBox.Name = "usernameTextBox";
-            usernameTextBox.Size = new Size(164, 32);
+            usernameTextBox.Size = new Size(196, 36);
             usernameTextBox.TabIndex = 1;
             // 
             // passwordLabel
@@ -435,18 +451,20 @@
             passwordLabel.AutoSize = true;
             passwordLabel.Dock = DockStyle.Top;
             passwordLabel.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            passwordLabel.Location = new Point(3, 142);
+            passwordLabel.Location = new Point(4, 168);
+            passwordLabel.Margin = new Padding(4, 0, 4, 0);
             passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new Size(164, 30);
+            passwordLabel.Size = new Size(196, 36);
             passwordLabel.TabIndex = 0;
             passwordLabel.Text = "Password";
             // 
             // passwordTextBox
             // 
             passwordTextBox.Dock = DockStyle.Top;
-            passwordTextBox.Location = new Point(3, 175);
+            passwordTextBox.Location = new Point(4, 208);
+            passwordTextBox.Margin = new Padding(4, 4, 4, 4);
             passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.Size = new Size(164, 32);
+            passwordTextBox.Size = new Size(196, 36);
             passwordTextBox.TabIndex = 1;
             // 
             // displayNameLabel
@@ -454,18 +472,20 @@
             displayNameLabel.AutoSize = true;
             displayNameLabel.Dock = DockStyle.Top;
             displayNameLabel.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            displayNameLabel.Location = new Point(3, 210);
+            displayNameLabel.Location = new Point(4, 248);
+            displayNameLabel.Margin = new Padding(4, 0, 4, 0);
             displayNameLabel.Name = "displayNameLabel";
-            displayNameLabel.Size = new Size(164, 30);
+            displayNameLabel.Size = new Size(196, 36);
             displayNameLabel.TabIndex = 0;
             displayNameLabel.Text = "Display Name";
             // 
             // displayNameTextBox
             // 
             displayNameTextBox.Dock = DockStyle.Top;
-            displayNameTextBox.Location = new Point(3, 243);
+            displayNameTextBox.Location = new Point(4, 288);
+            displayNameTextBox.Margin = new Padding(4, 4, 4, 4);
             displayNameTextBox.Name = "displayNameTextBox";
-            displayNameTextBox.Size = new Size(164, 32);
+            displayNameTextBox.Size = new Size(196, 36);
             displayNameTextBox.TabIndex = 1;
             // 
             // gmailLabel
@@ -473,17 +493,19 @@
             gmailLabel.AutoSize = true;
             gmailLabel.Dock = DockStyle.Top;
             gmailLabel.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            gmailLabel.Location = new Point(3, 278);
+            gmailLabel.Location = new Point(4, 328);
+            gmailLabel.Margin = new Padding(4, 0, 4, 0);
             gmailLabel.Name = "gmailLabel";
-            gmailLabel.Size = new Size(164, 30);
+            gmailLabel.Size = new Size(196, 36);
             gmailLabel.TabIndex = 0;
             gmailLabel.Text = "Gmail";
             // 
             // gmailTextBox
             // 
-            gmailTextBox.Location = new Point(173, 3);
+            gmailTextBox.Location = new Point(208, 4);
+            gmailTextBox.Margin = new Padding(4, 4, 4, 4);
             gmailTextBox.Name = "gmailTextBox";
-            gmailTextBox.Size = new Size(312, 32);
+            gmailTextBox.Size = new Size(389, 36);
             gmailTextBox.TabIndex = 1;
             // 
             // adminCheckBox
@@ -491,9 +513,10 @@
             adminCheckBox.AutoSize = true;
             adminCheckBox.Dock = DockStyle.Top;
             adminCheckBox.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            adminCheckBox.Location = new Point(173, 41);
+            adminCheckBox.Location = new Point(208, 48);
+            adminCheckBox.Margin = new Padding(4, 4, 4, 4);
             adminCheckBox.Name = "adminCheckBox";
-            adminCheckBox.Size = new Size(312, 34);
+            adminCheckBox.Size = new Size(389, 40);
             adminCheckBox.TabIndex = 2;
             adminCheckBox.Text = "Admin";
             adminCheckBox.UseVisualStyleBackColor = true;
@@ -505,9 +528,10 @@
             confirmButton.Dock = DockStyle.Bottom;
             confirmButton.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
             confirmButton.ForeColor = Color.MidnightBlue;
-            confirmButton.Location = new Point(0, 337);
+            confirmButton.Location = new Point(0, 427);
+            confirmButton.Margin = new Padding(4, 4, 4, 4);
             confirmButton.Name = "confirmButton";
-            confirmButton.Size = new Size(315, 68);
+            confirmButton.Size = new Size(395, 85);
             confirmButton.TabIndex = 0;
             confirmButton.Text = "CONFIRM CHANGE";
             confirmButton.UseVisualStyleBackColor = false;
@@ -518,11 +542,11 @@
             TagsTabPage.Controls.Add(gamesAndTagsPanel);
             TagsTabPage.Controls.Add(EditPanel);
             TagsTabPage.Controls.Add(tagMainControlPanel);
-            TagsTabPage.Location = new Point(4, 33);
+            TagsTabPage.Location = new Point(4, 38);
             TagsTabPage.Margin = new Padding(2);
             TagsTabPage.Name = "TagsTabPage";
             TagsTabPage.Padding = new Padding(2);
-            TagsTabPage.Size = new Size(951, 409);
+            TagsTabPage.Size = new Size(1191, 516);
             TagsTabPage.TabIndex = 1;
             TagsTabPage.Text = "Tags";
             TagsTabPage.UseVisualStyleBackColor = true;
@@ -533,10 +557,10 @@
             gamesAndTagsPanel.Controls.Add(gamesPanel);
             gamesAndTagsPanel.Controls.Add(tagsPanel);
             gamesAndTagsPanel.Dock = DockStyle.Fill;
-            gamesAndTagsPanel.Location = new Point(2, 150);
+            gamesAndTagsPanel.Location = new Point(2, 188);
             gamesAndTagsPanel.Margin = new Padding(2);
             gamesAndTagsPanel.Name = "gamesAndTagsPanel";
-            gamesAndTagsPanel.Size = new Size(947, 257);
+            gamesAndTagsPanel.Size = new Size(1187, 326);
             gamesAndTagsPanel.TabIndex = 5;
             // 
             // gamesPanel
@@ -544,19 +568,19 @@
             gamesPanel.Controls.Add(gamesFlowLayoutPanel);
             gamesPanel.Controls.Add(gameFakeLable);
             gamesPanel.Dock = DockStyle.Fill;
-            gamesPanel.Location = new Point(210, 0);
+            gamesPanel.Location = new Point(262, 0);
             gamesPanel.Margin = new Padding(2);
             gamesPanel.Name = "gamesPanel";
-            gamesPanel.Size = new Size(737, 257);
+            gamesPanel.Size = new Size(925, 326);
             gamesPanel.TabIndex = 1;
             // 
             // gamesFlowLayoutPanel
             // 
             gamesFlowLayoutPanel.Dock = DockStyle.Fill;
-            gamesFlowLayoutPanel.Location = new Point(0, 34);
+            gamesFlowLayoutPanel.Location = new Point(0, 42);
             gamesFlowLayoutPanel.Margin = new Padding(2);
             gamesFlowLayoutPanel.Name = "gamesFlowLayoutPanel";
-            gamesFlowLayoutPanel.Size = new Size(737, 223);
+            gamesFlowLayoutPanel.Size = new Size(925, 284);
             gamesFlowLayoutPanel.TabIndex = 1;
             // 
             // gameFakeLable
@@ -566,7 +590,7 @@
             gameFakeLable.Location = new Point(0, 0);
             gameFakeLable.Margin = new Padding(2);
             gameFakeLable.Name = "gameFakeLable";
-            gameFakeLable.Size = new Size(737, 34);
+            gameFakeLable.Size = new Size(925, 42);
             gameFakeLable.TabIndex = 0;
             gameFakeLable.Text = "GAMES";
             gameFakeLable.UseVisualStyleBackColor = false;
@@ -579,17 +603,17 @@
             tagsPanel.Location = new Point(0, 0);
             tagsPanel.Margin = new Padding(2);
             tagsPanel.Name = "tagsPanel";
-            tagsPanel.Size = new Size(210, 257);
+            tagsPanel.Size = new Size(262, 326);
             tagsPanel.TabIndex = 0;
             // 
             // tagFlowLayoutPanel
             // 
             tagFlowLayoutPanel.AutoScroll = true;
             tagFlowLayoutPanel.Dock = DockStyle.Fill;
-            tagFlowLayoutPanel.Location = new Point(0, 34);
+            tagFlowLayoutPanel.Location = new Point(0, 42);
             tagFlowLayoutPanel.Margin = new Padding(2);
             tagFlowLayoutPanel.Name = "tagFlowLayoutPanel";
-            tagFlowLayoutPanel.Size = new Size(210, 223);
+            tagFlowLayoutPanel.Size = new Size(262, 284);
             tagFlowLayoutPanel.TabIndex = 1;
             // 
             // allTagsButton
@@ -599,7 +623,7 @@
             allTagsButton.Location = new Point(0, 0);
             allTagsButton.Margin = new Padding(2);
             allTagsButton.Name = "allTagsButton";
-            allTagsButton.Size = new Size(210, 34);
+            allTagsButton.Size = new Size(262, 42);
             allTagsButton.TabIndex = 0;
             allTagsButton.Text = "TAGS";
             allTagsButton.UseVisualStyleBackColor = false;
@@ -612,35 +636,35 @@
             EditPanel.Controls.Add(descriptionButton);
             EditPanel.Controls.Add(tagNameButton);
             EditPanel.Dock = DockStyle.Top;
-            EditPanel.Location = new Point(2, 80);
+            EditPanel.Location = new Point(2, 100);
             EditPanel.Margin = new Padding(2);
             EditPanel.Name = "EditPanel";
-            EditPanel.Size = new Size(947, 70);
+            EditPanel.Size = new Size(1187, 88);
             EditPanel.TabIndex = 4;
             // 
             // tagDescriptionTextBox
             // 
-            tagDescriptionTextBox.Location = new Point(136, 38);
+            tagDescriptionTextBox.Location = new Point(170, 48);
             tagDescriptionTextBox.Margin = new Padding(2);
             tagDescriptionTextBox.Name = "tagDescriptionTextBox";
-            tagDescriptionTextBox.Size = new Size(640, 32);
+            tagDescriptionTextBox.Size = new Size(799, 36);
             tagDescriptionTextBox.TabIndex = 3;
             // 
             // tagNameTextBox
             // 
-            tagNameTextBox.Location = new Point(136, 6);
+            tagNameTextBox.Location = new Point(170, 8);
             tagNameTextBox.Margin = new Padding(2);
             tagNameTextBox.Name = "tagNameTextBox";
-            tagNameTextBox.Size = new Size(640, 32);
+            tagNameTextBox.Size = new Size(799, 36);
             tagNameTextBox.TabIndex = 2;
             // 
             // descriptionButton
             // 
             descriptionButton.BackColor = Color.FromArgb(255, 254, 145);
-            descriptionButton.Location = new Point(4, 35);
+            descriptionButton.Location = new Point(5, 44);
             descriptionButton.Margin = new Padding(2);
             descriptionButton.Name = "descriptionButton";
-            descriptionButton.Size = new Size(127, 30);
+            descriptionButton.Size = new Size(159, 38);
             descriptionButton.TabIndex = 1;
             descriptionButton.Text = "Description";
             descriptionButton.UseVisualStyleBackColor = false;
@@ -648,10 +672,10 @@
             // tagNameButton
             // 
             tagNameButton.BackColor = Color.FromArgb(255, 254, 145);
-            tagNameButton.Location = new Point(4, 2);
+            tagNameButton.Location = new Point(5, 2);
             tagNameButton.Margin = new Padding(2);
             tagNameButton.Name = "tagNameButton";
-            tagNameButton.Size = new Size(127, 30);
+            tagNameButton.Size = new Size(159, 38);
             tagNameButton.TabIndex = 0;
             tagNameButton.Text = "Name";
             tagNameButton.UseVisualStyleBackColor = false;
@@ -668,7 +692,7 @@
             tagMainControlPanel.Location = new Point(2, 2);
             tagMainControlPanel.Margin = new Padding(2);
             tagMainControlPanel.Name = "tagMainControlPanel";
-            tagMainControlPanel.Size = new Size(947, 78);
+            tagMainControlPanel.Size = new Size(1187, 98);
             tagMainControlPanel.TabIndex = 3;
             // 
             // editGameTagButton
@@ -677,10 +701,10 @@
             editGameTagButton.FlatAppearance.BorderColor = Color.DarkGreen;
             editGameTagButton.FlatAppearance.BorderSize = 5;
             editGameTagButton.ForeColor = Color.FromArgb(23, 61, 28);
-            editGameTagButton.Location = new Point(586, 2);
+            editGameTagButton.Location = new Point(732, 2);
             editGameTagButton.Margin = new Padding(2);
             editGameTagButton.Name = "editGameTagButton";
-            editGameTagButton.Size = new Size(189, 41);
+            editGameTagButton.Size = new Size(236, 51);
             editGameTagButton.TabIndex = 6;
             editGameTagButton.Text = "EDIT GAME TAG";
             editGameTagButton.UseVisualStyleBackColor = false;
@@ -692,10 +716,10 @@
             removeTagButton.FlatAppearance.BorderColor = Color.DarkGreen;
             removeTagButton.FlatAppearance.BorderSize = 5;
             removeTagButton.ForeColor = Color.FromArgb(23, 61, 28);
-            removeTagButton.Location = new Point(196, 2);
+            removeTagButton.Location = new Point(245, 2);
             removeTagButton.Margin = new Padding(2);
             removeTagButton.Name = "removeTagButton";
-            removeTagButton.Size = new Size(189, 41);
+            removeTagButton.Size = new Size(236, 51);
             removeTagButton.TabIndex = 5;
             removeTagButton.Text = "REMOVE";
             removeTagButton.UseVisualStyleBackColor = false;
@@ -704,10 +728,10 @@
             // tagsComboBox
             // 
             tagsComboBox.FormattingEnabled = true;
-            tagsComboBox.Location = new Point(2, 48);
+            tagsComboBox.Location = new Point(2, 60);
             tagsComboBox.Margin = new Padding(2);
             tagsComboBox.Name = "tagsComboBox";
-            tagsComboBox.Size = new Size(774, 32);
+            tagsComboBox.Size = new Size(966, 37);
             tagsComboBox.TabIndex = 4;
             tagsComboBox.TextChanged += tagsComboBox_TextChanged;
             // 
@@ -717,10 +741,10 @@
             editTagButton.FlatAppearance.BorderColor = Color.DarkGreen;
             editTagButton.FlatAppearance.BorderSize = 5;
             editTagButton.ForeColor = Color.FromArgb(23, 61, 28);
-            editTagButton.Location = new Point(393, 2);
+            editTagButton.Location = new Point(491, 2);
             editTagButton.Margin = new Padding(2);
             editTagButton.Name = "editTagButton";
-            editTagButton.Size = new Size(189, 41);
+            editTagButton.Size = new Size(236, 51);
             editTagButton.TabIndex = 2;
             editTagButton.Text = "EDIT TAG";
             editTagButton.UseVisualStyleBackColor = false;
@@ -733,7 +757,7 @@
             addTagButton.Location = new Point(2, 2);
             addTagButton.Margin = new Padding(2);
             addTagButton.Name = "addTagButton";
-            addTagButton.Size = new Size(189, 41);
+            addTagButton.Size = new Size(236, 51);
             addTagButton.TabIndex = 0;
             addTagButton.Text = "ADD";
             addTagButton.UseVisualStyleBackColor = false;
@@ -745,10 +769,11 @@
             GameTabPage.Controls.Add(mainControlPanel);
             GameTabPage.Controls.Add(InfoFlowLayoutPanel);
             GameTabPage.Font = new Font("Tahoma", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            GameTabPage.Location = new Point(4, 33);
+            GameTabPage.Location = new Point(4, 38);
+            GameTabPage.Margin = new Padding(4, 4, 4, 4);
             GameTabPage.Name = "GameTabPage";
-            GameTabPage.Padding = new Padding(3);
-            GameTabPage.Size = new Size(951, 409);
+            GameTabPage.Padding = new Padding(4, 4, 4, 4);
+            GameTabPage.Size = new Size(1191, 516);
             GameTabPage.TabIndex = 0;
             GameTabPage.Text = "Games";
             GameTabPage.UseVisualStyleBackColor = true;
@@ -758,11 +783,12 @@
             gameDataGridView.BackgroundColor = Color.FromArgb(171, 239, 255);
             gameDataGridView.ColumnHeadersHeight = 29;
             gameDataGridView.Dock = DockStyle.Fill;
-            gameDataGridView.Location = new Point(3, 111);
+            gameDataGridView.Location = new Point(4, 139);
+            gameDataGridView.Margin = new Padding(4, 4, 4, 4);
             gameDataGridView.Name = "gameDataGridView";
             gameDataGridView.RowHeadersWidth = 100;
             gameDataGridView.RowTemplate.Height = 29;
-            gameDataGridView.Size = new Size(613, 295);
+            gameDataGridView.Size = new Size(768, 373);
             gameDataGridView.TabIndex = 3;
             // 
             // mainControlPanel
@@ -772,17 +798,19 @@
             mainControlPanel.Controls.Add(editButton);
             mainControlPanel.Controls.Add(addButton);
             mainControlPanel.Dock = DockStyle.Top;
-            mainControlPanel.Location = new Point(3, 3);
+            mainControlPanel.Location = new Point(4, 4);
+            mainControlPanel.Margin = new Padding(4, 4, 4, 4);
             mainControlPanel.Name = "mainControlPanel";
-            mainControlPanel.Size = new Size(613, 108);
+            mainControlPanel.Size = new Size(768, 135);
             mainControlPanel.TabIndex = 2;
             // 
             // gameComboBox
             // 
             gameComboBox.FormattingEnabled = true;
-            gameComboBox.Location = new Point(3, 60);
+            gameComboBox.Location = new Point(4, 75);
+            gameComboBox.Margin = new Padding(4, 4, 4, 4);
             gameComboBox.Name = "gameComboBox";
-            gameComboBox.Size = new Size(634, 38);
+            gameComboBox.Size = new Size(792, 44);
             gameComboBox.TabIndex = 4;
             // 
             // editButton
@@ -792,9 +820,10 @@
             editButton.FlatAppearance.BorderColor = Color.DarkGreen;
             editButton.FlatAppearance.BorderSize = 5;
             editButton.ForeColor = Color.FromArgb(23, 61, 28);
-            editButton.Location = new Point(325, 3);
+            editButton.Location = new Point(406, 4);
+            editButton.Margin = new Padding(4, 4, 4, 4);
             editButton.Name = "editButton";
-            editButton.Size = new Size(312, 51);
+            editButton.Size = new Size(390, 64);
             editButton.TabIndex = 2;
             editButton.Text = "EDIT";
             editButton.UseVisualStyleBackColor = false;
@@ -804,9 +833,10 @@
             // 
             addButton.BackColor = Color.FromArgb(97, 255, 116);
             addButton.ForeColor = Color.FromArgb(23, 61, 28);
-            addButton.Location = new Point(3, 3);
+            addButton.Location = new Point(4, 4);
+            addButton.Margin = new Padding(4, 4, 4, 4);
             addButton.Name = "addButton";
-            addButton.Size = new Size(316, 51);
+            addButton.Size = new Size(395, 64);
             addButton.TabIndex = 0;
             addButton.Text = "ADD";
             addButton.UseVisualStyleBackColor = false;
@@ -820,9 +850,10 @@
             InfoFlowLayoutPanel.Controls.Add(gameDecPanel);
             InfoFlowLayoutPanel.Controls.Add(flowLayoutPanel1);
             InfoFlowLayoutPanel.Dock = DockStyle.Right;
-            InfoFlowLayoutPanel.Location = new Point(616, 3);
+            InfoFlowLayoutPanel.Location = new Point(772, 4);
+            InfoFlowLayoutPanel.Margin = new Padding(4, 4, 4, 4);
             InfoFlowLayoutPanel.Name = "InfoFlowLayoutPanel";
-            InfoFlowLayoutPanel.Size = new Size(332, 403);
+            InfoFlowLayoutPanel.Size = new Size(415, 508);
             InfoFlowLayoutPanel.TabIndex = 0;
             // 
             // gameNamePanel
@@ -830,41 +861,46 @@
             gameNamePanel.Controls.Add(gameNameTextBox);
             gameNamePanel.Controls.Add(nameLabel);
             gameNamePanel.Dock = DockStyle.Top;
-            gameNamePanel.Location = new Point(3, 3);
+            gameNamePanel.Location = new Point(4, 4);
+            gameNamePanel.Margin = new Padding(4, 4, 4, 4);
             gameNamePanel.Name = "gameNamePanel";
-            gameNamePanel.Size = new Size(326, 77);
+            gameNamePanel.Size = new Size(408, 96);
             gameNamePanel.TabIndex = 0;
             // 
             // gameNameTextBox
             // 
-            gameNameTextBox.Location = new Point(3, 33);
+            gameNameTextBox.Location = new Point(4, 41);
+            gameNameTextBox.Margin = new Padding(4, 4, 4, 4);
             gameNameTextBox.Name = "gameNameTextBox";
-            gameNameTextBox.Size = new Size(320, 38);
+            gameNameTextBox.Size = new Size(399, 44);
             gameNameTextBox.TabIndex = 1;
             // 
             // nameLabel
             // 
             nameLabel.AutoSize = true;
-            nameLabel.Location = new Point(4, 0);
+            nameLabel.Location = new Point(5, 0);
+            nameLabel.Margin = new Padding(4, 0, 4, 0);
             nameLabel.Name = "nameLabel";
-            nameLabel.Size = new Size(77, 30);
+            nameLabel.Size = new Size(92, 36);
             nameLabel.TabIndex = 0;
             nameLabel.Text = "Name";
             // 
             // gameDecPanel
             // 
             gameDecPanel.Controls.Add(gameDetailLabel);
-            gameDecPanel.Location = new Point(3, 86);
+            gameDecPanel.Location = new Point(4, 108);
+            gameDecPanel.Margin = new Padding(4, 4, 4, 4);
             gameDecPanel.Name = "gameDecPanel";
-            gameDecPanel.Size = new Size(323, 77);
+            gameDecPanel.Size = new Size(404, 96);
             gameDecPanel.TabIndex = 5;
             // 
             // gameDetailLabel
             // 
             gameDetailLabel.AutoSize = true;
-            gameDetailLabel.Location = new Point(3, 0);
+            gameDetailLabel.Location = new Point(4, 0);
+            gameDetailLabel.Margin = new Padding(4, 0, 4, 0);
             gameDetailLabel.Name = "gameDetailLabel";
-            gameDetailLabel.Size = new Size(204, 30);
+            gameDetailLabel.Size = new Size(243, 36);
             gameDetailLabel.TabIndex = 0;
             gameDetailLabel.Text = "Game Decripition";
             // 
@@ -875,10 +911,10 @@
             flowLayoutPanel1.Controls.Add(gamePictureBox2);
             flowLayoutPanel1.Controls.Add(gamePictureBox3);
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Location = new Point(2, 168);
+            flowLayoutPanel1.Location = new Point(2, 210);
             flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(323, 346);
+            flowLayoutPanel1.Size = new Size(404, 432);
             flowLayoutPanel1.TabIndex = 6;
             // 
             // pictureLabel
@@ -887,36 +923,36 @@
             pictureLabel.Location = new Point(2, 0);
             pictureLabel.Margin = new Padding(2, 0, 2, 0);
             pictureLabel.Name = "pictureLabel";
-            pictureLabel.Size = new Size(161, 30);
+            pictureLabel.Size = new Size(193, 36);
             pictureLabel.TabIndex = 0;
             pictureLabel.Text = "Game Picture";
             // 
             // gamePictureBox1
             // 
-            gamePictureBox1.Location = new Point(2, 32);
+            gamePictureBox1.Location = new Point(2, 38);
             gamePictureBox1.Margin = new Padding(2);
             gamePictureBox1.Name = "gamePictureBox1";
-            gamePictureBox1.Size = new Size(318, 99);
+            gamePictureBox1.Size = new Size(398, 124);
             gamePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             gamePictureBox1.TabIndex = 1;
             gamePictureBox1.TabStop = false;
             // 
             // gamePictureBox2
             // 
-            gamePictureBox2.Location = new Point(2, 135);
+            gamePictureBox2.Location = new Point(2, 166);
             gamePictureBox2.Margin = new Padding(2);
             gamePictureBox2.Name = "gamePictureBox2";
-            gamePictureBox2.Size = new Size(318, 99);
+            gamePictureBox2.Size = new Size(398, 124);
             gamePictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             gamePictureBox2.TabIndex = 3;
             gamePictureBox2.TabStop = false;
             // 
             // gamePictureBox3
             // 
-            gamePictureBox3.Location = new Point(2, 238);
+            gamePictureBox3.Location = new Point(2, 294);
             gamePictureBox3.Margin = new Padding(2);
             gamePictureBox3.Name = "gamePictureBox3";
-            gamePictureBox3.Size = new Size(318, 99);
+            gamePictureBox3.Size = new Size(398, 124);
             gamePictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             gamePictureBox3.TabIndex = 2;
             gamePictureBox3.TabStop = false;
@@ -932,14 +968,14 @@
             adminTabControl.Margin = new Padding(2);
             adminTabControl.Name = "adminTabControl";
             adminTabControl.SelectedIndex = 0;
-            adminTabControl.Size = new Size(959, 446);
+            adminTabControl.Size = new Size(1199, 558);
             adminTabControl.TabIndex = 0;
             // 
             // adminForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(959, 446);
+            ClientSize = new Size(1199, 558);
             Controls.Add(adminTabControl);
             Margin = new Padding(2);
             Name = "adminForm";
