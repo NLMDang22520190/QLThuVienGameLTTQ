@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EpistWinform", "EpistWinform.csproj", "{98070BF4-0D37-4F8E-8A0F-A40BECF86E58}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "EpistSetup", "..\EpistSetup\EpistSetup.vdproj", "{7EE16BB7-8EE1-4B5E-9661-C8350DD1FF00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{98070BF4-0D37-4F8E-8A0F-A40BECF86E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98070BF4-0D37-4F8E-8A0F-A40BECF86E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98070BF4-0D37-4F8E-8A0F-A40BECF86E58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EE16BB7-8EE1-4B5E-9661-C8350DD1FF00}.Debug|Any CPU.ActiveCfg = Debug
+		{7EE16BB7-8EE1-4B5E-9661-C8350DD1FF00}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

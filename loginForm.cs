@@ -47,7 +47,6 @@ namespace EpistWinform
         private void loginBtn_Click(object sender, EventArgs e)
         {
 
-            passwordTextBox.Text = "123";
             if (Login(usernameTextBox.Text, passwordTextBox.Text) && status != -1)
             {
                 DataRow row = currentUserData.Rows[0];
