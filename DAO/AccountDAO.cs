@@ -33,6 +33,8 @@ namespace EpistWinform.DAO
                 result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord });
                 if (result.Rows.Count <= 0)
                     throw new RowNotInTableException();
+                else
+                    status = 1;
                     
             }
             catch (RowNotInTableException e)
