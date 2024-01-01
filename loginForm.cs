@@ -47,7 +47,7 @@ namespace EpistWinform
         private void loginBtn_Click(object sender, EventArgs e)
         {
 
-            if (Login(usernameTextBox.Text, passwordTextBox.Text) && status != -1)
+            if (Login(usernameTextBox.Text, passwordTextBox.Text) && status == 1)
             {
                 DataRow row = currentUserData.Rows[0];
                 currentUserAccount = new Account(row);
@@ -57,9 +57,13 @@ namespace EpistWinform
                 if (this.IsDisposed == false)
                     this.Show();
             }
-            else if (status != -1)
-                MessageBox.Show("Incorrect Username or Password");
-
+            else if (status == 0)
+                MessageBox.Show(
+                    "Incorrect Username or Password. Please check your credentials and try again.",
+                    "Login Failed",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
 
         }
 

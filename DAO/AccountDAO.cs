@@ -31,10 +31,23 @@ namespace EpistWinform.DAO
             try
             {
                 result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord });
+                if (result.Rows.Count <= 0)
+                    throw new RowNotInTableException();
+                    
             }
-            catch (Exception)
+            catch (RowNotInTableException e)
             {
-                //MessageBox.Show("caught");
+                //MessageBox.Show(e.Message);
+                status = 0;
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(
+                    "Connection error: The database is currently in maintenance mode or experiencing a temporary issue. Please wait 2-3 minutes before attempting to log in again. If the problem persists, please contact support.",
+                    "Database Connection Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                ); 
                 status = -1;
             }
 

@@ -448,6 +448,7 @@
             searchUserComboBox.Name = "searchUserComboBox";
             searchUserComboBox.Size = new Size(509, 42);
             searchUserComboBox.TabIndex = 0;
+            searchUserComboBox.TextChanged += searchUserComboBox_TextChanged;
             // 
             // searchUserByColumnComboBox
             // 
@@ -459,6 +460,7 @@
             searchUserByColumnComboBox.Name = "searchUserByColumnComboBox";
             searchUserByColumnComboBox.Size = new Size(299, 42);
             searchUserByColumnComboBox.TabIndex = 0;
+            searchUserByColumnComboBox.SelectedIndexChanged += searchUserByColumnComboBox_SelectedIndexChanged;
             // 
             // mainToolsPanel
             // 
@@ -731,6 +733,7 @@
             confirmButton.TabIndex = 0;
             confirmButton.Text = "CONFIRM CHANGE";
             confirmButton.UseVisualStyleBackColor = false;
+            confirmButton.Click += confirmButton_Click;
             // 
             // OpenFileDialog
             // 
