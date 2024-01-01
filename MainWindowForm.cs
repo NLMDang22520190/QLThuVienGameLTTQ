@@ -64,7 +64,7 @@ namespace EpistWinform
             this.currentUserAccount = currentUserAccount;
             this.parentForm = parentForm;
 
-            if(currentUserAccount.IsAdmin == 0)
+            if (currentUserAccount.IsAdmin == 0)
                 adminBtn.Visible = false;
             else
                 adminBtn.Visible = true;
@@ -73,7 +73,7 @@ namespace EpistWinform
 
 
             this.DoubleBuffered = true;
-            
+
         }
 
         #region privateMethods
@@ -167,7 +167,7 @@ namespace EpistWinform
             inventoryForm.Close();
             userForm.Close();
             adminForm.Close();
-            if(gameInfoForm != null)
+            if (gameInfoForm != null)
             {
                 gameInfoForm.Close();
             }

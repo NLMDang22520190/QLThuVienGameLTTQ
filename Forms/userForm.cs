@@ -82,7 +82,7 @@ namespace EpistWinform.Forms
         private void SaveButton_Click(object sender, EventArgs e)
         {
             string query = "UPDATE UserInfo SET display_name = @display_name , password = @password WHERE userID = @userID";
-            object[] parameters = new object[] { DisplayNameTextBox.Text, PasswordTextBox.Text, 1 }; // Thay 1 bằng userID cần update
+            object[] parameters = new object[] { DisplayNameTextBox.Text, PasswordTextBox.Text, currentUserAccount.UserID }; // Thay 1 bằng userID cần update
 
             int rowsAffected = DataProvider.Instance.ExecuteNonQuery(query, parameters);
 

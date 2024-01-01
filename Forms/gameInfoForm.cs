@@ -129,14 +129,14 @@ namespace EpistWinform.Forms
             // You can add the game to the user's inventory here
             if (GamesDAO.Instance.InsertGameToOwnedGames(game.GameID, account.UserID))
             {
-                MessageBox.Show("Game was added into your Inventory.");
+                MessageBox.Show("Congratulations! Your game has been successfully added to your Inventory. Your game will appear in the inventory next time the app is restarted.", "Inventory Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 addGameButton.Click -= AddToInventoryButton_Click;
                 addGameButton.Text = "OPEN INVENTORY";
                 addGameButton.Click += OpenInventoryButton_Click;
             }
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Oops! An error occurred. Please check your internet connection and try again. If the problem persists, contact our support team for assistance.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 

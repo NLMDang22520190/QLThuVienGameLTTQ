@@ -107,7 +107,7 @@
             closeBtn.IconColor = Color.White;
             closeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             closeBtn.Location = new Point(1205, 5);
-            closeBtn.Margin = new Padding(5, 5, 5, 5);
+            closeBtn.Margin = new Padding(5);
             closeBtn.Name = "closeBtn";
             closeBtn.Size = new Size(52, 48);
             closeBtn.TabIndex = 10;
@@ -197,6 +197,7 @@
             // 
             // userBtn
             // 
+            userBtn.AutoSize = true;
             userBtn.FlatAppearance.BorderSize = 0;
             userBtn.FlatStyle = FlatStyle.Flat;
             userBtn.Font = new Font("Tahoma", 14F, FontStyle.Bold, GraphicsUnit.Point);
