@@ -159,6 +159,20 @@ namespace EpistWinform
                 }
             }
         }
+
+        void CloseAllForm()
+        {
+            this.Close();
+            libraryForm.Close();
+            inventoryForm.Close();
+            userForm.Close();
+            adminForm.Close();
+            if(gameInfoForm != null)
+            {
+                gameInfoForm.Close();
+            }
+
+        }
         #endregion
 
         #region events
@@ -166,7 +180,7 @@ namespace EpistWinform
         private void closeBtn_Click(object sender, EventArgs e)
         {
             this.parentForm.Close();
-            this.Close();
+            CloseAllForm();
         }
 
         private void maximizeBtn_Click(object sender, EventArgs e)
@@ -269,7 +283,7 @@ namespace EpistWinform
 
         private void exitBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            CloseAllForm();
         }
 
         private void GameInfoForm_OpenInventoryClicked(object sender, EventArgs e)
