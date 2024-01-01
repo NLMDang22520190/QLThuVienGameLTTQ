@@ -30,6 +30,7 @@ namespace EpistWinform.Forms
         private bool isDownloading = false;
         private bool isPlaying = false;
         private Thread playGameThread;
+        private DialogResult installResult = DialogResult.Cancel;
 
 
         public inventoryForm(Account currentUserAccount)
@@ -186,6 +187,7 @@ namespace EpistWinform.Forms
                     {
                         if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
                         {
+                            installResult = DialogResult.OK;
                             string destinationFolderPath = folderBrowserDialog.SelectedPath;
 
                             // Tạo đường dẫn đầy đủ cho file dựa trên đường dẫn thư mục và tên file mặc định
@@ -200,6 +202,11 @@ namespace EpistWinform.Forms
 
                             // Xoá file ZIP sau khi giải nén
                             File.Delete(destinationFilePath);
+                        }
+                        else
+                        {
+                            installResult = DialogResult.Cancel;
+                            ChangeInstallBtnStyleToInstall();
                         }
                     }
 
@@ -218,6 +225,7 @@ namespace EpistWinform.Forms
 
                 try
                 {
+                    installResult = DialogResult.OK;
                     await Task.Run(() => DownloadBlobAsync("gamefiledata", $"{currentInstallingGame.GameID}.zip", destinationFilePath));
                     extractFolder = Path.Combine(defaultFolderPath, Path.GetFileNameWithoutExtension(destinationFilePath));
                     ExtractZipFile(destinationFilePath, extractFolder);
@@ -229,6 +237,7 @@ namespace EpistWinform.Forms
                 }
             }
         }
+
 
         private async Task DownloadBlobAsync(string containerName, string blobName, string destinationFilePath)
         {
@@ -442,9 +451,10 @@ namespace EpistWinform.Forms
                     await InstallGame();
 
                     // Sau khi cài đặt xong, chuyển trạng thái nút và giao diện
-                    if (currentChoosenGame.GameName == currentInstallingGame.GameName)
+                    if (currentChoosenGame.GameName == currentInstallingGame.GameName && installResult == DialogResult.OK)
                         ChangeInstallBtnStyleToPlay();
-                    SaveInstallGamePath();
+                    if(installResult == DialogResult.OK)
+                        SaveInstallGamePath();
                 }
                 catch (Exception ex)
                 {
@@ -455,6 +465,7 @@ namespace EpistWinform.Forms
                     installBtn.Enabled = true; // Kích hoạt lại nút
                     downloadProgressBar.Visible = false;
                     isDownloading = false;
+                    installResult = DialogResult.Cancel;
                 }
             }
             else
