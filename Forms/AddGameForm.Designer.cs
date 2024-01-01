@@ -255,6 +255,7 @@
             gameFileTextBox.ReadOnly = true;
             gameFileTextBox.Size = new Size(278, 32);
             gameFileTextBox.TabIndex = 1;
+            gameFileTextBox.TabStop = false;
             // 
             // gameFileLabel
             // 

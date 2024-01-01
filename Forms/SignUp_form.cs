@@ -211,7 +211,7 @@ namespace EpistWinform.Forms
             {
                 Flag_connect = 1;
                 connect_to_database();
-            
+
             }
             int n = 4;
             if (Check_display() == false)

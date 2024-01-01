@@ -36,11 +36,11 @@ namespace EpistWinform.Forms
         {
             InitializeComponent();
             this.currentUserAccount = currentUserAccount;
-            if(!Directory.Exists(saveGamePath))
+            if (!Directory.Exists(saveGamePath))
             {
                 Directory.CreateDirectory(saveGamePath);
             }
-            if(!Directory.Exists(defaultSaveGameFolder))
+            if (!Directory.Exists(defaultSaveGameFolder))
             {
                 Directory.CreateDirectory(defaultSaveGameFolder);
             }
@@ -91,7 +91,7 @@ namespace EpistWinform.Forms
             {
                 installBtn.Visible = true;
             }
-            if(installPanel.Visible == false)
+            if (installPanel.Visible == false)
             {
                 installPanel.Visible = true;
             }
@@ -467,9 +467,9 @@ namespace EpistWinform.Forms
 
         private void uninstallBtn_Click(object sender, EventArgs e)
         {
-            if(isPlaying && currentChoosenGame.GameName == currentPlayingGame.GameName)
+            if (isPlaying && currentChoosenGame.GameName == currentPlayingGame.GameName)
             {
-                MessageBox.Show("Please exit the game before uninstalling!", "Warnings", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+                MessageBox.Show("Please exit the game before uninstalling!", "Warnings", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             string saveGameFileInTxt = saveGamePath + $"{currentChoosenGame.GameName}" + ".txt";
@@ -501,6 +501,11 @@ namespace EpistWinform.Forms
                     MessageBox.Show($"Error during uninstallation: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void inventoryForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //MessageBox.Show("closed");
         }
     }
 }

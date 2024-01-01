@@ -179,6 +179,7 @@
             Controls.Add(inventoryPanel);
             Name = "inventoryForm";
             Text = "inventoryForm";
+            FormClosing += inventoryForm_FormClosing;
             Load += inventoryForm_Load;
             SizeChanged += inventoryForm_SizeChanged;
             Resize += inventoryForm_Resize;

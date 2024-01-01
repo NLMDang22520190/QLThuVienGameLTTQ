@@ -111,6 +111,7 @@ namespace EpistWinform.Forms
             foreach (Tag tag in listTags)
             {
                 CheckBox tags = new CheckBox { Margin = new Padding(10, 0, 10, 0) };
+                tags.TabStop = false;
                 tags.Width = tagsFlowLayoutPanel.Width - tags.Margin.Left - tags.Margin.Right;
                 tags.AutoSize = true;
                 tags.Text = tag.TagName;

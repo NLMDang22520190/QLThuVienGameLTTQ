@@ -87,6 +87,7 @@
             minimizeBtn.Name = "minimizeBtn";
             minimizeBtn.Size = new Size(40, 40);
             minimizeBtn.TabIndex = 9;
+            minimizeBtn.TabStop = false;
             minimizeBtn.UseVisualStyleBackColor = true;
             minimizeBtn.Click += minimizeBtn_Click;
             // 
@@ -100,10 +101,11 @@
             closeBtn.IconColor = Color.White;
             closeBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             closeBtn.Location = new Point(738, 5);
-            closeBtn.Margin = new Padding(5, 5, 5, 5);
+            closeBtn.Margin = new Padding(5);
             closeBtn.Name = "closeBtn";
             closeBtn.Size = new Size(40, 40);
             closeBtn.TabIndex = 8;
+            closeBtn.TabStop = false;
             closeBtn.UseVisualStyleBackColor = true;
             closeBtn.Click += closeBtn_Click;
             // 
@@ -152,7 +154,7 @@
             userNameIcon.IconFont = FontAwesome.Sharp.IconFont.Auto;
             userNameIcon.IconSize = 46;
             userNameIcon.Location = new Point(68, 65);
-            userNameIcon.Margin = new Padding(4, 4, 4, 4);
+            userNameIcon.Margin = new Padding(4);
             userNameIcon.Name = "userNameIcon";
             userNameIcon.Size = new Size(46, 46);
             userNameIcon.TabIndex = 2;
@@ -209,6 +211,7 @@
             showPassBtn.Name = "showPassBtn";
             showPassBtn.Size = new Size(46, 46);
             showPassBtn.TabIndex = 1;
+            showPassBtn.TabStop = false;
             showPassBtn.UseVisualStyleBackColor = false;
             showPassBtn.Click += showPassBtn_Click;
             // 

@@ -73,7 +73,7 @@ namespace EpistWinform
 
 
             this.DoubleBuffered = true;
-            //MessageBox.Show(currentUserAccount.UserID.ToString() + " " + currentUserAccount.UserName.ToString());
+            
         }
 
         #region privateMethods

@@ -50,8 +50,6 @@ namespace EpistWinform.DAO
 
         public List<Game> LoadOwnGamesList(int userID)
         {
-            if (listOwnGames.Count <= 0)
-            {
                 List<Game> gameList = new List<Game>();
 
                 string querry = "GetOwnGameList @userID";
@@ -63,8 +61,6 @@ namespace EpistWinform.DAO
                     gameList.Add(game);
                 }
                 listOwnGames = gameList;
-            }
-
 
             return listOwnGames;
         }
