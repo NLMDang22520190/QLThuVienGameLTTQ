@@ -93,7 +93,11 @@
             SaveButton.BackColor = Color.FromArgb(58, 175, 131);
             SaveButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             SaveButton.ForeColor = Color.White;
+<<<<<<< HEAD
+            SaveButton.Location = new Point(195, 415);
+=======
             SaveButton.Location = new Point(34, 486);
+>>>>>>> 44943405e6bf3d3f14da11f54442c66be070d3e6
             SaveButton.Name = "SaveButton";
             SaveButton.Size = new Size(155, 50);
             SaveButton.TabIndex = 4;
@@ -106,7 +110,11 @@
             CancelButton.BackColor = Color.FromArgb(58, 175, 131);
             CancelButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             CancelButton.ForeColor = Color.White;
+<<<<<<< HEAD
+            CancelButton.Location = new Point(356, 415);
+=======
             CancelButton.Location = new Point(195, 486);
+>>>>>>> 44943405e6bf3d3f14da11f54442c66be070d3e6
             CancelButton.Name = "CancelButton";
             CancelButton.Size = new Size(155, 50);
             CancelButton.TabIndex = 5;
@@ -299,7 +307,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1033, 647);
+            ClientSize = new Size(1012, 647);
             Controls.Add(splitContainer1);
             Margin = new Padding(2);
             Name = "userForm";
