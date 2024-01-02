@@ -50,6 +50,12 @@
  <p>Ý tưởng của phần mềm này được tham khảo và chắc lọc từ các game store nổi tiếng như: Ubisoft, Epic game store, steam,...</p>
 <div id="Congnghe"></div>
  <li><h3>Công nghệ</h3></li>
+ <p>Nhóm chúng mình sử dụng các công nghệ như:</p>
+ <ul>
+  <li>Ngôn ngữ: C#</li>
+  <li>IDE phát triển: Visual Studio</li>
+  <li>Database: Azure</li>
+ </ul>
 <div id="Doituongsudung"></div>
  <li><h3>Người dùng</h3></li>
 <div id="Muctieu"></div>
