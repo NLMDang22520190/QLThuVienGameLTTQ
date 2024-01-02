@@ -101,3 +101,7 @@
        Nguyễn Tấn Dũng: 22520001 - <a href="https://github.com/NguyenTanDung-2004">Github</a>
   </li>
 </ul>
+
+<div id="Tacgia"></div>
+<h1>Tài liệu hướng dẫn chi tiết</h1>
+<a href = "https://docs.google.com/document/d/17W4i1Pu6RS-KBgkfIQYtN-xnEva3JTd3/edit?usp=sharing&ouid=116493815545709966860&rtpof=true&sd=true">Link tài liệu hướng dẫn</a>
