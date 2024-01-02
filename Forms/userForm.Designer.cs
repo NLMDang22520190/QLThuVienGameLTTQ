@@ -114,7 +114,7 @@
             SaveButton.BackColor = Color.FromArgb(58, 175, 131);
             SaveButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             SaveButton.ForeColor = Color.White;
-            SaveButton.Location = new Point(11, 26);
+            SaveButton.Location = new Point(6, 26);
             SaveButton.Name = "SaveButton";
             SaveButton.Size = new Size(155, 50);
             SaveButton.TabIndex = 4;
@@ -127,7 +127,7 @@
             CancelButton.BackColor = Color.FromArgb(58, 175, 131);
             CancelButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             CancelButton.ForeColor = Color.White;
-            CancelButton.Location = new Point(19, 26);
+            CancelButton.Location = new Point(0, 26);
             CancelButton.Name = "CancelButton";
             CancelButton.Size = new Size(155, 50);
             CancelButton.TabIndex = 5;
@@ -304,7 +304,7 @@
             panel4.Dock = DockStyle.Left;
             panel4.Location = new Point(348, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(174, 237);
+            panel4.Size = new Size(171, 237);
             panel4.TabIndex = 2;
             // 
             // panel3
