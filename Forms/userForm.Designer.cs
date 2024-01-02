@@ -32,7 +32,6 @@
             DisplayNameTextBox = new TextBox();
             UsernameTextBox = new TextBox();
             PasswordTextBox = new TextBox();
-            EditButton = new Button();
             SaveButton = new Button();
             CancelButton = new Button();
             displayNamePanel = new Panel();
@@ -46,10 +45,7 @@
             label2 = new Label();
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
-            panel1 = new Panel();
-            panel4 = new Panel();
-            panel3 = new Panel();
-            panel2 = new Panel();
+            EditButton = new Button();
             iconSplitButton1 = new FontAwesome.Sharp.IconSplitButton();
             displayNamePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)displayNameIcon).BeginInit();
@@ -63,10 +59,6 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer2).BeginInit();
             splitContainer2.Panel1.SuspendLayout();
             splitContainer2.SuspendLayout();
-            panel1.SuspendLayout();
-            panel4.SuspendLayout();
-            panel3.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // DisplayNameTextBox
@@ -96,25 +88,12 @@
             PasswordTextBox.Size = new Size(316, 27);
             PasswordTextBox.TabIndex = 2;
             // 
-            // EditButton
-            // 
-            EditButton.BackColor = Color.FromArgb(58, 175, 131);
-            EditButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            EditButton.ForeColor = Color.White;
-            EditButton.Location = new Point(27, 26);
-            EditButton.Name = "EditButton";
-            EditButton.Size = new Size(155, 50);
-            EditButton.TabIndex = 3;
-            EditButton.Text = "Edit";
-            EditButton.UseVisualStyleBackColor = false;
-            EditButton.Click += EditButton_Click_1;
-            // 
             // SaveButton
             // 
             SaveButton.BackColor = Color.FromArgb(58, 175, 131);
             SaveButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             SaveButton.ForeColor = Color.White;
-            SaveButton.Location = new Point(6, 26);
+            SaveButton.Location = new Point(42, 486);
             SaveButton.Name = "SaveButton";
             SaveButton.Size = new Size(155, 50);
             SaveButton.TabIndex = 4;
@@ -127,7 +106,7 @@
             CancelButton.BackColor = Color.FromArgb(58, 175, 131);
             CancelButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             CancelButton.ForeColor = Color.White;
-            CancelButton.Location = new Point(0, 26);
+            CancelButton.Location = new Point(259, 486);
             CancelButton.Name = "CancelButton";
             CancelButton.Size = new Size(155, 50);
             CancelButton.TabIndex = 5;
@@ -274,8 +253,10 @@
             // 
             // splitContainer2.Panel1
             // 
-            splitContainer2.Panel1.Controls.Add(panel1);
+            splitContainer2.Panel1.Controls.Add(CancelButton);
             splitContainer2.Panel1.Controls.Add(passwordPanel);
+            splitContainer2.Panel1.Controls.Add(EditButton);
+            splitContainer2.Panel1.Controls.Add(SaveButton);
             splitContainer2.Panel1.Controls.Add(userNamePanel);
             splitContainer2.Panel1.Controls.Add(displayNamePanel);
             // 
@@ -287,43 +268,18 @@
             splitContainer2.SplitterDistance = 522;
             splitContainer2.TabIndex = 0;
             // 
-            // panel1
+            // EditButton
             // 
-            panel1.Controls.Add(panel4);
-            panel1.Controls.Add(panel3);
-            panel1.Controls.Add(panel2);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 410);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(522, 237);
-            panel1.TabIndex = 9;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(CancelButton);
-            panel4.Dock = DockStyle.Left;
-            panel4.Location = new Point(348, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(171, 237);
-            panel4.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(SaveButton);
-            panel3.Dock = DockStyle.Left;
-            panel3.Location = new Point(182, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(166, 237);
-            panel3.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(EditButton);
-            panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(182, 237);
-            panel2.TabIndex = 0;
+            EditButton.BackColor = Color.FromArgb(58, 175, 131);
+            EditButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            EditButton.ForeColor = Color.White;
+            EditButton.Location = new Point(42, 415);
+            EditButton.Name = "EditButton";
+            EditButton.Size = new Size(155, 50);
+            EditButton.TabIndex = 3;
+            EditButton.Text = "Edit";
+            EditButton.UseVisualStyleBackColor = false;
+            EditButton.Click += EditButton_Click_1;
             // 
             // iconSplitButton1
             // 
@@ -363,10 +319,6 @@
             splitContainer2.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer2).EndInit();
             splitContainer2.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel4.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -375,7 +327,6 @@
         private TextBox DisplayNameTextBox;
         private TextBox UsernameTextBox;
         private TextBox PasswordTextBox;
-        private Button EditButton;
         private Button SaveButton;
         private Button CancelButton;
         private Panel displayNamePanel;
@@ -389,10 +340,7 @@
         private FontAwesome.Sharp.IconPictureBox passwordIcon;
         private SplitContainer splitContainer1;
         private SplitContainer splitContainer2;
-        private Panel panel1;
         private FontAwesome.Sharp.IconSplitButton iconSplitButton1;
-        private Panel panel4;
-        private Panel panel3;
-        private Panel panel2;
+        private Button EditButton;
     }
 }
