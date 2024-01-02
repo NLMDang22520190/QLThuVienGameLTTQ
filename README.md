@@ -58,6 +58,7 @@
  </ul>
 <div id="Doituongsudung"></div>
  <li><h3>Người dùng</h3></li>
+ <p>Người dùng ứng dụng có thể là bất kì ai có niềm đam mê cháy bổng, thích tìm hiểu, khám phá các tựa game đặc sắc, hấp dẫn, không chỉ vậy đây cũng là nơi giúp cho mọi người thư giãn sau những giờ làm việc căng thẳng bằng cách đắm chìm vào các game nhập vai, đấu súng để thỏa mãn tinh thần.</p>
 <div id="Muctieu"></div>
  <li><h3>Mục tiêu</h3></li>
 <div id="Tinhnang"></div>
