@@ -156,7 +156,7 @@
             userNamePanel.Controls.Add(label1);
             userNamePanel.Controls.Add(UsernameTextBox);
             userNamePanel.Dock = DockStyle.Top;
-            userNamePanel.Location = new Point(0, 271);
+            userNamePanel.Location = new Point(0, 129);
             userNamePanel.Margin = new Padding(2);
             userNamePanel.Name = "userNamePanel";
             userNamePanel.Size = new Size(539, 139);
@@ -194,7 +194,7 @@
             passwordPanel.Controls.Add(label2);
             passwordPanel.Controls.Add(PasswordTextBox);
             passwordPanel.Dock = DockStyle.Top;
-            passwordPanel.Location = new Point(0, 129);
+            passwordPanel.Location = new Point(0, 268);
             passwordPanel.Margin = new Padding(2);
             passwordPanel.Name = "passwordPanel";
             passwordPanel.Size = new Size(539, 142);
@@ -253,9 +253,9 @@
             // 
             // splitContainer2.Panel1
             // 
-            splitContainer2.Panel1.Controls.Add(userNamePanel);
             splitContainer2.Panel1.Controls.Add(passwordPanel);
             splitContainer2.Panel1.Controls.Add(CancelButton);
+            splitContainer2.Panel1.Controls.Add(userNamePanel);
             splitContainer2.Panel1.Controls.Add(displayNamePanel);
             splitContainer2.Panel1.Controls.Add(EditButton);
             splitContainer2.Panel1.Controls.Add(SaveButton);
