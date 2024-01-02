@@ -85,7 +85,7 @@
  </ol>
 </ol>
 
-<div id="#Tacgia"></div>
+<div id="Tacgia"></div>
 <h1>Tác giả</h1>
 <ul>
   <li>
