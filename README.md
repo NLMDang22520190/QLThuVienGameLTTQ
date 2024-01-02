@@ -47,4 +47,12 @@
 <div id="Ytuong"></div>
 <ol>
  <li><h3>Ý tưởng</h3></li>
+<div id="Congnghe"></div>
+ <li><h3>Công nghệ</h3></li>
+<div id="Doituongsudung"></div>
+ <li><h3>Người dùng</h3></li>
+<div id="Muctieu"></div>
+ <li><h3>Mục tiêu</h3></li>
+<div id="Tinhnang"></div>
+ <li><h3>Tính năng</h3></li>
 </ol>
