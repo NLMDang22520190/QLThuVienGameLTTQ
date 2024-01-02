@@ -40,3 +40,7 @@
     </ol>
     <p>Chúng tôi tin rằng, với Chương trình Quản lý Thư viện Game, không chỉ việc sắp xếp thư viện của bạn trở nên dễ dàng, mà còn tạo ra một trải nghiệm thú vị và hấp dẫn trong việc khám phá thế giới game đa dạng. Hãy bắt đầu hành trình quản lý game của bạn và tận hưởng sự thuận tiện tại đây!</p>
     <p>Chúc các bạn có những giây phút tuyệt vời cùng Chương trình Quản lý Thư viện Game của chúng tôi!</p>
+
+
+<div id="Mota"></div>
+<h1>Mô tả</h1>
