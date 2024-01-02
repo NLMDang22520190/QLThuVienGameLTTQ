@@ -26,6 +26,7 @@
 
 
 <div id="Modau"></div>
+<h1>Mở đầu</h1>
 <h4>Chào mừng các bạn đến với Chương trình Quản lý Thư viện Game</h4>
     <p>Nơi tập trung và tổ chức một cách hiệu quả bộ sưu tập game đa dạng của bạn!</p>
     <p>Chúng tôi hân hạnh được chào đón tất cả các game thủ và người yêu thư viện game vào hành trình này.</p>
