@@ -26,13 +26,16 @@
 
 
 <div id="Modau"></div>
-<p>Chào mừng các bạn đến với Chương trình Quản lý Thư viện Game nơi tập trung và tổ chức một cách hiệu quả bộ sưu tập game đa dạng của bạn! Chúng tôi hân hạnh được chào đón tất cả các game thủ và người yêu thư viện game vào hành trình này.
-Thư viện game không chỉ là nơi lưu trữ các tựa game, mà còn là không gian tận hưởng và khám phá vô tận thế giới ảo. Chương trình Quản lý Thư viện Game của chúng tôi được tạo ra với sứ mệnh giúp bạn duyệt qua, quản lý và trải nghiệm các trò chơi một cách thuận lợi nhất.
-Trải qua những tính năng độc đáo và hiệu quả, chúng tôi cam kết mang đến cho bạn trải nghiệm quản lý thư viện game tốt nhất:
-1.	Tìm kiếm và Sắp xếp Thuận tiện: Dễ dàng tìm kiếm và sắp xếp theo thể loại, nền tảng, hay ngày phát hành để bạn có thể dễ dàng xác định và chọn lựa theo ý muốn của mình.
-2.	Thông tin Chi tiết Game: Xem thông tin chi tiết về từng tựa game, bao gồm hình ảnh, mô tả, và đánh giá của cộng đồng game thủ.
-3.	Quản lý Tình trạng: Theo dõi tình trạng của game, bao gồm cả việc đã chơi, chưa chơi, hoặc đã hoàn thành.
-4.	Gợi ý Game mới: Nhận các gợi ý game dựa trên sở thích cá nhân và lịch sử chơi game của bạn.
-Chúng tôi tin rằng, với Chương trình Quản lý Thư viện Game, không chỉ việc sắp xếp thư viện của bạn trở nên dễ dàng, mà còn tạo ra một trải nghiệm thú vị và hấp dẫn trong việc khám phá thế giới game đa dạng. Hãy bắt đầu hành trình quản lý game của bạn và tận hưởng sự thuận tiện tại đây!
-Chúc các bạn có những giây phút tuyệt vời cùng Chương trình Quản lý Thư viện Game của chúng tôi!
-</p>
+<h6>Chào mừng các bạn đến với Chương trình Quản lý Thư viện Game</h6>
+    <p>Nơi tập trung và tổ chức một cách hiệu quả bộ sưu tập game đa dạng của bạn!</p>
+    <p>Chúng tôi hân hạnh được chào đón tất cả các game thủ và người yêu thư viện game vào hành trình này.</p>
+    <p>Thư viện game không chỉ là nơi lưu trữ các tựa game, mà còn là không gian tận hưởng và khám phá vô tận thế giới ảo. Chương trình Quản lý Thư viện Game của chúng tôi được tạo ra với sứ mệnh giúp bạn duyệt qua, quản lý và trải nghiệm các trò chơi một cách thuận lợi nhất.</p>
+    <p>Trải qua những tính năng độc đáo và hiệu quả, chúng tôi cam kết mang đến cho bạn trải nghiệm quản lý thư viện game tốt nhất:</p>
+    <ol>
+        <li>Tìm kiếm và Sắp xếp Thuận tiện: Dễ dàng tìm kiếm và sắp xếp theo thể loại, nền tảng, hay ngày phát hành để bạn có thể dễ dàng xác định và chọn lựa theo ý muốn của mình.</li>
+        <li>Thông tin Chi tiết Game: Xem thông tin chi tiết về từng tựa game, bao gồm hình ảnh, mô tả, và đánh giá của cộng đồng game thủ.</li>
+        <li>Quản lý Tình trạng: Theo dõi tình trạng của game, bao gồm cả việc đã chơi, chưa chơi, hoặc đã hoàn thành.</li>
+        <li>Gợi ý Game mới: Nhận các gợi ý game dựa trên sở thích cá nhân và lịch sử chơi game của bạn.</li>
+    </ol>
+    <p>Chúng tôi tin rằng, với Chương trình Quản lý Thư viện Game, không chỉ việc sắp xếp thư viện của bạn trở nên dễ dàng, mà còn tạo ra một trải nghiệm thú vị và hấp dẫn trong việc khám phá thế giới game đa dạng. Hãy bắt đầu hành trình quản lý game của bạn và tận hưởng sự thuận tiện tại đây!</p>
+    <p>Chúc các bạn có những giây phút tuyệt vời cùng Chương trình Quản lý Thư viện Game của chúng tôi!</p>
