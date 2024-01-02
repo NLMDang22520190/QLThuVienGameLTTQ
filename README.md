@@ -46,5 +46,5 @@
 <h1>Mô tả</h1>
 <div id="Ytuong"></div>
 <ol>
- <li><h3>=Ý tưởng</h3></li>
+ <li><h3>Ý tưởng</h3></li>
 </ol>
