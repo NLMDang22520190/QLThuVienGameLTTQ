@@ -61,6 +61,12 @@
  <p>Người dùng ứng dụng có thể là bất kì ai có niềm đam mê cháy bổng, thích tìm hiểu, khám phá các tựa game đặc sắc, hấp dẫn, không chỉ vậy đây cũng là nơi giúp cho mọi người thư giãn sau những giờ làm việc căng thẳng bằng cách đắm chìm vào các game nhập vai, đấu súng để thỏa mãn tinh thần.</p>
 <div id="Muctieu"></div>
  <li><h3>Mục tiêu</h3></li>
+<p>Mục tiêu của ứng dụng nhằm đáp ứng được các yêu cầu sau:</p>
+ <ul>
+  <li>Cung cấp một kho lưu trữ game đa dạng phong phú.</li>
+  <li>Dễ dàng trong việc quản lý: xóa, tải, cũng như tiếp cận các tựa game mới.</li>
+  <li>Không cần tốn phí để có thể trải nghiệm các tựa game hấp dẫn.</li>
+ </ul>
 <div id="Tinhnang"></div>
  <li><h3>Tính năng</h3></li>
 </ol>
