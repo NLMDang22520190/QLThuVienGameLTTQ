@@ -69,4 +69,18 @@
  </ul>
 <div id="Tinhnang"></div>
  <li><h3>Tính năng</h3></li>
+ <ol>
+  <li><h4>Admin:</h4></li>
+  <ul>
+   <li>Quản lý danh sách các game: thêm, xóa, sửa, bảo trì,...</li>
+   <li>Quản lý danh sách người dùng: thêm, xóa, sửa, ...</li>
+  </ul>
+   <li><h4>Người dùng:</h4></li>
+    <ul>
+   <li>Tạo tài khoản</li>
+     <li>Thay đổi tài khoản</li>
+     <li>Xử lí tình trạng quên mật khẩu</li>
+     <li>Tải game, xóa game</li>
+  </ul>
+ </ol>
 </ol>
