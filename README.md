@@ -47,6 +47,7 @@
 <div id="Ytuong"></div>
 <ol>
  <li><h3>Ý tưởng</h3></li>
+ <p>Ý tưởng của phần mềm này được tham khảo và chắc lọc từ các game store nổi tiếng như: Ubisoft, Epic game store, steam,...</p>
 <div id="Congnghe"></div>
  <li><h3>Công nghệ</h3></li>
 <div id="Doituongsudung"></div>
