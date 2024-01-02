@@ -17,4 +17,12 @@
 > [4. Mục tiêu](#Muctieu)
 >
 > [5. Tính năng](#Tinhnang)
-> <div id="Modau"></div>
+
+[III. Tác giả](#Tacgia)
+
+[IV. Tài liệu hướng dẫn chi tiết](#tailieuhuongdan)
+
+[V. Tổng kết](#Tongket)
+
+
+<div id="Modau"></div>
