@@ -26,7 +26,7 @@
 
 
 <div id="Modau"></div>
-<h6>Chào mừng các bạn đến với Chương trình Quản lý Thư viện Game</h6>
+<h4>Chào mừng các bạn đến với Chương trình Quản lý Thư viện Game</h4>
     <p>Nơi tập trung và tổ chức một cách hiệu quả bộ sưu tập game đa dạng của bạn!</p>
     <p>Chúng tôi hân hạnh được chào đón tất cả các game thủ và người yêu thư viện game vào hành trình này.</p>
     <p>Thư viện game không chỉ là nơi lưu trữ các tựa game, mà còn là không gian tận hưởng và khám phá vô tận thế giới ảo. Chương trình Quản lý Thư viện Game của chúng tôi được tạo ra với sứ mệnh giúp bạn duyệt qua, quản lý và trải nghiệm các trò chơi một cách thuận lợi nhất.</p>
