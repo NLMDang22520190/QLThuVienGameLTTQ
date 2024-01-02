@@ -67,7 +67,7 @@
             DisplayNameTextBox.BackColor = SystemColors.Control;
             DisplayNameTextBox.Location = new Point(98, 75);
             DisplayNameTextBox.Name = "DisplayNameTextBox";
-            DisplayNameTextBox.Size = new Size(316, 27);
+            DisplayNameTextBox.Size = new Size(333, 27);
             DisplayNameTextBox.TabIndex = 0;
             // 
             // UsernameTextBox
@@ -76,7 +76,7 @@
             UsernameTextBox.BackColor = SystemColors.Control;
             UsernameTextBox.Location = new Point(98, 71);
             UsernameTextBox.Name = "UsernameTextBox";
-            UsernameTextBox.Size = new Size(316, 27);
+            UsernameTextBox.Size = new Size(350, 27);
             UsernameTextBox.TabIndex = 1;
             // 
             // PasswordTextBox
@@ -85,7 +85,7 @@
             PasswordTextBox.BackColor = SystemColors.Control;
             PasswordTextBox.Location = new Point(98, 73);
             PasswordTextBox.Name = "PasswordTextBox";
-            PasswordTextBox.Size = new Size(316, 27);
+            PasswordTextBox.Size = new Size(333, 27);
             PasswordTextBox.TabIndex = 2;
             // 
             // SaveButton
@@ -93,7 +93,7 @@
             SaveButton.BackColor = Color.FromArgb(58, 175, 131);
             SaveButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             SaveButton.ForeColor = Color.White;
-            SaveButton.Location = new Point(42, 486);
+            SaveButton.Location = new Point(34, 486);
             SaveButton.Name = "SaveButton";
             SaveButton.Size = new Size(155, 50);
             SaveButton.TabIndex = 4;
@@ -106,7 +106,7 @@
             CancelButton.BackColor = Color.FromArgb(58, 175, 131);
             CancelButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             CancelButton.ForeColor = Color.White;
-            CancelButton.Location = new Point(259, 486);
+            CancelButton.Location = new Point(195, 486);
             CancelButton.Name = "CancelButton";
             CancelButton.Size = new Size(155, 50);
             CancelButton.TabIndex = 5;
@@ -122,7 +122,7 @@
             displayNamePanel.Location = new Point(0, 0);
             displayNamePanel.Margin = new Padding(2);
             displayNamePanel.Name = "displayNamePanel";
-            displayNamePanel.Size = new Size(522, 129);
+            displayNamePanel.Size = new Size(539, 129);
             displayNamePanel.TabIndex = 6;
             // 
             // displayNameIcon
@@ -156,10 +156,10 @@
             userNamePanel.Controls.Add(label1);
             userNamePanel.Controls.Add(UsernameTextBox);
             userNamePanel.Dock = DockStyle.Top;
-            userNamePanel.Location = new Point(0, 129);
+            userNamePanel.Location = new Point(0, 271);
             userNamePanel.Margin = new Padding(2);
             userNamePanel.Name = "userNamePanel";
-            userNamePanel.Size = new Size(522, 139);
+            userNamePanel.Size = new Size(539, 139);
             userNamePanel.TabIndex = 7;
             // 
             // userNameIcon
@@ -194,10 +194,10 @@
             passwordPanel.Controls.Add(label2);
             passwordPanel.Controls.Add(PasswordTextBox);
             passwordPanel.Dock = DockStyle.Top;
-            passwordPanel.Location = new Point(0, 268);
+            passwordPanel.Location = new Point(0, 129);
             passwordPanel.Margin = new Padding(2);
             passwordPanel.Name = "passwordPanel";
-            passwordPanel.Size = new Size(522, 142);
+            passwordPanel.Size = new Size(539, 142);
             passwordPanel.TabIndex = 8;
             // 
             // passwordIcon
@@ -229,7 +229,6 @@
             // 
             // splitContainer1
             // 
-            splitContainer1.Dock = DockStyle.Fill;
             splitContainer1.Location = new Point(0, 0);
             splitContainer1.Name = "splitContainer1";
             // 
@@ -237,12 +236,13 @@
             // 
             splitContainer1.Panel1.BackgroundImage = (Image)resources.GetObject("splitContainer1.Panel1.BackgroundImage");
             splitContainer1.Panel1.BackgroundImageLayout = ImageLayout.Stretch;
+            splitContainer1.Panel1.Paint += splitContainer1_Panel1_Paint;
             // 
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.Controls.Add(splitContainer2);
             splitContainer1.Size = new Size(1033, 647);
-            splitContainer1.SplitterDistance = 261;
+            splitContainer1.SplitterDistance = 235;
             splitContainer1.TabIndex = 9;
             // 
             // splitContainer2
@@ -253,19 +253,20 @@
             // 
             // splitContainer2.Panel1
             // 
-            splitContainer2.Panel1.Controls.Add(CancelButton);
+            splitContainer2.Panel1.Controls.Add(userNamePanel);
             splitContainer2.Panel1.Controls.Add(passwordPanel);
+            splitContainer2.Panel1.Controls.Add(CancelButton);
+            splitContainer2.Panel1.Controls.Add(displayNamePanel);
             splitContainer2.Panel1.Controls.Add(EditButton);
             splitContainer2.Panel1.Controls.Add(SaveButton);
-            splitContainer2.Panel1.Controls.Add(userNamePanel);
-            splitContainer2.Panel1.Controls.Add(displayNamePanel);
+            splitContainer2.Panel1.Paint += splitContainer2_Panel1_Paint;
             // 
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.BackgroundImage = (Image)resources.GetObject("splitContainer2.Panel2.BackgroundImage");
             splitContainer2.Panel2.BackgroundImageLayout = ImageLayout.Stretch;
-            splitContainer2.Size = new Size(768, 647);
-            splitContainer2.SplitterDistance = 522;
+            splitContainer2.Size = new Size(794, 647);
+            splitContainer2.SplitterDistance = 539;
             splitContainer2.TabIndex = 0;
             // 
             // EditButton
@@ -273,7 +274,7 @@
             EditButton.BackColor = Color.FromArgb(58, 175, 131);
             EditButton.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             EditButton.ForeColor = Color.White;
-            EditButton.Location = new Point(42, 415);
+            EditButton.Location = new Point(34, 415);
             EditButton.Name = "EditButton";
             EditButton.Size = new Size(155, 50);
             EditButton.TabIndex = 3;
